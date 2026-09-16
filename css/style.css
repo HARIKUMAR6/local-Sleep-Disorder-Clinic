@@ -548,6 +548,14 @@ h1, h2, h3, .font-serif-heading {
   max-height: 650px;
 }
 
+/* Home submenu: hidden by default, shown when JS toggles .show */
+.mobile-dropdown > div {
+  display: none;
+}
+.mobile-dropdown > div.show {
+  display: block;
+}
+
 .mobile-menu-item {
   display: flex;
   align-items: center;
@@ -580,6 +588,14 @@ h1, h2, h3, .font-serif-heading {
 [dir="rtl"] .mobile-menu-item:hover, [dir="rtl"] .mobile-menu-item.active {
   padding-left: 24px;
   padding-right: 28px;
+}
+
+/* Mobile menu: text LEFT, icon RIGHT */
+.mobile-menu-item > i {
+  order: 2;
+  margin-left: auto;
+  margin-right: 0;
+  flex-shrink: 0;
 }
 
 /* ==========================================================================

@@ -99,6 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (toggleIcon) {
         toggleIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
       }
+      // Reset Home submenu to collapsed every time the mobile menu opens
+      if (isOpen) {
+        mobileMenu.querySelectorAll('.mobile-dropdown > div').forEach(sub => {
+          sub.classList.remove('show');
+        });
+        mobileMenu.querySelectorAll('.mobile-dropdown-btn .fa-chevron-down').forEach(chev => {
+          chev.style.transform = 'rotate(0deg)';
+        });
+      }
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
