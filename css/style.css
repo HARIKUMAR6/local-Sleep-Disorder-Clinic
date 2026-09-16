@@ -1018,6 +1018,41 @@ details[open] .faq-icon-chevron {
   .faq-summary {
     font-size: 0.96rem;
   }
+
+  /* --- Specialists: Doctor faculty cards tablet spacing & layout --- */
+  #doctor-faculty .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  #doctor-faculty .clinical-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  #doctor-faculty .clinical-card > div:last-child {
+    min-width: 0;
+    flex: 1 1 0%;
+  }
+
+  /* --- Specialists: Our Approach 3-step process cards tablet padding --- */
+  #our-approach .grid > div {
+    padding: 1.5rem;
+  }
+}
+
+/* Scoped layout enforcement for tablet viewports up to desktop (768px – 1279px) */
+@media (min-width: 768px) and (max-width: 1279px) {
+  #doctor-faculty .grid {
+    grid-template-columns: 1fr;
+  }
+  #doctor-faculty .clinical-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #doctor-faculty .clinical-card > div:last-child {
+    min-width: 0;
+    flex: 1 1 0%;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1091,6 +1126,16 @@ details[open] .faq-icon-chevron {
   /* --- All pages: card padding reduction on mobile --- */
   .clinical-card.p-8 {
     padding: 1.5rem;
+  }
+
+  /* --- Specialists: Doctor faculty cards mobile image and stacking --- */
+  #doctor-faculty .clinical-card {
+    width: 100%;
+  }
+  #doctor-faculty .clinical-card img {
+    width: 100%;
+    max-height: 16rem;
+    object-fit: cover;
   }
 
   /* --- All pages: FAQ --- */
