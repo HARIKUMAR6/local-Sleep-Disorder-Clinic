@@ -862,3 +862,458 @@ details[open] .faq-icon-chevron {
     border-radius: 20px;
   }
 }
+
+/* ==========================================================================
+   HOME 2 — RESPONSIVE FIXES (Mobile & Tablet)
+   Desktop (≥ 1024px) is unchanged. All rules scoped to narrow viewports.
+   ========================================================================== */
+
+/* --- Tablet: 768px–1023px --- */
+@media (max-width: 1023px) {
+  /* Patient problem section: image height cap prevents excessive tall image */
+  #hero-home2 ~ section .image-reveal-frame img,
+  .image-reveal-frame img {
+    max-height: 420px;
+    height: 420px;
+  }
+}
+
+/* --- Mobile: ≤ 767px --- */
+@media (max-width: 767px) {
+  /* Hero: reduce vertical padding on small screens to avoid excessive scroll */
+  #hero-home2 {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+    min-height: auto;
+  }
+
+  /* Hero blob: constrain width so it never causes horizontal overflow on 360px devices */
+  #hero-home2 .order-1 > div[style] {
+    width: min(260px, calc(100vw - 3rem)) !important;
+    height: min(260px, calc(100vw - 3rem)) !important;
+  }
+
+  /* Stride-analysis tab buttons: wrap into column on mobile to prevent overflow */
+  #hero-home2 ~ section .flex.justify-center.gap-3 {
+    flex-direction: column;
+    align-items: center;
+  }
+  #hero-home2 ~ section .flex.justify-center.gap-3 .tab-btn {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  /* Patient problem image: reduce fixed height on mobile */
+  .image-reveal-frame img {
+    height: 320px;
+    max-height: 320px;
+  }
+
+  /* CTA section: stack buttons vertically on narrow mobile */
+  section .flex.justify-center.gap-4 {
+    flex-direction: column;
+    align-items: center;
+  }
+  section .flex.justify-center.gap-4 > a {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* --- Smallest phones: ≤ 390px --- */
+@media (max-width: 390px) {
+  /* Hero blob: tighten further on 360–390px phones */
+  #hero-home2 .order-1 > div[style] {
+    width: min(240px, calc(100vw - 2.5rem)) !important;
+    height: min(240px, calc(100vw - 2.5rem)) !important;
+  }
+
+  /* Section headings: allow tight wrapping without overflow */
+  #hero-home2 ~ section h2 {
+    font-size: 1.85rem;
+    line-height: 1.15;
+  }
+}
+
+/* ==========================================================================
+   FULL-SITE RESPONSIVE AUDIT — ALL PAGES
+   Scope: All breakpoints from 320px to 1920px.
+   Desktop (≥ 1280px) design is preserved exactly.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   TABLET & MEDIUM SCREENS: 768px – 1023px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+
+  /* --- All pages: section vertical padding reduction on tablet --- */
+  section[class*="py-24"] {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+  section[class*="py-20"] {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  /* --- All pages: fixed-height images on tablet --- */
+  .image-reveal-frame img[class*="h-[460px]"],
+  .image-reveal-frame img[class*="h-[480px]"],
+  .image-reveal-frame img[class*="h-[500px]"],
+  .image-reveal-frame img[class*="h-[520px]"] {
+    height: 380px;
+  }
+
+  /* --- Index hero: prevent text going behind image on tablet --- */
+  #hero .hero-content {
+    max-width: 90%;
+  }
+
+  /* --- Booking page: step wizard sidebar stacks cleanly --- */
+  .lg\:col-span-8 {
+    width: 100%;
+  }
+
+  /* --- Booking page: Appointment Options CTA cards tablet alignment & uniform sizing --- */
+  #appointment-options .grid {
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+  #appointment-options .grid > div {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  #appointment-options .grid > div h3 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+    min-height: 3.4rem;
+    display: flex;
+    align-items: flex-end;
+  }
+  #appointment-options .grid > div p {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    min-height: 4.8rem;
+  }
+  #appointment-options .grid > div .space-y-2 {
+    padding-bottom: 1.25rem;
+  }
+  #appointment-options .grid > div a.btn-outline-pill {
+    padding: 8px 10px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+    width: 100%;
+    justify-content: center;
+    min-height: 38px;
+    box-sizing: border-box;
+  }
+
+  /* --- All pages: FAQ summary font size prevents orphan lines on 768–900px --- */
+  .faq-summary {
+    font-size: 0.96rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE: ≤ 767px
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+
+  /* --- All pages: reduce section padding on mobile --- */
+  section[class*="py-24"] {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  section[class*="py-20"] {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  /* --- All pages: all fixed-height images scale properly --- */
+  .image-reveal-frame img {
+    height: 280px;
+    max-height: 280px;
+  }
+
+  /* Specific large fixed images on about/specialists pages */
+  img[class*="h-[460px]"],
+  img[class*="h-[480px]"],
+  img[class*="h-[500px]"],
+  img[class*="h-[520px]"] {
+    height: 260px !important;
+    max-height: 260px !important;
+  }
+
+  /* --- Index Hero: heading font on very small phones --- */
+  #hero h1 {
+    font-size: clamp(1.75rem, 7vw, 3rem);
+    line-height: 1.1;
+  }
+
+  /* --- Index: symptom triage bar negative margin fix on mobile --- */
+  section.relative.-mt-10 {
+    margin-top: 0;
+    position: relative;
+    z-index: 20;
+    padding-top: 1rem;
+  }
+
+  /* --- Index: triage pill buttons wrap correctly on 320–375px --- */
+  .triage-btn {
+    font-size: 0.72rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  /* --- All pages: page header sections padding on mobile --- */
+  header[class*="pt-36"] {
+    padding-top: 7rem;
+    padding-bottom: 2.5rem;
+  }
+
+  /* --- All pages: h1/h2 in interior page headers scale down --- */
+  header h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    line-height: 1.1;
+  }
+
+  /* --- All pages: section h2 base scale for 375px --- */
+  section h2 {
+    font-size: clamp(1.75rem, 7.5vw, 3rem);
+    line-height: 1.12;
+  }
+
+  /* --- All pages: card padding reduction on mobile --- */
+  .clinical-card.p-8 {
+    padding: 1.5rem;
+  }
+
+  /* --- All pages: FAQ --- */
+  .faq-summary {
+    font-size: 0.88rem;
+    padding: 16px 18px;
+    gap: 12px;
+  }
+  .faq-body {
+    padding: 0 18px 18px 18px;
+    font-size: 0.88rem;
+  }
+
+  /* --- Index: CTA section large pill buttons --- */
+  section .flex.flex-wrap.gap-4.justify-center > a {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* --- About page: 2-col stat grid is fine, ensure no overflow --- */
+  .grid.grid-cols-2 {
+    gap: 0.75rem;
+  }
+
+  /* --- Booking page: step indicator labels on 320–375px --- */
+  .step-tab {
+    font-size: 0.65rem;
+    word-break: break-word;
+  }
+
+  /* --- Booking: doctor selection 3-col buttons on sm --- */
+  #doctorOptions {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Booking: service option buttons full width on mobile --- */
+  #serviceOptions {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Booking: Appointment Options CTA cards on mobile --- */
+  #appointment-options .grid {
+    gap: 1.25rem;
+  }
+  #appointment-options .grid > div {
+    padding: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #appointment-options .grid > div h3 {
+    font-size: 1.4rem;
+    line-height: 1.25;
+    min-height: 2rem;
+  }
+  #appointment-options .grid > div p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    min-height: 2.7rem;
+  }
+  #appointment-options .grid > div a.btn-outline-pill {
+    padding: 8px 16px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+    width: 100%;
+    justify-content: center;
+    min-height: 38px;
+    box-sizing: border-box;
+  }
+
+  /* --- Contact page: quick-contact badges wrap and email truncates gracefully --- */
+  .flex.flex-wrap.gap-2\.5 > a {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* --- Contact: form padding on mobile --- */
+  .p-8.sm\:p-10.md\:p-12 {
+    padding: 1.5rem;
+  }
+
+  /* --- Services: filter button row wraps cleanly --- */
+  .flex.flex-wrap.justify-center.gap-2 {
+    justify-content: flex-start;
+    padding-left: 0.25rem;
+  }
+
+  /* --- All pages: mobile menu max-height for tall menus --- */
+  .mobile-menu.open {
+    max-height: 75vh;
+    overflow-y: auto;
+  }
+
+  /* --- All pages: scroll-to-top button repositioned on small screens --- */
+  .scroll-top-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* --- Dashboard: sidebar tab buttons full width and legible --- */
+  .dashboard-sidebar-link {
+    font-size: 0.82rem;
+    padding: 10px 14px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SMALL MOBILE: ≤ 390px
+   -------------------------------------------------------------------------- */
+@media (max-width: 390px) {
+
+  /* --- Navbar inner pill: ensure no overflow on 320px --- */
+  .navbar-inner {
+    padding: 4px 8px;
+    height: 50px;
+  }
+
+  /* --- Index hero h1: tighten to fit 320px --- */
+  #hero h1 {
+    font-size: clamp(1.5rem, 8vw, 2.25rem);
+  }
+
+  /* --- Interior page headers h1 --- */
+  header h1 {
+    font-size: clamp(1.7rem, 9vw, 2.5rem);
+  }
+
+  /* --- Section h2 on 320px --- */
+  section h2 {
+    font-size: clamp(1.5rem, 8vw, 2.25rem);
+  }
+
+  /* --- Card padding tighter on 320px --- */
+  .clinical-card.p-8,
+  .clinical-card.p-6 {
+    padding: 1.25rem;
+  }
+
+  /* --- Booking step tabs: reduce to minimal size on 320px --- */
+  .step-tab {
+    font-size: 0.58rem;
+    padding-bottom: 6px;
+  }
+
+  /* --- Index: triage bar container reduce inner padding --- */
+  section.relative.-mt-10 > div > div {
+    padding: 1rem;
+  }
+
+  /* --- All pages: CTA pill buttons always single column on 320px --- */
+  .btn-primary-pill,
+  .btn-outline-pill {
+    font-size: 0.78rem;
+    padding: 7px 16px;
+  }
+
+  /* --- Booking: Appointment Options CTA cards on 320px-390px --- */
+  #appointment-options .grid > div {
+    padding: 1.25rem;
+  }
+  #appointment-options .grid > div a.btn-outline-pill {
+    padding: 7px 8px;
+    font-size: 0.74rem;
+  }
+
+  /* --- Booking: date buttons wrap on 320px --- */
+  #dateBtns {
+    gap: 0.375rem;
+  }
+
+  /* --- Booking: time slots stay 2-col --- */
+  .grid-cols-2.sm\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- FAQ summary text: prevent overflow on 320px --- */
+  .faq-summary span {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+  .faq-icon-chevron {
+    min-width: 28px;
+    width: 28px;
+    height: 28px;
+  }
+
+  /* --- All footer columns: ensure text doesn't overflow at 320px --- */
+  footer ul li,
+  footer p,
+  footer span {
+    font-size: 0.82rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   LANDSCAPE MOBILE: short viewport height (≤ 500px height, ≥ 480px width)
+   -------------------------------------------------------------------------- */
+@media (max-height: 500px) and (min-width: 480px) {
+
+  /* --- Prevent hero sections being excessively tall in landscape --- */
+  #hero,
+  #hero-home2 {
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  /* --- Interior page headers shorten in landscape --- */
+  header[class*="pt-36"] {
+    padding-top: 5.5rem;
+    padding-bottom: 2rem;
+  }
+
+  /* --- Mobile menu max height in landscape so it scrolls --- */
+  .mobile-menu.open {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}

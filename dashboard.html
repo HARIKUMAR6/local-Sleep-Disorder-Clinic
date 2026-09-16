@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Patient Portal & Biomechanical Dashboard | StepWell Podiatry</title>
-    <meta name="description" content="StepWell Patient Portal: Track your upcoming podiatry visits, 3D custom orthotic fabrication status, digital gait scan reports, and physician messages.">
+    <title>Patient Dashboard | StepWell Podiatry &amp; Foot Care</title>
+    <meta name="description" content="StepWell Patient Dashboard: View your appointments, treatment history, orthotic order status, follow-up schedule, and billing information.">
 
     <!-- Favicon — StepWell Brand Logomark -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
@@ -71,11 +71,11 @@
                     <div class="logo-icon w-8 h-8 rounded-lg text-sm"><i class="fas fa-shoe-prints"></i></div>
                     <div>
                         <span class="logo-text text-base">Step<span class="highlight">Well</span></span>
-                        <span class="logo-sub text-[8px]">Patient Portal</span>
+                        <span class="logo-sub text-[8px]">Patient Dashboard</span>
                     </div>
                 </a>
                 <span class="hidden sm:inline-block px-3 py-1 bg-clinic-brand/10 border border-clinic-brand/30 rounded-full text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold">
-                    <i class="fas fa-shield-alt mr-1"></i> HIPAA Encrypted Session
+                    <i class="fas fa-shield-alt mr-1"></i> Secure Session
                 </span>
             </div>
 
@@ -86,16 +86,16 @@
                 <!-- Patient Profile Pill -->
                 <div class="flex items-center gap-2.5 bg-clinic-sage dark:bg-clinic-dark-elevated px-3 py-1.5 rounded-full border border-clinic-border dark:border-clinic-dark-border">
                     <div class="w-7 h-7 rounded-full bg-clinic-brand text-white font-bold flex items-center justify-center text-xs">
-                        SJ
+                        P
                     </div>
                     <div class="hidden md:block text-left">
-                        <div class="text-xs font-bold leading-none text-clinic-primary dark:text-white">Sarah Jenkins</div>
-                        <div class="text-[10px] text-clinic-brand dark:text-clinic-dark-accent leading-tight">Patient #SW-9842</div>
+                        <div class="text-xs font-bold leading-none text-clinic-primary dark:text-white">Demo Patient</div>
+                        <div class="text-[10px] text-clinic-brand dark:text-clinic-dark-accent leading-tight">Patient Dashboard</div>
                     </div>
                 </div>
 
                 <a href="index.html" class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary hover:text-clinic-brand dark:hover:text-clinic-dark-accent ml-2 flex items-center gap-1">
-                    <i class="fas fa-sign-out-alt"></i> <span class="hidden sm:inline">Exit Portal</span>
+                    <i class="fas fa-sign-out-alt"></i> <span class="hidden sm:inline">Exit Dashboard</span>
                 </a>
             </div>
         </div>
@@ -107,32 +107,32 @@
         <aside class="lg:col-span-3 space-y-4">
             <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-4 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-1" data-tab-group="dash">
                 <button class="dashboard-sidebar-link w-full active" data-tab-target="overview">
-                    <i class="fas fa-th-large w-5"></i> <span>Care Overview</span>
-                </button>
-                <button class="dashboard-sidebar-link w-full" data-tab-target="orthotics">
-                    <i class="fas fa-cube w-5"></i> <span>3D Orthotics Tracker</span>
+                    <i class="fas fa-th-large w-5"></i> <span>Overview</span>
                 </button>
                 <button class="dashboard-sidebar-link w-full" data-tab-target="appointments">
-                    <i class="far fa-calendar-alt w-5"></i> <span>My Appointments</span>
+                    <i class="far fa-calendar-alt w-5"></i> <span>Appointments</span>
                 </button>
-                <button class="dashboard-sidebar-link w-full" data-tab-target="scans">
-                    <i class="fas fa-file-medical-alt w-5"></i> <span>Gait & X-Ray Scans</span>
+                <button class="dashboard-sidebar-link w-full" data-tab-target="treatment">
+                    <i class="fas fa-file-medical-alt w-5"></i> <span>Treatment History</span>
                 </button>
-                <button class="dashboard-sidebar-link w-full" data-tab-target="exercises">
-                    <i class="fas fa-running w-5"></i> <span>Physical Therapy Video</span>
+                <button class="dashboard-sidebar-link w-full" data-tab-target="orthotics">
+                    <i class="fas fa-cube w-5"></i> <span>Orthotic Order Status</span>
                 </button>
-                <button class="dashboard-sidebar-link w-full" data-tab-target="messages">
-                    <i class="far fa-comment-dots w-5"></i> <span>Physician Messages</span>
+                <button class="dashboard-sidebar-link w-full" data-tab-target="followup">
+                    <i class="far fa-calendar-check w-5"></i> <span>Follow-up Schedule</span>
+                </button>
+                <button class="dashboard-sidebar-link w-full" data-tab-target="billing">
+                    <i class="fas fa-receipt w-5"></i> <span>Billing History</span>
                 </button>
             </div>
 
             <!-- Quick Help Box -->
             <div class="bg-clinic-sage dark:bg-clinic-dark-elevated p-5 rounded-3xl border border-clinic-border dark:border-clinic-dark-border text-xs text-clinic-secondary dark:text-clinic-dark-secondary space-y-2">
                 <div class="font-bold text-clinic-brand dark:text-clinic-dark-accent flex items-center gap-1.5 text-sm">
-                    <i class="fas fa-phone-volume text-clinic-brand dark:text-clinic-dark-accent"></i> Clinic Triage Line
+                    <i class="fas fa-phone-volume text-clinic-brand dark:text-clinic-dark-accent"></i> Need Assistance?
                 </div>
-                <p>Experiencing acute foot swelling or post-procedure pain? Call our 24/7 nursing triage.</p>
-                <a href="tel:8885557837" class="text-clinic-brand dark:text-clinic-dark-accent font-bold block pt-1 hover:underline">(888) 555-STEP</a>
+                <p>For questions about your care, appointments, or records, please contact the clinic directly.</p>
+                <a href="contact.html" class="text-clinic-brand dark:text-clinic-dark-accent font-bold block pt-1 hover:underline">Contact the Clinic →</a>
             </div>
         </aside>
 
@@ -143,10 +143,10 @@
                 <!-- Welcome Banner -->
                 <div class="bg-gradient-to-r from-clinic-brand to-clinic-brand-hover dark:from-clinic-dark-elevated dark:to-clinic-dark-surface text-white p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div class="space-y-2 relative z-10">
-                        <span class="text-xs uppercase font-bold text-clinic-accent dark:text-clinic-dark-accent tracking-wider">Patient Care Hub</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold">Welcome Back, Sarah</h2>
+                        <span class="text-xs uppercase font-bold text-clinic-accent dark:text-clinic-dark-accent tracking-wider">Patient Dashboard</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold">Welcome to Your Dashboard</h2>
                         <p class="text-white/80 text-sm max-w-md">
-                            Your recovery protocol for <strong class="text-clinic-accent dark:text-clinic-dark-accent">Left Plantar Fasciitis</strong> is on track. Follow-up scan in 6 days.
+                            View your care summary, upcoming appointments, orthotic order status, and more from one place.
                         </p>
                     </div>
                     <div class="relative z-10 flex gap-2">
@@ -156,7 +156,7 @@
                     </div>
                 </div>
 
-                <!-- Active 3D Orthotic Fabrication Live Status Bar -->
+                <!-- Orthotic Order Status Summary -->
                 <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-6 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-3">
@@ -164,12 +164,12 @@
                                 <i class="fas fa-cube"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-clinic-primary dark:text-white text-base">Custom Carbon Orthotics Status</h3>
-                                <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Prescription: Dr. Evelyn Chen • Order #ORD-4491</div>
+                                <h3 class="font-bold text-clinic-primary dark:text-white text-base">Orthotic Order Status</h3>
+                                <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Your most recent orthotic order</div>
                             </div>
                         </div>
                         <span class="bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent text-xs font-bold px-3 py-1 rounded-full">
-                            Step 3 of 4: Precision 3D Laser Milling
+                            Step 3 of 4: In Progress
                         </span>
                     </div>
 
@@ -177,75 +177,77 @@
                     <div class="grid grid-cols-4 gap-2 pt-2 text-center text-xs">
                         <div class="space-y-1">
                             <div class="h-2 rounded-full bg-clinic-brand"></div>
-                            <div class="font-bold text-clinic-brand dark:text-clinic-dark-accent">1. Gait Scanned</div>
-                            <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary">Sept 12</div>
+                            <div class="font-bold text-clinic-brand dark:text-clinic-dark-accent">1. Order Received</div>
+                            <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary">Confirmed</div>
                         </div>
                         <div class="space-y-1">
                             <div class="h-2 rounded-full bg-clinic-brand"></div>
-                            <div class="font-bold text-clinic-brand dark:text-clinic-dark-accent">2. CAD Modeling</div>
-                            <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary">Sept 14</div>
+                            <div class="font-bold text-clinic-brand dark:text-clinic-dark-accent">2. Assessment Done</div>
+                            <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary">Completed</div>
                         </div>
                         <div class="space-y-1">
                             <div class="h-2 rounded-full bg-clinic-brand animate-pulse"></div>
-                            <div class="font-bold text-clinic-brand dark:text-clinic-dark-accent">3. 3D Milling</div>
-                            <div class="text-[10px] text-clinic-brand dark:text-clinic-dark-accent font-semibold">Active Today</div>
+                            <div class="font-bold text-clinic-brand dark:text-clinic-dark-accent">3. In Progress</div>
+                            <div class="text-[10px] text-clinic-brand dark:text-clinic-dark-accent font-semibold">Active</div>
                         </div>
                         <div class="space-y-1">
                             <div class="h-2 rounded-full bg-clinic-border dark:bg-clinic-dark-border"></div>
-                            <div class="font-medium text-clinic-muted dark:text-clinic-dark-secondary">4. In-Office Fitting</div>
-                            <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary">Est. Sept 22</div>
+                            <div class="font-medium text-clinic-muted dark:text-clinic-dark-secondary">4. Ready for Fitting</div>
+                            <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary">Pending</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Upcoming Appointment Card & Gait Scan Metric -->
+                <!-- Upcoming Appointment Card & Care Status -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Upcoming Visit -->
                     <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-6 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
                         <div class="flex items-center justify-between">
                             <h3 class="font-bold text-base text-clinic-primary dark:text-white">Next Scheduled Visit</h3>
-                            <span class="text-xs bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent font-bold px-2.5 py-0.5 rounded-full">Confirmed</span>
+                            <span class="text-xs bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent font-bold px-2.5 py-0.5 rounded-full">Upcoming</span>
                         </div>
                         <div class="flex items-center gap-4 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border p-4 rounded-2xl">
-                            <img src="assets/images/dr_sarah_chen.jpg" alt="Dr. Evelyn Chen" class="w-12 h-12 rounded-xl object-cover border border-clinic-brand/40 dark:border-clinic-dark-accent/40">
+                            <div class="w-12 h-12 rounded-xl bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl">
+                                <i class="fas fa-user-md"></i>
+                            </div>
                             <div>
-                                <div class="font-bold text-sm text-clinic-primary dark:text-white">Dr. Evelyn Chen, DPM</div>
-                                <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Orthotic In-Shoe Fitting & Stride Re-check</div>
+                                <div class="font-bold text-sm text-clinic-primary dark:text-white">Podiatric Care Team</div>
+                                <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Sample follow-up appointment</div>
                             </div>
                         </div>
                         <div class="space-y-1 text-xs text-clinic-secondary dark:text-clinic-dark-secondary">
-                            <div class="flex items-center gap-2"><i class="far fa-calendar text-clinic-brand dark:text-clinic-dark-accent"></i> <span>Monday, Sept 22, 2026 at 10:30 AM</span></div>
-                            <div class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-clinic-brand dark:text-clinic-dark-accent"></i> <span>Seattle Suite #210 (Main Clinic)</span></div>
+                            <div class="flex items-center gap-2"><i class="far fa-calendar text-clinic-brand dark:text-clinic-dark-accent"></i> <span>Date and time to be confirmed</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-clinic-brand dark:text-clinic-dark-accent"></i> <span>Contact the clinic for location details</span></div>
                         </div>
                         <div class="pt-2 flex gap-2">
                             <button onclick="showToast('Visit confirmed on your calendar.')" class="btn-primary-pill text-xs py-2 px-4 flex-1 justify-center">Confirm Attendance</button>
-                            <button onclick="showToast('Reschedule request submitted. Our coordinator will call you.')" class="btn-outline-pill text-xs py-2 px-4 justify-center">Reschedule</button>
+                            <button onclick="showToast('Reschedule request submitted. Our coordinator will contact you.')" class="btn-outline-pill text-xs py-2 px-4 justify-center">Reschedule</button>
                         </div>
                     </div>
 
-                    <!-- Gait Biomechanics Metric -->
+                    <!-- Care Status Card -->
                     <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-6 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
                         <div class="flex items-center justify-between">
-                            <h3 class="font-bold text-base text-clinic-primary dark:text-white">Dynamic Pressure Telemetry</h3>
-                            <button onclick="openModal('scanReportModal')" class="text-xs text-clinic-brand dark:text-clinic-dark-accent hover:underline font-semibold">View Scan PDF →</button>
+                            <h3 class="font-bold text-base text-clinic-primary dark:text-white">Care Status Summary</h3>
+                            <button onclick="openModal('scanReportModal')" class="text-xs text-clinic-brand dark:text-clinic-dark-accent hover:underline font-semibold">View Details →</button>
                         </div>
                         <div class="space-y-3 pt-1">
                             <div>
-                                <div class="flex justify-between text-xs mb-1"><span class="text-clinic-secondary dark:text-clinic-dark-secondary">Arch Impact Balance</span> <strong class="text-clinic-brand dark:text-clinic-dark-accent">98% (Optimal)</strong></div>
+                                <div class="flex justify-between text-xs mb-1"><span class="text-clinic-secondary dark:text-clinic-dark-secondary">Treatment Progress</span> <strong class="text-clinic-brand dark:text-clinic-dark-accent">In Progress</strong></div>
                                 <div class="h-2 bg-clinic-sage dark:bg-clinic-dark-elevated rounded-full overflow-hidden">
-                                    <div class="h-full bg-clinic-brand rounded-full" style="width: 98%;"></div>
+                                    <div class="h-full bg-clinic-brand rounded-full" style="width: 60%;"></div>
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between text-xs mb-1"><span class="text-clinic-secondary dark:text-clinic-dark-secondary">Medial Overpronation Correction</span> <strong class="text-clinic-brand dark:text-clinic-dark-accent">+14° Neutralized</strong></div>
+                                <div class="flex justify-between text-xs mb-1"><span class="text-clinic-secondary dark:text-clinic-dark-secondary">Orthotic Order</span> <strong class="text-clinic-brand dark:text-clinic-dark-accent">In Progress</strong></div>
                                 <div class="h-2 bg-clinic-sage dark:bg-clinic-dark-elevated rounded-full overflow-hidden">
-                                    <div class="h-full bg-clinic-brand rounded-full" style="width: 85%;"></div>
+                                    <div class="h-full bg-clinic-brand rounded-full" style="width: 75%;"></div>
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between text-xs mb-1"><span class="text-clinic-secondary dark:text-clinic-dark-secondary">Plantar Fascia Tension Relief</span> <strong class="text-clinic-brand dark:text-clinic-dark-accent">-72% Load Reduced</strong></div>
+                                <div class="flex justify-between text-xs mb-1"><span class="text-clinic-secondary dark:text-clinic-dark-secondary">Follow-up Required</span> <strong class="text-clinic-brand dark:text-clinic-dark-accent">Scheduled</strong></div>
                                 <div class="h-2 bg-clinic-sage dark:bg-clinic-dark-elevated rounded-full overflow-hidden">
-                                    <div class="h-full bg-clinic-brand rounded-full" style="width: 90%;"></div>
+                                    <div class="h-full bg-clinic-brand rounded-full" style="width: 45%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -253,141 +255,146 @@
                 </div>
             </div>
 
-            <!-- PANE 2: ORTHOTICS TAB -->
-            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="orthotics">
-                <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Your Custom Carbon Orthotic Details</h3>
-                    <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Order #ORD-4491 • Material: Medical Grade Carbon-Fiber Matrix • Arch Profile: High Support with 4mm Heel Cup</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-                        <img src="assets/images/orthotics_3d_scan.jpg" alt="3D Orthotics Preview" class="rounded-2xl h-52 w-full object-cover border border-clinic-border dark:border-clinic-dark-border">
-                        <div class="space-y-3 text-xs text-clinic-secondary dark:text-clinic-dark-secondary">
-                            <div class="p-3 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border rounded-xl">
-                                <strong>Shell Type:</strong> Semi-Rigid Carbon Composite
-                            </div>
-                            <div class="p-3 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border rounded-xl">
-                                <strong>Top Cover:</strong> Anti-Microbial Silver Ion EVA Foam
-                            </div>
-                            <div class="p-3 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border rounded-xl">
-                                <strong>Break-In Guideline:</strong> Wear 1 hour Day 1, increase by 1 hour daily until full-day comfort.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PANE 3: APPOINTMENTS TAB -->
+            <!-- PANE 2: APPOINTMENTS TAB -->
             <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="appointments">
                 <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Appointment History & Upcoming</h3>
+                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Appointments</h3>
                     <div class="space-y-3 pt-2">
                         <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated flex justify-between items-center text-xs">
                             <div>
                                 <span class="bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent font-bold px-2 py-0.5 rounded">Upcoming</span>
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white mt-1">Orthotic In-Shoe Fitting & Stride Re-check</h4>
-                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Sept 22, 2026 • 10:30 AM • Dr. Evelyn Chen</div>
+                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white mt-1">Sample Appointment</h4>
+                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Date and time to be confirmed • Podiatric Care Team</div>
                             </div>
-                            <button onclick="showToast('Visit reminder already active.')" class="btn-outline-pill text-xs py-1.5 px-3">Remind Me</button>
+                            <button onclick="showToast('Visit reminder active.')" class="btn-outline-pill text-xs py-1.5 px-3">Remind Me</button>
                         </div>
                         <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas/70 dark:bg-clinic-dark-elevated/70 flex justify-between items-center text-xs opacity-85">
                             <div>
                                 <span class="bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-secondary dark:text-clinic-dark-secondary font-bold px-2 py-0.5 rounded border border-clinic-border dark:border-clinic-dark-border">Completed</span>
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white mt-1">Dynamic 3D Gait Scan & Shockwave Session #2</h4>
-                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Sept 12, 2026 • 2:00 PM • Dr. Evelyn Chen</div>
+                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white mt-1">Sample Past Appointment</h4>
+                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Previous visit • Podiatric Care Team</div>
                             </div>
-                            <button onclick="openModal('scanReportModal')" class="text-clinic-brand dark:text-clinic-dark-accent font-bold hover:underline">Notes PDF</button>
+                            <button onclick="openModal('scanReportModal')" class="text-clinic-brand dark:text-clinic-dark-accent font-bold hover:underline">View Notes</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- PANE 4: SCANS TAB -->
-            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="scans">
+            <!-- PANE 3: TREATMENT HISTORY TAB -->
+            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="treatment">
                 <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Clinical Scans & Diagnostic Imaging</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated space-y-2">
-                            <i class="fas fa-file-pdf text-3xl text-red-500"></i>
-                            <h4 class="font-bold text-sm text-clinic-primary dark:text-white">Dynamic Stride Pressure Scan (Left Foot)</h4>
-                            <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Captured Sept 12, 2026 • Sensor Matrix 4,096 pts</p>
-                            <button onclick="openModal('scanReportModal')" class="btn-outline-pill text-xs py-1.5 px-4 w-full justify-center">View Interactive PDF</button>
+                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Treatment History</h3>
+                    <div class="space-y-3 pt-2">
+                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated space-y-2 text-xs">
+                            <div class="flex items-center justify-between">
+                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white">Sample Treatment Record</h4>
+                                <span class="bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-secondary dark:text-clinic-dark-secondary font-bold px-2 py-0.5 rounded border border-clinic-border dark:border-clinic-dark-border">Completed</span>
+                            </div>
+                            <p class="text-clinic-muted dark:text-clinic-dark-secondary">Treatment information available. Contact your care team for details.</p>
+                            <button onclick="openModal('scanReportModal')" class="btn-outline-pill text-xs py-1.5 px-4">View Record</button>
                         </div>
-                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated space-y-2">
-                            <i class="fas fa-file-image text-3xl text-clinic-brand dark:text-clinic-dark-accent"></i>
-                            <h4 class="font-bold text-sm text-clinic-primary dark:text-white">Plantar Fascia High-Res Ultrasound</h4>
-                            <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Captured Sept 05, 2026 • Thickness reduced from 6.2mm to 4.1mm</p>
-                            <button onclick="openModal('scanReportModal')" class="btn-outline-pill text-xs py-1.5 px-4 w-full justify-center">View Image</button>
+                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated space-y-2 text-xs">
+                            <div class="flex items-center justify-between">
+                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white">Sample Treatment Record</h4>
+                                <span class="bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-secondary dark:text-clinic-dark-secondary font-bold px-2 py-0.5 rounded border border-clinic-border dark:border-clinic-dark-border">Completed</span>
+                            </div>
+                            <p class="text-clinic-muted dark:text-clinic-dark-secondary">Assessment details available. Contact your care team for details.</p>
+                            <button onclick="openModal('scanReportModal')" class="btn-outline-pill text-xs py-1.5 px-4">View Record</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- PANE 5: EXERCISES TAB -->
-            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="exercises">
+            <!-- PANE 4: ORTHOTIC ORDER STATUS TAB -->
+            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="orthotics">
                 <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Prescribed Physical Therapy Exercises</h3>
+                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Orthotic Order Status</h3>
+                    <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Your most recent orthotic order — contact the clinic for full order details.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                        <img src="assets/images/orthotics_3d_scan.jpg" alt="Orthotics Preview" class="rounded-2xl h-52 w-full object-cover border border-clinic-border dark:border-clinic-dark-border">
+                        <div class="space-y-3 text-xs text-clinic-secondary dark:text-clinic-dark-secondary">
+                            <div class="p-3 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border rounded-xl">
+                                <strong>Order Status:</strong> In Progress — Ready for Review
+                            </div>
+                            <div class="p-3 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border rounded-xl">
+                                <strong>Next Step:</strong> Follow-up appointment for fitting review
+                            </div>
+                            <div class="p-3 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border rounded-xl">
+                                <strong>Guidance:</strong> Contact the clinic for order details and wear instructions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANE 5: FOLLOW-UP SCHEDULE TAB -->
+            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="followup">
+                <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
+                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Follow-up Schedule</h3>
                     <div class="space-y-3 pt-2">
                         <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated flex justify-between items-center text-xs">
                             <div class="space-y-1">
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white">1. Frozen Water Bottle Plantar Roll</h4>
-                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Duration: 5 minutes every morning • Reduces acute morning inflammation</div>
+                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white">Sample Follow-up Appointment</h4>
+                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Follow-up information available upon confirmation from the clinic.</div>
                             </div>
-                            <span class="text-clinic-brand dark:text-clinic-dark-accent font-bold"><i class="fas fa-check-circle mr-1"></i> Completed Today</span>
+                            <button onclick="openModal('bookFollowUpModal')" class="btn-primary-pill text-xs py-1.5 px-3">Schedule</button>
                         </div>
                         <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated flex justify-between items-center text-xs">
                             <div class="space-y-1">
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white">2. Eccentric Gastrocnemius Drop on Step</h4>
-                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Reps: 3 sets of 12 reps • Lengthens Achilles & reduces calcaneus pulling</div>
+                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white">Sample Recommended Review</h4>
+                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Recommended follow-up review — contact the clinic to confirm.</div>
                             </div>
-                            <button onclick="showToast('Exercise marked completed for today!')" class="btn-primary-pill text-xs py-1.5 px-3">Mark Done</button>
+                            <button onclick="showToast('Follow-up request submitted.')" class="btn-outline-pill text-xs py-1.5 px-3">Request</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- PANE 6: MESSAGES TAB -->
-            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="messages">
+            <!-- PANE 6: BILLING HISTORY TAB -->
+            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="billing">
                 <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Physician Care Messaging</h3>
-                    <div class="p-4 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border rounded-2xl space-y-3 text-xs">
-                        <div class="flex items-center gap-2">
-                            <img src="assets/images/dr_sarah_chen.jpg" alt="Dr. Evelyn Chen" class="w-8 h-8 rounded-full object-cover border border-clinic-brand/40">
+                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Billing History</h3>
+                    <div class="space-y-3 pt-2">
+                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated flex justify-between items-center text-xs">
                             <div>
-                                <strong class="text-clinic-primary dark:text-white">Dr. Evelyn Chen, DPM</strong>
-                                <span class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary ml-2">Yesterday at 4:15 PM</span>
+                                <span class="bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-secondary dark:text-clinic-dark-secondary font-bold px-2 py-0.5 rounded border border-clinic-border dark:border-clinic-dark-border">Demo Billing Record</span>
+                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white mt-1">Sample Service Record</h4>
+                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Billing details shown for demonstration only</div>
                             </div>
+                            <button onclick="showToast('Billing statement download requested.')" class="text-clinic-brand dark:text-clinic-dark-accent font-bold hover:underline">View Statement</button>
                         </div>
-                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary">
-                            "Hi Sarah, your 3D orthotic lab scan is approved and in milling. Remember to continue the calf stretches twice daily before your fitting next Monday!"
-                        </p>
-                    </div>
-
-                    <div class="flex gap-2 pt-2">
-                        <input type="text" id="replyMsgInput" placeholder="Reply to Dr. Chen..." class="flex-1 px-4 py-2 text-xs rounded-full border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-primary dark:text-white focus:outline-none focus:border-clinic-brand">
-                        <button onclick="sendDoctorReply()" class="btn-primary-pill text-xs py-2 px-5"><i class="fas fa-paper-plane"></i> Send</button>
+                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas/70 dark:bg-clinic-dark-elevated/70 flex justify-between items-center text-xs opacity-85">
+                            <div>
+                                <span class="bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-secondary dark:text-clinic-dark-secondary font-bold px-2 py-0.5 rounded border border-clinic-border dark:border-clinic-dark-border">Demo Billing Record</span>
+                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white mt-1">Sample Service Record</h4>
+                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Billing details shown for demonstration only</div>
+                            </div>
+                            <button onclick="showToast('Billing statement download requested.')" class="text-clinic-brand dark:text-clinic-dark-accent font-bold hover:underline">View Statement</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- ===== MODAL: SCAN REPORT ===== -->
+    <!-- ===== MODAL: CARE RECORD ===== -->
     <div id="scanReportModal" class="modal-backdrop">
         <div class="modal-content p-6 sm:p-8 max-w-xl">
             <div class="flex items-center justify-between pb-4 border-b border-clinic-border dark:border-clinic-dark-border mb-4">
-                <h3 class="font-bold text-lg text-clinic-primary dark:text-white">Dynamic Gait Pressure Report</h3>
+                <h3 class="font-bold text-lg text-clinic-primary dark:text-white">Care Record</h3>
                 <button data-modal-close class="text-clinic-muted dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-white text-xl"><i class="fas fa-times"></i></button>
             </div>
             <div class="space-y-4 text-xs text-clinic-secondary dark:text-clinic-dark-secondary">
-                <img src="assets/images/orthotics_3d_scan.jpg" alt="Scan Graphic" class="rounded-xl w-full h-44 object-cover border border-clinic-border dark:border-clinic-dark-border">
+                <img src="assets/images/orthotics_3d_scan.jpg" alt="Care Record" class="rounded-xl w-full h-44 object-cover border border-clinic-border dark:border-clinic-dark-border">
                 <div class="grid grid-cols-2 gap-2 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border p-3 rounded-xl font-medium">
-                    <div>Medial Arch Load: <strong>3.8 N/cm² (Normal)</strong></div>
-                    <div>Heel Strike Velocity: <strong>1.12 m/s</strong></div>
-                    <div>Stance Phase Pronation: <strong>4.2° (Target Neutral)</strong></div>
-                    <div>Prescription Orthotic: <strong>Approved</strong></div>
+                    <div>Record Type: <strong>Treatment Information</strong></div>
+                    <div>Status: <strong>Available</strong></div>
+                    <div>Assessment: <strong>Details available</strong></div>
+                    <div>Follow-up: <strong>Information available</strong></div>
                 </div>
-                <button onclick="showToast('Downloading encrypted PDF report...'); closeModal('scanReportModal');" class="btn-primary-pill w-full justify-center text-xs py-2.5">
-                    <i class="fas fa-download mr-1"></i> Download Official Medical PDF
+                <button onclick="showToast('Record download requested.'); closeModal('scanReportModal');" class="btn-primary-pill w-full justify-center text-xs py-2.5">
+                    <i class="fas fa-download mr-1"></i> Download Record
                 </button>
             </div>
         </div>
@@ -397,25 +404,25 @@
     <div id="bookFollowUpModal" class="modal-backdrop">
         <div class="modal-content p-6 sm:p-8 max-w-md">
             <div class="flex items-center justify-between pb-4 border-b border-clinic-border dark:border-clinic-dark-border mb-4">
-                <h3 class="font-bold text-lg text-clinic-primary dark:text-white">Quick Follow-Up Scheduling</h3>
+                <h3 class="font-bold text-lg text-clinic-primary dark:text-white">Request a Follow-Up</h3>
                 <button data-modal-close class="text-clinic-muted dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-white text-xl"><i class="fas fa-times"></i></button>
             </div>
             <div class="space-y-3 text-xs">
                 <div>
-                    <label class="block font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Select Date:</label>
-                    <input type="date" value="2026-09-22" class="w-full px-3 py-2 border rounded-xl bg-clinic-canvas dark:bg-clinic-dark-elevated border-clinic-border dark:border-clinic-dark-border text-clinic-primary dark:text-white">
+                    <label class="block font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Preferred Date:</label>
+                    <input type="date" class="w-full px-3 py-2 border rounded-xl bg-clinic-canvas dark:bg-clinic-dark-elevated border-clinic-border dark:border-clinic-dark-border text-clinic-primary dark:text-white">
                 </div>
                 <div>
-                    <label class="block font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Select Time:</label>
+                    <label class="block font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Preferred Time:</label>
                     <select class="w-full px-3 py-2 border rounded-xl bg-clinic-canvas dark:bg-clinic-dark-elevated border-clinic-border dark:border-clinic-dark-border text-clinic-primary dark:text-white">
-                        <option>10:30 AM (Available)</option>
-                        <option>1:15 PM (Available)</option>
-                        <option>4:00 PM (Available)</option>
+                        <option>Morning (9:00 AM – 12:00 PM)</option>
+                        <option>Afternoon (1:00 PM – 4:00 PM)</option>
+                        <option>Late Afternoon (4:00 PM – 6:00 PM)</option>
                     </select>
                 </div>
                 <div class="pt-4 flex justify-end gap-2">
                     <button data-modal-close class="btn-outline-pill text-xs py-2 px-4">Cancel</button>
-                    <button onclick="showToast('Follow-up scheduled successfully!'); closeModal('bookFollowUpModal');" class="btn-primary-pill text-xs py-2 px-5">Confirm Visit</button>
+                    <button onclick="showToast('Follow-up request submitted. The clinic will confirm your appointment.'); closeModal('bookFollowUpModal');" class="btn-primary-pill text-xs py-2 px-5">Submit Request</button>
                 </div>
             </div>
         </div>
@@ -427,7 +434,7 @@
         function sendDoctorReply() {
             const input = document.getElementById('replyMsgInput');
             if (input && input.value.trim() !== '') {
-                showToast('Message transmitted securely to Dr. Chen.');
+                showToast('Message submitted to the care team.');
                 input.value = '';
             }
         }
