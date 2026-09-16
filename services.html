@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Podiatry Treatments & Clinical Procedures | StepWell Foot Care</title>
+    <meta name="description" content="Comprehensive podiatric treatments: Extracorporeal shockwave therapy (ESWT), 3D custom orthotics, minimally invasive bunion surgery, laser nail therapy, and diabetic foot wound care.">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E🦶%3C/text%3E%3C/svg%3E">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'clinic-canvas': '#F4F1EA',
+                        'clinic-surface': '#FFFFFF',
+                        'clinic-sage': '#E9EFE9',
+                        'clinic-accent': '#DCE7E2',
+                        'clinic-primary': '#17221F',
+                        'clinic-secondary': '#52605B',
+                        'clinic-muted': '#71807A',
+                        'clinic-border': '#D8DED9',
+                        'clinic-brand': '#176B63',
+                        'clinic-brand-hover': '#0F514B',
+                        'clinic-dark-canvas': '#000000',
+                        'clinic-dark-surface': '#0B0B0B',
+                        'clinic-dark-elevated': '#141414',
+                        'clinic-dark-primary': '#F5F7F6',
+                        'clinic-dark-secondary': '#B8C2BE',
+                        'clinic-dark-border': '#292D2B',
+                        'clinic-dark-accent': '#65B8AD',
+                        'clinic-navy': '#17221F',
+                        'clinic-navy-dark': '#0B0B0B',
+                        'clinic-teal': '#176B63',
+                        'clinic-teal-light': '#176B63',
+                        'clinic-mint': '#65B8AD',
+                        'clinic-ice': '#E9EFE9',
+                        'clinic-dark': '#000000',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/motion.css">
+</head>
+<body class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans overflow-x-hidden w-full relative">
+
+    <!-- ===== ROUNDED FLOATING NAVBAR ===== -->
+    <nav class="navbar-wrapper" id="navbarWrapper">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo-wrapper">
+                <div class="logo-icon"><i class="fas fa-shoe-prints"></i></div>
+                <div>
+                    <span class="logo-text">Step<span class="highlight">Well</span></span>
+                    <span class="logo-sub">Podiatry & Foot Care</span>
+                </div>
+            </a>
+
+            <div class="nav-links">
+                <div class="dropdown-wrapper">
+                    <span class="nav-link">Home <i class="fas fa-chevron-down text-[9px] ml-1 opacity-70"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item"><i class="fas fa-clinic-medical text-teal-400"></i> Home 1 — Clinical Podiatry</a>
+                        <a href="home2.html" class="dropdown-item"><i class="fas fa-running text-teal-400"></i> Home 2 — Sports Biomechanics</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About Clinic</a>
+                <a href="services.html" class="nav-link active">Treatments</a>
+                <a href="specialists.html" class="nav-link">Podiatrists</a>
+                <a href="dashboard.html" class="nav-link">Patient Portal</a>
+                <a href="booking.html" class="nav-link">Book Visit</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="btn-icon-rounded desktop-action" title="Toggle RTL/LTR"><i class="fas fa-exchange-alt"></i></button>
+                <button id="theme-toggle" class="btn-icon-rounded desktop-action" title="Toggle Theme"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                <a href="booking.html" class="btn-primary-pill desktop-action"><i class="far fa-calendar-check"></i> Book Visit</a>
+                <button id="mobile-toggle" class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="index.html" class="mobile-menu-item"><i class="fas fa-home text-teal-400 mr-2"></i> Home 1 — Clinical</a>
+            <a href="home2.html" class="mobile-menu-item"><i class="fas fa-running text-teal-400 mr-2"></i> Home 2 — Sports</a>
+            <a href="about.html" class="mobile-menu-item"><i class="fas fa-user-md text-teal-400 mr-2"></i> About Clinic</a>
+            <a href="services.html" class="mobile-menu-item active"><i class="fas fa-stethoscope text-teal-400 mr-2"></i> Treatments & Services</a>
+            <a href="specialists.html" class="mobile-menu-item"><i class="fas fa-award text-teal-400 mr-2"></i> Our Podiatrists</a>
+            <a href="dashboard.html" class="mobile-menu-item"><i class="fas fa-chart-line text-teal-400 mr-2"></i> Patient Portal</a>
+            <a href="booking.html" class="mobile-menu-item"><i class="far fa-calendar-alt text-teal-400 mr-2"></i> Book Appointment</a>
+            <a href="contact.html" class="mobile-menu-item"><i class="fas fa-map-marker-alt text-teal-400 mr-2"></i> Clinic & Contact</a>
+        </div>
+    </nav>
+
+    <!-- ===== HEADER ===== -->
+    <header class="pt-36 pb-16 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary border-b border-clinic-border dark:border-clinic-dark-border text-center transition-colors duration-300">
+        <div class="max-w-4xl mx-auto space-y-4 reveal">
+            <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-widest bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 border border-clinic-brand/30 dark:border-clinic-dark-accent/30 px-4 py-1.5 rounded-full inline-block">Clinical Catalog</span>
+            <h1 class="font-serif text-4xl sm:text-6xl font-bold leading-tight text-clinic-primary dark:text-white">
+                Our Podiatric <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Treatments</span>
+            </h1>
+            <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Evidence-based therapies combining conservative non-invasive medicine with modern outpatient surgical excellence.
+            </p>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 pt-6">
+                <button class="service-filter active px-5 py-2 rounded-full text-xs font-semibold bg-clinic-brand text-white shadow-md transition" onclick="filterServices('all', this)">All Procedures</button>
+                <button class="service-filter px-5 py-2 rounded-full text-xs font-semibold bg-clinic-surface dark:bg-clinic-dark-surface text-clinic-secondary dark:text-clinic-dark-secondary border border-clinic-border dark:border-clinic-dark-border hover:bg-clinic-accent dark:hover:bg-clinic-dark-elevated transition" onclick="filterServices('heel', this)">Heel & Arch</button>
+                <button class="service-filter px-5 py-2 rounded-full text-xs font-semibold bg-clinic-surface dark:bg-clinic-dark-surface text-clinic-secondary dark:text-clinic-dark-secondary border border-clinic-border dark:border-clinic-dark-border hover:bg-clinic-accent dark:hover:bg-clinic-dark-elevated transition" onclick="filterServices('surgery', this)">Minimally Invasive Surgery</button>
+                <button class="service-filter px-5 py-2 rounded-full text-xs font-semibold bg-clinic-surface dark:bg-clinic-dark-surface text-clinic-secondary dark:text-clinic-dark-secondary border border-clinic-border dark:border-clinic-dark-border hover:bg-clinic-accent dark:hover:bg-clinic-dark-elevated transition" onclick="filterServices('sports', this)">Sports Biomechanics</button>
+                <button class="service-filter px-5 py-2 rounded-full text-xs font-semibold bg-clinic-surface dark:bg-clinic-dark-surface text-clinic-secondary dark:text-clinic-dark-secondary border border-clinic-border dark:border-clinic-dark-border hover:bg-clinic-accent dark:hover:bg-clinic-dark-elevated transition" onclick="filterServices('laser', this)">Laser & Skin/Nail</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== SERVICES GRID ===== -->
+    <main class="py-20 px-6 bg-clinic-canvas dark:bg-clinic-dark-canvas transition-colors duration-300">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="servicesGrid">
+                <!-- Service Item 1 -->
+                <div class="clinical-card p-8 flex flex-col justify-between service-card-item" data-category="heel">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="icon-box"><i class="fas fa-shoe-prints"></i></div>
+                            <span class="text-[11px] bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent font-bold px-3 py-1 rounded-full">Non-Invasive</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-2">Plantar Fasciitis ESWT Shockwave</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed mb-6">
+                            High-energy acoustic pulses stimulate neovascularization and dissolve calcified spurs. 88% pain resolution within 3 to 5 weekly sessions.
+                        </p>
+                        <div class="space-y-1.5 text-xs text-clinic-muted dark:text-clinic-dark-secondary border-t border-clinic-border dark:border-clinic-dark-border pt-3">
+                            <div class="flex justify-between"><span>Duration:</span> <strong class="text-clinic-primary dark:text-white">20 Mins / Session</strong></div>
+                            <div class="flex justify-between"><span>Downtime:</span> <strong class="text-clinic-primary dark:text-white">Zero (Walk immediately)</strong></div>
+                            <div class="flex justify-between"><span>Insurance:</span> <strong class="text-clinic-primary dark:text-white">Covered by Most PPO</strong></div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="booking.html?treatment=Plantar+Fasciitis" class="btn-primary-pill w-full justify-center text-xs py-2.5">Book This Treatment</a>
+                    </div>
+                </div>
+
+                <!-- Service Item 2 -->
+                <div class="clinical-card p-8 flex flex-col justify-between service-card-item" data-category="heel">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="icon-box"><i class="fas fa-cube"></i></div>
+                            <span class="text-[11px] bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent font-bold px-3 py-1 rounded-full">Custom Biomechanics</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-2">3D Dynamic Laser Orthotics</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed mb-6">
+                            4,096-sensor dynamic gait scan maps high-pressure hotspots and pronation angles. 3D-printed carbon shell with personalized arch height.
+                        </p>
+                        <div class="space-y-1.5 text-xs text-clinic-muted dark:text-clinic-dark-secondary border-t border-clinic-border dark:border-clinic-dark-border pt-3">
+                            <div class="flex justify-between"><span>Scan Time:</span> <strong class="text-clinic-primary dark:text-white">15 Mins In-Office</strong></div>
+                            <div class="flex justify-between"><span>Fabrication:</span> <strong class="text-clinic-primary dark:text-white">5-7 Business Days</strong></div>
+                            <div class="flex justify-between"><span>Warranty:</span> <strong class="text-clinic-primary dark:text-white">10-Year Shell Warranty</strong></div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="booking.html?treatment=Custom+Orthotics" class="btn-primary-pill w-full justify-center text-xs py-2.5">Book Gait Scan</a>
+                    </div>
+                </div>
+
+                <!-- Service Item 3 -->
+                <div class="clinical-card p-8 flex flex-col justify-between service-card-item" data-category="surgery">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="icon-box"><i class="fas fa-bone"></i></div>
+                            <span class="text-[11px] bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent font-bold px-3 py-1 rounded-full">Micro-Invasive</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-2">Percutaneous Bunion Surgery</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed mb-6">
+                            Realignment through micro-punctures under fluoroscopy. No large 7cm cuts. Significantly less post-operative swelling and immediate weight-bearing in a boot.
+                        </p>
+                        <div class="space-y-1.5 text-xs text-clinic-muted dark:text-clinic-dark-secondary border-t border-clinic-border dark:border-clinic-dark-border pt-3">
+                            <div class="flex justify-between"><span>Anesthesia:</span> <strong class="text-clinic-primary dark:text-white">Local + Twilight (Outpatient)</strong></div>
+                            <div class="flex justify-between"><span>Recovery:</span> <strong class="text-clinic-primary dark:text-white">Walk Day 1 in boot</strong></div>
+                            <div class="flex justify-between"><span>Scarring:</span> <strong class="text-clinic-primary dark:text-white">Near-Invisible 3mm mark</strong></div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="booking.html?treatment=Bunion+Surgery" class="btn-primary-pill w-full justify-center text-xs py-2.5">Surgical Consult</a>
+                    </div>
+                </div>
+
+                <!-- Service Item 4 -->
+                <div class="clinical-card p-8 flex flex-col justify-between service-card-item" data-category="sports">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="icon-box"><i class="fas fa-running"></i></div>
+                            <span class="text-[11px] bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent font-bold px-3 py-1 rounded-full">Sports Lab</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-2">Achilles Tendonitis Protocol</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed mb-6">
+                            Combined focused shockwave, platelet-rich matrix therapy, and eccentric kinetic training to reverse micro-tears and chronic morning stiffness.
+                        </p>
+                        <div class="space-y-1.5 text-xs text-clinic-muted dark:text-clinic-dark-secondary border-t border-clinic-border dark:border-clinic-dark-border pt-3">
+                            <div class="flex justify-between"><span>Sessions:</span> <strong class="text-clinic-primary dark:text-white">4-6 Sessions</strong></div>
+                            <div class="flex justify-between"><span>Return to Run:</span> <strong class="text-clinic-primary dark:text-white">Gradual (Week 3-4)</strong></div>
+                            <div class="flex justify-between"><span>Modality:</span> <strong class="text-clinic-primary dark:text-white">Non-Surgical</strong></div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="booking.html?treatment=Achilles+Tendonitis" class="btn-primary-pill w-full justify-center text-xs py-2.5">Book Achilles Rehab</a>
+                    </div>
+                </div>
+
+                <!-- Service Item 5 -->
+                <div class="clinical-card p-8 flex flex-col justify-between service-card-item" data-category="laser">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="icon-box"><i class="fas fa-sun"></i></div>
+                            <span class="text-[11px] bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent font-bold px-3 py-1 rounded-full">Laser Suite</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-2">Nd:YAG Fungal Nail Laser</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed mb-6">
+                            Therapeutic 1064nm wavelength penetrates the keratin plate to destroy fungal spores without damaging the nail matrix or stressing liver enzymes.
+                        </p>
+                        <div class="space-y-1.5 text-xs text-clinic-muted dark:text-clinic-dark-secondary border-t border-clinic-border dark:border-clinic-dark-border pt-3">
+                            <div class="flex justify-between"><span>Time:</span> <strong class="text-clinic-primary dark:text-white">15 Mins (All 10 toes)</strong></div>
+                            <div class="flex justify-between"><span>Pain Level:</span> <strong class="text-clinic-primary dark:text-white">Mild warmth only</strong></div>
+                            <div class="flex justify-between"><span>Success:</span> <strong class="text-clinic-primary dark:text-white">92% Clear Nail Regrowth</strong></div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="booking.html?treatment=Laser+Fungal+Nails" class="btn-primary-pill w-full justify-center text-xs py-2.5">Book Laser Session</a>
+                    </div>
+                </div>
+
+                <!-- Service Item 6 -->
+                <div class="clinical-card p-8 flex flex-col justify-between service-card-item" data-category="surgery">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="icon-box"><i class="fas fa-cut"></i></div>
+                            <span class="text-[11px] bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent font-bold px-3 py-1 rounded-full">Permanent Relief</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-2">Ingrown Toenail Matrixectomy</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed mb-6">
+                            Painless in-office chemical matrixectomy using phenol. Gently removes the irritating nail border permanently with a 98% non-recurrence rate.
+                        </p>
+                        <div class="space-y-1.5 text-xs text-clinic-muted dark:text-clinic-dark-secondary border-t border-clinic-border dark:border-clinic-dark-border pt-3">
+                            <div class="flex justify-between"><span>Procedure:</span> <strong class="text-clinic-primary dark:text-white">15 Mins In-Office</strong></div>
+                            <div class="flex justify-between"><span>Relief:</span> <strong class="text-clinic-primary dark:text-white">Immediate next morning</strong></div>
+                            <div class="flex justify-between"><span>Recurrence:</span> <strong class="text-clinic-primary dark:text-white">&lt; 2% Permanent Fix</strong></div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="booking.html?treatment=Ingrown+Nail" class="btn-primary-pill w-full justify-center text-xs py-2.5">Book Matrixectomy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-16 pb-8 bg-clinic-dark-surface text-clinic-dark-secondary border-t border-clinic-dark-border">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1: Clinic Overview -->
+                <div>
+                    <a href="index.html" class="logo-wrapper mb-4">
+                        <div class="logo-icon">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <div>
+                            <span class="logo-text text-clinic-dark-primary">Step<span class="text-clinic-brand dark:text-clinic-dark-accent">Well</span></span>
+                            <span class="logo-sub text-clinic-dark-secondary">Podiatry & Foot Care</span>
+                        </div>
+                    </a>
+                    <p class="text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                        State-of-the-art foot and ankle medicine clinic combining digital biomechanics, non-invasive therapies, and reconstructive surgical precision.
+                    </p>
+                    <div class="flex gap-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="Facebook"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="Instagram"><i class="fab fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Quick Navigation</h4>
+                    <ul class="space-y-2.5 text-sm text-clinic-dark-secondary">
+                        <li><a href="index.html" class="hover:text-clinic-dark-accent transition">Home (Clinical Podiatry)</a></li>
+                        <li><a href="home2.html" class="hover:text-clinic-dark-accent transition">Home 2 (Sports Biomechanics)</a></li>
+                        <li><a href="about.html" class="hover:text-clinic-dark-accent transition">About Our Practice</a></li>
+                        <li><a href="specialists.html" class="hover:text-clinic-dark-accent transition">Our Board Podiatrists</a></li>
+                        <li><a href="dashboard.html" class="hover:text-clinic-dark-accent transition">Patient Portal & Scans</a></li>
+                        <li><a href="booking.html" class="hover:text-clinic-dark-accent transition">Schedule Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Key Treatments -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Clinical Specialties</h4>
+                    <ul class="space-y-2.5 text-sm text-clinic-dark-secondary">
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Plantar Fasciitis & Shockwave</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Custom 3D-Printed Orthotics</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Diabetic Foot & Ulcer Care</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Minimally Invasive Bunion Surgery</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Laser Fungal Nail Therapy</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Achilles Tendonitis Rehab</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Clinic Hours & Contact -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Clinic Information</h4>
+                    <ul class="space-y-3 text-sm text-clinic-dark-secondary">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-map-marker-alt text-clinic-brand dark:text-clinic-dark-accent mt-1"></i>
+                            <span>450 Medical Heights Blvd, Suite 210, Seattle, WA 98101</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-phone-alt text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>(888) 555-STEP / (888) 555-7837</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-envelope text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>care@stepwellpodiatry.com</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 pt-1">
+                            <i class="fas fa-clock text-clinic-brand dark:text-clinic-dark-accent mt-1"></i>
+                            <span>Mon – Fri: 7:30 AM – 6:00 PM<br>Sat: 8:00 AM – 1:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-clinic-dark-border pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-clinic-muted dark:text-clinic-dark-secondary">
+                <p>© 2026 StepWell Podiatry & Advanced Foot Care Center. All Rights Reserved.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-clinic-dark-accent">Privacy Policy</a>
+                    <a href="#" class="hover:text-clinic-dark-accent">HIPAA Compliance</a>
+                    <a href="#" class="hover:text-clinic-dark-accent">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/motion.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function filterServices(category, btn) {
+            document.querySelectorAll('.service-filter').forEach(b => {
+                b.classList.remove('active', 'bg-clinic-brand', 'text-white', 'shadow-md');
+                b.classList.add('bg-clinic-surface', 'dark:bg-clinic-dark-surface', 'text-clinic-secondary', 'dark:text-clinic-dark-secondary');
+            });
+            btn.classList.add('active', 'bg-clinic-brand', 'text-white', 'shadow-md');
+            btn.classList.remove('bg-clinic-surface', 'dark:bg-clinic-dark-surface', 'text-clinic-secondary', 'dark:text-clinic-dark-secondary');
+
+            document.querySelectorAll('.service-card-item').forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

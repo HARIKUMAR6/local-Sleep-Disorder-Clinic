@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>StepWell Podiatry & Foot Care Clinic | Advanced Foot & Ankle Center</title>
+    <meta name="description" content="Premier podiatry and foot care medical clinic specializing in biomechanical gait analysis, custom 3D orthotics, diabetic foot health, heel pain relief, and minimally invasive surgery.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E🦶%3C/text%3E%3C/svg%3E">
+    
+    <!-- Tailwind CSS CDN with Warm Clinical Canvas Design System -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'clinic-canvas': '#F4F1EA',
+                        'clinic-surface': '#FFFFFF',
+                        'clinic-sage': '#E9EFE9',
+                        'clinic-accent': '#DCE7E2',
+                        'clinic-primary': '#17221F',
+                        'clinic-secondary': '#52605B',
+                        'clinic-muted': '#71807A',
+                        'clinic-border': '#D8DED9',
+                        'clinic-brand': '#176B63',
+                        'clinic-brand-hover': '#0F514B',
+                        
+                        // Genuine Dark Mode Tokens (Pure #000000 background)
+                        'clinic-dark-canvas': '#000000',
+                        'clinic-dark-surface': '#0B0B0B',
+                        'clinic-dark-elevated': '#141414',
+                        'clinic-dark-primary': '#F5F7F6',
+                        'clinic-dark-secondary': '#B8C2BE',
+                        'clinic-dark-border': '#292D2B',
+                        'clinic-dark-accent': '#65B8AD',
+                        
+                        // Compatibility aliases
+                        'clinic-navy': '#17221F',
+                        'clinic-navy-dark': '#0B0B0B',
+                        'clinic-teal': '#176B63',
+                        'clinic-teal-light': '#176B63',
+                        'clinic-mint': '#65B8AD',
+                        'clinic-ice': '#E9EFE9',
+                        'clinic-dark': '#000000',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Project Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/motion.css">
+</head>
+<body class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans overflow-x-hidden w-full relative">
+
+    <!-- ===== ROUNDED FLOATING NAVBAR ===== -->
+    <nav class="navbar-wrapper" id="navbarWrapper">
+        <div class="navbar-inner">
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo-wrapper" id="nav-brand-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-shoe-prints"></i>
+                </div>
+                <div>
+                    <span class="logo-text">Step<span class="highlight">Well</span></span>
+                    <span class="logo-sub">Podiatry & Foot Care</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="nav-links">
+                <!-- Home Dropdown -->
+                <div class="dropdown-wrapper">
+                    <span class="nav-link active">
+                        Home <i class="fas fa-chevron-down text-[9px] ml-1 opacity-70"></i>
+                    </span>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item active">
+                            <i class="fas fa-clinic-medical text-clinic-brand dark:text-clinic-dark-accent"></i> Home 1 — Clinical Podiatry
+                        </a>
+                        <a href="home2.html" class="dropdown-item">
+                            <i class="fas fa-running text-clinic-brand dark:text-clinic-dark-accent"></i> Home 2 — Sports Biomechanics
+                        </a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="nav-link">About Clinic</a>
+                <a href="services.html" class="nav-link">Treatments</a>
+                <a href="specialists.html" class="nav-link">Podiatrists</a>
+                <a href="dashboard.html" class="nav-link">Patient Portal</a>
+                <a href="booking.html" class="nav-link">Book Visit</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="nav-actions">
+                <!-- RTL Layout Switcher -->
+                <button id="rtl-toggle" class="btn-icon-rounded desktop-action" title="Toggle RTL/LTR" aria-label="Toggle text direction">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="btn-icon-rounded desktop-action" title="Toggle Light/Dark Theme" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun hidden"></i>
+                </button>
+
+                <!-- Booking CTA -->
+                <a href="booking.html" class="btn-primary-pill desktop-action">
+                    <i class="far fa-calendar-check"></i> Schedule Exam
+                </a>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button id="mobile-toggle" class="mobile-toggle" aria-label="Open mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn mobile-menu-item active w-full">
+                    <span><i class="fas fa-home text-clinic-brand dark:text-clinic-dark-accent mr-2"></i> Home Variants</span>
+                    <i class="fas fa-chevron-down text-xs opacity-60"></i>
+                </button>
+                <div class="bg-clinic-sage/50 dark:bg-clinic-dark-elevated px-4 py-2 space-y-1">
+                    <a href="index.html" class="block py-2 text-sm text-clinic-brand dark:text-clinic-dark-accent font-semibold">Home 1 — Comprehensive Podiatry</a>
+                    <a href="home2.html" class="block py-2 text-sm text-clinic-secondary dark:text-clinic-dark-secondary hover:text-clinic-brand dark:hover:text-clinic-dark-accent">Home 2 — Sports Biomechanics</a>
+                </div>
+            </div>
+            <a href="about.html" class="mobile-menu-item"><i class="fas fa-user-md text-clinic-brand dark:text-clinic-dark-accent mr-2"></i> About Clinic</a>
+            <a href="services.html" class="mobile-menu-item"><i class="fas fa-stethoscope text-clinic-brand dark:text-clinic-dark-accent mr-2"></i> Treatments & Services</a>
+            <a href="specialists.html" class="mobile-menu-item"><i class="fas fa-award text-clinic-brand dark:text-clinic-dark-accent mr-2"></i> Our Podiatrists</a>
+            <a href="dashboard.html" class="mobile-menu-item"><i class="fas fa-chart-line text-clinic-brand dark:text-clinic-dark-accent mr-2"></i> Patient Portal</a>
+            <a href="booking.html" class="mobile-menu-item"><i class="far fa-calendar-alt text-clinic-brand dark:text-clinic-dark-accent mr-2"></i> Book Appointment</a>
+            <a href="contact.html" class="mobile-menu-item"><i class="fas fa-map-marker-alt text-clinic-brand dark:text-clinic-dark-accent mr-2"></i> Clinic & Contact</a>
+            
+            <div class="p-4 flex items-center justify-between border-t border-clinic-border dark:border-clinic-dark-border gap-2">
+                <button id="theme-toggle-mobile" class="btn-icon-rounded flex-1 py-2 flex items-center justify-center gap-2">
+                    <i class="fas fa-moon"></i><span class="text-xs">Theme</span>
+                </button>
+                <button id="rtl-toggle-mobile" class="btn-icon-rounded flex-1 py-2 flex items-center justify-center gap-2">
+                    <i class="fas fa-exchange-alt"></i><span class="text-xs">RTL</span>
+                </button>
+                <a href="booking.html" class="btn-primary-pill flex-1 text-center justify-center text-xs">Book</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== SECTION 1: HERO (STAGGERED ENTRANCE — WARM IVORY CANVAS) ===== -->
+    <header class="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary">
+        <!-- Ambient Background Glow (Subtle & Clinical) -->
+        <div class="absolute inset-0 z-0 pointer-events-none opacity-40 dark:opacity-15">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-clinic-sage rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-[30rem] h-[30rem] bg-clinic-accent dark:bg-clinic-dark-elevated rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Hero Left: Staggered Content Sequence -->
+            <div class="lg:col-span-7 space-y-6 text-left">
+                <!-- Stagger 1: Eyebrow Badge -->
+                <div class="hero-reveal-item hero-delay-1 inline-flex items-center gap-2.5 bg-clinic-sage dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border px-4 py-1.5 rounded-full backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-clinic-brand dark:bg-clinic-dark-accent animate-ping"></span>
+                    <span class="text-xs uppercase tracking-widest font-bold text-clinic-brand dark:text-clinic-dark-accent">Board-Certified Podiatric Physicians</span>
+                </div>
+
+                <!-- Stagger 2: Main Serif Heading -->
+                <h1 class="hero-reveal-item hero-delay-2 font-serif text-4xl sm:text-6xl xl:text-7xl font-semibold leading-[1.08] tracking-tight text-clinic-primary dark:text-clinic-dark-primary">
+                    Advanced Precision for <span class="italic text-clinic-brand dark:text-clinic-dark-accent font-normal">Painless</span> Mobility
+                </h1>
+
+                <!-- Stagger 3: Supporting Text -->
+                <p class="hero-reveal-item hero-delay-3 text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg xl:text-xl font-normal max-w-2xl leading-relaxed">
+                    Step into cutting-edge podiatric medicine. From 3D digital gait pressure mapping and custom carbon orthotics to minimally invasive heel surgery, we restore your freedom to walk pain-free.
+                </p>
+
+                <!-- Stagger 4: CTA Button Group -->
+                <div class="hero-reveal-item hero-delay-4 flex flex-wrap items-center gap-4 pt-2">
+                    <a href="booking.html" class="btn-primary-pill text-base py-3 px-8 shadow-md">
+                        <i class="far fa-calendar-check"></i> Book Clinical Exam
+                    </a>
+                    <a href="services.html" class="btn-outline-pill text-base py-3 px-7">
+                        <i class="fas fa-stethoscope"></i> View Treatments
+                    </a>
+                    <button onclick="openModal('quickModal')" class="text-sm font-medium text-clinic-secondary dark:text-clinic-dark-secondary hover:text-clinic-brand dark:hover:text-clinic-dark-accent flex items-center gap-2 underline underline-offset-4 ml-2 transition">
+                        <i class="fas fa-play-circle text-clinic-brand dark:text-clinic-dark-accent text-base"></i> 60-Sec Foot Triage
+                    </button>
+                </div>
+
+                <!-- Stagger 5: Clinical Credential Badges -->
+                <div class="hero-reveal-item hero-delay-5 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-clinic-border dark:border-clinic-dark-border text-xs sm:text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-clinic-brand dark:text-clinic-dark-accent text-base"></i>
+                        <span>APMA Accredited</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-clinic-brand dark:text-clinic-dark-accent text-base"></i>
+                        <span>Zero-Radiation Scans</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-clinic-brand dark:text-clinic-dark-accent text-base"></i>
+                        <span>Same-Day Relief</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-clinic-brand dark:text-clinic-dark-accent text-base"></i>
+                        <span>Major Insurances</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Right: Visual with Biomechanical Scanline & Floating Badges -->
+            <div class="lg:col-span-5 relative hero-reveal-item hero-delay-4">
+                <div class="image-reveal-frame rounded-[2.5rem] border border-clinic-border dark:border-clinic-dark-border shadow-2xl overflow-hidden relative group">
+                    <img src="assets/images/hero_clinic.jpg" alt="StepWell Modern Podiatry and Gait Analysis Suite" class="w-full h-[460px] object-cover">
+                    <div class="scan-line-overlay"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+                    
+                    <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-[#65B8AD] font-bold block">Clinic Suite #4</span>
+                            <h2 class="text-lg font-bold text-white">Digital Gait & Pressure Lab</h2>
+                        </div>
+                        <span class="bg-[#176B63] dark:bg-[#65B8AD] text-white dark:text-black px-3 py-1 rounded-full text-xs font-semibold">Active Suite</span>
+                    </div>
+                </div>
+
+                <!-- Floating Micro Card 1: 3D Arch Scan -->
+                <div class="floating-subtle absolute -top-6 -left-6 bg-clinic-surface/95 dark:bg-clinic-dark-surface/95 backdrop-blur-md border border-clinic-border dark:border-clinic-dark-border p-4 rounded-2xl shadow-xl hidden sm:flex items-center gap-3 text-clinic-primary dark:text-clinic-dark-primary">
+                    <div class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold text-lg">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold">3D Arch Precision</div>
+                        <div class="text-sm font-bold">Sub-Millimeter Fit</div>
+                    </div>
+                </div>
+
+                <!-- Floating Micro Card 2: Patient Satisfaction -->
+                <div class="floating-subtle-delayed absolute -bottom-6 -right-6 bg-clinic-surface/95 dark:bg-clinic-dark-surface/95 backdrop-blur-md border border-clinic-border dark:border-clinic-dark-border p-4 rounded-2xl shadow-xl hidden sm:flex items-center gap-3 text-clinic-primary dark:text-clinic-dark-primary">
+                    <div class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold text-lg">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold">Patient Outcomes</div>
+                        <div class="text-sm font-bold">99.2% Pain Resolution</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== SECTION 2: INTERACTIVE SYMPTOM TRIAGE BAR ===== -->
+    <section class="relative z-20 -mt-10 max-w-7xl mx-auto px-6">
+        <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-6 shadow-xl border border-clinic-border dark:border-clinic-dark-border">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-clinic-primary dark:text-clinic-dark-primary">Quick Symptom Checker</h3>
+                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Select what you are feeling for tailored recommendations</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 justify-center">
+                    <button class="triage-btn px-4 py-2 rounded-full text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-primary dark:text-clinic-dark-primary hover:border-clinic-brand hover:bg-clinic-accent dark:hover:bg-clinic-dark-border transition" onclick="selectTriage('Heel Pain & Plantar Fasciitis')">
+                        ⚡ Morning Heel Pain
+                    </button>
+                    <button class="triage-btn px-4 py-2 rounded-full text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-primary dark:text-clinic-dark-primary hover:border-clinic-brand hover:bg-clinic-accent dark:hover:bg-clinic-dark-border transition" onclick="selectTriage('Diabetic Foot Care & Neuropathy')">
+                        🩸 Diabetic Foot Check
+                    </button>
+                    <button class="triage-btn px-4 py-2 rounded-full text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-primary dark:text-clinic-dark-primary hover:border-clinic-brand hover:bg-clinic-accent dark:hover:bg-clinic-dark-border transition" onclick="selectTriage('Bunion & Hammertoe Realignment')">
+                        🦴 Bunion / Big Toe Deformity
+                    </button>
+                    <button class="triage-btn px-4 py-2 rounded-full text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-primary dark:text-clinic-dark-primary hover:border-clinic-brand hover:bg-clinic-accent dark:hover:bg-clinic-dark-border transition" onclick="selectTriage('Sports Podiatry & Achilles Rehab')">
+                        🏃 Sports Ankle Sprain
+                    </button>
+                    <button class="triage-btn px-4 py-2 rounded-full text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-primary dark:text-clinic-dark-primary hover:border-clinic-brand hover:bg-clinic-accent dark:hover:bg-clinic-dark-border transition" onclick="selectTriage('Laser Fungal & Wart Therapy')">
+                        🔬 Thick Toenail / Wart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3: CLINICAL SERVICES (SUPPORTING SECTION — SOFT SAGE) ===== -->
+    <section class="py-24 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas transition-colors duration-300">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs">Comprehensive Care</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold mt-2 text-clinic-primary dark:text-clinic-dark-primary">
+                    Our Specialized <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Podiatry Treatments</span>
+                </h2>
+                <div class="w-20 h-1 bg-clinic-brand dark:bg-clinic-dark-accent mx-auto mt-4 rounded-full"></div>
+                <p class="text-clinic-secondary dark:text-clinic-dark-secondary max-w-2xl mx-auto mt-4 text-base">
+                    Evidence-based conservative medicine and advanced surgical interventions tailored specifically to lower extremity anatomy and biomechanics.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-group">
+                <!-- Service Card 1 -->
+                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-100">
+                    <div>
+                        <div class="icon-box mb-6">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">Heel Pain & Plantar Fasciitis</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                            Targeted shockwave therapy (ESWT), ultrasound-guided injections, and regenerative therapies to eradicate debilitating morning heel pain without incisions.
+                        </p>
+                    </div>
+                    <div class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
+                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i class="fas fa-bolt mr-1"></i> Non-Invasive Shockwave</span>
+                        <a href="services.html" class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details →</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-200">
+                    <div>
+                        <div class="icon-box mb-6">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">Custom 3D-Printed Orthotics</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                            Engineered from digital dynamic gait scans to correct pronation, supination, high arches, and flat feet with lightweight medical-grade carbon fiber polymers.
+                        </p>
+                    </div>
+                    <div class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
+                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i class="fas fa-check mr-1"></i> 10-Year Shell Warranty</span>
+                        <a href="services.html" class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details →</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-300">
+                    <div>
+                        <div class="icon-box mb-6">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">Diabetic Limb Preservation</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                            Comprehensive sensory neuropathy screenings, vascular Doppler flow evaluations, proactive ulcer debridement, and custom therapeutic footwear.
+                        </p>
+                    </div>
+                    <div class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
+                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i class="fas fa-shield-alt mr-1"></i> Ulcer Prevention</span>
+                        <a href="services.html" class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details →</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-100">
+                    <div>
+                        <div class="icon-box mb-6">
+                            <i class="fas fa-bone"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">Minimally Invasive Bunion Surgery</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                            State-of-the-art percutaneous realignments through tiny 3mm micro-incisions. Walk out in a surgical shoe with minimal post-op swelling and no large scars.
+                        </p>
+                    </div>
+                    <div class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
+                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i class="fas fa-walking mr-1"></i> Immediate Weight Bearing</span>
+                        <a href="services.html" class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details →</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-200">
+                    <div>
+                        <div class="icon-box mb-6">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">Sports Podiatry & Achilles Rehab</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                            Precision biomechanical rehabilitation for runners, dancers, and athletes. Treatment for shin splints, stress fractures, and chronic Achilles tendinopathy.
+                        </p>
+                    </div>
+                    <div class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
+                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i class="fas fa-trophy mr-1"></i> Rapid Return to Sport</span>
+                        <a href="home2.html" class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details →</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-300">
+                    <div>
+                        <div class="icon-box mb-6">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">Laser Therapy for Fungal Nails & Warts</h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                            FDA-cleared 1064nm Nd:YAG laser penetrates deep into the nail bed to safely eliminate stubborn onychomycosis and verruca without systemic liver medication risks.
+                        </p>
+                    </div>
+                    <div class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
+                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i class="fas fa-star mr-1"></i> Pain-Free Laser</span>
+                        <a href="services.html" class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 reveal">
+                <a href="services.html" class="btn-primary-pill py-3 px-8 text-base">
+                    <i class="fas fa-notes-medical"></i> View All 14 Clinical Procedures
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4: 3D BIOMECHANICS & ORTHOTICS SPOTLIGHT (CONTENT — WHITE SURFACE) ===== -->
+    <section class="py-24 px-6 bg-clinic-surface dark:bg-clinic-dark-surface transition-colors duration-300 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column: Visual with Image and Overlay -->
+                <div class="lg:col-span-6 relative reveal-left">
+                    <div class="image-reveal-frame rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-2xl overflow-hidden group">
+                        <img src="assets/images/orthotics_3d_scan.jpg" alt="3D Custom Orthotic Insoles & Biomechanical Tablet" class="w-full h-[480px] object-cover">
+                        <div class="scan-line-overlay"></div>
+                        <div class="absolute bottom-4 left-4 bg-black/85 backdrop-blur-md px-5 py-2.5 rounded-full border border-clinic-dark-border text-xs text-white flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#65B8AD] animate-pulse"></span>
+                            <span>Dynamic Foot Arch Pressure Mapping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Features & Explanations -->
+                <div class="lg:col-span-6 space-y-6 reveal-right">
+                    <span class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs block">Engineering Meets Podiatry</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-bold text-clinic-primary dark:text-clinic-dark-primary leading-tight">
+                        Custom 3D Orthotics Engineered for <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Your Biomechanics</span>
+                    </h2>
+                    <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base leading-relaxed">
+                        Off-the-shelf drugstore insoles only cushion — they do not realign skeletal joints. At StepWell, our high-speed laser cameras capture 120 frames per second of your foot strike to craft custom medical orthotics that relieve knee, hip, and lumbar strain.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold flex-shrink-0">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary">Dynamic 3D Pressure Sensors</h4>
+                                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm">Measures exact force distributions across 4,096 micro-sensors per foot in real-time.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold flex-shrink-0">
+                                <i class="fas fa-feather-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary">Featherlight Carbon-Fiber Lattice</h4>
+                                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm">40% lighter and 3x more durable than traditional plaster casts, fitting seamlessly into dress shoes and trainers.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold flex-shrink-0">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary">Lifetime Gait Optimization</h4>
+                                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm">Free biomechanical checkups every 6 months to ensure your realignment stays optimal as your stride improves.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex items-center gap-4">
+                        <a href="booking.html" class="btn-primary-pill py-3 px-8">
+                            <i class="fas fa-laptop-medical"></i> Schedule 3D Scan ($0 with PPO)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5: DOCTOR SPOTLIGHT & WHY CHOOSE US (WARM IVORY CANVAS) ===== -->
+    <section class="py-24 px-6 bg-clinic-canvas dark:bg-clinic-dark-canvas transition-colors duration-300">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6 reveal-left">
+                    <span class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs block">Physician-Led Care</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-bold text-clinic-primary dark:text-clinic-dark-primary leading-tight">
+                        Compassionate Expertise in Every <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Step</span>
+                    </h2>
+                    <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base leading-relaxed">
+                        Foot pain should never be accepted as a normal part of aging or athletics. Our team of board-certified podiatric surgeons (DPM, FACFAS) combines academic excellence with a warm, bedside approach that treats the whole patient, not just the foot.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-5 rounded-2xl border border-clinic-border dark:border-clinic-dark-border shadow-sm">
+                            <i class="fas fa-user-md text-2xl text-clinic-brand dark:text-clinic-dark-accent mb-2"></i>
+                            <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-base">Fellowship Trained</h4>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-1">Specialized residency training at top US teaching hospitals.</p>
+                        </div>
+                        <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-5 rounded-2xl border border-clinic-border dark:border-clinic-dark-border shadow-sm">
+                            <i class="fas fa-hospital-user text-2xl text-clinic-brand dark:text-clinic-dark-accent mb-2"></i>
+                            <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-base">In-Office Fluoroscopy</h4>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-1">Real-time digital motion X-rays with minimal radiation dosage.</p>
+                        </div>
+                        <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-5 rounded-2xl border border-clinic-border dark:border-clinic-dark-border shadow-sm">
+                            <i class="fas fa-band-aid text-2xl text-clinic-brand dark:text-clinic-dark-accent mb-2"></i>
+                            <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-base">Same-Day Urgent Care</h4>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-1">Emergency slots reserved daily for fractures and infections.</p>
+                        </div>
+                        <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-5 rounded-2xl border border-clinic-border dark:border-clinic-dark-border shadow-sm">
+                            <i class="fas fa-file-invoice-dollar text-2xl text-clinic-brand dark:text-clinic-dark-accent mb-2"></i>
+                            <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-base">Transparent Pricing</h4>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-1">Direct insurance verification before any procedure begins.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="about.html" class="btn-outline-pill py-3 px-7">
+                            <i class="fas fa-info-circle"></i> Learn About Our Medical Team
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 relative reveal-right">
+                    <div class="image-reveal-frame rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-2xl overflow-hidden group">
+                        <img src="assets/images/podiatrist_exam.jpg" alt="Podiatrist examining patient foot with tablet scan" class="w-full h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <div class="flex items-center gap-3">
+                                <img src="assets/images/dr_sarah_chen.jpg" alt="Dr. Evelyn Chen" class="w-12 h-12 rounded-full border-2 border-clinic-brand dark:border-clinic-dark-accent object-cover">
+                                <div>
+                                    <h4 class="font-bold text-white text-base">Dr. Evelyn Chen, DPM, FACFAS</h4>
+                                    <p class="text-xs text-[#65B8AD]">Chief of Reconstructive Foot Surgery</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6: STATS COUNTERS (ACCENT AREA — SOFT SAGE ACCENT) ===== -->
+    <section class="py-20 px-6 bg-clinic-accent dark:bg-clinic-dark-canvas transition-colors duration-300 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-14 reveal">
+                <span class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs">Proven Clinical Track Record</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold mt-2 text-clinic-primary dark:text-clinic-dark-primary">Clinical Results by the Numbers</h2>
+                <div class="w-20 h-1 bg-clinic-brand dark:bg-clinic-dark-accent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-group">
+                <div class="bg-clinic-surface/90 dark:bg-clinic-dark-surface/90 rounded-2xl p-6 text-center border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition flex flex-col items-center justify-center shadow-sm reveal delay-100">
+                    <i class="fas fa-users text-3xl text-clinic-brand dark:text-clinic-dark-accent mb-3"></i>
+                    <div class="text-4xl sm:text-5xl font-bold text-clinic-brand dark:text-clinic-dark-accent" data-counter-target="15400" data-counter-suffix="+">15,400+</div>
+                    <div class="text-xs sm:text-sm text-clinic-secondary dark:text-clinic-dark-secondary mt-2 font-medium">Patients Treated</div>
+                </div>
+
+                <div class="bg-clinic-surface/90 dark:bg-clinic-dark-surface/90 rounded-2xl p-6 text-center border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition flex flex-col items-center justify-center shadow-sm reveal delay-200">
+                    <i class="fas fa-check-circle text-3xl text-clinic-brand dark:text-clinic-dark-accent mb-3"></i>
+                    <div class="text-4xl sm:text-5xl font-bold text-clinic-brand dark:text-clinic-dark-accent" data-counter-target="99" data-counter-suffix="%">99%</div>
+                    <div class="text-xs sm:text-sm text-clinic-secondary dark:text-clinic-dark-secondary mt-2 font-medium">Surgical & Conservative Success</div>
+                </div>
+
+                <div class="bg-clinic-surface/90 dark:bg-clinic-dark-surface/90 rounded-2xl p-6 text-center border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition flex flex-col items-center justify-center shadow-sm reveal delay-300">
+                    <i class="fas fa-shoe-prints text-3xl text-clinic-brand dark:text-clinic-dark-accent mb-3"></i>
+                    <div class="text-4xl sm:text-5xl font-bold text-clinic-brand dark:text-clinic-dark-accent" data-counter-target="8650" data-counter-suffix="+">8,650+</div>
+                    <div class="text-xs sm:text-sm text-clinic-secondary dark:text-clinic-dark-secondary mt-2 font-medium">Custom Orthotics Engineered</div>
+                </div>
+
+                <div class="bg-clinic-surface/90 dark:bg-clinic-dark-surface/90 rounded-2xl p-6 text-center border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition flex flex-col items-center justify-center shadow-sm reveal delay-400">
+                    <i class="fas fa-award text-3xl text-clinic-brand dark:text-clinic-dark-accent mb-3"></i>
+                    <div class="text-4xl sm:text-5xl font-bold text-clinic-brand dark:text-clinic-dark-accent" data-counter-target="18" data-counter-suffix=" Yrs">18 Yrs</div>
+                    <div class="text-xs sm:text-sm text-clinic-secondary dark:text-clinic-dark-secondary mt-2 font-medium">Excellence in Podiatry</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 7: PATIENT TESTIMONIALS (SUPPORTING — SOFT SAGE) ===== -->
+    <section class="py-24 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas transition-colors duration-300">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs">Patient Stories</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold mt-2 text-clinic-primary dark:text-clinic-dark-primary">
+                    Restoring Active <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Lifestyles</span>
+                </h2>
+                <div class="w-20 h-1 bg-clinic-brand dark:bg-clinic-dark-accent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-group">
+                <!-- Testimonial 1 -->
+                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-100">
+                    <div>
+                        <div class="flex text-amber-500 text-sm mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed italic mb-6">
+                            "For over 8 months I could barely put weight on my left heel getting out of bed. Dr. Chen recommended shockwave therapy combined with custom 3D orthotics. In just 4 sessions, the plantar fasciitis pain was 100% gone."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-clinic-border dark:border-clinic-dark-border pt-4">
+                        <div class="w-10 h-10 rounded-full bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent font-bold flex items-center justify-center">
+                            MK
+                        </div>
+                        <div>
+                            <div class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-sm">Margaret Klein</div>
+                            <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Heel Pain Patient • School Teacher</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-200">
+                    <div>
+                        <div class="flex text-amber-500 text-sm mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed italic mb-6">
+                            "As a marathon runner, Achilles tendonitis threatened to end my training season. The dynamic gait pressure scan showed I had severe overpronation. The custom sport orthotics corrected my strike instantly."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-clinic-border dark:border-clinic-dark-border pt-4">
+                        <div class="w-10 h-10 rounded-full bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent font-bold flex items-center justify-center">
+                            JT
+                        </div>
+                        <div>
+                            <div class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-sm">Jonathan Torres</div>
+                            <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Distance Runner • Achilles Rehab</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-300">
+                    <div>
+                        <div class="flex text-amber-500 text-sm mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed italic mb-6">
+                            "I had delayed bunion surgery for years fearing painful recovery. Dr. Vance performed minimally invasive surgery. I walked out the same afternoon wearing a recovery shoe. Minimal discomfort and no visible scarring."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-clinic-border dark:border-clinic-dark-border pt-4">
+                        <div class="w-10 h-10 rounded-full bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent font-bold flex items-center justify-center">
+                            SB
+                        </div>
+                        <div>
+                            <div class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-sm">Sophia Brooks</div>
+                            <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Minimally Invasive Bunion Patient</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 8: FAQ ACCORDION (CONTENT — WHITE) ===== -->
+    <section class="py-24 px-6 bg-clinic-surface dark:bg-clinic-dark-surface transition-colors duration-300">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs">Patient Resources</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold mt-2 text-clinic-primary dark:text-clinic-dark-primary">
+                    Frequently Asked <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Questions</span>
+                </h2>
+                <div class="w-20 h-1 bg-clinic-brand dark:bg-clinic-dark-accent mx-auto mt-4 rounded-full"></div>
+                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm max-w-xl mx-auto mt-4">
+                    Clear answers regarding appointment preparation, insurance coverage, and modern podiatric procedures.
+                </p>
+            </div>
+
+            <div class="space-y-4 reveal">
+                <!-- FAQ 1 -->
+                <details class="faq-accordion-item group" open>
+                    <summary class="faq-summary">
+                        <span class="text-clinic-primary dark:text-clinic-dark-primary">How do custom 3D orthotics differ from store insoles?</span>
+                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </summary>
+                    <div class="faq-body">
+                        Over-the-counter insoles provide generic foam cushioning but cannot correct biomechanical joint angles. Our custom medical orthotics are fabricated using dynamic laser gait mapping to balance your subtalar joint, lift arches precisely, and relieve pressure on tendons and lower back joints.
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="faq-accordion-item group">
+                    <summary class="faq-summary">
+                        <span class="text-clinic-primary dark:text-clinic-dark-primary">Is shockwave therapy for plantar fasciitis painful?</span>
+                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </summary>
+                    <div class="faq-body">
+                        Extracorporeal Shockwave Therapy (ESWT) delivers acoustic sound pulses into the inflamed fascia to trigger micro-circulation and stem-cell repair. Patients experience a mild tapping sensation that is well-tolerated. No needles, anesthesia, or downtime are required, and you can immediately resume normal daily activities.
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="faq-accordion-item group">
+                    <summary class="faq-summary">
+                        <span class="text-clinic-primary dark:text-clinic-dark-primary">Do you accept Medicare and major PPO insurance plans?</span>
+                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </summary>
+                    <div class="faq-body">
+                        Yes. StepWell Podiatry is an in-network provider with Medicare, Blue Cross Blue Shield, Aetna, Cigna, United Healthcare, and most major commercial PPO plans. Our billing team verifies your exact benefits prior to treatment and handles all claims.
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="faq-accordion-item group">
+                    <summary class="faq-summary">
+                        <span class="text-clinic-primary dark:text-clinic-dark-primary">What is the recovery time for minimally invasive bunion surgery?</span>
+                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </summary>
+                    <div class="faq-body">
+                        Unlike traditional open surgeries that require large 5-7cm incisions and weeks of cast immobilization, our percutaneous technique uses tiny 3mm entry points. Patients walk out immediately in a post-op boot, experience significantly less swelling, and typically return to supportive sneakers within 3 to 4 weeks.
+                    </div>
+                </details>
+
+                <!-- FAQ 5 -->
+                <details class="faq-accordion-item group">
+                    <summary class="faq-summary">
+                        <span class="text-clinic-primary dark:text-clinic-dark-primary">How often should diabetic patients have their feet examined?</span>
+                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </summary>
+                    <div class="faq-body">
+                        The American Podiatric Medical Association (APMA) strongly recommends a comprehensive podiatric examination at least once per year for all diabetic patients, or every 3 to 6 months if you experience sensory neuropathy, peripheral artery disease (PAD), or previous foot ulcers.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 9: CALL TO ACTION BANNER (BRAND ACCENT) ===== -->
+    <section class="py-20 px-6 bg-clinic-brand dark:bg-clinic-dark-surface text-white relative overflow-hidden dark:border-t dark:border-b dark:border-clinic-dark-border">
+        <div class="absolute inset-0 opacity-15 pointer-events-none">
+            <div class="absolute -top-10 -right-10 w-96 h-96 bg-clinic-accent rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10 space-y-6 reveal">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-white/15 text-white text-2xl mb-2">
+                <i class="fas fa-calendar-check"></i>
+            </div>
+            <h2 class="font-serif text-4xl sm:text-6xl font-bold leading-tight text-white">
+                Ready to Take Your First <span class="italic text-clinic-accent dark:text-clinic-dark-accent">Pain-Free Step?</span>
+            </h2>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Do not let chronic heel, arch, or ankle pain restrict your life. Schedule your clinical consultation with our board-certified podiatrists today.
+            </p>
+
+            <div class="flex flex-wrap gap-4 justify-center pt-4">
+                <a href="booking.html" class="px-8 py-3.5 rounded-full font-semibold text-base bg-white text-clinic-brand hover:bg-clinic-sage transition shadow-md">
+                    <i class="far fa-calendar-check"></i> Book Online Consultation
+                </a>
+                <a href="tel:8885557837" class="px-8 py-3.5 rounded-full font-semibold text-base border-2 border-white text-white hover:bg-white/10 transition">
+                    <i class="fas fa-phone-alt"></i> Call (888) 555-STEP
+                </a>
+            </div>
+
+            <div class="pt-8 flex flex-wrap justify-center items-center gap-6 text-xs text-white/80">
+                <span class="flex items-center gap-1.5"><i class="fas fa-check text-clinic-accent dark:text-clinic-dark-accent"></i> Free Insurance Benefit Check</span>
+                <span class="flex items-center gap-1.5"><i class="fas fa-check text-clinic-accent dark:text-clinic-dark-accent"></i> Same-Day Emergency Openings</span>
+                <span class="flex items-center gap-1.5"><i class="fas fa-check text-clinic-accent dark:text-clinic-dark-accent"></i> Free Dedicated Patient Parking</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-16 pb-8 bg-clinic-dark-surface text-clinic-dark-secondary border-t border-clinic-dark-border">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1: Clinic Overview -->
+                <div>
+                    <a href="index.html" class="logo-wrapper mb-4">
+                        <div class="logo-icon">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <div>
+                            <span class="logo-text text-clinic-dark-primary">Step<span class="text-clinic-brand dark:text-clinic-dark-accent">Well</span></span>
+                            <span class="logo-sub text-clinic-dark-secondary">Podiatry & Foot Care</span>
+                        </div>
+                    </a>
+                    <p class="text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                        State-of-the-art foot and ankle medicine clinic combining digital biomechanics, non-invasive therapies, and reconstructive surgical precision.
+                    </p>
+                    <div class="flex gap-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="Facebook"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="Instagram"><i class="fab fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Quick Navigation</h4>
+                    <ul class="space-y-2.5 text-sm text-clinic-dark-secondary">
+                        <li><a href="index.html" class="hover:text-clinic-dark-accent transition">Home (Clinical Podiatry)</a></li>
+                        <li><a href="home2.html" class="hover:text-clinic-dark-accent transition">Home 2 (Sports Biomechanics)</a></li>
+                        <li><a href="about.html" class="hover:text-clinic-dark-accent transition">About Our Practice</a></li>
+                        <li><a href="specialists.html" class="hover:text-clinic-dark-accent transition">Our Board Podiatrists</a></li>
+                        <li><a href="dashboard.html" class="hover:text-clinic-dark-accent transition">Patient Portal & Scans</a></li>
+                        <li><a href="booking.html" class="hover:text-clinic-dark-accent transition">Schedule Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Key Treatments -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Clinical Specialties</h4>
+                    <ul class="space-y-2.5 text-sm text-clinic-dark-secondary">
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Plantar Fasciitis & Shockwave</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Custom 3D-Printed Orthotics</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Diabetic Foot & Ulcer Care</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Minimally Invasive Bunion Surgery</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Laser Fungal Nail Therapy</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Achilles Tendonitis Rehab</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Clinic Hours & Contact -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Clinic Information</h4>
+                    <ul class="space-y-3 text-sm text-clinic-dark-secondary">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-map-marker-alt text-clinic-brand dark:text-clinic-dark-accent mt-1"></i>
+                            <span>450 Medical Heights Blvd, Suite 210, Seattle, WA 98101</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-phone-alt text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>(888) 555-STEP / (888) 555-7837</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-envelope text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>care@stepwellpodiatry.com</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 pt-1">
+                            <i class="fas fa-clock text-clinic-brand dark:text-clinic-dark-accent mt-1"></i>
+                            <span>Mon – Fri: 7:30 AM – 6:00 PM<br>Sat: 8:00 AM – 1:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-clinic-dark-border pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-clinic-muted dark:text-clinic-dark-secondary">
+                <p>© 2026 StepWell Podiatry & Advanced Foot Care Center. All Rights Reserved.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-clinic-dark-accent">Privacy Policy</a>
+                    <a href="#" class="hover:text-clinic-dark-accent">HIPAA Compliance</a>
+                    <a href="#" class="hover:text-clinic-dark-accent">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== QUICK TRIAGE MODAL ===== -->
+    <div id="quickModal" class="modal-backdrop">
+        <div class="modal-content p-6 sm:p-8">
+            <div class="flex items-center justify-between pb-4 border-b border-clinic-border dark:border-clinic-dark-border mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-clinic-primary dark:text-clinic-dark-primary">60-Second Foot Health Triage</h3>
+                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Instant physician evaluation guideline</p>
+                    </div>
+                </div>
+                <button data-modal-close class="text-clinic-muted dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-clinic-dark-primary text-xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4">
+                <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
+                    Where is your discomfort most pronounced today?
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <button class="p-3 text-left border rounded-xl border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand hover:bg-clinic-sage/50 dark:hover:bg-clinic-dark-elevated transition text-xs font-semibold" onclick="handleTriageModalSelect('Plantar Fasciitis / Heel Spur Protocol')">
+                        🦶 Under Heel upon waking
+                    </button>
+                    <button class="p-3 text-left border rounded-xl border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand hover:bg-clinic-sage/50 dark:hover:bg-clinic-dark-elevated transition text-xs font-semibold" onclick="handleTriageModalSelect('Bunion Deformity Realignment')">
+                        🦴 Base of Big Toe joint bump
+                    </button>
+                    <button class="p-3 text-left border rounded-xl border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand hover:bg-clinic-sage/50 dark:hover:bg-clinic-dark-elevated transition text-xs font-semibold" onclick="handleTriageModalSelect('Diabetic Sensory Screening')">
+                        🩸 Numbness / Tingling / Burning
+                    </button>
+                    <button class="p-3 text-left border rounded-xl border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand hover:bg-clinic-sage/50 dark:hover:bg-clinic-dark-elevated transition text-xs font-semibold" onclick="handleTriageModalSelect('Sports Tendon Rehabilitation')">
+                        🏃 Achilles tendon stiffness after run
+                    </button>
+                </div>
+
+                <div id="triageResultBox" class="hidden p-4 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated border border-clinic-brand/30 dark:border-clinic-dark-accent/30 text-clinic-brand dark:text-clinic-dark-accent text-xs">
+                    <div class="font-bold mb-1" id="triageResultTitle">Recommended Clinical Pathway</div>
+                    <p id="triageResultDesc">Our podiatry team can provide immediate diagnostic imaging and tailored pain relief.</p>
+                </div>
+
+                <div class="pt-4 flex justify-end gap-3">
+                    <button data-modal-close class="btn-outline-pill text-xs py-2 px-4">Close</button>
+                    <a href="booking.html" class="btn-primary-pill text-xs py-2 px-5">Proceed to Schedule</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/motion.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function selectTriage(condition) {
+            showToast(`Selected triage pathway: ${condition}. Directing to specialized service...`);
+            setTimeout(() => {
+                window.location.href = 'services.html?triage=' + encodeURIComponent(condition);
+            }, 1200);
+        }
+
+        function handleTriageModalSelect(protocol) {
+            const box = document.getElementById('triageResultBox');
+            const title = document.getElementById('triageResultTitle');
+            const desc = document.getElementById('triageResultDesc');
+            if (box && title && desc) {
+                box.classList.remove('hidden');
+                title.textContent = `Recommended Pathway: ${protocol}`;
+                desc.textContent = `Based on your symptoms, we recommend an initial in-office digital gait and fluoroscopy evaluation with our specialists.`;
+            }
+        }
+    </script>
+</body>
+</html>

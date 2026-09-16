@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About StepWell Podiatry | Heritage, Doctors & Clinical Excellence</title>
+    <meta name="description" content="Discover StepWell Podiatry & Foot Care Clinic. Learn about our board-certified foot surgeons, clinical heritage, and state-of-the-art facilities in Seattle, WA.">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E🦶%3C/text%3E%3C/svg%3E">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'clinic-canvas': '#F4F1EA',
+                        'clinic-surface': '#FFFFFF',
+                        'clinic-sage': '#E9EFE9',
+                        'clinic-accent': '#DCE7E2',
+                        'clinic-primary': '#17221F',
+                        'clinic-secondary': '#52605B',
+                        'clinic-muted': '#71807A',
+                        'clinic-border': '#D8DED9',
+                        'clinic-brand': '#176B63',
+                        'clinic-brand-hover': '#0F514B',
+                        'clinic-dark-canvas': '#000000',
+                        'clinic-dark-surface': '#0B0B0B',
+                        'clinic-dark-elevated': '#141414',
+                        'clinic-dark-primary': '#F5F7F6',
+                        'clinic-dark-secondary': '#B8C2BE',
+                        'clinic-dark-border': '#292D2B',
+                        'clinic-dark-accent': '#65B8AD',
+                        'clinic-navy': '#17221F',
+                        'clinic-navy-dark': '#0B0B0B',
+                        'clinic-teal': '#176B63',
+                        'clinic-teal-light': '#176B63',
+                        'clinic-mint': '#65B8AD',
+                        'clinic-ice': '#E9EFE9',
+                        'clinic-dark': '#000000',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/motion.css">
+</head>
+<body class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans overflow-x-hidden w-full relative">
+
+    <!-- ===== ROUNDED FLOATING NAVBAR ===== -->
+    <nav class="navbar-wrapper" id="navbarWrapper">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo-wrapper">
+                <div class="logo-icon"><i class="fas fa-shoe-prints"></i></div>
+                <div>
+                    <span class="logo-text">Step<span class="highlight">Well</span></span>
+                    <span class="logo-sub">Podiatry & Foot Care</span>
+                </div>
+            </a>
+
+            <div class="nav-links">
+                <div class="dropdown-wrapper">
+                    <span class="nav-link">Home <i class="fas fa-chevron-down text-[9px] ml-1 opacity-70"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item"><i class="fas fa-clinic-medical text-teal-400"></i> Home 1 — Clinical Podiatry</a>
+                        <a href="home2.html" class="dropdown-item"><i class="fas fa-running text-teal-400"></i> Home 2 — Sports Biomechanics</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link active">About Clinic</a>
+                <a href="services.html" class="nav-link">Treatments</a>
+                <a href="specialists.html" class="nav-link">Podiatrists</a>
+                <a href="dashboard.html" class="nav-link">Patient Portal</a>
+                <a href="booking.html" class="nav-link">Book Visit</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="btn-icon-rounded desktop-action" title="Toggle RTL/LTR"><i class="fas fa-exchange-alt"></i></button>
+                <button id="theme-toggle" class="btn-icon-rounded desktop-action" title="Toggle Theme"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                <a href="booking.html" class="btn-primary-pill desktop-action"><i class="far fa-calendar-check"></i> Book Visit</a>
+                <button id="mobile-toggle" class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="index.html" class="mobile-menu-item"><i class="fas fa-home text-teal-400 mr-2"></i> Home 1 — Clinical</a>
+            <a href="home2.html" class="mobile-menu-item"><i class="fas fa-running text-teal-400 mr-2"></i> Home 2 — Sports</a>
+            <a href="about.html" class="mobile-menu-item active"><i class="fas fa-user-md text-teal-400 mr-2"></i> About Clinic</a>
+            <a href="services.html" class="mobile-menu-item"><i class="fas fa-stethoscope text-teal-400 mr-2"></i> Treatments & Services</a>
+            <a href="specialists.html" class="mobile-menu-item"><i class="fas fa-award text-teal-400 mr-2"></i> Our Podiatrists</a>
+            <a href="dashboard.html" class="mobile-menu-item"><i class="fas fa-chart-line text-teal-400 mr-2"></i> Patient Portal</a>
+            <a href="booking.html" class="mobile-menu-item"><i class="far fa-calendar-alt text-teal-400 mr-2"></i> Book Appointment</a>
+            <a href="contact.html" class="mobile-menu-item"><i class="fas fa-map-marker-alt text-teal-400 mr-2"></i> Clinic & Contact</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO / BANNER ===== -->
+    <header class="pt-36 pb-20 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary border-b border-clinic-border dark:border-clinic-dark-border text-center relative transition-colors duration-300">
+        <div class="max-w-4xl mx-auto space-y-4 reveal">
+            <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-widest bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 border border-clinic-brand/30 dark:border-clinic-dark-accent/30 px-4 py-1.5 rounded-full inline-block">Established 2008</span>
+            <h1 class="font-serif text-4xl sm:text-6xl font-bold leading-tight text-clinic-primary dark:text-white">
+                Pioneering the Future of <br><span class="italic text-clinic-brand dark:text-clinic-dark-accent">Podiatric Medicine</span>
+            </h1>
+            <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Dedicated to clinical excellence, surgical precision, and compassionate patient care. We believe no one should live with preventable foot or ankle discomfort.
+            </p>
+        </div>
+    </header>
+
+    <!-- ===== SECTION 1: CLINICAL MISSION & HERITAGE ===== -->
+    <section class="py-20 px-6 bg-clinic-surface dark:bg-clinic-dark-surface transition-colors duration-300">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6 space-y-6 reveal-left">
+                <span class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs block">Our Clinical Heritage</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-clinic-primary dark:text-white leading-tight">
+                    Where Biomechanical Science Meets <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Patient Comfort</span>
+                </h2>
+                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base leading-relaxed">
+                    Founded in 2008 by Dr. Julian Vance, DPM, FACFAS, StepWell Podiatry was conceived with a clear vision: to bring academic medical center technology directly to an outpatient setting where patients are treated like family.
+                </p>
+                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base leading-relaxed">
+                    Over the past 18 years, our practice has grown from a single treatment suite into a state-of-the-art foot & ankle surgical and biomechanical rehabilitation center with 6 private suites, zero-radiation digital fluoroscopy, and an in-house 3D orthotic laboratory.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 pt-2">
+                    <div class="border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-4">
+                        <div class="font-bold text-2xl text-clinic-primary dark:text-white">100%</div>
+                        <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Board-Certified Specialists</div>
+                    </div>
+                    <div class="border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-4">
+                        <div class="font-bold text-2xl text-clinic-primary dark:text-white">APMA</div>
+                        <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Accredited Clinical Facility</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 reveal-right">
+                <div class="image-reveal-frame rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-2xl overflow-hidden">
+                    <img src="assets/images/hero_clinic.jpg" alt="StepWell Podiatry Clinic Interior" class="w-full h-[460px] object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2: 4 CLINICAL VALUES ===== -->
+    <section class="py-20 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas transition-colors duration-300">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs">Our Core Values</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold mt-2 text-clinic-primary dark:text-white">The StepWell Promise</h2>
+                <div class="w-20 h-1 bg-clinic-brand dark:bg-clinic-dark-accent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-group">
+                <div class="clinical-card p-6 reveal delay-100">
+                    <div class="icon-box mb-4"><i class="fas fa-shield-virus"></i></div>
+                    <h4 class="font-bold text-lg text-clinic-primary dark:text-white mb-2">Conservative First</h4>
+                    <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">We explore non-invasive regenerative solutions before considering surgical intervention.</p>
+                </div>
+
+                <div class="clinical-card p-6 reveal delay-200">
+                    <div class="icon-box mb-4"><i class="fas fa-laptop-medical"></i></div>
+                    <h4 class="font-bold text-lg text-clinic-primary dark:text-white mb-2">Digital Diagnostics</h4>
+                    <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">No guesswork. Real-time dynamic pressure plate mapping and high-resolution ultrasound.</p>
+                </div>
+
+                <div class="clinical-card p-6 reveal delay-300">
+                    <div class="icon-box mb-4"><i class="fas fa-heart"></i></div>
+                    <h4 class="font-bold text-lg text-clinic-primary dark:text-white mb-2">Patient-Centric</h4>
+                    <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">Every treatment plan is personalized around your daily habits, profession, and sports passions.</p>
+                </div>
+
+                <div class="clinical-card p-6 reveal delay-400">
+                    <div class="icon-box mb-4"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h4 class="font-bold text-lg text-clinic-primary dark:text-white mb-2">Transparent Care</h4>
+                    <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">Clear upfront quotes, comprehensive insurance filing, and no hidden facility charges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3: LEAD SURGEONS PREVIEW ===== -->
+    <section class="py-20 px-6 bg-clinic-surface dark:bg-clinic-dark-surface transition-colors duration-300">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs">Medical Leadership</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold mt-2 text-clinic-primary dark:text-white">Meet Our Board Specialists</h2>
+                <div class="w-20 h-1 bg-clinic-brand dark:bg-clinic-dark-accent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <!-- Doctor 1 -->
+                <div class="clinical-card p-6 flex flex-col sm:flex-row gap-6 items-center reveal-left">
+                    <img src="assets/images/dr_marcus_vance.jpg" alt="Dr. Julian Vance" class="w-36 h-36 rounded-2xl object-cover border-2 border-clinic-brand/40 dark:border-clinic-dark-accent/40">
+                    <div>
+                        <span class="text-xs font-bold text-clinic-brand dark:text-clinic-dark-accent uppercase tracking-wider">Founder & Surgeon</span>
+                        <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mt-1">Dr. Julian Vance, DPM</h3>
+                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary mb-3">FACFAS • Board Certified in Foot & Reconstructive Ankle Surgery</p>
+                        <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-4">18+ years specializing in minimally invasive bunion corrections and complex heel pain.</p>
+                        <a href="booking.html" class="btn-primary-pill text-xs py-2 px-4">Book with Dr. Vance</a>
+                    </div>
+                </div>
+
+                <!-- Doctor 2 -->
+                <div class="clinical-card p-6 flex flex-col sm:flex-row gap-6 items-center reveal-right">
+                    <img src="assets/images/dr_sarah_chen.jpg" alt="Dr. Evelyn Chen" class="w-36 h-36 rounded-2xl object-cover border-2 border-clinic-brand/40 dark:border-clinic-dark-accent/40">
+                    <div>
+                        <span class="text-xs font-bold text-clinic-brand dark:text-clinic-dark-accent uppercase tracking-wider">Sports Podiatrist</span>
+                        <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mt-1">Dr. Evelyn Chen, DPM</h3>
+                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary mb-3">APMA Fellow • Sports Biomechanics & Diabetic Limb Salvage</p>
+                        <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-4">Specializing in runner gait analysis, 3D orthotics, and pediatric lower extremity development.</p>
+                        <a href="booking.html" class="btn-primary-pill text-xs py-2 px-4">Book with Dr. Chen</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="specialists.html" class="btn-outline-pill py-3 px-8 text-sm">View Full Clinical Staff & Fellowships →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-16 pb-8 bg-clinic-dark-surface text-clinic-dark-secondary border-t border-clinic-dark-border">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1: Clinic Overview -->
+                <div>
+                    <a href="index.html" class="logo-wrapper mb-4">
+                        <div class="logo-icon">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <div>
+                            <span class="logo-text text-clinic-dark-primary">Step<span class="text-clinic-brand dark:text-clinic-dark-accent">Well</span></span>
+                            <span class="logo-sub text-clinic-dark-secondary">Podiatry & Foot Care</span>
+                        </div>
+                    </a>
+                    <p class="text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                        State-of-the-art foot and ankle medicine clinic combining digital biomechanics, non-invasive therapies, and reconstructive surgical precision.
+                    </p>
+                    <div class="flex gap-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="Facebook"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="Instagram"><i class="fab fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Quick Navigation</h4>
+                    <ul class="space-y-2.5 text-sm text-clinic-dark-secondary">
+                        <li><a href="index.html" class="hover:text-clinic-dark-accent transition">Home (Clinical Podiatry)</a></li>
+                        <li><a href="home2.html" class="hover:text-clinic-dark-accent transition">Home 2 (Sports Biomechanics)</a></li>
+                        <li><a href="about.html" class="hover:text-clinic-dark-accent transition">About Our Practice</a></li>
+                        <li><a href="specialists.html" class="hover:text-clinic-dark-accent transition">Our Board Podiatrists</a></li>
+                        <li><a href="dashboard.html" class="hover:text-clinic-dark-accent transition">Patient Portal & Scans</a></li>
+                        <li><a href="booking.html" class="hover:text-clinic-dark-accent transition">Schedule Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Key Treatments -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Clinical Specialties</h4>
+                    <ul class="space-y-2.5 text-sm text-clinic-dark-secondary">
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Plantar Fasciitis & Shockwave</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Custom 3D-Printed Orthotics</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Diabetic Foot & Ulcer Care</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Minimally Invasive Bunion Surgery</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Laser Fungal Nail Therapy</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Achilles Tendonitis Rehab</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Clinic Hours & Contact -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Clinic Information</h4>
+                    <ul class="space-y-3 text-sm text-clinic-dark-secondary">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-map-marker-alt text-clinic-brand dark:text-clinic-dark-accent mt-1"></i>
+                            <span>450 Medical Heights Blvd, Suite 210, Seattle, WA 98101</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-phone-alt text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>(888) 555-STEP / (888) 555-7837</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-envelope text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>care@stepwellpodiatry.com</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 pt-1">
+                            <i class="fas fa-clock text-clinic-brand dark:text-clinic-dark-accent mt-1"></i>
+                            <span>Mon – Fri: 7:30 AM – 6:00 PM<br>Sat: 8:00 AM – 1:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-clinic-dark-border pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-clinic-muted dark:text-clinic-dark-secondary">
+                <p>© 2026 StepWell Podiatry & Advanced Foot Care Center. All Rights Reserved.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-clinic-dark-accent">Privacy Policy</a>
+                    <a href="#" class="hover:text-clinic-dark-accent">HIPAA Compliance</a>
+                    <a href="#" class="hover:text-clinic-dark-accent">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/motion.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

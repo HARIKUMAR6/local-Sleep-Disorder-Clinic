@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Contact & Clinic Location | StepWell Podiatry & Foot Care</title>
+    <meta name="description" content="Contact StepWell Podiatry in Seattle, WA. Office hours, map directions, emergency after-hours foot triage line, and online inquiry form.">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E📍%3C/text%3E%3C/svg%3E">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'clinic-canvas': '#F4F1EA',
+                        'clinic-surface': '#FFFFFF',
+                        'clinic-sage': '#E9EFE9',
+                        'clinic-accent': '#DCE7E2',
+                        'clinic-primary': '#17221F',
+                        'clinic-secondary': '#52605B',
+                        'clinic-muted': '#71807A',
+                        'clinic-border': '#D8DED9',
+                        'clinic-brand': '#176B63',
+                        'clinic-brand-hover': '#0F514B',
+                        'clinic-dark-canvas': '#000000',
+                        'clinic-dark-surface': '#0B0B0B',
+                        'clinic-dark-elevated': '#141414',
+                        'clinic-dark-primary': '#F5F7F6',
+                        'clinic-dark-secondary': '#B8C2BE',
+                        'clinic-dark-border': '#292D2B',
+                        'clinic-dark-accent': '#65B8AD',
+                        'clinic-navy': '#17221F',
+                        'clinic-navy-dark': '#0B0B0B',
+                        'clinic-teal': '#176B63',
+                        'clinic-teal-light': '#176B63',
+                        'clinic-mint': '#65B8AD',
+                        'clinic-ice': '#E9EFE9',
+                        'clinic-dark': '#000000',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/motion.css">
+</head>
+<body class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans overflow-x-hidden w-full relative">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar-wrapper" id="navbarWrapper">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo-wrapper">
+                <div class="logo-icon"><i class="fas fa-shoe-prints"></i></div>
+                <div>
+                    <span class="logo-text">Step<span class="highlight">Well</span></span>
+                    <span class="logo-sub">Podiatry & Foot Care</span>
+                </div>
+            </a>
+
+            <div class="nav-links">
+                <div class="dropdown-wrapper">
+                    <span class="nav-link">Home <i class="fas fa-chevron-down text-[9px] ml-1 opacity-70"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item"><i class="fas fa-clinic-medical text-teal-400"></i> Home 1 — Clinical Podiatry</a>
+                        <a href="home2.html" class="dropdown-item"><i class="fas fa-running text-teal-400"></i> Home 2 — Sports Biomechanics</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About Clinic</a>
+                <a href="services.html" class="nav-link">Treatments</a>
+                <a href="specialists.html" class="nav-link">Podiatrists</a>
+                <a href="dashboard.html" class="nav-link">Patient Portal</a>
+                <a href="booking.html" class="nav-link">Book Visit</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="btn-icon-rounded desktop-action" title="Toggle RTL"><i class="fas fa-exchange-alt"></i></button>
+                <button id="theme-toggle" class="btn-icon-rounded desktop-action" title="Toggle Theme"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                <a href="booking.html" class="btn-primary-pill desktop-action"><i class="far fa-calendar-check"></i> Book Visit</a>
+                <button id="mobile-toggle" class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="index.html" class="mobile-menu-item"><i class="fas fa-home text-teal-400 mr-2"></i> Home 1 — Clinical</a>
+            <a href="home2.html" class="mobile-menu-item"><i class="fas fa-running text-teal-400 mr-2"></i> Home 2 — Sports</a>
+            <a href="about.html" class="mobile-menu-item"><i class="fas fa-user-md text-teal-400 mr-2"></i> About Clinic</a>
+            <a href="services.html" class="mobile-menu-item"><i class="fas fa-stethoscope text-teal-400 mr-2"></i> Treatments & Services</a>
+            <a href="specialists.html" class="mobile-menu-item"><i class="fas fa-award text-teal-400 mr-2"></i> Our Podiatrists</a>
+            <a href="dashboard.html" class="mobile-menu-item"><i class="fas fa-chart-line text-teal-400 mr-2"></i> Patient Portal</a>
+            <a href="booking.html" class="mobile-menu-item"><i class="far fa-calendar-alt text-teal-400 mr-2"></i> Book Appointment</a>
+            <a href="contact.html" class="mobile-menu-item active"><i class="fas fa-map-marker-alt text-teal-400 mr-2"></i> Clinic & Contact</a>
+        </div>
+    </nav>
+
+    <!-- ===== HEADER ===== -->
+    <header class="pt-36 pb-16 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary border-b border-clinic-border dark:border-clinic-dark-border text-center transition-colors duration-300">
+        <div class="max-w-4xl mx-auto space-y-4 reveal">
+            <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-widest bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 border border-clinic-brand/30 dark:border-clinic-dark-accent/30 px-4 py-1.5 rounded-full inline-block">Seattle, WA Facility</span>
+            <h1 class="font-serif text-4xl sm:text-6xl font-bold leading-tight text-clinic-primary dark:text-white">
+                Visit or Get in <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Touch</span>
+            </h1>
+            <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                We are conveniently located in the Medical Heights district with reserved ground-floor patient parking and direct transit access.
+            </p>
+        </div>
+    </header>
+
+    <!-- ===== CONTACT GRID & FORM ===== -->
+    <main class="py-20 px-6 bg-clinic-canvas dark:bg-clinic-dark-canvas transition-colors duration-300">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Left: Contact Details & Hours (Col 5) -->
+            <div class="lg:col-span-5 space-y-6 reveal-left">
+                <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-xl space-y-6">
+                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Clinic Details</h3>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-clinic-primary dark:text-white">Main Medical Suite</h4>
+                                <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-0.5">450 Medical Heights Blvd, Suite 210<br>Seattle, WA 98101</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold flex-shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-clinic-primary dark:text-white">Telephone & Triage</h4>
+                                <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-0.5">Primary: (888) 555-STEP / (888) 555-7837<br>Emergency: (888) 555-0911</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-clinic-primary dark:text-white">Electronic Inquiries</h4>
+                                <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-0.5">care@stepwellpodiatry.com</p>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold flex-shrink-0">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-clinic-primary dark:text-white">Clinical Hours</h4>
+                                <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-0.5">
+                                    Monday – Friday: 7:30 AM – 6:00 PM<br>
+                                    Saturday: 8:00 AM – 1:00 PM (Emergency & Scans)<br>
+                                    Sunday: Closed
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Banner -->
+                <div class="bg-red-500/10 border border-red-500/30 p-6 rounded-3xl text-xs space-y-2 text-red-900 dark:text-red-200">
+                    <div class="font-bold text-sm flex items-center gap-2">
+                        <i class="fas fa-exclamation-triangle text-red-500"></i> Acute Trauma or Infection?
+                    </div>
+                    <p>If you have an open diabetic ulcer with spreading redness, sudden foot drop, or fracture deformity, proceed immediately to urgent triage or call our emergency line.</p>
+                </div>
+            </div>
+
+            <!-- Right: Interactive Contact Form (Col 7) -->
+            <div class="lg:col-span-7 bg-clinic-surface dark:bg-clinic-dark-surface p-8 sm:p-10 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-xl reveal-right">
+                <span class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs block mb-1">Direct Message</span>
+                <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white mb-6">Send Our Clinical Coordinator an Inquiry</h3>
+
+                <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Your Full Name *</label>
+                            <input type="text" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-primary dark:text-white text-xs focus:outline-none focus:border-clinic-brand transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Phone Number *</label>
+                            <input type="tel" required placeholder="(555) 123-4567" class="w-full px-4 py-3 rounded-xl border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-primary dark:text-white text-xs focus:outline-none focus:border-clinic-brand transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Email Address *</label>
+                            <input type="email" required placeholder="jane@example.com" class="w-full px-4 py-3 rounded-xl border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-primary dark:text-white text-xs focus:outline-none focus:border-clinic-brand transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Inquiry Subject</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-primary dark:text-white text-xs focus:outline-none focus:border-clinic-brand transition">
+                                <option>General Foot Pain Question</option>
+                                <option>Insurance & PPO Coverage Question</option>
+                                <option>3D Custom Orthotic Insole Status</option>
+                                <option>Minimally Invasive Bunion Inquiry</option>
+                                <option>Physician Referral</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">How Can We Help You? *</label>
+                        <textarea rows="4" required placeholder="Describe symptoms, duration of foot pain, previous treatments tried..." class="w-full px-4 py-3 rounded-xl border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-primary dark:text-white text-xs focus:outline-none focus:border-clinic-brand transition"></textarea>
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit" id="contactSubmitBtn" class="btn-primary-pill py-3 px-8 text-xs font-bold shadow-lg shadow-clinic-brand/25">
+                            <i class="fas fa-paper-plane mr-1.5"></i> Submit Clinical Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-16 pb-8 bg-clinic-dark-surface text-clinic-dark-secondary border-t border-clinic-dark-border">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1: Clinic Overview -->
+                <div>
+                    <a href="index.html" class="logo-wrapper mb-4">
+                        <div class="logo-icon">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <div>
+                            <span class="logo-text text-clinic-dark-primary">Step<span class="text-clinic-brand dark:text-clinic-dark-accent">Well</span></span>
+                            <span class="logo-sub text-clinic-dark-secondary">Podiatry & Foot Care</span>
+                        </div>
+                    </a>
+                    <p class="text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                        State-of-the-art foot and ankle medicine clinic combining digital biomechanics, non-invasive therapies, and reconstructive surgical precision.
+                    </p>
+                    <div class="flex gap-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="Facebook"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="Instagram"><i class="fab fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Quick Navigation</h4>
+                    <ul class="space-y-2.5 text-sm text-clinic-dark-secondary">
+                        <li><a href="index.html" class="hover:text-clinic-dark-accent transition">Home (Clinical Podiatry)</a></li>
+                        <li><a href="home2.html" class="hover:text-clinic-dark-accent transition">Home 2 (Sports Biomechanics)</a></li>
+                        <li><a href="about.html" class="hover:text-clinic-dark-accent transition">About Our Practice</a></li>
+                        <li><a href="specialists.html" class="hover:text-clinic-dark-accent transition">Our Board Podiatrists</a></li>
+                        <li><a href="dashboard.html" class="hover:text-clinic-dark-accent transition">Patient Portal & Scans</a></li>
+                        <li><a href="booking.html" class="hover:text-clinic-dark-accent transition">Schedule Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Key Treatments -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Clinical Specialties</h4>
+                    <ul class="space-y-2.5 text-sm text-clinic-dark-secondary">
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Plantar Fasciitis & Shockwave</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Custom 3D-Printed Orthotics</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Diabetic Foot & Ulcer Care</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Minimally Invasive Bunion Surgery</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Laser Fungal Nail Therapy</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Achilles Tendonitis Rehab</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Clinic Hours & Contact -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Clinic Information</h4>
+                    <ul class="space-y-3 text-sm text-clinic-dark-secondary">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-map-marker-alt text-clinic-brand dark:text-clinic-dark-accent mt-1"></i>
+                            <span>450 Medical Heights Blvd, Suite 210, Seattle, WA 98101</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-phone-alt text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>(888) 555-STEP / (888) 555-7837</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-envelope text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>care@stepwellpodiatry.com</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 pt-1">
+                            <i class="fas fa-clock text-clinic-brand dark:text-clinic-dark-accent mt-1"></i>
+                            <span>Mon – Fri: 7:30 AM – 6:00 PM<br>Sat: 8:00 AM – 1:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-clinic-dark-border pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-clinic-muted dark:text-clinic-dark-secondary">
+                <p>© 2026 StepWell Podiatry & Advanced Foot Care Center. All Rights Reserved.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-clinic-dark-accent">Privacy Policy</a>
+                    <a href="#" class="hover:text-clinic-dark-accent">HIPAA Compliance</a>
+                    <a href="#" class="hover:text-clinic-dark-accent">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/motion.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('contactSubmitBtn');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1.5"></i> Transmitting...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                showToast('Thank you! Your message has been sent to our clinical coordinator.');
+                btn.innerHTML = '<i class="fas fa-check mr-1.5"></i> Sent Successfully';
+                e.target.reset();
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-paper-plane mr-1.5"></i> Submit Clinical Message';
+                    btn.disabled = false;
+                }, 3000);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

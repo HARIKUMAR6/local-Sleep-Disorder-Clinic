@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Schedule Clinical Consultation | StepWell Podiatry & Foot Care</title>
+    <meta name="description" content="Book an appointment online with our board-certified podiatrists and foot surgeons. Easy 4-step scheduling for heel pain, custom orthotics, bunions, and sports injuries.">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E📅%3C/text%3E%3C/svg%3E">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'clinic-canvas': '#F4F1EA',
+                        'clinic-surface': '#FFFFFF',
+                        'clinic-sage': '#E9EFE9',
+                        'clinic-accent': '#DCE7E2',
+                        'clinic-primary': '#17221F',
+                        'clinic-secondary': '#52605B',
+                        'clinic-muted': '#71807A',
+                        'clinic-border': '#D8DED9',
+                        'clinic-brand': '#176B63',
+                        'clinic-brand-hover': '#0F514B',
+                        'clinic-dark-canvas': '#000000',
+                        'clinic-dark-surface': '#0B0B0B',
+                        'clinic-dark-elevated': '#141414',
+                        'clinic-dark-primary': '#F5F7F6',
+                        'clinic-dark-secondary': '#B8C2BE',
+                        'clinic-dark-border': '#292D2B',
+                        'clinic-dark-accent': '#65B8AD',
+                        'clinic-navy': '#17221F',
+                        'clinic-navy-dark': '#0B0B0B',
+                        'clinic-teal': '#176B63',
+                        'clinic-teal-light': '#176B63',
+                        'clinic-mint': '#65B8AD',
+                        'clinic-ice': '#E9EFE9',
+                        'clinic-dark': '#000000',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/motion.css">
+</head>
+<body class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans overflow-x-hidden w-full relative">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar-wrapper" id="navbarWrapper">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo-wrapper">
+                <div class="logo-icon"><i class="fas fa-shoe-prints"></i></div>
+                <div>
+                    <span class="logo-text">Step<span class="highlight">Well</span></span>
+                    <span class="logo-sub">Podiatry & Foot Care</span>
+                </div>
+            </a>
+
+            <div class="nav-links">
+                <div class="dropdown-wrapper">
+                    <span class="nav-link">Home <i class="fas fa-chevron-down text-[9px] ml-1 opacity-70"></i></span>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item"><i class="fas fa-clinic-medical text-teal-400"></i> Home 1 — Clinical Podiatry</a>
+                        <a href="home2.html" class="dropdown-item"><i class="fas fa-running text-teal-400"></i> Home 2 — Sports Biomechanics</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About Clinic</a>
+                <a href="services.html" class="nav-link">Treatments</a>
+                <a href="specialists.html" class="nav-link">Podiatrists</a>
+                <a href="dashboard.html" class="nav-link">Patient Portal</a>
+                <a href="booking.html" class="nav-link active">Book Visit</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="btn-icon-rounded desktop-action" title="Toggle RTL"><i class="fas fa-exchange-alt"></i></button>
+                <button id="theme-toggle" class="btn-icon-rounded desktop-action" title="Toggle Theme"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                <a href="booking.html" class="btn-primary-pill desktop-action"><i class="far fa-calendar-check"></i> Book Visit</a>
+                <button id="mobile-toggle" class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="index.html" class="mobile-menu-item"><i class="fas fa-home text-teal-400 mr-2"></i> Home 1 — Clinical</a>
+            <a href="home2.html" class="mobile-menu-item"><i class="fas fa-running text-teal-400 mr-2"></i> Home 2 — Sports</a>
+            <a href="about.html" class="mobile-menu-item"><i class="fas fa-user-md text-teal-400 mr-2"></i> About Clinic</a>
+            <a href="services.html" class="mobile-menu-item"><i class="fas fa-stethoscope text-teal-400 mr-2"></i> Treatments & Services</a>
+            <a href="specialists.html" class="mobile-menu-item"><i class="fas fa-award text-teal-400 mr-2"></i> Our Podiatrists</a>
+            <a href="dashboard.html" class="mobile-menu-item"><i class="fas fa-chart-line text-teal-400 mr-2"></i> Patient Portal</a>
+            <a href="booking.html" class="mobile-menu-item active"><i class="far fa-calendar-alt text-teal-400 mr-2"></i> Book Appointment</a>
+            <a href="contact.html" class="mobile-menu-item"><i class="fas fa-map-marker-alt text-teal-400 mr-2"></i> Clinic & Contact</a>
+        </div>
+    </nav>
+
+    <!-- ===== HEADER ===== -->
+    <header class="pt-36 pb-12 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary border-b border-clinic-border dark:border-clinic-dark-border text-center transition-colors duration-300">
+        <div class="max-w-4xl mx-auto space-y-3 reveal">
+            <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-widest bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 border border-clinic-brand/30 dark:border-clinic-dark-accent/30 px-4 py-1.5 rounded-full inline-block">Online Scheduling</span>
+            <h1 class="font-serif text-4xl sm:text-5xl font-bold leading-tight text-clinic-primary dark:text-white">
+                Schedule Your <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Clinical Consultation</span>
+            </h1>
+            <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm max-w-xl mx-auto">
+                Select your condition, specialist, and preferred time slot. No payment required today.
+            </p>
+        </div>
+    </header>
+
+    <!-- ===== MULTI-STEP SCHEDULER WIZARD ===== -->
+    <main class="py-16 px-6 bg-clinic-canvas dark:bg-clinic-dark-canvas transition-colors duration-300 flex-1">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- Step Form Wizard (Col 8) -->
+            <div class="lg:col-span-8 bg-clinic-surface dark:bg-clinic-dark-surface p-6 sm:p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-xl">
+                <!-- Step Indicator Header -->
+                <div class="grid grid-cols-4 gap-2 mb-8 pb-6 border-b border-clinic-border dark:border-clinic-dark-border text-xs font-semibold text-center">
+                    <div id="stepTab1" class="step-tab text-clinic-brand dark:text-clinic-dark-accent font-bold border-b-2 border-clinic-brand pb-2">1. Service</div>
+                    <div id="stepTab2" class="step-tab text-clinic-muted dark:text-clinic-dark-secondary border-b-2 border-transparent pb-2">2. Specialist</div>
+                    <div id="stepTab3" class="step-tab text-clinic-muted dark:text-clinic-dark-secondary border-b-2 border-transparent pb-2">3. Date & Time</div>
+                    <div id="stepTab4" class="step-tab text-clinic-muted dark:text-clinic-dark-secondary border-b-2 border-transparent pb-2">4. Patient Info</div>
+                </div>
+
+                <!-- STEP 1: SERVICE SELECTION -->
+                <div id="step1" class="step-content space-y-4">
+                    <h3 class="font-bold text-lg text-clinic-primary dark:text-white">What would you like examined?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="serviceOptions">
+                        <button type="button" class="service-opt-btn p-4 rounded-2xl border text-left border-clinic-brand bg-clinic-brand/10 text-clinic-primary dark:text-white transition" onclick="chooseService('Plantar Fasciitis & Heel Pain Protocol', '$180 Consultation / $0 with PPO')">
+                            <div class="font-bold text-sm">🦶 Plantar Fasciitis / Heel Pain</div>
+                            <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary mt-1">Ultrasound scan & shockwave evaluation</div>
+                        </button>
+                        <button type="button" class="service-opt-btn p-4 rounded-2xl border text-left border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated hover:border-clinic-brand transition text-clinic-primary dark:text-white" onclick="chooseService('3D Dynamic Gait Scan & Custom Orthotics', '$195 Evaluation')">
+                            <div class="font-bold text-sm">👣 3D Dynamic Gait Scan & Orthotics</div>
+                            <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary mt-1">Pressure sensor tracking & carbon insoles</div>
+                        </button>
+                        <button type="button" class="service-opt-btn p-4 rounded-2xl border text-left border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated hover:border-clinic-brand transition text-clinic-primary dark:text-white" onclick="chooseService('Minimally Invasive Bunion Consultation', '$180 Consultation')">
+                            <div class="font-bold text-sm">🦴 Minimally Invasive Bunion Consult</div>
+                            <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary mt-1">In-office fluoroscopy & surgical plan</div>
+                        </button>
+                        <button type="button" class="service-opt-btn p-4 rounded-2xl border text-left border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated hover:border-clinic-brand transition text-clinic-primary dark:text-white" onclick="chooseService('Diabetic Sensory Foot Examination', '$150 Screen')">
+                            <div class="font-bold text-sm">🩸 Diabetic Sensory Foot Exam</div>
+                            <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary mt-1">Neuropathy & Doppler pulse test</div>
+                        </button>
+                    </div>
+                    <div class="pt-6 flex justify-end">
+                        <button type="button" class="btn-primary-pill text-xs py-2.5 px-6" onclick="goToStep(2)">Next: Choose Doctor →</button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: DOCTOR SELECTION -->
+                <div id="step2" class="step-content hidden space-y-4">
+                    <h3 class="font-bold text-lg text-clinic-primary dark:text-white">Choose your podiatrist</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="doctorOptions">
+                        <button type="button" class="doc-opt-btn p-4 rounded-2xl border text-center border-clinic-brand bg-clinic-brand/10 text-clinic-primary dark:text-white transition" onclick="chooseDoctor('Dr. Julian Vance, DPM (Surgeon)')">
+                            <img src="assets/images/dr_marcus_vance.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover border border-clinic-brand/40">
+                            <div class="font-bold text-sm">Dr. Julian Vance</div>
+                            <div class="text-[10px] text-clinic-brand dark:text-clinic-dark-accent font-semibold">Chief Surgeon</div>
+                        </button>
+                        <button type="button" class="doc-opt-btn p-4 rounded-2xl border text-center border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated hover:border-clinic-brand transition text-clinic-primary dark:text-white" onclick="chooseDoctor('Dr. Evelyn Chen, DPM (Sports & Biomechanics)')">
+                            <img src="assets/images/dr_sarah_chen.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover border border-clinic-brand/40">
+                            <div class="font-bold text-sm">Dr. Evelyn Chen</div>
+                            <div class="text-[10px] text-clinic-brand dark:text-clinic-dark-accent font-semibold">Sports & Gait Lab</div>
+                        </button>
+                        <button type="button" class="doc-opt-btn p-4 rounded-2xl border text-center border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated hover:border-clinic-brand transition text-clinic-primary dark:text-white" onclick="chooseDoctor('First Available Board Physician')">
+                            <div class="w-16 h-16 rounded-full bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl mx-auto mb-2 font-bold">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="font-bold text-sm">First Available</div>
+                            <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary">Earliest Opening</div>
+                        </button>
+                    </div>
+                    <div class="pt-6 flex justify-between">
+                        <button type="button" class="btn-outline-pill text-xs py-2 px-5" onclick="goToStep(1)">← Back</button>
+                        <button type="button" class="btn-primary-pill text-xs py-2.5 px-6" onclick="goToStep(3)">Next: Date & Time →</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: DATE & TIME SELECTION -->
+                <div id="step3" class="step-content hidden space-y-4">
+                    <h3 class="font-bold text-lg text-clinic-primary dark:text-white">Select preferred appointment slot</h3>
+                    <div>
+                        <label class="block text-xs font-semibold mb-2 text-clinic-secondary dark:text-clinic-dark-secondary">Available Clinic Dates:</label>
+                        <div class="flex flex-wrap gap-2" id="dateBtns">
+                            <button type="button" class="date-btn px-4 py-2 rounded-xl text-xs font-semibold bg-clinic-brand text-white shadow" onclick="chooseDate('Tomorrow, Sept 17', this)">Tomorrow (Sept 17)</button>
+                            <button type="button" class="date-btn px-4 py-2 rounded-xl text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-secondary dark:text-clinic-dark-secondary hover:border-clinic-brand" onclick="chooseDate('Thursday, Sept 18', this)">Thursday (Sept 18)</button>
+                            <button type="button" class="date-btn px-4 py-2 rounded-xl text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-secondary dark:text-clinic-dark-secondary hover:border-clinic-brand" onclick="chooseDate('Friday, Sept 19', this)">Friday (Sept 19)</button>
+                            <button type="button" class="date-btn px-4 py-2 rounded-xl text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-secondary dark:text-clinic-dark-secondary hover:border-clinic-brand" onclick="chooseDate('Monday, Sept 22', this)">Monday (Sept 22)</button>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <label class="block text-xs font-semibold mb-2 text-clinic-secondary dark:text-clinic-dark-secondary">Time Slot:</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                            <button type="button" class="slot-btn p-2 rounded-xl border text-xs text-center border-clinic-brand bg-clinic-brand/10 font-bold text-clinic-primary dark:text-white" onclick="chooseTime('9:00 AM', this)">9:00 AM</button>
+                            <button type="button" class="slot-btn p-2 rounded-xl border text-xs text-center border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-secondary dark:text-clinic-dark-secondary hover:border-clinic-brand" onclick="chooseTime('10:45 AM', this)">10:45 AM</button>
+                            <button type="button" class="slot-btn p-2 rounded-xl border text-xs text-center border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-secondary dark:text-clinic-dark-secondary hover:border-clinic-brand" onclick="chooseTime('1:30 PM', this)">1:30 PM</button>
+                            <button type="button" class="slot-btn p-2 rounded-xl border text-xs text-center border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-secondary dark:text-clinic-dark-secondary hover:border-clinic-brand" onclick="chooseTime('3:45 PM', this)">3:45 PM</button>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 flex justify-between">
+                        <button type="button" class="btn-outline-pill text-xs py-2 px-5" onclick="goToStep(2)">← Back</button>
+                        <button type="button" class="btn-primary-pill text-xs py-2.5 px-6" onclick="goToStep(4)">Next: Patient Details →</button>
+                    </div>
+                </div>
+
+                <!-- STEP 4: PATIENT INFO & INSURANCE -->
+                <div id="step4" class="step-content hidden space-y-4">
+                    <h3 class="font-bold text-lg text-clinic-primary dark:text-white">Patient Contact & Insurance</h3>
+                    <form id="bookingForm" onsubmit="submitBooking(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Full Legal Name *</label>
+                                <input type="text" id="patientName" required placeholder="e.g. Sarah Jenkins" class="w-full px-4 py-2.5 rounded-xl border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-primary dark:text-white text-xs focus:outline-none focus:border-clinic-brand">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Cell Phone Number *</label>
+                                <input type="tel" id="patientPhone" required placeholder="(555) 000-0000" class="w-full px-4 py-2.5 rounded-xl border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-primary dark:text-white text-xs focus:outline-none focus:border-clinic-brand">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Email Address *</label>
+                                <input type="email" id="patientEmail" required placeholder="name@example.com" class="w-full px-4 py-2.5 rounded-xl border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-primary dark:text-white text-xs focus:outline-none focus:border-clinic-brand">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Insurance Provider (Optional)</label>
+                                <select class="w-full px-4 py-2.5 rounded-xl border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-primary dark:text-white text-xs focus:outline-none focus:border-clinic-brand">
+                                    <option>Blue Cross Blue Shield</option>
+                                    <option>Medicare</option>
+                                    <option>Aetna PPO</option>
+                                    <option>Cigna Healthcare</option>
+                                    <option>United Healthcare</option>
+                                    <option>Self-Pay / Cash Discount</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Brief Note on Foot Discomfort:</label>
+                            <textarea rows="2" placeholder="e.g. Sharp morning heel pain for 3 months, worse after running" class="w-full px-4 py-2.5 rounded-xl border border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated text-clinic-primary dark:text-white text-xs focus:outline-none focus:border-clinic-brand"></textarea>
+                        </div>
+
+                        <div class="pt-4 flex justify-between items-center">
+                            <button type="button" class="btn-outline-pill text-xs py-2 px-5" onclick="goToStep(3)">← Back</button>
+                            <button type="submit" class="btn-primary-pill text-xs py-3 px-8 shadow-lg shadow-clinic-brand/25">
+                                <i class="fas fa-check-circle mr-1"></i> Confirm Booking
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Booking Summary Sidecard (Col 4) -->
+            <div class="lg:col-span-4 bg-clinic-surface dark:bg-clinic-dark-surface p-6 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-xl space-y-4 sticky top-28">
+                <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white border-b border-clinic-border dark:border-clinic-dark-border pb-3">Visit Summary</h3>
+                <div class="space-y-3 text-xs">
+                    <div>
+                        <span class="text-clinic-muted dark:text-clinic-dark-secondary block text-[11px]">Selected Clinical Service:</span>
+                        <strong class="text-clinic-brand dark:text-clinic-dark-accent text-sm" id="sumService">Plantar Fasciitis & Heel Pain Protocol</strong>
+                    </div>
+                    <div>
+                        <span class="text-clinic-muted dark:text-clinic-dark-secondary block text-[11px]">Attending Physician:</span>
+                        <strong class="text-clinic-primary dark:text-white" id="sumDoctor">Dr. Julian Vance, DPM (Surgeon)</strong>
+                    </div>
+                    <div>
+                        <span class="text-clinic-muted dark:text-clinic-dark-secondary block text-[11px]">Date & Time:</span>
+                        <strong class="text-clinic-primary dark:text-white" id="sumDateTime">Tomorrow, Sept 17 at 9:00 AM</strong>
+                    </div>
+                    <div>
+                        <span class="text-clinic-muted dark:text-clinic-dark-secondary block text-[11px]">Location:</span>
+                        <strong class="text-clinic-primary dark:text-white">450 Medical Heights Blvd, Suite 210, Seattle</strong>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-clinic-sage dark:bg-clinic-dark-elevated rounded-2xl text-[11px] text-clinic-secondary dark:text-clinic-dark-secondary border border-clinic-border dark:border-clinic-dark-border space-y-1">
+                    <div class="font-bold flex items-center gap-1 text-clinic-brand dark:text-clinic-dark-accent"><i class="fas fa-info-circle"></i> Cancellation Policy:</div>
+                    <p>No fee for cancellations made 24 hours prior. We verify insurance coverage before you arrive.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== CONFIRMATION MODAL ===== -->
+    <div id="bookingConfirmModal" class="modal-backdrop">
+        <div class="modal-content p-8 max-w-md text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent text-3xl flex items-center justify-center mx-auto">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Appointment Confirmed!</h3>
+            <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary leading-relaxed">
+                Confirmation code <strong class="text-clinic-brand dark:text-clinic-dark-accent">#STP-94812</strong> has been sent to your email and phone via SMS.
+            </p>
+            <div class="bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border p-4 rounded-2xl text-xs text-left space-y-1 text-clinic-secondary dark:text-clinic-dark-secondary">
+                <div><strong>Service:</strong> <span id="modalService">Plantar Fasciitis</span></div>
+                <div><strong>Specialist:</strong> <span id="modalDoctor">Dr. Julian Vance</span></div>
+                <div><strong>Slot:</strong> <span id="modalSlot">Tomorrow, Sept 17 at 9:00 AM</span></div>
+            </div>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="dashboard.html" class="btn-primary-pill text-xs py-2.5 justify-center">
+                    <i class="fas fa-user-circle mr-1"></i> View in Patient Portal
+                </a>
+                <button onclick="closeModal('bookingConfirmModal'); window.location.href='index.html';" class="btn-outline-pill text-xs py-2 justify-center">Return to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-16 pb-8 bg-clinic-dark-surface text-clinic-dark-secondary border-t border-clinic-dark-border">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1: Clinic Overview -->
+                <div>
+                    <a href="index.html" class="logo-wrapper mb-4">
+                        <div class="logo-icon">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <div>
+                            <span class="logo-text text-clinic-dark-primary">Step<span class="text-clinic-brand dark:text-clinic-dark-accent">Well</span></span>
+                            <span class="logo-sub text-clinic-dark-secondary">Podiatry & Foot Care</span>
+                        </div>
+                    </a>
+                    <p class="text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                        State-of-the-art foot and ankle medicine clinic combining digital biomechanics, non-invasive therapies, and reconstructive surgical precision.
+                    </p>
+                    <div class="flex gap-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="Facebook"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="Instagram"><i class="fab fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-clinic-dark-elevated border border-clinic-dark-border flex items-center justify-center text-clinic-dark-accent hover:bg-clinic-brand hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Quick Navigation</h4>
+                    <ul class="space-y-2.5 text-sm text-clinic-dark-secondary">
+                        <li><a href="index.html" class="hover:text-clinic-dark-accent transition">Home (Clinical Podiatry)</a></li>
+                        <li><a href="home2.html" class="hover:text-clinic-dark-accent transition">Home 2 (Sports Biomechanics)</a></li>
+                        <li><a href="about.html" class="hover:text-clinic-dark-accent transition">About Our Practice</a></li>
+                        <li><a href="specialists.html" class="hover:text-clinic-dark-accent transition">Our Board Podiatrists</a></li>
+                        <li><a href="dashboard.html" class="hover:text-clinic-dark-accent transition">Patient Portal & Scans</a></li>
+                        <li><a href="booking.html" class="hover:text-clinic-dark-accent transition">Schedule Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Key Treatments -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Clinical Specialties</h4>
+                    <ul class="space-y-2.5 text-sm text-clinic-dark-secondary">
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Plantar Fasciitis & Shockwave</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Custom 3D-Printed Orthotics</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Diabetic Foot & Ulcer Care</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Minimally Invasive Bunion Surgery</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Laser Fungal Nail Therapy</a></li>
+                        <li><a href="services.html" class="hover:text-clinic-dark-accent transition">Achilles Tendonitis Rehab</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Clinic Hours & Contact -->
+                <div>
+                    <h4 class="text-clinic-dark-primary font-bold text-base mb-4 border-l-2 border-clinic-brand dark:border-clinic-dark-accent pl-3">Clinic Information</h4>
+                    <ul class="space-y-3 text-sm text-clinic-dark-secondary">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fas fa-map-marker-alt text-clinic-brand dark:text-clinic-dark-accent mt-1"></i>
+                            <span>450 Medical Heights Blvd, Suite 210, Seattle, WA 98101</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-phone-alt text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>(888) 555-STEP / (888) 555-7837</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fas fa-envelope text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>care@stepwellpodiatry.com</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 pt-1">
+                            <i class="fas fa-clock text-clinic-brand dark:text-clinic-dark-accent mt-1"></i>
+                            <span>Mon – Fri: 7:30 AM – 6:00 PM<br>Sat: 8:00 AM – 1:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-clinic-dark-border pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-clinic-muted dark:text-clinic-dark-secondary">
+                <p>© 2026 StepWell Podiatry & Advanced Foot Care Center. All Rights Reserved.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-clinic-dark-accent">Privacy Policy</a>
+                    <a href="#" class="hover:text-clinic-dark-accent">HIPAA Compliance</a>
+                    <a href="#" class="hover:text-clinic-dark-accent">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/motion.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        let selectedService = 'Plantar Fasciitis & Heel Pain Protocol';
+        let selectedDoctor = 'Dr. Julian Vance, DPM (Surgeon)';
+        let selectedDate = 'Tomorrow, Sept 17';
+        let selectedTime = '9:00 AM';
+
+        function goToStep(step) {
+            for (let i = 1; i <= 4; i++) {
+                const el = document.getElementById(`step${i}`);
+                const tab = document.getElementById(`stepTab${i}`);
+                if (el) el.classList.add('hidden');
+                if (tab) {
+                    tab.classList.remove('text-clinic-brand', 'dark:text-clinic-dark-accent', 'font-bold', 'border-clinic-brand');
+                    tab.classList.add('text-clinic-muted', 'dark:text-clinic-dark-secondary', 'border-transparent');
+                }
+            }
+            const activeEl = document.getElementById(`step${step}`);
+            const activeTab = document.getElementById(`stepTab${step}`);
+            if (activeEl) activeEl.classList.remove('hidden');
+            if (activeTab) {
+                activeTab.classList.add('text-clinic-brand', 'dark:text-clinic-dark-accent', 'font-bold', 'border-clinic-brand');
+                activeTab.classList.remove('text-clinic-muted', 'dark:text-clinic-dark-secondary', 'border-transparent');
+            }
+        }
+
+        function chooseService(name, cost) {
+            selectedService = name;
+            document.getElementById('sumService').textContent = name;
+            document.querySelectorAll('.service-opt-btn').forEach(btn => {
+                btn.classList.remove('border-clinic-brand', 'bg-clinic-brand/10');
+                btn.classList.add('border-clinic-border', 'dark:border-clinic-dark-border');
+            });
+            event.currentTarget.classList.add('border-clinic-brand', 'bg-clinic-brand/10');
+            event.currentTarget.classList.remove('border-clinic-border', 'dark:border-clinic-dark-border');
+        }
+
+        function chooseDoctor(doc) {
+            selectedDoctor = doc;
+            document.getElementById('sumDoctor').textContent = doc;
+            document.querySelectorAll('.doc-opt-btn').forEach(btn => {
+                btn.classList.remove('border-clinic-brand', 'bg-clinic-brand/10');
+                btn.classList.add('border-clinic-border', 'dark:border-clinic-dark-border');
+            });
+            event.currentTarget.classList.add('border-clinic-brand', 'bg-clinic-brand/10');
+            event.currentTarget.classList.remove('border-clinic-border', 'dark:border-clinic-dark-border');
+        }
+
+        function chooseDate(date, btn) {
+            selectedDate = date;
+            document.querySelectorAll('.date-btn').forEach(b => {
+                b.classList.remove('bg-clinic-brand', 'text-white', 'shadow');
+                b.classList.add('border', 'border-clinic-border', 'dark:border-clinic-dark-border');
+            });
+            btn.classList.add('bg-clinic-brand', 'text-white', 'shadow');
+            btn.classList.remove('border');
+            updateDateTimeSummary();
+        }
+
+        function chooseTime(time, btn) {
+            selectedTime = time;
+            document.querySelectorAll('.slot-btn').forEach(b => {
+                b.classList.remove('border-clinic-brand', 'bg-clinic-brand/10', 'font-bold', 'text-clinic-primary', 'dark:text-white');
+                b.classList.add('border-clinic-border', 'dark:border-clinic-dark-border');
+            });
+            btn.classList.add('border-clinic-brand', 'bg-clinic-brand/10', 'font-bold', 'text-clinic-primary', 'dark:text-white');
+            btn.classList.remove('border-clinic-border', 'dark:border-clinic-dark-border');
+            updateDateTimeSummary();
+        }
+
+        function updateDateTimeSummary() {
+            document.getElementById('sumDateTime').textContent = `${selectedDate} at ${selectedTime}`;
+        }
+
+        function submitBooking(e) {
+            e.preventDefault();
+            document.getElementById('modalService').textContent = selectedService;
+            document.getElementById('modalDoctor').textContent = selectedDoctor;
+            document.getElementById('modalSlot').textContent = `${selectedDate} at ${selectedTime}`;
+            openModal('bookingConfirmModal');
+        }
+
+        // Check if query param treatment is passed
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const treatment = params.get('treatment');
+            const doctor = params.get('doctor');
+            if (treatment) {
+                selectedService = treatment;
+                document.getElementById('sumService').textContent = treatment;
+            }
+            if (doctor) {
+                selectedDoctor = doctor;
+                document.getElementById('sumDoctor').textContent = doctor;
+            }
+        });
+    </script>
+</body>
+</html>
