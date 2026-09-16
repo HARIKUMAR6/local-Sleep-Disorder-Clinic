@@ -164,107 +164,110 @@
         </div>
     </nav>
 
-    <!-- ===== SECTION 1: HERO (STAGGERED ENTRANCE — WARM IVORY CANVAS) ===== -->
-    <header class="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary">
-        <!-- Ambient Background Glow (Subtle & Clinical) -->
-        <div class="absolute inset-0 z-0 pointer-events-none opacity-40 dark:opacity-15">
-            <div class="absolute top-20 left-10 w-96 h-96 bg-clinic-sage rounded-full blur-3xl"></div>
-            <div class="absolute bottom-10 right-10 w-[30rem] h-[30rem] bg-clinic-accent dark:bg-clinic-dark-elevated rounded-full blur-3xl"></div>
+    <!-- ===== SECTION 1: HERO — ASYMMETRIC CLINICAL FRAMING ===== -->
+    <section id="hero" class="hero-section relative min-h-[88vh] lg:min-h-[90vh] flex items-center pt-28 sm:pt-32 pb-16 overflow-hidden bg-[#032626] dark:bg-black text-white">
+        <!-- Background Layer: Clinical subject positioned predominantly on the right -->
+        <div class="hero-background absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            <img src="assets/images/patient_foot_care.jpg" alt="Specialist Podiatrist Examining Patient Foot at StepWell Clinic" class="w-full h-full object-cover object-[72%_center] lg:object-[68%_center] scale-[1.02] transition-transform duration-1000 ease-out">
         </div>
 
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-            <!-- Hero Left: Staggered Content Sequence -->
-            <div class="lg:col-span-7 space-y-6 text-left">
-                <!-- Stagger 1: Eyebrow Badge -->
-                <div class="hero-reveal-item hero-delay-1 inline-flex items-center gap-2.5 bg-clinic-sage dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border px-4 py-1.5 rounded-full backdrop-blur-md">
-                    <span class="w-2 h-2 rounded-full bg-clinic-brand dark:bg-clinic-dark-accent animate-ping"></span>
-                    <span class="text-xs uppercase tracking-widest font-bold text-clinic-brand dark:text-clinic-dark-accent">Board-Certified Podiatric Physicians</span>
+        <!-- Directional Scrim: Dark readable negative space on LEFT, clinical action visible on RIGHT -->
+        <!-- Desktop / Tablet Scrim (Horizontal left-to-right in LTR, reversed in RTL) -->
+        <div class="hero-scrim hidden md:block absolute inset-0 z-[1] pointer-events-none bg-gradient-to-r rtl:bg-gradient-to-l from-[#032626] via-[#032626]/90 via-38% to-transparent dark:from-black dark:via-black/92 dark:to-transparent"></div>
+        <div class="hero-scrim-deep hidden md:block absolute inset-y-0 start-0 w-2/5 z-[1] pointer-events-none bg-gradient-to-r rtl:bg-gradient-to-l from-[#032626] dark:from-black via-[#032626]/85 dark:via-black/85 to-transparent"></div>
+
+        <!-- Mobile Scrim (Vertical top-to-bottom for stacked composition) -->
+        <div class="hero-scrim-mobile md:hidden absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent via-[#032626]/75 via-42% to-[#032626] dark:via-black/85 dark:to-black"></div>
+
+        <!-- Clinical Hotspots (Desktop & Tablet only, positioned over right-side clinical action) -->
+        <div class="hero-hotspots hidden md:block pointer-events-none" aria-hidden="true">
+            <!-- Hotspot 1: Clinical Foot Care -->
+            <div class="absolute top-[32%] left-[58%] lg:left-[60%] rtl:left-auto rtl:right-[58%] lg:rtl:right-[60%] z-10 pointer-events-auto">
+                <div class="hotspot-pin inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 dark:bg-black/50 backdrop-blur-md border border-white/25 dark:border-white/15 text-white text-xs font-medium shadow-lg transition-transform hover:scale-105">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#53C8B8] opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#53C8B8]"></span>
+                    </span>
+                    <span>Clinical Foot Care</span>
+                </div>
+                <!-- Subtle connecting line pointing toward clinical interaction -->
+                <svg class="w-12 h-8 text-white/30 stroke-current -mt-1 ml-4 rtl:ml-0 rtl:mr-4" viewBox="0 0 48 32" fill="none">
+                    <path d="M4 2 L22 22 L42 22" stroke-width="1" stroke-dasharray="2 2" />
+                </svg>
+            </div>
+
+            <!-- Hotspot 2: Custom Orthotics -->
+            <div class="absolute top-[56%] left-[74%] lg:left-[76%] rtl:left-auto rtl:right-[74%] lg:rtl:right-[76%] z-10 pointer-events-auto">
+                <div class="hotspot-pin inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 dark:bg-black/50 backdrop-blur-md border border-white/25 dark:border-white/15 text-white text-xs font-medium shadow-lg transition-transform hover:scale-105">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#53C8B8] opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#53C8B8]"></span>
+                    </span>
+                    <span>Custom Orthotics</span>
+                </div>
+                <!-- Subtle connecting line -->
+                <svg class="w-12 h-8 text-white/30 stroke-current -mt-1 ml-4 rtl:ml-0 rtl:mr-4" viewBox="0 0 48 32" fill="none">
+                    <path d="M4 2 L20 20 L40 20" stroke-width="1" stroke-dasharray="2 2" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Floating Information Badge (Desktop & Tablet: Lower-right region) -->
+        <div class="hero-proof hidden md:flex absolute bottom-10 right-8 lg:right-14 rtl:right-auto rtl:left-8 lg:rtl:left-14 z-10 items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/15 dark:bg-black/50 backdrop-blur-xl border border-white/25 dark:border-white/15 shadow-2xl">
+            <div class="w-10 h-10 rounded-xl bg-[#53C8B8]/20 flex items-center justify-center text-[#53C8B8]">
+                <i class="fas fa-heartbeat text-base"></i>
+            </div>
+            <div class="text-left rtl:text-right">
+                <div class="text-[11px] font-bold text-[#53C8B8] uppercase tracking-wider">Foot Care</div>
+                <div class="text-xs font-semibold text-white">Personalized Treatment</div>
+            </div>
+        </div>
+
+        <!-- Main Content Layer: Positioned inside Left Negative Space -->
+        <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-10 py-10 md:py-16">
+            <div class="hero-content max-w-xl text-left rtl:text-right space-y-6">
+                <!-- Eyebrow & Micro Indicator -->
+                <div class="inline-flex items-center gap-3">
+                    <span class="text-[11px] font-mono font-bold tracking-widest text-[#53C8B8] uppercase">01 / FOOT CARE</span>
+                    <span class="w-1 h-1 rounded-full bg-white/30"></span>
+                    <span class="text-xs font-semibold tracking-wider text-white/90 uppercase">PODIATRY & FOOT CARE</span>
                 </div>
 
-                <!-- Stagger 2: Main Serif Heading -->
-                <h1 class="hero-reveal-item hero-delay-2 font-serif text-4xl sm:text-6xl xl:text-7xl font-semibold leading-[1.08] tracking-tight text-clinic-primary dark:text-clinic-dark-primary">
-                    Advanced Precision for <span class="italic text-clinic-brand dark:text-clinic-dark-accent font-normal">Painless</span> Mobility
+                <!-- Main Heading (Plus Jakarta Sans) -->
+                <h1 class="font-sans text-3xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-bold leading-[1.06] tracking-tight text-white">
+                    Better Foot Care Starts With the <span class="text-[#53C8B8]">Right Step</span>
                 </h1>
 
-                <!-- Stagger 3: Supporting Text -->
-                <p class="hero-reveal-item hero-delay-3 text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg xl:text-xl font-normal max-w-2xl leading-relaxed">
-                    Step into cutting-edge podiatric medicine. From 3D digital gait pressure mapping and custom carbon orthotics to minimally invasive heel surgery, we restore your freedom to walk pain-free.
+                <!-- Supporting Description -->
+                <p class="text-base sm:text-lg text-white/80 font-normal leading-relaxed max-w-lg">
+                    Thoughtful podiatry care focused on common foot concerns, personalized treatment planning, and ongoing support.
                 </p>
 
-                <!-- Stagger 4: CTA Button Group -->
-                <div class="hero-reveal-item hero-delay-4 flex flex-wrap items-center gap-4 pt-2">
-                    <a href="booking.html" class="btn-primary-pill text-base py-3 px-8 shadow-md">
-                        <i class="far fa-calendar-check"></i> Book Clinical Exam
+                <!-- CTA Actions -->
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="booking.html" class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg bg-[#53C8B8] hover:bg-[#3db3a3] text-[#032626] font-bold text-sm tracking-wide shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#53C8B8] focus:ring-offset-2 focus:ring-offset-[#032626]">
+                        <span>Book a Visit</span>
+                        <i class="far fa-calendar-alt text-xs"></i>
                     </a>
-                    <a href="services.html" class="btn-outline-pill text-base py-3 px-7">
-                        <i class="fas fa-stethoscope"></i> View Treatments
+                    <a href="services.html" class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg border border-white/30 hover:border-white/70 bg-white/5 hover:bg-white/10 text-white font-semibold text-sm tracking-wide backdrop-blur-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50">
+                        <span>Explore Treatments</span>
+                        <i class="fas fa-arrow-right rtl:rotate-180 text-xs"></i>
                     </a>
-                    <button onclick="openModal('quickModal')" class="text-sm font-medium text-clinic-secondary dark:text-clinic-dark-secondary hover:text-clinic-brand dark:hover:text-clinic-dark-accent flex items-center gap-2 underline underline-offset-4 ml-2 transition">
-                        <i class="fas fa-play-circle text-clinic-brand dark:text-clinic-dark-accent text-base"></i> 60-Sec Foot Triage
-                    </button>
                 </div>
 
-                <!-- Stagger 5: Clinical Credential Badges -->
-                <div class="hero-reveal-item hero-delay-5 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-clinic-border dark:border-clinic-dark-border text-xs sm:text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-clinic-brand dark:text-clinic-dark-accent text-base"></i>
-                        <span>APMA Accredited</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-clinic-brand dark:text-clinic-dark-accent text-base"></i>
-                        <span>Zero-Radiation Scans</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-clinic-brand dark:text-clinic-dark-accent text-base"></i>
-                        <span>Same-Day Relief</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-clinic-brand dark:text-clinic-dark-accent text-base"></i>
-                        <span>Major Insurances</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hero Right: Visual with Biomechanical Scanline & Floating Badges -->
-            <div class="lg:col-span-5 relative hero-reveal-item hero-delay-4">
-                <div class="image-reveal-frame rounded-[2.5rem] border border-clinic-border dark:border-clinic-dark-border shadow-2xl overflow-hidden relative group">
-                    <img src="assets/images/hero_clinic.jpg" alt="StepWell Modern Podiatry and Gait Analysis Suite" class="w-full h-[460px] object-cover">
-                    <div class="scan-line-overlay"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
-                    
-                    <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white">
-                        <div>
-                            <span class="text-xs uppercase tracking-widest text-[#65B8AD] font-bold block">Clinic Suite #4</span>
-                            <h2 class="text-lg font-bold text-white">Digital Gait & Pressure Lab</h2>
-                        </div>
-                        <span class="bg-[#176B63] dark:bg-[#65B8AD] text-white dark:text-black px-3 py-1 rounded-full text-xs font-semibold">Active Suite</span>
-                    </div>
-                </div>
-
-                <!-- Floating Micro Card 1: 3D Arch Scan -->
-                <div class="floating-subtle absolute -top-6 -left-6 bg-clinic-surface/95 dark:bg-clinic-dark-surface/95 backdrop-blur-md border border-clinic-border dark:border-clinic-dark-border p-4 rounded-2xl shadow-xl hidden sm:flex items-center gap-3 text-clinic-primary dark:text-clinic-dark-primary">
-                    <div class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold text-lg">
-                        <i class="fas fa-shoe-prints"></i>
+                <!-- Mobile Information Badge (Normal flow below CTA on mobile ≤ 767px) -->
+                <div class="flex md:hidden items-center gap-3.5 pt-5 border-t border-white/15">
+                    <div class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-[#53C8B8]">
+                        <i class="fas fa-heartbeat text-sm"></i>
                     </div>
                     <div>
-                        <div class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold">3D Arch Precision</div>
-                        <div class="text-sm font-bold">Sub-Millimeter Fit</div>
-                    </div>
-                </div>
-
-                <!-- Floating Micro Card 2: Patient Satisfaction -->
-                <div class="floating-subtle-delayed absolute -bottom-6 -right-6 bg-clinic-surface/95 dark:bg-clinic-dark-surface/95 backdrop-blur-md border border-clinic-border dark:border-clinic-dark-border p-4 rounded-2xl shadow-xl hidden sm:flex items-center gap-3 text-clinic-primary dark:text-clinic-dark-primary">
-                    <div class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold text-lg">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <div>
-                        <div class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold">Patient Outcomes</div>
-                        <div class="text-sm font-bold">99.2% Pain Resolution</div>
+                        <div class="text-[11px] font-bold text-[#53C8B8] uppercase tracking-wider">Foot Care</div>
+                        <div class="text-xs font-semibold text-white/90">Personalized Treatment</div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- ===== SECTION 2: INTERACTIVE SYMPTOM TRIAGE BAR ===== -->
     <section class="relative z-20 -mt-10 max-w-7xl mx-auto px-6">

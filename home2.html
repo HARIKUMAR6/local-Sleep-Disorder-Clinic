@@ -160,69 +160,87 @@
         </div>
     </nav>
 
-    <!-- ===== SECTION 1: SPORTS HERO (WARM IVORY CANVAS) ===== -->
-    <header class="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary">
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-            <!-- Left: Hero Text -->
-            <div class="lg:col-span-7 space-y-6 text-left">
-                <div class="hero-reveal-item hero-delay-1 inline-flex items-center gap-2.5 bg-clinic-sage dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border px-4 py-1.5 rounded-full backdrop-blur-md">
-                    <span class="w-2 h-2 rounded-full bg-clinic-brand dark:bg-clinic-dark-accent animate-pulse"></span>
-                    <span class="text-xs uppercase tracking-widest font-bold text-clinic-brand dark:text-clinic-dark-accent">High-Performance Sports Podiatry Lab</span>
-                </div>
+    <!-- ===== SECTION 1: HOME 2 HERO — ORGANIC BLOB + PASTEL MEDICAL BLUE + SVG WAVE ===== -->
+    <section id="hero-home2" class="relative min-h-[85vh] lg:min-h-[88vh] flex items-center pt-28 sm:pt-32 pb-24 sm:pb-32 overflow-hidden bg-[#BFE5F8] dark:bg-[#071728] text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300">
+        
+        <!-- Geometric Dot Grid Accents (Section 12, 13, 14: Hidden on mobile < 768px) -->
+        <!-- Top-Left Dot Matrix -->
+        <div class="dot-matrix dot-top-left absolute top-[12%] left-[3%] w-32 h-28 pointer-events-none hidden md:block opacity-65 dark:opacity-20 z-0" 
+             style="background-image: radial-gradient(rgba(255,255,255,0.7) 2.5px, transparent 2.5px); background-size: 18px 18px;" 
+             aria-hidden="true"></div>
+        
+        <!-- Middle-Right Dot Matrix -->
+        <div class="dot-matrix dot-middle-right absolute top-[32%] right-[2%] w-32 h-32 pointer-events-none hidden md:block opacity-60 dark:opacity-20 z-0" 
+             style="background-image: radial-gradient(rgba(255,255,255,0.7) 2.5px, transparent 2.5px); background-size: 18px 18px;" 
+             aria-hidden="true"></div>
 
-                <h1 class="hero-reveal-item hero-delay-2 font-serif text-4xl sm:text-6xl xl:text-7xl font-semibold leading-[1.08] text-clinic-primary dark:text-clinic-dark-primary">
-                    Optimize Your Stride. <br><span class="italic text-clinic-brand dark:text-clinic-dark-accent font-normal">Eliminate</span> Overuse Injuries.
-                </h1>
-
-                <p class="hero-reveal-item hero-delay-3 text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg xl:text-xl max-w-2xl leading-relaxed">
-                    Designed for marathon runners, triathletes, court players, and dancers. We integrate high-speed optoelectronic gait analysis with custom carbon-fiber energy return orthotics to keep you competing at your peak.
-                </p>
-
-                <div class="hero-reveal-item hero-delay-4 flex flex-wrap items-center gap-4 pt-2">
-                    <a href="booking.html" class="btn-primary-pill text-base py-3 px-8 shadow-md">
-                        <i class="fas fa-running"></i> Book Athlete Gait Scan
-                    </a>
-                    <a href="services.html" class="btn-outline-pill text-base py-3 px-7">
-                        <i class="fas fa-bolt"></i> Sports Rehab Protocols
-                    </a>
-                </div>
-
-                <div class="hero-reveal-item hero-delay-5 pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-clinic-border dark:border-clinic-dark-border text-xs sm:text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-tachometer-alt text-clinic-brand dark:text-clinic-dark-accent"></i>
-                        <span>120 FPS Motion Capture</span>
+        <!-- Main Content & Image Container (Two-column CSS grid on desktop: 1.1fr 0.9fr) -->
+        <div class="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+                
+                <!-- Left: Editorial Content (Order 2 on mobile, Order 1 on desktop) -->
+                <div class="order-2 lg:order-1 text-left rtl:text-right space-y-6 max-w-xl mx-auto lg:mx-0">
+                    
+                    <!-- Eyebrow -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 dark:bg-clinic-dark-elevated border border-white/80 dark:border-clinic-dark-border shadow-xs backdrop-blur-sm">
+                        <span class="w-2 h-2 rounded-full bg-[#273B75] dark:bg-[#53C8B8]"></span>
+                        <span class="text-xs uppercase tracking-widest font-bold text-[#273B75] dark:text-[#53C8B8]">PODIATRY & FOOT CARE</span>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-shoe-prints text-clinic-brand dark:text-clinic-dark-accent"></i>
-                        <span>Dynamic Carbon Insoles</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-wave-square text-clinic-brand dark:text-clinic-dark-accent"></i>
-                        <span>ESWT Tendon Therapy</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-medal text-clinic-brand dark:text-clinic-dark-accent"></i>
-                        <span>Pro Athlete Trusted</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Right: High-Tech Treadmill Image -->
-            <div class="lg:col-span-5 relative hero-reveal-item hero-delay-4">
-                <div class="image-reveal-frame rounded-[2.5rem] border border-clinic-border dark:border-clinic-dark-border shadow-2xl overflow-hidden relative group">
-                    <img src="assets/images/sports_podiatry_run.jpg" alt="High speed athletic gait analysis on treadmill" class="w-full h-[480px] object-cover">
-                    <div class="scan-line-overlay"></div>
-                    <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white">
-                        <div>
-                            <span class="text-xs uppercase tracking-widest text-[#65B8AD] font-bold block">Biomechanical Lab 1</span>
-                            <h2 class="text-lg font-bold text-white">High-Speed Motion Capture</h2>
-                        </div>
-                        <span class="bg-[#176B63] dark:bg-[#65B8AD] px-3 py-1 rounded-full text-xs font-semibold text-white dark:text-black font-bold">14.5 km/h Scan</span>
+                    <!-- Heading (Plus Jakarta Sans, Editorial Weight) -->
+                    <h1 class="font-sans text-3xl sm:text-5xl lg:text-5xl xl:text-[3.8rem] font-bold text-[#1E3A78] dark:text-white leading-[1.12] tracking-tight">
+                        Better Foot Care <br class="hidden sm:inline">
+                        <span class="text-[#273B75] dark:text-[#53C8B8]">for Every Step</span>
+                    </h1>
+
+                    <!-- Supporting Copy -->
+                    <p class="text-base sm:text-lg text-[#3B6088] dark:text-slate-300 font-normal leading-relaxed">
+                        Thoughtful podiatry care for common foot concerns, personalized treatment planning, and ongoing support for everyday mobility.
+                    </p>
+
+                    <!-- CTA Actions (Refined Pill) -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="booking.html" class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#273B75] hover:bg-[#1b2b56] text-white font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#273B75] focus:ring-offset-2 focus:ring-offset-[#BFE5F8]">
+                            <span>Book a Visit</span>
+                            <i class="far fa-calendar-alt text-xs"></i>
+                        </a>
+                        <a href="services.html" class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-[#273B75]/30 dark:border-white/30 text-[#273B75] dark:text-white hover:bg-white/40 dark:hover:bg-white/10 font-semibold text-sm tracking-wide backdrop-blur-xs transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#273B75]/40">
+                            <span>Explore Treatments</span>
+                            <i class="fas fa-arrow-right rtl:rotate-180 text-xs"></i>
+                        </a>
                     </div>
                 </div>
+
+                <!-- Right: Organic Curved Blob Image Frame (Order 1 on mobile, Order 2 on desktop) -->
+                <div class="order-1 lg:order-2 flex justify-center items-center relative">
+                    <!-- Subtle organic arc line behind image referencing foot arch and movement -->
+                    <svg class="absolute -inset-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] text-[#1E3A78]/15 dark:text-clinic-dark-accent/20 pointer-events-none -z-10" viewBox="0 0 500 500" fill="none" aria-hidden="true">
+                        <path d="M 70,260 C 60,120 190,50 330,60 C 450,70 485,190 455,330 C 425,445 285,475 165,435" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 6" />
+                    </svg>
+
+                    <!-- Organic Blob Container with Asymmetric Border Radius & Outline -->
+                    <div class="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] lg:w-[440px] lg:h-[440px] xl:w-[480px] xl:h-[480px] overflow-hidden transition-transform duration-500 hover:scale-[1.02]"
+                         style="border-radius: 50% 50% 48% 52% / 46% 48% 52% 54%; border: 4px solid rgba(255,255,255,0.78); box-shadow: 0 16px 40px -10px rgba(0,70,140,0.14);">
+                        <img src="assets/images/treatment-diabetic-care.jpg" 
+                             alt="Warm multigenerational patient foot care and mobility consultation at StepWell Clinic" 
+                             class="w-full h-full object-cover object-[35%_25%]">
+                    </div>
+                </div>
+
             </div>
         </div>
-    </header>
+
+        <!-- SVG Wave Divider: Smooth organic transition into white/dark surface (Section 10, 11, 23, 24) -->
+        <div class="hero-wave-divider absolute left-0 bottom-0 w-full pointer-events-none z-[3] overflow-hidden leading-none" 
+             style="height: clamp(75px, 9vw, 135px);" 
+             aria-hidden="true">
+            <svg class="w-full h-full block" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path class="fill-white dark:fill-clinic-dark-surface transition-colors duration-300" 
+                      d="M0,160 C320,260 480,90 820,180 C1120,260 1320,130 1440,160 L1440,320 L0,320 Z"></path>
+            </svg>
+        </div>
+
+    </section>
 
     <!-- ===== SECTION 2: 3 CORE ATHLETIC REHAB PROGRAMS (CONTENT — WHITE) ===== -->
     <section class="py-24 px-6 bg-clinic-surface dark:bg-clinic-dark-surface transition-colors duration-300">
