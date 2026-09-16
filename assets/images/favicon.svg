@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      :root {
+        --bg-color: #176B63;
+        --border-color: #0F514B;
+        --icon-color: #FFFFFF;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-color: #141414;
+          --border-color: #292D2B;
+          --icon-color: #65B8AD;
+        }
+      }
+      .brand-bg {
+        fill: var(--bg-color);
+        stroke: var(--border-color);
+        stroke-width: 14px;
+      }
+      .brand-icon {
+        fill: var(--icon-color);
+      }
+    </style>
+  </defs>
+  <!-- Approved Brand Mark Container: 35% corner radius, brand teal background, subtle border -->
+  <rect class="brand-bg" x="7" y="7" width="498" height="498" rx="175" ry="175" />
+  <!-- Approved Brand Mark Symbol: FontAwesome 6 shoe-prints -->
+  <g transform="translate(115.2, 143.36) scale(0.44)">
+    <path class="brand-icon" d="M416 0C352.3 0 256 32 256 32l0 128c48 0 76 16 104 32s56 32 104 32c56.4 0 176-16 176-96S512 0 416 0zM128 96c0 35.3 28.7 64 64 64l32 0 0-128-32 0c-35.3 0-64 28.7-64 64zM288 512c96 0 224-48 224-128s-119.6-96-176-96c-48 0-76 16-104 32s-56 32-104 32l0 128s96.3 32 160 32zM0 416c0 35.3 28.7 64 64 64l32 0 0-128-32 0c-35.3 0-64 28.7-64 64z"/>
+  </g>
+</svg>
