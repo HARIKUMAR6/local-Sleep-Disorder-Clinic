@@ -120,7 +120,7 @@
     </header>
 
     <!-- ===== MULTI-STEP SCHEDULER WIZARD ===== -->
-    <main class="py-16 px-6 bg-clinic-canvas dark:bg-clinic-dark-canvas transition-colors duration-300 flex-1">
+    <main class="py-16 px-6 bg-clinic-canvas dark:bg-clinic-dark-canvas transition-colors duration-300 flex-1" id="booking-section">
         <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <!-- Step Form Wizard (Col 8) -->
             <div class="lg:col-span-8 bg-clinic-surface dark:bg-clinic-dark-surface p-6 sm:p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-xl">
@@ -292,6 +292,463 @@
             </div>
         </div>
     </main>
+
+    <!-- ==========================================================================
+         NEW SECTION 01 — Before You Book
+         ========================================================================== -->
+    <section class="py-20 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas border-t border-b border-clinic-border dark:border-clinic-dark-border transition-colors duration-300 relative overflow-hidden" id="before-you-book">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-widest bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 border border-clinic-brand/30 dark:border-clinic-dark-accent/30 px-4 py-1.5 rounded-full inline-block mb-3">
+                    BEFORE YOUR VISIT
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-clinic-primary dark:text-white leading-tight mb-4">
+                    A Few Things to Consider Before You Book
+                </h2>
+                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg leading-relaxed">
+                    A little preparation can help you make the most of your appointment. Think about what you have been experiencing and what you would like to discuss with your podiatrist.
+                </p>
+            </div>
+
+            <!-- Structured 3-Step Preparation Component (Non-Editorial) -->
+            <div class="relative">
+                <!-- Desktop Connector Line -->
+                <div class="hidden md:block absolute top-1/2 left-20 right-20 h-0.5 bg-clinic-border dark:bg-clinic-dark-border -translate-y-10 z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                    <!-- Point 01: What Brings You In? -->
+                    <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-8 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-16 h-16 rounded-2xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-2xl border border-clinic-border dark:border-clinic-dark-border group-hover:bg-clinic-brand group-hover:text-white transition-colors duration-300">
+                                    <i class="fas fa-shoe-prints"></i>
+                                </div>
+                                <span class="font-serif text-3xl font-bold text-clinic-brand dark:text-clinic-dark-accent">01</span>
+                            </div>
+                            <span class="text-[11px] uppercase tracking-widest font-bold text-clinic-muted dark:text-clinic-dark-secondary block mb-1">Focus Area</span>
+                            <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-3 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
+                                What Brings You In?
+                            </h3>
+                            <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed">
+                                Consider the foot concern, discomfort or movement difficulty you would like to discuss.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 flex items-center text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent">
+                            <span>Symptom Awareness</span>
+                            <i class="fas fa-arrow-right ml-auto rtl:rotate-180 text-[11px] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Point 02: Your Recent Foot-Care History -->
+                    <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-8 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-2">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-16 h-16 rounded-2xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-2xl border border-clinic-border dark:border-clinic-dark-border group-hover:bg-clinic-brand group-hover:text-white transition-colors duration-300">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                                <span class="font-serif text-3xl font-bold text-clinic-brand dark:text-clinic-dark-accent">02</span>
+                            </div>
+                            <span class="text-[11px] uppercase tracking-widest font-bold text-clinic-muted dark:text-clinic-dark-secondary block mb-1">Clinical Context</span>
+                            <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-3 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
+                                Recent Foot-Care History
+                            </h3>
+                            <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed">
+                                Be ready to share relevant treatment or care information that may help your podiatrist understand your situation.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 flex items-center text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent">
+                            <span>Previous Care Notes</span>
+                            <i class="fas fa-arrow-right ml-auto rtl:rotate-180 text-[11px] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Point 03: Questions You Want to Ask -->
+                    <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-8 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-3">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-16 h-16 rounded-2xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-2xl border border-clinic-border dark:border-clinic-dark-border group-hover:bg-clinic-brand group-hover:text-white transition-colors duration-300">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <span class="font-serif text-3xl font-bold text-clinic-brand dark:text-clinic-dark-accent">03</span>
+                            </div>
+                            <span class="text-[11px] uppercase tracking-widest font-bold text-clinic-muted dark:text-clinic-dark-secondary block mb-1">Patient Goals</span>
+                            <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-3 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
+                                Questions You Want to Ask
+                            </h3>
+                            <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed">
+                                Make a note of anything you would like to understand about your foot health or available care options.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 flex items-center text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent">
+                            <span>Collaborative Care</span>
+                            <i class="fas fa-arrow-right ml-auto rtl:rotate-180 text-[11px] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         NEW SECTION 02 — Find the Right Appointment
+         ========================================================================== -->
+    <section class="py-24 px-6 bg-clinic-canvas dark:bg-clinic-dark-canvas border-b border-clinic-border dark:border-clinic-dark-border transition-colors duration-300" id="appointment-options">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-widest bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 border border-clinic-brand/30 dark:border-clinic-dark-accent/30 px-4 py-1.5 rounded-full inline-block mb-3">
+                    APPOINTMENT OPTIONS
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-clinic-primary dark:text-white leading-tight mb-4">
+                    Choose the Visit That Fits Your Needs
+                </h2>
+                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg leading-relaxed">
+                    Whether you are visiting for a new concern, ongoing care or a follow-up, select the appointment option that best matches your current needs.
+                </p>
+            </div>
+
+            <!-- 3 Structured Appointment Pathways (Non-Editorial) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <!-- Pathway 1: New Patient Visit -->
+                <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-8 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:shadow-md hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl group-hover:bg-clinic-brand group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <span class="text-xs font-bold text-clinic-brand dark:text-clinic-dark-accent bg-clinic-sage dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border px-3 py-1 rounded-full">
+                                Pathway 01
+                            </span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-3 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
+                            New Patient Visit
+                        </h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                            For patients visiting the clinic for the first time or discussing a new foot-health concern.
+                        </p>
+                        <div class="space-y-2 text-xs text-clinic-muted dark:text-clinic-dark-secondary pb-6">
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent text-[10px]"></i> Thorough initial foot assessment</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent text-[10px]"></i> Symptom & footwear evaluation</div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#booking-section" class="btn-outline-pill w-full justify-center text-xs py-2.5 group-hover:bg-clinic-brand group-hover:text-white group-hover:border-clinic-brand transition-all">
+                            <span>Book New Visit</span>
+                            <i class="fas fa-arrow-right text-[10px] ml-1.5 rtl:rotate-180 rtl:mr-1.5 rtl:ml-0"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pathway 2: Follow-Up Visit -->
+                <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-8 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:shadow-md hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-2">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl group-hover:bg-clinic-brand group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <span class="text-xs font-bold text-clinic-brand dark:text-clinic-dark-accent bg-clinic-sage dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border px-3 py-1 rounded-full">
+                                Pathway 02
+                            </span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-3 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
+                            Follow-Up Visit
+                        </h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                            For patients returning to continue or review an existing care journey.
+                        </p>
+                        <div class="space-y-2 text-xs text-clinic-muted dark:text-clinic-dark-secondary pb-6">
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent text-[10px]"></i> Progress check & adjustments</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent text-[10px]"></i> Treatment response review</div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#booking-section" class="btn-outline-pill w-full justify-center text-xs py-2.5 group-hover:bg-clinic-brand group-hover:text-white group-hover:border-clinic-brand transition-all">
+                            <span>Book Follow-Up</span>
+                            <i class="fas fa-arrow-right text-[10px] ml-1.5 rtl:rotate-180 rtl:mr-1.5 rtl:ml-0"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pathway 3: Orthotic Care Visit -->
+                <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-8 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:shadow-md hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-3">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl group-hover:bg-clinic-brand group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                            <span class="text-xs font-bold text-clinic-brand dark:text-clinic-dark-accent bg-clinic-sage dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border px-3 py-1 rounded-full">
+                                Pathway 03
+                            </span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-3 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
+                            Orthotic Care Visit
+                        </h3>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
+                            For patients discussing custom orthotic needs, fitting or ongoing orthotic care.
+                        </p>
+                        <div class="space-y-2 text-xs text-clinic-muted dark:text-clinic-dark-secondary pb-6">
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent text-[10px]"></i> Custom insole fitting & checks</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent text-[10px]"></i> Biomechanical support alignment</div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#booking-section" class="btn-outline-pill w-full justify-center text-xs py-2.5 group-hover:bg-clinic-brand group-hover:text-white group-hover:border-clinic-brand transition-all">
+                            <span>Book Orthotic Visit</span>
+                            <i class="fas fa-arrow-right text-[10px] ml-1.5 rtl:rotate-180 rtl:mr-1.5 rtl:ml-0"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         NEW SECTION 03 — What Happens After You Book
+         ========================================================================== -->
+    <section class="py-24 px-6 bg-clinic-surface dark:bg-clinic-dark-surface border-b border-clinic-border dark:border-clinic-dark-border transition-colors duration-300 relative" id="after-booking">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-widest bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 border border-clinic-brand/30 dark:border-clinic-dark-accent/30 px-4 py-1.5 rounded-full inline-block mb-3">
+                    AFTER BOOKING
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-clinic-primary dark:text-white leading-tight mb-4">
+                    What Happens After You Book
+                </h2>
+                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg leading-relaxed">
+                    Once your appointment is scheduled, the next steps are designed to keep your visit clear and easy to follow.
+                </p>
+            </div>
+
+            <!-- Structured Interactive 4-Step Timeline (Horizontal on Desktop, Vertical on Mobile) -->
+            <div class="relative">
+                <!-- Desktop Horizontal Connecting Progress Line -->
+                <div class="hidden lg:block absolute top-12 left-16 right-16 h-0.5 bg-clinic-border dark:bg-clinic-dark-border z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+                    <!-- Step 01: Appointment Scheduled -->
+                    <div class="bg-clinic-canvas dark:bg-clinic-dark-elevated rounded-3xl p-7 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-full bg-clinic-surface dark:bg-clinic-dark-surface text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl border-2 border-clinic-brand dark:border-clinic-dark-accent group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <span class="font-serif text-3xl font-bold text-clinic-brand dark:text-clinic-dark-accent">01</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-widest font-bold text-clinic-muted dark:text-clinic-dark-secondary block mb-1">Confirmation</span>
+                            <h3 class="font-serif text-xl font-bold text-clinic-primary dark:text-white mb-2 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
+                                Appointment Scheduled
+                            </h3>
+                            <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed">
+                                Your visit details are confirmed through the booking process.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 text-[11px] font-semibold text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-between">
+                            <span>Instant Confirmation</span>
+                            <i class="fas fa-check text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 02: Prepare for Your Visit -->
+                    <div class="bg-clinic-canvas dark:bg-clinic-dark-elevated rounded-3xl p-7 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-2">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-full bg-clinic-surface dark:bg-clinic-dark-surface text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl border-2 border-clinic-brand dark:border-clinic-dark-accent group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <span class="font-serif text-3xl font-bold text-clinic-brand dark:text-clinic-dark-accent">02</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-widest font-bold text-clinic-muted dark:text-clinic-dark-secondary block mb-1">Preparation</span>
+                            <h3 class="font-serif text-xl font-bold text-clinic-primary dark:text-white mb-2 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
+                                Prepare for Your Visit
+                            </h3>
+                            <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed">
+                                Review your appointment information and consider the concerns you would like to discuss.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 text-[11px] font-semibold text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-between">
+                            <span>Simple Checklist</span>
+                            <i class="fas fa-check text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 03: Meet Your Podiatrist -->
+                    <div class="bg-clinic-canvas dark:bg-clinic-dark-elevated rounded-3xl p-7 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-3">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-full bg-clinic-surface dark:bg-clinic-dark-surface text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl border-2 border-clinic-brand dark:border-clinic-dark-accent group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-user-doctor"></i>
+                                </div>
+                                <span class="font-serif text-3xl font-bold text-clinic-brand dark:text-clinic-dark-accent">03</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-widest font-bold text-clinic-muted dark:text-clinic-dark-secondary block mb-1">Clinical Visit</span>
+                            <h3 class="font-serif text-xl font-bold text-clinic-primary dark:text-white mb-2 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
+                                Meet Your Podiatrist
+                            </h3>
+                            <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed">
+                                Discuss your foot-health concerns and the care options relevant to your needs.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 text-[11px] font-semibold text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-between">
+                            <span>One-on-One Care</span>
+                            <i class="fas fa-check text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 04: Continue Your Care -->
+                    <div class="bg-clinic-canvas dark:bg-clinic-dark-elevated rounded-3xl p-7 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-4">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-full bg-clinic-surface dark:bg-clinic-dark-surface text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl border-2 border-clinic-brand dark:border-clinic-dark-accent group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-heart-pulse"></i>
+                                </div>
+                                <span class="font-serif text-3xl font-bold text-clinic-brand dark:text-clinic-dark-accent">04</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-widest font-bold text-clinic-muted dark:text-clinic-dark-secondary block mb-1">Ongoing Health</span>
+                            <h3 class="font-serif text-xl font-bold text-clinic-primary dark:text-white mb-2 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
+                                Continue Your Care
+                            </h3>
+                            <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed">
+                                Follow your recommended next steps and keep track of follow-up care when needed.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 text-[11px] font-semibold text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-between">
+                            <span>Continuous Support</span>
+                            <i class="fas fa-check text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         NEW SECTION 04 — Stay Connected to Your Care
+         ========================================================================== -->
+    <section class="py-24 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas border-b border-clinic-border dark:border-clinic-dark-border transition-colors duration-300 relative overflow-hidden" id="patient-support">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-widest bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 border border-clinic-brand/30 dark:border-clinic-dark-accent/30 px-4 py-1.5 rounded-full inline-block mb-3">
+                    PATIENT SUPPORT
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-clinic-primary dark:text-white leading-tight mb-4">
+                    Stay Connected to Your Care
+                </h2>
+                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg leading-relaxed">
+                    Your appointment is one part of your wider care journey. The patient portal helps you stay connected with information related to your ongoing care.
+                </p>
+            </div>
+
+            <!-- Central Care Hub Banner -->
+            <div class="max-w-md mx-auto mb-12 p-6 rounded-3xl bg-clinic-surface dark:bg-clinic-dark-surface border border-clinic-border dark:border-clinic-dark-border text-center shadow-sm relative reveal">
+                <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-2xl pulse-teal-subtle">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <span class="text-[11px] uppercase tracking-widest font-bold text-clinic-brand dark:text-clinic-dark-accent">Digital Patient Hub</span>
+                <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mt-1">
+                    StepWell Patient Portal
+                </h3>
+                <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-1">
+                    Direct access to your ongoing podiatric records & schedules
+                </p>
+            </div>
+
+            <!-- 4 Visual Support Nodes (Non-Editorial) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Node 1: Appointments -->
+                <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-6 border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 shadow-sm group reveal reveal-delay-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg mb-4 group-hover:bg-clinic-brand group-hover:text-white transition-colors duration-300">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-clinic-primary dark:text-white mb-2">
+                            Appointments
+                        </h4>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed">
+                            Keep track of upcoming appointment information.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 flex items-center text-[11px] font-semibold text-clinic-brand dark:text-clinic-dark-accent">
+                        <span>Upcoming Dates</span>
+                        <i class="fas fa-check ml-auto text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Node 2: Treatment History -->
+                <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-6 border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 shadow-sm group reveal reveal-delay-2 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg mb-4 group-hover:bg-clinic-brand group-hover:text-white transition-colors duration-300">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-clinic-primary dark:text-white mb-2">
+                            Treatment History
+                        </h4>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed">
+                            Review available information from your previous care.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 flex items-center text-[11px] font-semibold text-clinic-brand dark:text-clinic-dark-accent">
+                        <span>Past Records</span>
+                        <i class="fas fa-check ml-auto text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Node 3: Orthotic Order Status -->
+                <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-6 border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 shadow-sm group reveal reveal-delay-3 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg mb-4 group-hover:bg-clinic-brand group-hover:text-white transition-colors duration-300">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-clinic-primary dark:text-white mb-2">
+                            Orthotic Order Status
+                        </h4>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed">
+                            Follow the progress of a custom orthotic order when applicable.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 flex items-center text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent">
+                        <span>Live Tracking</span>
+                        <i class="fas fa-check ml-auto text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Node 4: Follow-Up Schedule -->
+                <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-6 border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 shadow-sm group reveal reveal-delay-4 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg mb-4 group-hover:bg-clinic-brand group-hover:text-white transition-colors duration-300">
+                            <i class="fas fa-clock-rotate-left"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-clinic-primary dark:text-white mb-2">
+                            Follow-Up Schedule
+                        </h4>
+                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed">
+                            Stay aware of upcoming follow-up care.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 flex items-center text-[11px] font-semibold text-clinic-brand dark:text-clinic-dark-accent">
+                        <span>Care Timeline</span>
+                        <i class="fas fa-check ml-auto text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Action Row -->
+            <div class="text-center reveal">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="dashboard.html" class="btn-primary-pill px-8 py-3.5 text-sm shadow-md w-full sm:w-auto inline-flex justify-center items-center">
+                        <i class="fas fa-chart-line mr-2 rtl:ml-2 rtl:mr-0"></i>
+                        <span>Open Patient Dashboard</span>
+                    </a>
+                    <a href="#booking-section" class="btn-outline-pill px-8 py-3.5 text-sm w-full sm:w-auto inline-flex justify-center items-center">
+                        <i class="far fa-calendar-alt mr-2 rtl:ml-2 rtl:mr-0"></i>
+                        <span>Book an Appointment</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ===== CONFIRMATION MODAL ===== -->
     <div id="bookingConfirmModal" class="modal-backdrop">
