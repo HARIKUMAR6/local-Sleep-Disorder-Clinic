@@ -61,6 +61,23 @@
     </script>
 
     <!-- FontAwesome 6 -->
+        <!-- Immediate Direction & Theme Initialization (Prevents FOUC) -->
+    <script>
+        (function() {
+            var theme = localStorage.getItem('somna-theme');
+            if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            var dir = localStorage.getItem('somna-dir');
+            if (dir === 'rtl') {
+                document.documentElement.setAttribute('dir', 'rtl');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google Fonts: Cormorant Garamond & DM Sans -->
@@ -77,6 +94,9 @@
 
 <body
     class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans overflow-x-hidden w-full relative">
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- ===== CLINICAL STICKY HEADER ===== -->
     <header class="navbar-wrapper" id="navbarWrapper">
         <div class="navbar-inner">
@@ -115,6 +135,7 @@
                 <a href="doctors.html" class="nav-link " id="nav-item-doctors">Doctors</a>
                 <a href="faq.html" class="nav-link " id="nav-item-faq">FAQ</a>
                 <a href="contact.html" class="nav-link " id="nav-item-contact">Contact</a>
+                <a href="dashboard.html" class="nav-link " id="nav-item-dashboard">Dashboard</a>
             </nav>
 
             <!-- Right Header Controls -->
@@ -131,10 +152,7 @@
                     <i class="fas fa-sun hidden"></i>
                 </button>
 
-                <!-- Dashboard CTA (Desktop) -->
-                <a href="dashboard.html" class="btn-primary-pill nav-cta-btn hidden lg:inline-flex ">
-                    <i class="fas fa-chart-line"></i> <span>Dashboard</span>
-                </a>
+                
 
                 <!-- Mobile Hamburger Toggle -->
                 <button id="mobile-toggle" class="mobile-toggle lg:hidden" aria-label="Open mobile menu" aria-expanded="false">
@@ -179,13 +197,11 @@
                 <a href="contact.html" class="mobile-menu-item " id="mobile-item-contact">
                     <span><i class="fas fa-calendar-check text-clinic-brand dark:text-clinic-dark-accent mr-2.5"></i> Contact</span>
                 </a>
+                <a href="dashboard.html" class="mobile-menu-item " id="mobile-item-dashboard">
+                    <span><i class="fas fa-chart-line text-clinic-brand dark:text-clinic-dark-accent mr-2.5"></i> Dashboard</span>
+                </a>
 
-                <!-- Mobile Dashboard CTA -->
-                <div class="mobile-menu-cta">
-                    <a href="dashboard.html" class="btn-primary-pill w-full justify-center ">
-                        <i class="fas fa-chart-line"></i> <span>Dashboard</span>
-                    </a>
-                </div>
+                
             </div>
         </div>
     </header>
@@ -194,6 +210,7 @@
          SECTION 01: EDITORIAL ABOUT HERO — "A Different Way to Understand Sleep"
          Typography-led asymmetric editorial introduction (NO full-bleed background, NO Home duplicate)
          ========================================================================== -->
+    <main id="main-content">
     <section id="about-hero" class="about-hero-section bg-clinic-canvas dark:bg-clinic-dark-canvas border-b border-clinic-border/60 dark:border-[#161B30]" aria-labelledby="about-hero-title">
         <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -382,7 +399,7 @@
                     </div>
 
                     <!-- Philosophy Pillars -->
-                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-clinic-border/60 dark:border-[#1A1D30]">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-clinic-border/60 dark:border-[#1A1D30]">
                         <div class="space-y-1">
                             <span class="text-xs font-bold text-clinic-primary dark:text-clinic-dark-primary">Individualized Biology</span>
                             <p class="text-[11px] text-clinic-muted dark:text-clinic-dark-secondary leading-normal">
@@ -503,7 +520,7 @@
                         </h2>
 
                         <p class="text-sm sm:text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed max-w-xl">
-                            Whether you are navigating chronic fatigue, snoring concerns, or sleepless nights, our board-certified sleep medicine physicians are ready to listen, evaluate, and guide you toward restorative rest.
+                            Whether you are navigating chronic fatigue, snoring concerns, or sleepless nights, our clinical sleep medicine physicians are ready to listen, evaluate, and guide you toward restorative rest.
                         </p>
 
                         <!-- CTA Actions -->
@@ -544,6 +561,8 @@
             </div>
         </div>
     </section>
+</main>
+
 <footer class="site-footer">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
@@ -563,8 +582,8 @@
                     </p>
                     <div class="pt-2">
                         <span class="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-clinic-dark-primary">
-                            <i class="fas fa-certificate text-clinic-brand dark:text-clinic-dark-accent"></i>
-                            <span>Board-Certified Sleep Medicine</span>
+                            <i class="fas fa-bed-pulse text-clinic-brand dark:text-clinic-dark-accent"></i>
+                        <span>Evidence-Based Sleep Medicine</span>
                         </span>
                     </div>
                 </div>
@@ -710,9 +729,9 @@
             const name = document.getElementById('patientName')?.value || 'Patient';
             
             if (typeof window.showToast === 'function') {
-                window.showToast(`Thank you, ${name}. Your consultation request for ${service} has been received. Our clinical team will reach out promptly.`);
+                window.showToast(`Thank you, ${name}. Your consultation request for ${service} has been prepared. Connect this form to the clinic's booking system to confirm.`);
             } else {
-                alert(`Thank you, ${name}. Your request for ${service} has been received.`);
+                alert(`Thank you, ${name}. Your consultation request for ${service} has been prepared.`);
             }
 
             if (typeof window.closeModal === 'function') {

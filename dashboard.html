@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="overflow-x-hidden">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Patient Dashboard | StepWell Podiatry &amp; Foot Care</title>
-    <meta name="description" content="StepWell Patient Dashboard: View your appointments, treatment history, orthotic order status, follow-up schedule, and billing information.">
+    <title>Clinic Operations Dashboard | SomnaClinic — Sleep Medicine &amp; Diagnostics</title>
+    <meta name="description"
+        content="SomnaClinic Clinical Operations Workspace: Organize sleep medicine operations, review care workflows, and prepare diagnostic and scheduling system connections.">
 
-    <!-- Favicon — StepWell Brand Logomark -->
+    <!-- Favicon — SomnaClinic Brand Logomark -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192x192.png">
-    
+
+    <!-- Tailwind CSS (CDN) with SomnaClinic Midnight Clinical Palette -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,425 +22,920 @@
             theme: {
                 extend: {
                     colors: {
-                        'clinic-canvas': '#F4F1EA',
+                        'clinic-canvas': '#F0F3FB',
                         'clinic-surface': '#FFFFFF',
-                        'clinic-sage': '#E9EFE9',
-                        'clinic-accent': '#DCE7E2',
-                        'clinic-primary': '#17221F',
-                        'clinic-secondary': '#52605B',
-                        'clinic-muted': '#71807A',
-                        'clinic-border': '#D8DED9',
-                        'clinic-brand': '#176B63',
-                        'clinic-brand-hover': '#0F514B',
+                        'clinic-primary': '#0A1128',
+                        'clinic-secondary': '#4A5578',
+                        'clinic-muted': '#737DA0',
+                        'clinic-border': '#D8DFF0',
+                        'clinic-brand': '#3B5BDB',
+                        'clinic-brand-hover': '#2B44B8',
                         'clinic-dark-canvas': '#000000',
-                        'clinic-dark-surface': '#0B0B0B',
-                        'clinic-dark-elevated': '#141414',
-                        'clinic-dark-primary': '#F5F7F6',
-                        'clinic-dark-secondary': '#B8C2BE',
-                        'clinic-dark-border': '#292D2B',
-                        'clinic-dark-accent': '#65B8AD',
-                        'clinic-navy': '#17221F',
-                        'clinic-navy-dark': '#0B0B0B',
-                        'clinic-teal': '#176B63',
-                        'clinic-teal-light': '#176B63',
-                        'clinic-mint': '#65B8AD',
-                        'clinic-ice': '#E9EFE9',
-                        'clinic-dark': '#000000',
+                        'clinic-dark-surface': '#0D1527',
+                        'clinic-dark-elevated': '#162038',
+                        'clinic-dark-primary': '#FFFFFF',
+                        'clinic-dark-secondary': '#E2E8F0',
+                        'clinic-dark-border': '#1A2440',
+                        'clinic-dark-accent': '#6888F7',
                     },
                     fontFamily: {
-                        serif: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"DM Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+                        heading: ['"Cormorant Garamond"', 'Georgia', 'serif'],
                     }
                 }
             }
         }
     </script>
-    
+
+    <!-- Font Awesome 6.4.0 (Global Icon System) -->
+        <!-- Immediate Direction & Theme Initialization (Prevents FOUC) -->
+    <script>
+        (function() {
+            var theme = localStorage.getItem('somna-theme');
+            if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            var dir = localStorage.getItem('somna-dir');
+            if (dir === 'rtl') {
+                document.documentElement.setAttribute('dir', 'rtl');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Project Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/motion.css">
 </head>
-<body class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans overflow-x-hidden min-h-screen flex flex-col">
 
-    <!-- ===== TOP APP HEADER ===== -->
-    <header class="bg-clinic-surface dark:bg-clinic-dark-surface text-clinic-primary dark:text-white px-6 py-3 sticky top-0 z-50 border-b border-clinic-border dark:border-clinic-dark-border shadow-sm transition-colors duration-300">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center gap-6">
-                <a href="index.html" class="logo-wrapper" id="nav-brand-logo" aria-label="SomnaClinic Home">
-                    <div class="logo-icon w-8 h-8 rounded-lg text-sm"><i class="fas fa-moon"></i></div>
-                    <div>
-                        <span class="logo-text text-base">Somna<span class="highlight">Clinic</span></span>
-                        <span class="logo-sub text-[8px]">Sleep Medicine &amp; Diagnostics</span>
+<body
+    class="bg-clinic-canvas dark:bg-[#000000] text-clinic-primary dark:text-clinic-dark-primary font-sans antialiased transition-colors duration-300 selection:bg-clinic-brand/20 selection:text-clinic-brand dark:selection:bg-clinic-dark-accent/30 dark:selection:text-clinic-dark-accent min-h-screen">
+
+    <!-- Accessibility Skip Link -->
+    <span id="nav-item-dashboard" class="nav-link active hidden" aria-hidden="true"></span>
+    <span id="mobile-item-dashboard" class="mobile-menu-item active hidden" aria-hidden="true"></span>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Dashboard App Shell -->
+    <div class="dashboard-shell" id="dashboard-root">
+
+        <!-- Mobile Drawer Backdrop -->
+        <div id="dashboard-drawer-backdrop" class="dashboard-drawer-backdrop lg:hidden" aria-hidden="true"></div>
+
+        <!-- Left Navigation Rail (Application Sidebar) -->
+        <aside id="dashboard-sidebar" class="dashboard-sidebar" aria-label="Clinical Operations Navigation">
+            
+            <!-- Sidebar Header / Brand -->
+            <div class="sidebar-header flex items-center justify-between p-5 border-b border-clinic-border/60 dark:border-[#1A2440]">
+                <a href="index.html" class="logo-wrapper flex items-center gap-3" aria-label="SomnaClinic Home">
+                    <div class="logo-icon w-9 h-9 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold text-sm shrink-0">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="sidebar-logo-text min-w-0">
+                        <span class="logo-text text-base font-bold tracking-tight text-clinic-primary dark:text-white block leading-tight">
+                            Somna<span class="highlight text-clinic-brand dark:text-clinic-dark-accent">Clinic</span>
+                        </span>
+                        <span class="logo-sub text-[10px] text-clinic-muted dark:text-clinic-dark-secondary block truncate">
+                            Sleep Medicine &amp; Diagnostics
+                        </span>
                     </div>
                 </a>
-                <span class="hidden sm:inline-block px-3 py-1 bg-clinic-brand/10 border border-clinic-brand/30 rounded-full text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold">
-                    <i class="fas fa-shield-alt mr-1"></i> Secure Session
-                </span>
+
+                <!-- Mobile Drawer Close Button -->
+                <button type="button" id="drawer-close-btn" class="lg:hidden text-clinic-muted hover:text-clinic-primary dark:hover:text-white p-1" aria-label="Close navigation">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
 
-            <div class="flex items-center gap-3">
-                <button id="rtl-toggle" class="btn-icon-rounded w-8 h-8 text-xs" title="Toggle RTL"><i class="fas fa-exchange-alt"></i></button>
-                <button id="theme-toggle" class="btn-icon-rounded w-8 h-8 text-xs" title="Toggle Theme"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
-                
-                <!-- Patient Profile Pill -->
-                <div class="flex items-center gap-2.5 bg-clinic-sage dark:bg-clinic-dark-elevated px-3 py-1.5 rounded-full border border-clinic-border dark:border-clinic-dark-border">
-                    <div class="w-7 h-7 rounded-full bg-clinic-brand text-white font-bold flex items-center justify-center text-xs">
-                        P
+            <!-- Operational Navigation Modules -->
+            <nav class="flex-1 overflow-y-auto p-3 space-y-1" aria-label="Operational Modules">
+                <!-- 01 Overview -->
+                <button type="button" class="dashboard-nav-btn active" data-module="overview" aria-current="page" id="nav-btn-overview">
+                    <i class="fa-solid fa-table-cells-large w-5 text-center text-sm shrink-0"></i>
+                    <span class="sidebar-full-label truncate">Overview</span>
+                </button>
+
+                <!-- Module: Appointments -->
+                <button type="button" class="dashboard-nav-btn" data-module="appointments" id="nav-btn-appointments">
+                    <i class="fa-solid fa-calendar-check w-5 text-center text-sm shrink-0"></i>
+                    <span class="sidebar-full-label truncate">Appointments</span>
+                </button>
+
+                <!-- 03 Sleep Studies -->
+                <button type="button" class="dashboard-nav-btn" data-module="sleep-studies" id="nav-btn-sleep-studies">
+                    <i class="fa-solid fa-bed-pulse w-5 text-center text-sm shrink-0"></i>
+                    <span class="sidebar-full-label truncate">Sleep Studies</span>
+                </button>
+
+                <!-- 04 Reports -->
+                <button type="button" class="dashboard-nav-btn" data-module="reports" id="nav-btn-reports">
+                    <i class="fa-solid fa-file-lines w-5 text-center text-sm shrink-0"></i>
+                    <span class="sidebar-full-label truncate">Reports</span>
+                </button>
+
+                <!-- 05 CPAP Management -->
+                <button type="button" class="dashboard-nav-btn" data-module="cpap" id="nav-btn-cpap">
+                    <i class="fa-solid fa-lungs w-5 text-center text-sm shrink-0"></i>
+                    <span class="sidebar-full-label truncate">CPAP Management</span>
+                </button>
+
+                <!-- 06 Follow-ups -->
+                <button type="button" class="dashboard-nav-btn" data-module="followups" id="nav-btn-followups">
+                    <i class="fa-solid fa-comments w-5 text-center text-sm shrink-0"></i>
+                    <span class="sidebar-full-label truncate">Follow-ups</span>
+                </button>
+
+                <!-- 07 Billing -->
+                <button type="button" class="dashboard-nav-btn" data-module="billing" id="nav-btn-billing">
+                    <i class="fa-solid fa-receipt w-5 text-center text-sm shrink-0"></i>
+                    <span class="sidebar-full-label truncate">Billing</span>
+                </button>
+
+                <!-- 08 Settings -->
+                <button type="button" class="dashboard-nav-btn" data-module="settings" id="nav-btn-settings">
+                    <i class="fa-solid fa-sliders w-5 text-center text-sm shrink-0"></i>
+                    <span class="sidebar-full-label truncate">Settings</span>
+                </button>
+            </nav>
+
+            <!-- Bottom Sidebar Controls -->
+            <div class="p-3 border-t border-clinic-border/60 dark:border-[#1A2440] flex flex-col gap-2">
+                <!-- Theme & Direction Switchers -->
+                <div class="sidebar-footer flex items-center justify-between gap-2 px-1">
+                    <div class="flex items-center gap-2">
+                        <!-- Theme Toggle -->
+                        <button id="theme-toggle" class="btn-icon-rounded w-8 h-8 text-xs" title="Toggle Light / Dark Theme" aria-label="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun hidden"></i>
+                        </button>
+
+                        <!-- RTL Toggle -->
+                        <button id="rtl-toggle" class="btn-rtl-control text-xs px-2.5 py-1" title="Toggle RTL / LTR Direction" aria-label="Toggle text direction">
+                            <i class="fas fa-globe"></i>
+                            <span>RTL</span>
+                        </button>
                     </div>
-                    <div class="hidden md:block text-left">
-                        <div class="text-xs font-bold leading-none text-clinic-primary dark:text-white">Demo Patient</div>
-                        <div class="text-[10px] text-clinic-brand dark:text-clinic-dark-accent leading-tight">Patient Dashboard</div>
-                    </div>
+
+                    <!-- Collapse Desktop Sidebar Button -->
+                    <button type="button" id="sidebar-collapse-btn" class="hidden lg:flex btn-icon-rounded w-8 h-8 text-xs" title="Toggle Compact Sidebar" aria-label="Collapse sidebar navigation">
+                        <i class="fas fa-chevron-left transition-transform duration-200" id="collapse-icon"></i>
+                    </button>
                 </div>
 
-                <a href="index.html" class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary hover:text-clinic-brand dark:hover:text-clinic-dark-accent ml-2 flex items-center gap-1">
-                    <i class="fas fa-sign-out-alt"></i> <span class="hidden sm:inline">Exit Dashboard</span>
+                <!-- Exit to Public Site Link -->
+                <a href="index.html" class="dashboard-nav-btn text-xs py-2 px-2.5 rounded-lg border border-clinic-border/60 dark:border-[#1A2440] hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-colors flex items-center gap-2">
+                    <i class="fas fa-arrow-left text-xs shrink-0"></i>
+                    <span class="sidebar-full-label truncate">Return to Public Site</span>
                 </a>
             </div>
-        </div>
-    </header>
 
-    <!-- ===== DASHBOARD BODY: SIDEBAR + MAIN CONTENT ===== -->
-    <div class="max-w-7xl mx-auto w-full flex-1 px-4 sm:px-6 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <!-- Sidebar Navigation (Desktop & Tablet) -->
-        <aside class="lg:col-span-3 space-y-4">
-            <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-4 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-1" data-tab-group="dash">
-                <button class="dashboard-sidebar-link w-full active" data-tab-target="overview">
-                    <i class="fas fa-th-large w-5"></i> <span>Overview</span>
-                </button>
-                <button class="dashboard-sidebar-link w-full" data-tab-target="appointments">
-                    <i class="far fa-calendar-alt w-5"></i> <span>Appointments</span>
-                </button>
-                <button class="dashboard-sidebar-link w-full" data-tab-target="treatment">
-                    <i class="fas fa-file-medical-alt w-5"></i> <span>Treatment History</span>
-                </button>
-                <button class="dashboard-sidebar-link w-full" data-tab-target="orthotics">
-                    <i class="fas fa-cube w-5"></i> <span>Orthotic Order Status</span>
-                </button>
-                <button class="dashboard-sidebar-link w-full" data-tab-target="followup">
-                    <i class="far fa-calendar-check w-5"></i> <span>Follow-up Schedule</span>
-                </button>
-                <button class="dashboard-sidebar-link w-full" data-tab-target="billing">
-                    <i class="fas fa-receipt w-5"></i> <span>Billing History</span>
-                </button>
-            </div>
-
-            <!-- Quick Help Box -->
-            <div class="bg-clinic-sage dark:bg-clinic-dark-elevated p-5 rounded-3xl border border-clinic-border dark:border-clinic-dark-border text-xs text-clinic-secondary dark:text-clinic-dark-secondary space-y-2">
-                <div class="font-bold text-clinic-brand dark:text-clinic-dark-accent flex items-center gap-1.5 text-sm">
-                    <i class="fas fa-phone-volume text-clinic-brand dark:text-clinic-dark-accent"></i> Need Assistance?
-                </div>
-                <p>For questions about your care, appointments, or records, please contact the clinic directly.</p>
-                <a href="contact.html" class="text-clinic-brand dark:text-clinic-dark-accent font-bold block pt-1 hover:underline">Contact the Clinic →</a>
-            </div>
         </aside>
 
-        <!-- Main Dashboard Tab Panes -->
-        <main class="lg:col-span-9 space-y-6">
-            <!-- PANE 1: OVERVIEW -->
-            <div class="tab-pane active space-y-6" data-tab-pane-group="dash" data-tab-pane="overview">
-                <!-- Welcome Banner -->
-                <div class="bg-gradient-to-r from-clinic-brand to-clinic-brand-hover dark:from-clinic-dark-elevated dark:to-clinic-dark-surface text-white p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                    <div class="space-y-2 relative z-10">
-                        <span class="text-xs uppercase font-bold text-clinic-accent dark:text-clinic-dark-accent tracking-wider">Patient Dashboard</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold">Welcome to Your Dashboard</h2>
-                        <p class="text-white/80 text-sm max-w-md">
-                            View your care summary, upcoming appointments, orthotic order status, and more from one place.
+        <!-- Main Workspace Shell -->
+        <div class="flex-1 flex flex-col min-w-0">
+            
+            <!-- Dashboard Top Utility Bar -->
+            <header class="dashboard-topbar">
+                <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+                    <!-- Mobile Hamburger Toggle -->
+                    <button type="button" id="mobile-sidebar-toggle" class="lg:hidden btn-icon-rounded w-9 h-9 shrink-0" aria-label="Open sidebar menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <!-- Header Context Titles -->
+                    <div class="min-w-0">
+                        <span class="block text-[11px] font-bold uppercase tracking-wider text-clinic-brand dark:text-clinic-dark-accent">
+                            CLINIC OPERATIONS
+                        </span>
+                        <h1 id="topbar-heading" class="text-lg sm:text-xl font-bold text-clinic-primary dark:text-white leading-tight truncate">
+                            Dashboard Overview
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- Right Utility Actions -->
+                <div class="flex items-center gap-2.5">
+                    <!-- Operational Mode Status Pill -->
+                    <span class="hidden md:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent border border-clinic-brand/15 dark:border-clinic-dark-accent/20">
+                        <span class="w-2 h-2 rounded-full bg-clinic-brand dark:bg-clinic-dark-accent"></span>
+                        <span>Clinical Workspace</span>
+                    </span>
+
+                    <!-- Quick Exit to Public Website -->
+                    <a href="index.html" class="btn-outline-pill text-xs py-2 px-3.5 inline-flex items-center gap-1.5">
+                        <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                        <span class="hidden sm:inline">SomnaClinic Site</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Workspace Content Canvas (All 8 Modules) -->
+            <main id="main-content" tabindex="-1" class="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto focus:outline-hidden">
+
+                <!-- ==============================================================
+                     MODULE 01: OVERVIEW
+                     Introductory workspace + editorial operational index rail
+                     ============================================================== -->
+                <div id="module-overview" class="dashboard-module-view active">
+                    
+                    <!-- Overview Introductory Editorial Hero Banner -->
+                    <div class="p-6 sm:p-8 lg:p-10 rounded-3xl bg-white dark:bg-[#0B1022] border border-clinic-border dark:border-[#1E2A4A] shadow-sm mb-8" data-reveal="fade-up">
+                        <div class="max-w-3xl">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-clinic-brand/10 text-clinic-brand dark:bg-clinic-dark-accent/10 dark:text-clinic-dark-accent mb-4 border border-clinic-brand/15 dark:border-clinic-dark-accent/20">
+                                <i class="fa-solid fa-table-cells-large text-xs"></i>
+                                <span>OPERATIONAL WORKSPACE</span>
+                            </div>
+                            <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-clinic-primary dark:text-clinic-dark-primary mb-4">
+                                Keep Every Next Step <span class="text-clinic-brand dark:text-clinic-dark-accent italic">Clear.</span>
+                            </h2>
+                            <p class="text-base sm:text-lg text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-6">
+                                Use this workspace to organize clinic operations, review care-related workflows, and connect each area to the appropriate system when data becomes available.
+                            </p>
+                            <div class="flex flex-wrap items-center gap-4 text-xs text-clinic-muted dark:text-clinic-dark-secondary">
+                                <span class="inline-flex items-center gap-1.5">
+                                    <i class="fa-solid fa-shield-halved text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    Operational Safety Standards
+                                </span>
+                                <span class="inline-flex items-center gap-1.5">
+                                    <i class="fa-solid fa-circle-nodes text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    Ready for System Integration
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operational Index Grid (6 Core Modules) -->
+                    <div class="mb-6">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-clinic-muted dark:text-clinic-dark-secondary mb-4 px-1">
+                            Operational Modules &amp; Care Workflows
+                        </h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                            
+                            <!-- Card 1: Appointments -->
+                            <div class="overview-module-card group">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="w-11 h-11 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg">
+                                            <i class="fa-solid fa-calendar-check"></i>
+                                        </div>
+                                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-[#141E38] text-clinic-muted dark:text-clinic-dark-secondary border border-clinic-border/60 dark:border-white/10">
+                                            Ready for Sync
+                                        </span>
+                                    </div>
+                                    <h4 class="text-base font-bold text-clinic-primary dark:text-white group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors mb-1.5">
+                                        Appointments
+                                    </h4>
+                                    <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-4">
+                                        Consultation scheduling, in-lab arrival prep, and specialist evaluation slots.
+                                    </p>
+                                </div>
+                                <button type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent group-hover:underline" onclick="switchModule('appointments')">
+                                    <span>Open Module</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+
+                            <!-- Card 2: Sleep Studies -->
+                            <div class="overview-module-card group">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="w-11 h-11 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg">
+                                            <i class="fa-solid fa-bed-pulse"></i>
+                                        </div>
+                                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-[#141E38] text-clinic-muted dark:text-clinic-dark-secondary border border-clinic-border/60 dark:border-white/10">
+                                            Ready for Sync
+                                        </span>
+                                    </div>
+                                    <h4 class="text-base font-bold text-clinic-primary dark:text-white group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors mb-1.5">
+                                        Sleep Studies
+                                    </h4>
+                                    <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-4">
+                                        Polysomnography testing, HSAT dispatch tracking, and diagnostic channel review.
+                                    </p>
+                                </div>
+                                <button type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent group-hover:underline" onclick="switchModule('sleep-studies')">
+                                    <span>Open Module</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+
+                            <!-- Card 3: Reports -->
+                            <div class="overview-module-card group">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="w-11 h-11 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </div>
+                                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-[#141E38] text-clinic-muted dark:text-clinic-dark-secondary border border-clinic-border/60 dark:border-white/10">
+                                            Ready for Sync
+                                        </span>
+                                    </div>
+                                    <h4 class="text-base font-bold text-clinic-primary dark:text-white group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors mb-1.5">
+                                        Reports
+                                    </h4>
+                                    <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-4">
+                                        Polysomnography records, clinical consult notes, and diagnostic physician summaries.
+                                    </p>
+                                </div>
+                                <button type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent group-hover:underline" onclick="switchModule('reports')">
+                                    <span>Open Module</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+
+                            <!-- Card 4: CPAP Management -->
+                            <div class="overview-module-card group">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="w-11 h-11 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg">
+                                            <i class="fa-solid fa-lungs"></i>
+                                        </div>
+                                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-[#141E38] text-clinic-muted dark:text-clinic-dark-secondary border border-clinic-border/60 dark:border-white/10">
+                                            Ready for Sync
+                                        </span>
+                                    </div>
+                                    <h4 class="text-base font-bold text-clinic-primary dark:text-white group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors mb-1.5">
+                                        CPAP Management
+                                    </h4>
+                                    <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-4">
+                                        Equipment calibration, mask fit documentation, and therapy follow-up tracking.
+                                    </p>
+                                </div>
+                                <button type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent group-hover:underline" onclick="switchModule('cpap')">
+                                    <span>Open Module</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+
+                            <!-- Card 5: Follow-ups -->
+                            <div class="overview-module-card group">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="w-11 h-11 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg">
+                                            <i class="fa-solid fa-comments"></i>
+                                        </div>
+                                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-[#141E38] text-clinic-muted dark:text-clinic-dark-secondary border border-clinic-border/60 dark:border-white/10">
+                                            Ready for Sync
+                                        </span>
+                                    </div>
+                                    <h4 class="text-base font-bold text-clinic-primary dark:text-white group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors mb-1.5">
+                                        Follow-ups
+                                    </h4>
+                                    <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-4">
+                                        Post-study clinical reviews, therapy adherence check-ins, and treatment discussions.
+                                    </p>
+                                </div>
+                                <button type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent group-hover:underline" onclick="switchModule('followups')">
+                                    <span>Open Module</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+
+                            <!-- Card 6: Billing -->
+                            <div class="overview-module-card group">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="w-11 h-11 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg">
+                                            <i class="fa-solid fa-receipt"></i>
+                                        </div>
+                                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-[#141E38] text-clinic-muted dark:text-clinic-dark-secondary border border-clinic-border/60 dark:border-white/10">
+                                            Ready for Sync
+                                        </span>
+                                    </div>
+                                    <h4 class="text-base font-bold text-clinic-primary dark:text-white group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors mb-1.5">
+                                        Billing
+                                    </h4>
+                                    <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-4">
+                                        Service coding, invoice generation, and financial records coordination.
+                                    </p>
+                                </div>
+                                <button type="button" class="inline-flex items-center gap-1.5 text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent group-hover:underline" onclick="switchModule('billing')">
+                                    <span>Open Module</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ==============================================================
+                     MODULE 02: APPOINTMENTS
+                     Intentional empty state + scheduling integration action
+                     ============================================================== -->
+                <div id="module-appointments" class="dashboard-module-view">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-clinic-primary dark:text-white">Appointments</h2>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
+                            Appointment information will appear here once connected to the clinic scheduling system.
                         </p>
                     </div>
-                    <div class="relative z-10 flex gap-2">
-                        <button onclick="openModal('bookFollowUpModal')" class="btn-primary-pill text-xs py-2.5 px-5">
-                            <i class="far fa-calendar-plus"></i> Book Follow-Up
+
+                    <div class="dashboard-empty-card">
+                        <div class="w-16 h-16 rounded-2xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-2xl mx-auto mb-5">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl font-medium text-clinic-primary dark:text-white mb-3">
+                            No appointment data is connected yet.
+                        </h3>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary max-w-md mx-auto leading-relaxed mb-6">
+                            Connect the scheduling source to review upcoming consultations and appointment activity here.
+                        </p>
+                        <button type="button" class="btn-primary-pill text-xs py-3 px-6 shadow-md shadow-clinic-brand/20 inline-flex items-center gap-2" onclick="triggerConnectionNotice('Scheduling System')">
+                            <i class="fa-solid fa-plug text-xs"></i>
+                            <span>Connect Scheduling</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Orthotic Order Status Summary -->
-                <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-6 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold">
-                                <i class="fas fa-cube"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-clinic-primary dark:text-white text-base">Orthotic Order Status</h3>
-                                <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Your most recent orthotic order</div>
-                            </div>
-                        </div>
-                        <span class="bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent text-xs font-bold px-3 py-1 rounded-full">
-                            Step 3 of 4: In Progress
-                        </span>
+                <!-- ==============================================================
+                     MODULE 03: SLEEP STUDIES
+                     Intentional empty state + diagnostic source integration
+                     ============================================================== -->
+                <div id="module-sleep-studies" class="dashboard-module-view">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-clinic-primary dark:text-white">Sleep Studies</h2>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
+                            Sleep study records can be organized here when the diagnostic data source is connected.
+                        </p>
                     </div>
 
-                    <!-- Step Tracker Bar -->
-                    <div class="grid grid-cols-4 gap-2 pt-2 text-center text-xs">
-                        <div class="space-y-1">
-                            <div class="h-2 rounded-full bg-clinic-brand"></div>
-                            <div class="font-bold text-clinic-brand dark:text-clinic-dark-accent">1. Order Received</div>
-                            <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary">Confirmed</div>
+                    <div class="dashboard-empty-card">
+                        <div class="w-16 h-16 rounded-2xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-2xl mx-auto mb-5">
+                            <i class="fa-solid fa-bed-pulse"></i>
                         </div>
-                        <div class="space-y-1">
-                            <div class="h-2 rounded-full bg-clinic-brand"></div>
-                            <div class="font-bold text-clinic-brand dark:text-clinic-dark-accent">2. Assessment Done</div>
-                            <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary">Completed</div>
-                        </div>
-                        <div class="space-y-1">
-                            <div class="h-2 rounded-full bg-clinic-brand animate-pulse"></div>
-                            <div class="font-bold text-clinic-brand dark:text-clinic-dark-accent">3. In Progress</div>
-                            <div class="text-[10px] text-clinic-brand dark:text-clinic-dark-accent font-semibold">Active</div>
-                        </div>
-                        <div class="space-y-1">
-                            <div class="h-2 rounded-full bg-clinic-border dark:bg-clinic-dark-border"></div>
-                            <div class="font-medium text-clinic-muted dark:text-clinic-dark-secondary">4. Ready for Fitting</div>
-                            <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary">Pending</div>
-                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl font-medium text-clinic-primary dark:text-white mb-3">
+                            No sleep study records are available.
+                        </h3>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary max-w-md mx-auto leading-relaxed mb-6">
+                            Connect the appropriate diagnostic workflow to review study records here.
+                        </p>
+                        <button type="button" class="btn-primary-pill text-xs py-3 px-6 shadow-md shadow-clinic-brand/20 inline-flex items-center gap-2" onclick="triggerConnectionNotice('Diagnostic Data Feed')">
+                            <i class="fa-solid fa-plug text-xs"></i>
+                            <span>Connect Diagnostic Source</span>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Upcoming Appointment Card & Care Status -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Upcoming Visit -->
-                    <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-6 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h3 class="font-bold text-base text-clinic-primary dark:text-white">Next Scheduled Visit</h3>
-                            <span class="text-xs bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent font-bold px-2.5 py-0.5 rounded-full">Upcoming</span>
-                        </div>
-                        <div class="flex items-center gap-4 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border p-4 rounded-2xl">
-                            <div class="w-12 h-12 rounded-xl bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl">
-                                <i class="fas fa-user-md"></i>
-                            </div>
-                            <div>
-                                <div class="font-bold text-sm text-clinic-primary dark:text-white">Podiatric Care Team</div>
-                                <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Sample follow-up appointment</div>
-                            </div>
-                        </div>
-                        <div class="space-y-1 text-xs text-clinic-secondary dark:text-clinic-dark-secondary">
-                            <div class="flex items-center gap-2"><i class="far fa-calendar text-clinic-brand dark:text-clinic-dark-accent"></i> <span>Date and time to be confirmed</span></div>
-                            <div class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-clinic-brand dark:text-clinic-dark-accent"></i> <span>Contact the clinic for location details</span></div>
-                        </div>
-                        <div class="pt-2 flex gap-2">
-                            <button onclick="showToast('Visit confirmed on your calendar.')" class="btn-primary-pill text-xs py-2 px-4 flex-1 justify-center">Confirm Attendance</button>
-                            <button onclick="showToast('Reschedule request submitted. Our coordinator will contact you.')" class="btn-outline-pill text-xs py-2 px-4 justify-center">Reschedule</button>
-                        </div>
+                <!-- ==============================================================
+                     MODULE 04: REPORTS
+                     Intentional empty state + reporting system integration
+                     ============================================================== -->
+                <div id="module-reports" class="dashboard-module-view">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-clinic-primary dark:text-white">Reports</h2>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
+                            Reports and clinical documents can be organized here when connected to the appropriate source.
+                        </p>
                     </div>
 
-                    <!-- Care Status Card -->
-                    <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-6 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h3 class="font-bold text-base text-clinic-primary dark:text-white">Care Status Summary</h3>
-                            <button onclick="openModal('scanReportModal')" class="text-xs text-clinic-brand dark:text-clinic-dark-accent hover:underline font-semibold">View Details →</button>
+                    <div class="dashboard-empty-card">
+                        <div class="w-16 h-16 rounded-2xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-2xl mx-auto mb-5">
+                            <i class="fa-solid fa-file-lines"></i>
                         </div>
-                        <div class="space-y-3 pt-1">
-                            <div>
-                                <div class="flex justify-between text-xs mb-1"><span class="text-clinic-secondary dark:text-clinic-dark-secondary">Treatment Progress</span> <strong class="text-clinic-brand dark:text-clinic-dark-accent">In Progress</strong></div>
-                                <div class="h-2 bg-clinic-sage dark:bg-clinic-dark-elevated rounded-full overflow-hidden">
-                                    <div class="h-full bg-clinic-brand rounded-full" style="width: 60%;"></div>
+                        <h3 class="font-heading text-2xl sm:text-3xl font-medium text-clinic-primary dark:text-white mb-3">
+                            No reports are available yet.
+                        </h3>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary max-w-md mx-auto leading-relaxed mb-6">
+                            Connect the reporting workflow to review available documents here.
+                        </p>
+                        <button type="button" class="btn-primary-pill text-xs py-3 px-6 shadow-md shadow-clinic-brand/20 inline-flex items-center gap-2" onclick="triggerConnectionNotice('Clinical Reporting Source')">
+                            <i class="fa-solid fa-plug text-xs"></i>
+                            <span>Connect Reporting System</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ==============================================================
+                     MODULE 05: CPAP MANAGEMENT
+                     Intentional empty state + equipment workflow integration
+                     ============================================================== -->
+                <div id="module-cpap" class="dashboard-module-view">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-clinic-primary dark:text-white">CPAP Management</h2>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
+                            Equipment-related workflows can be organized here when a connected source is available.
+                        </p>
+                    </div>
+
+                    <div class="dashboard-empty-card">
+                        <div class="w-16 h-16 rounded-2xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-2xl mx-auto mb-5">
+                            <i class="fa-solid fa-lungs"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl font-medium text-clinic-primary dark:text-white mb-3">
+                            No CPAP management data is connected.
+                        </h3>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary max-w-md mx-auto leading-relaxed mb-6">
+                            Connect the appropriate equipment workflow to manage relevant records here.
+                        </p>
+                        <button type="button" class="btn-primary-pill text-xs py-3 px-6 shadow-md shadow-clinic-brand/20 inline-flex items-center gap-2" onclick="triggerConnectionNotice('Equipment Management Workflow')">
+                            <i class="fa-solid fa-plug text-xs"></i>
+                            <span>Connect Equipment Workflow</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ==============================================================
+                     MODULE 06: FOLLOW-UPS
+                     Intentional empty state + care follow-up integration
+                     ============================================================== -->
+                <div id="module-followups" class="dashboard-module-view">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-clinic-primary dark:text-white">Follow-ups</h2>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
+                            Follow-up workflows can be organized here when connected to the clinic's care system.
+                        </p>
+                    </div>
+
+                    <div class="dashboard-empty-card">
+                        <div class="w-16 h-16 rounded-2xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-2xl mx-auto mb-5">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl font-medium text-clinic-primary dark:text-white mb-3">
+                            No follow-up records are available.
+                        </h3>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary max-w-md mx-auto leading-relaxed mb-6">
+                            Connect the follow-up workflow to review relevant care activity here.
+                        </p>
+                        <button type="button" class="btn-primary-pill text-xs py-3 px-6 shadow-md shadow-clinic-brand/20 inline-flex items-center gap-2" onclick="triggerConnectionNotice('Care Follow-Up System')">
+                            <i class="fa-solid fa-plug text-xs"></i>
+                            <span>Connect Follow-up System</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ==============================================================
+                     MODULE 07: BILLING
+                     Intentional empty state + financial workflow integration
+                     ============================================================== -->
+                <div id="module-billing" class="dashboard-module-view">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-clinic-primary dark:text-white">Billing</h2>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
+                            Billing information can be reviewed here once connected to the appropriate financial system.
+                        </p>
+                    </div>
+
+                    <div class="dashboard-empty-card">
+                        <div class="w-16 h-16 rounded-2xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-2xl mx-auto mb-5">
+                            <i class="fa-solid fa-receipt"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl font-medium text-clinic-primary dark:text-white mb-3">
+                            No billing data is connected.
+                        </h3>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary max-w-md mx-auto leading-relaxed mb-6">
+                            Connect the billing workflow to review financial records here.
+                        </p>
+                        <button type="button" class="btn-primary-pill text-xs py-3 px-6 shadow-md shadow-clinic-brand/20 inline-flex items-center gap-2" onclick="triggerConnectionNotice('Financial &amp; Billing Source')">
+                            <i class="fa-solid fa-plug text-xs"></i>
+                            <span>Connect Financial System</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ==============================================================
+                     MODULE 08: SETTINGS
+                     Operational settings workspace (Interface, Workspace, Integrations)
+                     ============================================================== -->
+                <div id="module-settings" class="dashboard-module-view">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-clinic-primary dark:text-white">Settings</h2>
+                        <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
+                            Configure interface preferences, workspace options, and operational integrations.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6 max-w-4xl">
+                        
+                        <!-- Section 1: Interface Preferences -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1022] border border-clinic-border dark:border-[#1E2A4A] shadow-sm">
+                            <h3 class="text-base font-bold text-clinic-primary dark:text-white mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-display text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                <span>Interface Preferences</span>
+                            </h3>
+
+                            <div class="space-y-4">
+                                <!-- Theme Setting -->
+                                <div class="flex items-center justify-between py-2 border-b border-clinic-border/60 dark:border-[#1A2440]">
+                                    <div>
+                                        <span class="text-sm font-semibold text-clinic-primary dark:text-white block">Theme Mode</span>
+                                        <span class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary">Choose between Light and Dark canvas</span>
+                                    </div>
+                                    <button type="button" class="btn-outline-pill text-xs py-1.5 px-4" onclick="document.getElementById('theme-toggle').click()">
+                                        <span>Toggle Mode</span>
+                                    </button>
+                                </div>
+
+                                <!-- RTL/LTR Direction Setting -->
+                                <div class="flex items-center justify-between py-2 border-b border-clinic-border/60 dark:border-[#1A2440]">
+                                    <div>
+                                        <span class="text-sm font-semibold text-clinic-primary dark:text-white block">Text Direction</span>
+                                        <span class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary">Switch between LTR and RTL layouts</span>
+                                    </div>
+                                    <button type="button" class="btn-outline-pill text-xs py-1.5 px-4" onclick="document.getElementById('rtl-toggle').click()">
+                                        <span>Toggle RTL</span>
+                                    </button>
+                                </div>
+
+                                <!-- Sidebar Mode -->
+                                <div class="flex items-center justify-between py-2">
+                                    <div>
+                                        <span class="text-sm font-semibold text-clinic-primary dark:text-white block">Sidebar Layout</span>
+                                        <span class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary">Expanded standard rail or compact icons</span>
+                                    </div>
+                                    <button type="button" class="btn-outline-pill text-xs py-1.5 px-4" onclick="toggleSidebarCollapse()">
+                                        <span id="settings-sidebar-toggle-text">Toggle Compact</span>
+                                    </button>
                                 </div>
                             </div>
-                            <div>
-                                <div class="flex justify-between text-xs mb-1"><span class="text-clinic-secondary dark:text-clinic-dark-secondary">Orthotic Order</span> <strong class="text-clinic-brand dark:text-clinic-dark-accent">In Progress</strong></div>
-                                <div class="h-2 bg-clinic-sage dark:bg-clinic-dark-elevated rounded-full overflow-hidden">
-                                    <div class="h-full bg-clinic-brand rounded-full" style="width: 75%;"></div>
+                        </div>
+
+                        <!-- Section 2: Workspace Options -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1022] border border-clinic-border dark:border-[#1E2A4A] shadow-sm">
+                            <h3 class="text-base font-bold text-clinic-primary dark:text-white mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                <span>Workspace Display</span>
+                            </h3>
+
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between py-2 border-b border-clinic-border/60 dark:border-[#1A2440]">
+                                    <div>
+                                        <span class="text-sm font-semibold text-clinic-primary dark:text-white block">Workspace Density</span>
+                                        <span class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary">Adjust vertical spacing of operational cards</span>
+                                    </div>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-[#15203D] text-clinic-primary dark:text-white">
+                                        Comfortable
+                                    </span>
+                                </div>
+
+                                <div class="flex items-center justify-between py-2">
+                                    <div>
+                                        <span class="text-sm font-semibold text-clinic-primary dark:text-white block">Operational Modules</span>
+                                        <span class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary">All 8 standard clinical workflow domains active</span>
+                                    </div>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent">
+                                        8 Active Modules
+                                    </span>
                                 </div>
                             </div>
-                            <div>
-                                <div class="flex justify-between text-xs mb-1"><span class="text-clinic-secondary dark:text-clinic-dark-secondary">Follow-up Required</span> <strong class="text-clinic-brand dark:text-clinic-dark-accent">Scheduled</strong></div>
-                                <div class="h-2 bg-clinic-sage dark:bg-clinic-dark-elevated rounded-full overflow-hidden">
-                                    <div class="h-full bg-clinic-brand rounded-full" style="width: 45%;"></div>
+                        </div>
+
+                        <!-- Section 3: System Integrations -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1022] border border-clinic-border dark:border-[#1E2A4A] shadow-sm">
+                            <h3 class="text-base font-bold text-clinic-primary dark:text-white mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-circle-nodes text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                <span>Operational Integrations</span>
+                            </h3>
+
+                            <div class="space-y-3">
+                                <!-- Scheduling -->
+                                <div class="flex items-center justify-between p-3.5 rounded-xl bg-clinic-canvas dark:bg-[#070B18] border border-clinic-border/60 dark:border-[#1A2440]">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-calendar-check text-clinic-muted dark:text-clinic-dark-secondary"></i>
+                                        <div>
+                                            <span class="text-xs font-bold text-clinic-primary dark:text-white block">Scheduling Source</span>
+                                            <span class="text-[11px] text-clinic-muted dark:text-clinic-dark-secondary">Consultation calendar synchronization</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-200 dark:bg-[#1A2440] text-clinic-muted dark:text-clinic-dark-secondary">
+                                        Not connected
+                                    </span>
+                                </div>
+
+                                <!-- Diagnostic Records -->
+                                <div class="flex items-center justify-between p-3.5 rounded-xl bg-clinic-canvas dark:bg-[#070B18] border border-clinic-border/60 dark:border-[#1A2440]">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-bed-pulse text-clinic-muted dark:text-clinic-dark-secondary"></i>
+                                        <div>
+                                            <span class="text-xs font-bold text-clinic-primary dark:text-white block">Diagnostic Records Feed</span>
+                                            <span class="text-[11px] text-clinic-muted dark:text-clinic-dark-secondary">In-lab PSG &amp; home testing data sync</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-200 dark:bg-[#1A2440] text-clinic-muted dark:text-clinic-dark-secondary">
+                                        Not connected
+                                    </span>
+                                </div>
+
+                                <!-- Clinical Reports -->
+                                <div class="flex items-center justify-between p-3.5 rounded-xl bg-clinic-canvas dark:bg-[#070B18] border border-clinic-border/60 dark:border-[#1A2440]">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-file-lines text-clinic-muted dark:text-clinic-dark-secondary"></i>
+                                        <div>
+                                            <span class="text-xs font-bold text-clinic-primary dark:text-white block">Clinical Document Archive</span>
+                                            <span class="text-[11px] text-clinic-muted dark:text-clinic-dark-secondary">Medical records and consult summaries</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-200 dark:bg-[#1A2440] text-clinic-muted dark:text-clinic-dark-secondary">
+                                        Not connected
+                                    </span>
+                                </div>
+
+                                <!-- Billing Source -->
+                                <div class="flex items-center justify-between p-3.5 rounded-xl bg-clinic-canvas dark:bg-[#070B18] border border-clinic-border/60 dark:border-[#1A2440]">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-receipt text-clinic-muted dark:text-clinic-dark-secondary"></i>
+                                        <div>
+                                            <span class="text-xs font-bold text-clinic-primary dark:text-white block">Financial &amp; Billing System</span>
+                                            <span class="text-[11px] text-clinic-muted dark:text-clinic-dark-secondary">Practice accounting and invoice pipeline</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-200 dark:bg-[#1A2440] text-clinic-muted dark:text-clinic-dark-secondary">
+                                        Not connected
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- PANE 2: APPOINTMENTS TAB -->
-            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="appointments">
-                <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Appointments</h3>
-                    <div class="space-y-3 pt-2">
-                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated flex justify-between items-center text-xs">
-                            <div>
-                                <span class="bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent font-bold px-2 py-0.5 rounded">Upcoming</span>
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white mt-1">Sample Appointment</h4>
-                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Date and time to be confirmed • Podiatric Care Team</div>
-                            </div>
-                            <button onclick="showToast('Visit reminder active.')" class="btn-outline-pill text-xs py-1.5 px-3">Remind Me</button>
-                        </div>
-                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas/70 dark:bg-clinic-dark-elevated/70 flex justify-between items-center text-xs opacity-85">
-                            <div>
-                                <span class="bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-secondary dark:text-clinic-dark-secondary font-bold px-2 py-0.5 rounded border border-clinic-border dark:border-clinic-dark-border">Completed</span>
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white mt-1">Sample Past Appointment</h4>
-                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Previous visit • Podiatric Care Team</div>
-                            </div>
-                            <button onclick="openModal('scanReportModal')" class="text-clinic-brand dark:text-clinic-dark-accent font-bold hover:underline">View Notes</button>
-                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- PANE 3: TREATMENT HISTORY TAB -->
-            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="treatment">
-                <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Treatment History</h3>
-                    <div class="space-y-3 pt-2">
-                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated space-y-2 text-xs">
-                            <div class="flex items-center justify-between">
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white">Sample Treatment Record</h4>
-                                <span class="bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-secondary dark:text-clinic-dark-secondary font-bold px-2 py-0.5 rounded border border-clinic-border dark:border-clinic-dark-border">Completed</span>
-                            </div>
-                            <p class="text-clinic-muted dark:text-clinic-dark-secondary">Treatment information available. Contact your care team for details.</p>
-                            <button onclick="openModal('scanReportModal')" class="btn-outline-pill text-xs py-1.5 px-4">View Record</button>
-                        </div>
-                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated space-y-2 text-xs">
-                            <div class="flex items-center justify-between">
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white">Sample Treatment Record</h4>
-                                <span class="bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-secondary dark:text-clinic-dark-secondary font-bold px-2 py-0.5 rounded border border-clinic-border dark:border-clinic-dark-border">Completed</span>
-                            </div>
-                            <p class="text-clinic-muted dark:text-clinic-dark-secondary">Assessment details available. Contact your care team for details.</p>
-                            <button onclick="openModal('scanReportModal')" class="btn-outline-pill text-xs py-1.5 px-4">View Record</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </main>
 
-            <!-- PANE 4: ORTHOTIC ORDER STATUS TAB -->
-            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="orthotics">
-                <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Orthotic Order Status</h3>
-                    <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Your most recent orthotic order — contact the clinic for full order details.</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-                        <img src="assets/images/orthotics_3d_scan.jpg" alt="Orthotics Preview" class="rounded-2xl h-52 w-full object-cover border border-clinic-border dark:border-clinic-dark-border">
-                        <div class="space-y-3 text-xs text-clinic-secondary dark:text-clinic-dark-secondary">
-                            <div class="p-3 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border rounded-xl">
-                                <strong>Order Status:</strong> In Progress — Ready for Review
-                            </div>
-                            <div class="p-3 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border rounded-xl">
-                                <strong>Next Step:</strong> Follow-up appointment for fitting review
-                            </div>
-                            <div class="p-3 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border rounded-xl">
-                                <strong>Guidance:</strong> Contact the clinic for order details and wear instructions.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
 
-            <!-- PANE 5: FOLLOW-UP SCHEDULE TAB -->
-            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="followup">
-                <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Follow-up Schedule</h3>
-                    <div class="space-y-3 pt-2">
-                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated flex justify-between items-center text-xs">
-                            <div class="space-y-1">
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white">Sample Follow-up Appointment</h4>
-                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Follow-up information available upon confirmation from the clinic.</div>
-                            </div>
-                            <button onclick="openModal('bookFollowUpModal')" class="btn-primary-pill text-xs py-1.5 px-3">Schedule</button>
-                        </div>
-                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated flex justify-between items-center text-xs">
-                            <div class="space-y-1">
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white">Sample Recommended Review</h4>
-                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Recommended follow-up review — contact the clinic to confirm.</div>
-                            </div>
-                            <button onclick="showToast('Follow-up request submitted.')" class="btn-outline-pill text-xs py-1.5 px-3">Request</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PANE 6: BILLING HISTORY TAB -->
-            <div class="tab-pane space-y-6" data-tab-pane-group="dash" data-tab-pane="billing">
-                <div class="bg-clinic-surface dark:bg-clinic-dark-surface p-8 rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-sm space-y-4">
-                    <h3 class="font-serif text-3xl font-bold text-clinic-primary dark:text-white">Billing History</h3>
-                    <div class="space-y-3 pt-2">
-                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas dark:bg-clinic-dark-elevated flex justify-between items-center text-xs">
-                            <div>
-                                <span class="bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-secondary dark:text-clinic-dark-secondary font-bold px-2 py-0.5 rounded border border-clinic-border dark:border-clinic-dark-border">Demo Billing Record</span>
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white mt-1">Sample Service Record</h4>
-                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Billing details shown for demonstration only</div>
-                            </div>
-                            <button onclick="showToast('Billing statement download requested.')" class="text-clinic-brand dark:text-clinic-dark-accent font-bold hover:underline">View Statement</button>
-                        </div>
-                        <div class="p-4 border rounded-2xl border-clinic-border dark:border-clinic-dark-border bg-clinic-canvas/70 dark:bg-clinic-dark-elevated/70 flex justify-between items-center text-xs opacity-85">
-                            <div>
-                                <span class="bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-secondary dark:text-clinic-dark-secondary font-bold px-2 py-0.5 rounded border border-clinic-border dark:border-clinic-dark-border">Demo Billing Record</span>
-                                <h4 class="font-bold text-sm text-clinic-primary dark:text-white mt-1">Sample Service Record</h4>
-                                <div class="text-clinic-muted dark:text-clinic-dark-secondary">Billing details shown for demonstration only</div>
-                            </div>
-                            <button onclick="showToast('Billing statement download requested.')" class="text-clinic-brand dark:text-clinic-dark-accent font-bold hover:underline">View Statement</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
     </div>
 
-    <!-- ===== MODAL: CARE RECORD ===== -->
-    <div id="scanReportModal" class="modal-backdrop">
-        <div class="modal-content p-6 sm:p-8 max-w-xl">
-            <div class="flex items-center justify-between pb-4 border-b border-clinic-border dark:border-clinic-dark-border mb-4">
-                <h3 class="font-bold text-lg text-clinic-primary dark:text-white">Care Record</h3>
-                <button data-modal-close class="text-clinic-muted dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-white text-xl"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="space-y-4 text-xs text-clinic-secondary dark:text-clinic-dark-secondary">
-                <img src="assets/images/orthotics_3d_scan.jpg" alt="Care Record" class="rounded-xl w-full h-44 object-cover border border-clinic-border dark:border-clinic-dark-border">
-                <div class="grid grid-cols-2 gap-2 bg-clinic-canvas dark:bg-clinic-dark-elevated border border-clinic-border dark:border-clinic-dark-border p-3 rounded-xl font-medium">
-                    <div>Record Type: <strong>Treatment Information</strong></div>
-                    <div>Status: <strong>Available</strong></div>
-                    <div>Assessment: <strong>Details available</strong></div>
-                    <div>Follow-up: <strong>Information available</strong></div>
+    <!-- Informational Connection Modal Dialog -->
+    <div id="connection-info-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="conn-modal-title">
+        <div class="clinical-modal-dialog p-6 sm:p-8 max-w-lg">
+            <div class="flex items-center justify-between pb-4 border-b border-clinic-border dark:border-[#1A1D30] mb-5">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                    </div>
+                    <div>
+                        <h3 id="conn-modal-title" class="font-bold text-lg text-clinic-primary dark:text-clinic-dark-primary">System Integration</h3>
+                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">SomnaClinic Operational Architecture</p>
+                    </div>
                 </div>
-                <button onclick="showToast('Record download requested.'); closeModal('scanReportModal');" class="btn-primary-pill w-full justify-center text-xs py-2.5">
-                    <i class="fas fa-download mr-1"></i> Download Record
+                <button type="button" onclick="closeConnectionModal()" class="text-clinic-muted dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-clinic-dark-primary text-xl p-1" aria-label="Close dialog">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 mb-6 text-sm text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                <p id="conn-modal-body">
+                    This operational module is designed for connection to the clinic's preferred backend service. Once configured, live records and workflows will sync automatically.
+                </p>
+                <div class="p-3.5 rounded-xl bg-clinic-canvas dark:bg-[#070B18] border border-clinic-border/70 dark:border-[#1A2440] text-xs space-y-1">
+                    <span class="font-semibold text-clinic-primary dark:text-white block">Technical Integration Protocol:</span>
+                    <span class="block text-clinic-muted dark:text-clinic-dark-secondary">Endpoint configuration can be linked through the clinic's secure operational gateway.</span>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-end">
+                <button type="button" onclick="closeConnectionModal()" class="btn-primary-pill text-xs py-2.5 px-5">
+                    <span>Understood</span>
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- ===== MODAL: BOOK FOLLOW-UP ===== -->
-    <div id="bookFollowUpModal" class="modal-backdrop">
-        <div class="modal-content p-6 sm:p-8 max-w-md">
-            <div class="flex items-center justify-between pb-4 border-b border-clinic-border dark:border-clinic-dark-border mb-4">
-                <h3 class="font-bold text-lg text-clinic-primary dark:text-white">Request a Follow-Up</h3>
-                <button data-modal-close class="text-clinic-muted dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-white text-xl"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="space-y-3 text-xs">
-                <div>
-                    <label class="block font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Preferred Date:</label>
-                    <input type="date" class="w-full px-3 py-2 border rounded-xl bg-clinic-canvas dark:bg-clinic-dark-elevated border-clinic-border dark:border-clinic-dark-border text-clinic-primary dark:text-white">
-                </div>
-                <div>
-                    <label class="block font-semibold mb-1 text-clinic-secondary dark:text-clinic-dark-secondary">Preferred Time:</label>
-                    <select class="w-full px-3 py-2 border rounded-xl bg-clinic-canvas dark:bg-clinic-dark-elevated border-clinic-border dark:border-clinic-dark-border text-clinic-primary dark:text-white">
-                        <option>Morning (9:00 AM – 12:00 PM)</option>
-                        <option>Afternoon (1:00 PM – 4:00 PM)</option>
-                        <option>Late Afternoon (4:00 PM – 6:00 PM)</option>
-                    </select>
-                </div>
-                <div class="pt-4 flex justify-end gap-2">
-                    <button data-modal-close class="btn-outline-pill text-xs py-2 px-4">Cancel</button>
-                    <button onclick="showToast('Follow-up request submitted. The clinic will confirm your appointment.'); closeModal('bookFollowUpModal');" class="btn-primary-pill text-xs py-2 px-5">Submit Request</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- Scripts -->
     <script src="js/motion.js"></script>
     <script src="js/main.js"></script>
     <script>
-        function sendDoctorReply() {
-            const input = document.getElementById('replyMsgInput');
-            if (input && input.value.trim() !== '') {
-                showToast('Message submitted to the care team.');
-                input.value = '';
+        // Module Switching Logic
+        const moduleTitles = {
+            'overview': 'Dashboard Overview',
+            'appointments': 'Appointments Management',
+            'sleep-studies': 'Sleep Studies Diagnostic Flow',
+            'reports': 'Clinical Document Archive',
+            'cpap': 'CPAP Therapy &amp; Equipment',
+            'followups': 'Patient Follow-up Workflows',
+            'billing': 'Financial &amp; Billing Records',
+            'settings': 'Operational Workspace Settings'
+        };
+
+        function switchModule(moduleId) {
+            // Update sidebar buttons
+            const navBtns = document.querySelectorAll('.dashboard-nav-btn[data-module]');
+            navBtns.forEach(btn => {
+                const matches = btn.getAttribute('data-module') === moduleId;
+                btn.classList.toggle('active', matches);
+                if (matches) {
+                    btn.setAttribute('aria-current', 'page');
+                } else {
+                    btn.removeAttribute('aria-current');
+                }
+            });
+
+            // Update module views
+            const views = document.querySelectorAll('.dashboard-module-view');
+            views.forEach(view => {
+                view.classList.remove('active');
+            });
+            const targetView = document.getElementById('module-' + moduleId);
+            if (targetView) {
+                targetView.classList.add('active');
+            }
+
+            // Update topbar heading
+            const topbarHeading = document.getElementById('topbar-heading');
+            if (topbarHeading && moduleTitles[moduleId]) {
+                topbarHeading.innerHTML = moduleTitles[moduleId];
+            }
+
+            // Close mobile drawer if open
+            closeMobileDrawer();
+
+            // Scroll main workspace to top
+            const mainCanvas = document.getElementById('main-content');
+            if (mainCanvas) {
+                mainCanvas.scrollTop = 0;
+            }
+        }
+
+        // Attach listeners to sidebar nav buttons
+        document.addEventListener('DOMContentLoaded', function () {
+            const navBtns = document.querySelectorAll('.dashboard-nav-btn[data-module]');
+            navBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const moduleId = this.getAttribute('data-module');
+                    if (moduleId) switchModule(moduleId);
+                });
+            });
+
+            // Mobile drawer toggle
+            const mobileToggle = document.getElementById('mobile-sidebar-toggle');
+            const drawerBackdrop = document.getElementById('dashboard-drawer-backdrop');
+            const drawerCloseBtn = document.getElementById('drawer-close-btn');
+            const sidebar = document.getElementById('dashboard-sidebar');
+
+            function openMobileDrawer() {
+                if (sidebar && drawerBackdrop) {
+                    sidebar.classList.add('mobile-open');
+                    drawerBackdrop.classList.add('open');
+                }
+            }
+
+            window.closeMobileDrawer = function () {
+                if (sidebar && drawerBackdrop) {
+                    sidebar.classList.remove('mobile-open');
+                    drawerBackdrop.classList.remove('open');
+                }
+            };
+
+            if (mobileToggle) mobileToggle.addEventListener('click', openMobileDrawer);
+            if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeMobileDrawer);
+            if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeMobileDrawer);
+
+            // Escape key closes mobile drawer and modal
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeMobileDrawer();
+                    closeConnectionModal();
+                }
+            });
+
+            // Desktop Sidebar Collapse Toggle
+            const collapseBtn = document.getElementById('sidebar-collapse-btn');
+            window.toggleSidebarCollapse = function () {
+                if (sidebar) {
+                    sidebar.classList.toggle('collapsed');
+                    const isCollapsed = sidebar.classList.contains('collapsed');
+                    const collapseIcon = document.getElementById('collapse-icon');
+                    if (collapseIcon) {
+                        collapseIcon.style.transform = isCollapsed ? 'rotate(180deg)' : 'rotate(0deg)';
+                    }
+                }
+            };
+            if (collapseBtn) collapseBtn.addEventListener('click', toggleSidebarCollapse);
+        });
+
+        // Connection Notice Trigger (Safe, non-faking informational notification)
+        function triggerConnectionNotice(sourceName) {
+            const modal = document.getElementById('connection-info-modal');
+            const body = document.getElementById('conn-modal-body');
+            if (body && sourceName) {
+                body.innerHTML = `The <strong>${sourceName}</strong> operational module is prepared for clinical synchronization. Configure the respective data endpoint to stream records into this workspace.`;
+            }
+            if (modal) {
+                modal.classList.add('open');
+            }
+        }
+
+        function closeConnectionModal() {
+            const modal = document.getElementById('connection-info-modal');
+            if (modal) {
+                modal.classList.remove('open');
             }
         }
     </script>
 </body>
+
 </html>

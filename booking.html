@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Schedule Clinical Consultation | StepWell Podiatry & Foot Care</title>
-    <meta name="description" content="Book an appointment online with our board-certified podiatrists and foot surgeons. Easy 4-step scheduling for heel pain, custom orthotics, bunions, and sports injuries.">
-    <!-- Favicon — StepWell Brand Logomark -->
+    <title>Consultation Scheduling Archive | SomnaClinic Sleep Medicine</title>
+    <meta name="description" content="Archive: Consultation scheduling reference for SomnaClinic Sleep Medicine & Diagnostics.">
+    <!-- Favicon — SomnaClinic Brand Logomark -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
@@ -52,6 +52,23 @@
         }
     </script>
     
+        <!-- Immediate Direction & Theme Initialization (Prevents FOUC) -->
+    <script>
+        (function() {
+            var theme = localStorage.getItem('somna-theme');
+            if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            var dir = localStorage.getItem('somna-dir');
+            if (dir === 'rtl') {
+                document.documentElement.setAttribute('dir', 'rtl');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,6 +76,7 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/motion.css">
+    <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans overflow-x-hidden w-full relative">
 
@@ -176,6 +194,15 @@
         </div>
     </header>
 
+    <!-- Legacy Deprecation Banner -->
+    <div class="w-full bg-clinic-canvas dark:bg-[#0C0F1D] border-b border-clinic-border/60 dark:border-[#1A1D30] py-3 px-4 text-center text-xs text-clinic-secondary dark:text-clinic-dark-secondary" role="status">
+        <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-2">
+            <i class="fas fa-circle-info text-clinic-brand dark:text-clinic-dark-accent"></i>
+            <span>Notice: This legacy page has been updated. Please visit our active <a href="contact.html" class="font-semibold underline text-clinic-brand dark:text-clinic-dark-accent">Consultation & Contact</a> or <a href="services.html" class="font-semibold underline text-clinic-brand dark:text-clinic-dark-accent">Sleep Diagnostics</a>.</span>
+        </div>
+    </div>
+
+
     <!-- ===== HEADER ===== -->
     <header class="pt-36 pb-12 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary border-b border-clinic-border dark:border-clinic-dark-border text-center transition-colors duration-300">
         <div class="max-w-4xl mx-auto space-y-3 reveal">
@@ -230,7 +257,7 @@
 
                 <!-- STEP 2: DOCTOR SELECTION -->
                 <div id="step2" class="step-content hidden space-y-4">
-                    <h3 class="font-bold text-lg text-clinic-primary dark:text-white">Choose your podiatrist</h3>
+                    <h3 class="font-bold text-lg text-clinic-primary dark:text-white">Choose your specialist</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="doctorOptions">
                         <button type="button" class="doc-opt-btn p-4 rounded-2xl border text-center border-clinic-brand bg-clinic-brand/10 text-clinic-primary dark:text-white transition" onclick="chooseDoctor('Dr. Julian Vance, DPM (Surgeon)')">
                             <img src="assets/images/dr_marcus_vance.jpg" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover border border-clinic-brand/40">
@@ -377,7 +404,7 @@
                     A Few Things to Consider Before You Book
                 </h2>
                 <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg leading-relaxed">
-                    A little preparation can help you make the most of your appointment. Think about what you have been experiencing and what you would like to discuss with your podiatrist.
+                    A little preparation can help you make the most of your appointment. Think about what you have been experiencing and what you would like to discuss with your specialist.
                 </p>
             </div>
 
@@ -424,7 +451,7 @@
                                 Recent Foot-Care History
                             </h3>
                             <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed">
-                                Be ready to share relevant treatment or care information that may help your podiatrist understand your situation.
+                                Be ready to share relevant treatment or care information that may help your specialist understand your situation.
                             </p>
                         </div>
                         <div class="pt-6 mt-6 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 flex items-center text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent">
@@ -447,7 +474,7 @@
                                 Questions You Want to Ask
                             </h3>
                             <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed">
-                                Make a note of anything you would like to understand about your foot health or available care options.
+                                Make a note of anything you would like to understand about your sleep health or available care options.
                             </p>
                         </div>
                         <div class="pt-6 mt-6 border-t border-clinic-border/60 dark:border-clinic-dark-border/60 flex items-center text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent">
@@ -643,7 +670,7 @@
                         </div>
                     </div>
 
-                    <!-- Step 03: Meet Your Podiatrist -->
+                    <!-- Step 03: Meet Your Specialist -->
                     <div class="bg-clinic-canvas dark:bg-clinic-dark-elevated rounded-3xl p-7 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-3">
                         <div>
                             <div class="flex items-center justify-between mb-6">
@@ -654,7 +681,7 @@
                             </div>
                             <span class="text-[10px] uppercase tracking-widest font-bold text-clinic-muted dark:text-clinic-dark-secondary block mb-1">Clinical Visit</span>
                             <h3 class="font-serif text-xl font-bold text-clinic-primary dark:text-white mb-2 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
-                                Meet Your Podiatrist
+                                Meet Your Specialist
                             </h3>
                             <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed">
                                 Discuss your foot-health concerns and the care options relevant to your needs.
@@ -718,10 +745,10 @@
                 </div>
                 <span class="text-[11px] uppercase tracking-widest font-bold text-clinic-brand dark:text-clinic-dark-accent">Digital Patient Hub</span>
                 <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mt-1">
-                    StepWell Patient Portal
+                    SomnaClinic Operational Portal
                 </h3>
                 <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-1">
-                    Direct access to your ongoing podiatric records & schedules
+                    Direct access to your ongoing clinical records & schedules
                 </p>
             </div>
 
@@ -866,8 +893,8 @@
                     </p>
                     <div class="pt-2">
                         <span class="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-clinic-dark-primary">
-                            <i class="fas fa-certificate text-clinic-brand dark:text-clinic-dark-accent"></i>
-                            <span>Board-Certified Sleep Medicine</span>
+                            <i class="fas fa-bed-pulse text-clinic-brand dark:text-clinic-dark-accent"></i>
+                        <span>Evidence-Based Sleep Medicine</span>
                         </span>
                     </div>
                 </div>

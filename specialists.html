@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Board-Certified Podiatrists & Foot Surgeons | StepWell Foot Care</title>
-    <meta name="description" content="Meet our board-certified podiatric physicians, foot surgeons, and sports pedorthists at StepWell Podiatry in Seattle, WA.">
+    <title>Clinical Specialists Archive | SomnaClinic Sleep Medicine</title>
+    <meta name="description" content="Archive: Historical clinical specialists reference for SomnaClinic Sleep Medicine & Diagnostics.">
 
-    <!-- Favicon — StepWell Brand Logomark -->
+    <!-- Favicon — SomnaClinic Brand Logomark -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
@@ -53,6 +53,23 @@
         }
     </script>
     
+        <!-- Immediate Direction & Theme Initialization (Prevents FOUC) -->
+    <script>
+        (function() {
+            var theme = localStorage.getItem('somna-theme');
+            if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            var dir = localStorage.getItem('somna-dir');
+            if (dir === 'rtl') {
+                document.documentElement.setAttribute('dir', 'rtl');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,6 +77,7 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/motion.css">
+    <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans overflow-x-hidden w-full relative">
 
@@ -177,12 +195,21 @@
         </div>
     </header>
 
+    <!-- Legacy Deprecation Banner -->
+    <div class="w-full bg-clinic-canvas dark:bg-[#0C0F1D] border-b border-clinic-border/60 dark:border-[#1A1D30] py-3 px-4 text-center text-xs text-clinic-secondary dark:text-clinic-dark-secondary" role="status">
+        <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-2">
+            <i class="fas fa-circle-info text-clinic-brand dark:text-clinic-dark-accent"></i>
+            <span>Notice: This legacy page has been updated. Please visit our active <a href="doctors.html" class="font-semibold underline text-clinic-brand dark:text-clinic-dark-accent">Doctors & Sleep Specialists</a> or <a href="services.html" class="font-semibold underline text-clinic-brand dark:text-clinic-dark-accent">Sleep Diagnostics</a>.</span>
+        </div>
+    </div>
+
+
     <!-- ===== HEADER ===== -->
     <header class="pt-36 pb-16 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary border-b border-clinic-border dark:border-clinic-dark-border text-center transition-colors duration-300">
         <div class="max-w-4xl mx-auto space-y-4 reveal">
             <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-widest bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 border border-clinic-brand/30 dark:border-clinic-dark-accent/30 px-4 py-1.5 rounded-full inline-block">Medical Faculty</span>
             <h1 class="font-serif text-4xl sm:text-6xl font-bold leading-tight text-clinic-primary dark:text-white">
-                Our Podiatric <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Physicians & Surgeons</span>
+                Our Clinical <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Physicians & Specialists</span>
             </h1>
             <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
                 Leaders in minimally invasive foot surgery, athletic biomechanics, and limb salvage dedicated to personalized, compassionate healing.
@@ -191,7 +218,7 @@
     </header>
 
     <!-- ==========================================================================
-         NEW SECTION 01 — How Our Podiatrists Approach Care
+         NEW SECTION 01 — How Our Specialists Approach Care
          ========================================================================== -->
     <section class="py-20 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas border-b border-clinic-border dark:border-clinic-dark-border transition-colors duration-300 relative overflow-hidden" id="our-approach">
         <div class="max-w-7xl mx-auto">
@@ -343,7 +370,7 @@
     </main>
 
     <!-- ==========================================================================
-         NEW SECTION 02 — Areas of Podiatric Expertise
+         NEW SECTION 02 — Areas of Clinical Expertise
          ========================================================================== -->
     <section class="py-24 px-6 bg-clinic-surface dark:bg-clinic-dark-surface border-b border-clinic-border dark:border-clinic-dark-border transition-colors duration-300" id="areas-of-care">
         <div class="max-w-7xl mx-auto">
@@ -353,10 +380,10 @@
                     AREAS OF CARE
                 </span>
                 <h2 class="font-serif text-3xl sm:text-5xl font-bold text-clinic-primary dark:text-white leading-tight mb-4">
-                    Focused Care for Your Foot Health
+                    Focused Care for Your Sleep Health
                 </h2>
                 <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg leading-relaxed">
-                    Explore the core areas of podiatric care available through our clinic.
+                    Explore the core areas of clinical sleep care available through our clinic.
                 </p>
             </div>
 
@@ -366,7 +393,7 @@
                 <div class="bg-clinic-canvas dark:bg-clinic-dark-elevated rounded-3xl border border-clinic-border dark:border-clinic-dark-border overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group reveal reveal-delay-1">
                     <div>
                         <div class="relative overflow-hidden aspect-[4/3] w-full">
-                            <img src="assets/images/specialist-bunion-care.jpg" alt="Bunion Evaluation and Conservative Foot Care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <img src="assets/images/specialist-bunion-care.jpg" alt="Clinical Evaluation and Patient Care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                             <div class="absolute top-4 left-4 rtl:left-auto rtl:right-4 bg-clinic-surface/90 dark:bg-clinic-dark-surface/90 backdrop-blur-md px-3 py-1 rounded-full border border-clinic-border/60 dark:border-clinic-dark-border/60 text-xs font-bold text-clinic-brand dark:text-clinic-dark-accent flex items-center gap-2">
                                 <span class="w-2 h-2 rounded-full bg-clinic-brand dark:bg-clinic-dark-accent"></span>
                                 <span>Joint Realignment</span>
@@ -392,7 +419,7 @@
                     </div>
                 </div>
 
-                <!-- Panel 2: Diabetic Foot Care -->
+                <!-- Panel 2: Clinical Care Archive -->
                 <div class="bg-clinic-canvas dark:bg-clinic-dark-elevated rounded-3xl border border-clinic-border dark:border-clinic-dark-border overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group reveal reveal-delay-2">
                     <div>
                         <div class="relative overflow-hidden aspect-[4/3] w-full">
@@ -407,7 +434,7 @@
                                 <i class="fas fa-shield-heart"></i>
                             </div>
                             <h3 class="font-serif text-2xl font-bold text-clinic-primary dark:text-white mb-3">
-                                Diabetic Foot Care
+                                Comprehensive Clinical Care
                             </h3>
                             <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-4">
                                 Professional foot-health support focused on regular monitoring, awareness and ongoing care needs.
@@ -466,7 +493,7 @@
                     YOUR CARE TEAM
                 </span>
                 <h2 class="font-serif text-3xl sm:text-5xl font-bold text-clinic-primary dark:text-white leading-tight mb-4">
-                    People Behind Your Foot Care
+                    People Behind Your Clinical Care
                 </h2>
                 <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base sm:text-lg leading-relaxed">
                     Our care team is here to listen, understand your concerns and support you throughout your foot-health journey.
@@ -497,7 +524,7 @@
                     </div>
                     <div class="w-full md:w-7/12 space-y-4">
                         <div class="flex items-center justify-between">
-                            <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-wider">Podiatry Care Team</span>
+                            <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-wider">Clinical Care Team</span>
                             <span class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">01 / 02</span>
                         </div>
                         <h3 class="font-serif text-3xl sm:text-4xl font-bold text-clinic-primary dark:text-white">
@@ -555,7 +582,7 @@
                     </div>
                     <div class="w-full md:w-7/12 space-y-4">
                         <div class="flex items-center justify-between">
-                            <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-wider">Podiatry Care Team</span>
+                            <span class="text-xs uppercase font-bold text-clinic-brand dark:text-clinic-dark-accent tracking-wider">Clinical Care Team</span>
                             <span class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">02 / 02</span>
                         </div>
                         <h3 class="font-serif text-3xl sm:text-4xl font-bold text-clinic-primary dark:text-white">
@@ -628,7 +655,7 @@
                 <div class="hidden lg:block absolute top-12 left-16 right-16 h-0.5 bg-clinic-border dark:bg-clinic-dark-border z-0"></div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-                    <!-- Stage 01: Meet Your Podiatrist -->
+                    <!-- Stage 01: Meet Your Specialist -->
                     <div class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-7 border border-clinic-border dark:border-clinic-dark-border shadow-sm hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-all duration-300 group flex flex-col justify-between reveal reveal-delay-1">
                         <div>
                             <div class="flex items-center justify-between mb-6">
@@ -639,7 +666,7 @@
                             </div>
                             <span class="text-[10px] uppercase tracking-widest font-bold text-clinic-muted dark:text-clinic-dark-secondary block mb-1">Consultation</span>
                             <h3 class="font-serif text-xl font-bold text-clinic-primary dark:text-white mb-2 group-hover:text-clinic-brand dark:group-hover:text-clinic-dark-accent transition-colors">
-                                Meet Your Podiatrist
+                                Meet Your Specialist
                             </h3>
                             <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-xs leading-relaxed">
                                 Start with a conversation about your concerns and what you would like help with.
@@ -760,8 +787,8 @@
                     </p>
                     <div class="pt-2">
                         <span class="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-clinic-dark-primary">
-                            <i class="fas fa-certificate text-clinic-brand dark:text-clinic-dark-accent"></i>
-                            <span>Board-Certified Sleep Medicine</span>
+                            <i class="fas fa-bed-pulse text-clinic-brand dark:text-clinic-dark-accent"></i>
+                        <span>Evidence-Based Sleep Medicine</span>
                         </span>
                     </div>
                 </div>

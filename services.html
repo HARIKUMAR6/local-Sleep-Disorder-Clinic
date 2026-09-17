@@ -68,6 +68,23 @@
         rel="stylesheet">
 
     <!-- Font Awesome Icons -->
+        <!-- Immediate Direction & Theme Initialization (Prevents FOUC) -->
+    <script>
+        (function() {
+            var theme = localStorage.getItem('somna-theme');
+            if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            var dir = localStorage.getItem('somna-dir');
+            if (dir === 'rtl') {
+                document.documentElement.setAttribute('dir', 'rtl');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Core Custom Stylesheets -->
@@ -119,6 +136,7 @@
                 <a href="doctors.html" class="nav-link " id="nav-item-doctors">Doctors</a>
                 <a href="faq.html" class="nav-link " id="nav-item-faq">FAQ</a>
                 <a href="contact.html" class="nav-link " id="nav-item-contact">Contact</a>
+                <a href="dashboard.html" class="nav-link " id="nav-item-dashboard">Dashboard</a>
             </nav>
 
             <!-- Right Header Controls -->
@@ -135,10 +153,7 @@
                     <i class="fas fa-sun hidden"></i>
                 </button>
 
-                <!-- Dashboard CTA (Desktop) -->
-                <a href="dashboard.html" class="btn-primary-pill nav-cta-btn hidden lg:inline-flex ">
-                    <i class="fas fa-chart-line"></i> <span>Dashboard</span>
-                </a>
+                
 
                 <!-- Mobile Hamburger Toggle -->
                 <button id="mobile-toggle" class="mobile-toggle lg:hidden" aria-label="Open mobile menu" aria-expanded="false">
@@ -183,19 +198,17 @@
                 <a href="contact.html" class="mobile-menu-item " id="mobile-item-contact">
                     <span><i class="fas fa-calendar-check text-clinic-brand dark:text-clinic-dark-accent mr-2.5"></i> Contact</span>
                 </a>
+                <a href="dashboard.html" class="mobile-menu-item " id="mobile-item-dashboard">
+                    <span><i class="fas fa-chart-line text-clinic-brand dark:text-clinic-dark-accent mr-2.5"></i> Dashboard</span>
+                </a>
 
-                <!-- Mobile Dashboard CTA -->
-                <div class="mobile-menu-cta">
-                    <a href="dashboard.html" class="btn-primary-pill w-full justify-center ">
-                        <i class="fas fa-chart-line"></i> <span>Dashboard</span>
-                    </a>
-                </div>
+                
             </div>
         </div>
     </header>
 
     <!-- Main Content (Exactly 5 Services sections, 100% preserved) -->
-    <main id="main-content">
+    <main id="main-content" tabindex="-1" class="focus:outline-hidden">
 
         <!-- ==================================================================
              SECTION 01: SERVICES EDITORIAL HERO
@@ -852,7 +865,7 @@
                                 </span>
                                 <span class="inline-flex items-center gap-2">
                                     <i class="fa-solid fa-user-doctor text-clinic-dark-accent text-xs"></i>
-                                    Board-Certified Sleep Specialists
+                                    Clinical Sleep Specialists
                                 </span>
                             </div>
                         </div>
@@ -885,8 +898,8 @@
                     </p>
                     <div class="pt-2">
                         <span class="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-clinic-dark-primary">
-                            <i class="fas fa-certificate text-clinic-brand dark:text-clinic-dark-accent"></i>
-                            <span>Board-Certified Sleep Medicine</span>
+                            <i class="fas fa-bed-pulse text-clinic-brand dark:text-clinic-dark-accent"></i>
+                        <span>Evidence-Based Sleep Medicine</span>
                         </span>
                     </div>
                 </div>
@@ -1101,9 +1114,9 @@
             const name = document.getElementById('patientName')?.value || 'Patient';
             
             if (typeof window.showToast === 'function') {
-                window.showToast(`Thank you, ${name}. Your consultation request for ${service} has been received. Our clinical team will reach out promptly.`);
+                window.showToast(`Thank you, ${name}. Your consultation request for ${service} has been prepared. Connect this form to the clinic's booking system to confirm.`);
             } else {
-                alert(`Thank you, ${name}. Your request for ${service} has been received.`);
+                alert(`Thank you, ${name}. Your consultation request for ${service} has been prepared.`);
             }
 
             if (typeof window.closeModal === 'function') {

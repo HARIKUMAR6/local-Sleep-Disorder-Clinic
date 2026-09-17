@@ -111,6 +111,11 @@ html {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -120,10 +125,72 @@ body {
   min-height: 100vh;
   transition: background-color 0.35s ease, color 0.35s ease;
   overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 
-h1, h2, h3, .font-serif-heading {
+h1, h2, h3, h4, .font-serif-heading, .font-heading {
   font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY: SKIP TO MAIN CONTENT LINK
+   ========================================================================== */
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1.5rem;
+  z-index: 99999;
+  padding: 0.625rem 1.25rem;
+  background: var(--brand-primary, #3B5BDB);
+  color: #FFFFFF;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px -5px rgba(59, 91, 219, 0.4);
+  transform: translateY(-250%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  outline: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8), 0 10px 25px -5px rgba(59, 91, 219, 0.5);
+}
+
+.dark .skip-link {
+  background: var(--brand-primary, #7A9BE8);
+  color: #000000;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8);
+}
+
+.dark .skip-link:focus,
+.dark .skip-link:focus-visible {
+  box-shadow: 0 0 0 3px rgba(122, 155, 232, 0.5), 0 10px 25px -5px rgba(0, 0, 0, 0.9);
+}
+
+[dir="rtl"] .skip-link {
+  left: auto;
+  right: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none !important;
+  }
 }
 
 /* ==========================================================================
@@ -1099,6 +1166,93 @@ details[open] .faq-icon-chevron {
     border-radius: 20px;
   }
 }
+
+@media (max-width: 480px) {
+  .navbar-inner {
+    padding: 0 10px;
+    gap: 8px;
+  }
+  .nav-actions {
+    gap: 6px;
+  }
+  .btn-rtl-control {
+    height: 32px;
+    padding: 0 7px;
+    font-size: 0.70rem;
+    gap: 4px;
+  }
+  .btn-icon-rounded {
+    width: 32px;
+    height: 32px;
+    font-size: 0.80rem;
+  }
+  .mobile-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.90rem;
+  }
+  .service-nav-tab,
+  .faq-category-btn {
+    padding: 1rem 1.15rem;
+    gap: 0.85rem;
+  }
+  .faq-question-btn {
+    padding: 1rem 1.15rem;
+  }
+  .disorder-tab-btn {
+    padding: 0.85rem 1rem;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar-inner {
+    padding: 0 8px;
+    gap: 6px;
+  }
+  .nav-actions {
+    gap: 4px;
+  }
+  .logo-wrapper {
+    gap: 6px;
+  }
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+  .logo-wrapper span.font-serif,
+  .logo-text {
+    font-size: 0.95rem !important;
+  }
+  .btn-rtl-control {
+    height: 28px;
+    padding: 0 5px;
+    font-size: 0.65rem;
+    gap: 2px;
+  }
+  .btn-icon-rounded {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+  .mobile-toggle {
+    width: 28px;
+    height: 28px;
+    font-size: 0.82rem;
+  }
+  .service-nav-tab,
+  .faq-category-btn {
+    padding: 0.85rem 0.95rem;
+    gap: 0.75rem;
+  }
+  .faq-question-btn {
+    padding: 0.85rem 0.95rem;
+  }
+}
+
 
 /* ==========================================================================
    PHASE 7 — HOME 1 CLINICAL SLEEP MEDICINE STYLES
@@ -2634,5 +2788,886 @@ details[open] .faq-icon-chevron {
   .service-nav-tab:hover,
   .principle-item:hover {
     transform: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   PHASE 11 — DOCTORS PAGE STYLING
+   ========================================================================== */
+
+/* Concern Navigator Panels (Section 03) */
+.concern-tab-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.concern-tab-panel.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Concern Nav Button */
+.concern-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  text-align: left;
+  padding: 1.15rem 1.35rem;
+  border-radius: 1.25rem;
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-color, #C4CCDF);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+[dir="rtl"] .concern-nav-btn {
+  text-align: right;
+}
+
+.concern-nav-btn:hover {
+  border-color: var(--color-brand, #3B5BDB);
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .concern-nav-btn:hover {
+  transform: translateX(-4px);
+}
+
+.concern-nav-btn.active {
+  background: var(--bg-surface, #FFFFFF);
+  border-color: var(--color-brand, #3B5BDB);
+  box-shadow: 0 12px 30px -6px rgba(59, 91, 219, 0.14);
+}
+
+.dark .concern-nav-btn {
+  background: #09090F;
+  border-color: #1A1D30;
+}
+
+.dark .concern-nav-btn:hover {
+  border-color: var(--color-brand-dark, #7A9BE8);
+  background: #0E101D;
+}
+
+.dark .concern-nav-btn.active {
+  background: #10101C;
+  border-color: var(--color-brand-dark, #7A9BE8);
+  box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.8);
+}
+
+.concern-nav-btn .concern-indicator {
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 0;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--color-brand, #3B5BDB);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+[dir="rtl"] .concern-nav-btn .concern-indicator {
+  left: auto;
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.concern-nav-btn.active .concern-indicator {
+  opacity: 1;
+}
+
+.dark .concern-nav-btn .concern-indicator {
+  background: var(--color-brand-dark, #7A9BE8);
+}
+
+/* Care Process Track (Section 02) */
+.doctors-process-track {
+  position: relative;
+}
+
+.doctors-process-track::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 1.75rem;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(59, 91, 219, 0.4), rgba(59, 91, 219, 0.05));
+  z-index: 1;
+}
+
+[dir="rtl"] .doctors-process-track::before {
+  left: auto;
+  right: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .doctors-process-track::before {
+    top: 2.25rem;
+    bottom: 2.25rem;
+    left: 2rem;
+  }
+  [dir="rtl"] .doctors-process-track::before {
+    left: auto;
+    right: 2rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .concern-tab-panel {
+    transition: none !important;
+    transform: none !important;
+  }
+  .concern-nav-btn:hover {
+    transform: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   PHASE 12 — FAQ PAGE STYLING
+   ========================================================================== */
+
+/* FAQ Category Navigator (Section 02) */
+.faq-category-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  width: 100%;
+  text-align: left;
+  padding: 1.2rem 1.4rem;
+  border-radius: 1.25rem;
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-color, #C4CCDF);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+[dir="rtl"] .faq-category-btn {
+  text-align: right;
+}
+
+.faq-category-btn:hover {
+  border-color: var(--color-brand, #3B5BDB);
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .faq-category-btn:hover {
+  transform: translateX(-4px);
+}
+
+.faq-category-btn.active {
+  background: var(--bg-surface, #FFFFFF);
+  border-color: var(--color-brand, #3B5BDB);
+  box-shadow: 0 12px 30px -6px rgba(59, 91, 219, 0.14);
+}
+
+.dark .faq-category-btn {
+  background: #09090F;
+  border-color: #1A1D30;
+}
+
+.dark .faq-category-btn:hover {
+  border-color: var(--color-brand-dark, #7A9BE8);
+  background: #0E101D;
+}
+
+.dark .faq-category-btn.active {
+  background: #10101C;
+  border-color: var(--color-brand-dark, #7A9BE8);
+  box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.8);
+}
+
+.faq-category-btn .faq-indicator {
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 0;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--color-brand, #3B5BDB);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+[dir="rtl"] .faq-category-btn .faq-indicator {
+  left: auto;
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.faq-category-btn.active .faq-indicator {
+  opacity: 1;
+}
+
+.dark .faq-category-btn .faq-indicator {
+  background: var(--color-brand-dark, #7A9BE8);
+}
+
+/* FAQ Context Panels (Section 02) */
+.faq-context-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-context-panel.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FAQ Accordion (Section 03) */
+.faq-accordion-item {
+  border-radius: 1.25rem;
+  background: var(--bg-surface, #FFFFFF);
+  border: 1px solid var(--border-color, #C4CCDF);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.dark .faq-accordion-item {
+  background: #10101C;
+  border-color: #1A1D30;
+}
+
+.faq-accordion-item.active {
+  border-color: var(--color-brand, #3B5BDB);
+  box-shadow: 0 10px 28px -6px rgba(59, 91, 219, 0.12);
+}
+
+.dark .faq-accordion-item.active {
+  border-color: var(--color-brand-dark, #7A9BE8);
+  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.7);
+}
+
+.faq-question-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  gap: 1rem;
+}
+
+[dir="rtl"] .faq-question-btn {
+  text-align: right;
+}
+
+.faq-question-btn .faq-chevron {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-accordion-item.active .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.faq-accordion-item.active .faq-answer-panel {
+  max-height: 500px;
+  opacity: 1;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+/* Before Visit Timeline Track (Section 04) */
+.faq-prepare-track {
+  position: relative;
+}
+
+.faq-prepare-track::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 1.75rem;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(59, 91, 219, 0.4), rgba(59, 91, 219, 0.05));
+  z-index: 1;
+}
+
+[dir="rtl"] .faq-prepare-track::before {
+  left: auto;
+  right: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .faq-prepare-track::before {
+    top: 2.25rem;
+    bottom: 2.25rem;
+    left: 2rem;
+  }
+  [dir="rtl"] .faq-prepare-track::before {
+    left: auto;
+    right: 2rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .faq-context-panel,
+  .faq-answer-panel,
+  .faq-category-btn,
+  .faq-chevron {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   PHASE 13: CONTACT PAGE STYLES (SomnaClinic Design System)
+   ========================================================================== */
+
+/* --- Section 02: Contact Ways to Begin Pathways --- */
+.contact-pathway-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 2rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--border-color, rgba(10, 17, 40, 0.08));
+  background: var(--surface-color, #FFFFFF);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+.dark .contact-pathway-card {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: #0B1021;
+}
+
+.contact-pathway-card:hover,
+.contact-pathway-card:focus-visible {
+  border-color: var(--brand-indigo, #3B5BDB);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -8px rgba(59, 91, 219, 0.15);
+}
+
+.dark .contact-pathway-card:hover,
+.dark .contact-pathway-card:focus-visible {
+  border-color: #6888F7;
+  box-shadow: 0 12px 28px -8px rgba(59, 91, 219, 0.3);
+}
+
+.contact-pathway-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  background: rgba(59, 91, 219, 0.08);
+  color: var(--brand-indigo, #3B5BDB);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.dark .contact-pathway-icon {
+  background: rgba(104, 136, 247, 0.12);
+  color: #6888F7;
+}
+
+.contact-pathway-card:hover .contact-pathway-icon {
+  background: var(--brand-indigo, #3B5BDB);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.dark .contact-pathway-card:hover .contact-pathway-icon {
+  background: #6888F7;
+  color: #000000;
+}
+
+.contact-pathway-action-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(10, 17, 40, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary, #0A1128);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.dark .contact-pathway-action-btn {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+.contact-pathway-card:hover .contact-pathway-action-btn {
+  background: var(--brand-indigo, #3B5BDB);
+  border-color: var(--brand-indigo, #3B5BDB);
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .contact-pathway-card:hover .contact-pathway-action-btn {
+  transform: translateX(-4px);
+}
+
+.dark .contact-pathway-card:hover .contact-pathway-action-btn {
+  background: #6888F7;
+  border-color: #6888F7;
+  color: #000000;
+}
+
+/* --- Section 03: Contact Form Styling --- */
+.contact-input-field {
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(10, 17, 40, 0.12);
+  background: #FFFFFF;
+  color: #0A1128;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+}
+
+.dark .contact-input-field {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: #080D1D;
+  color: #F8FAFC;
+}
+
+[dir="rtl"] .contact-input-field {
+  text-align: right;
+}
+
+.contact-input-field:focus {
+  outline: none;
+  border-color: var(--brand-indigo, #3B5BDB);
+  box-shadow: 0 0 0 3px rgba(59, 91, 219, 0.15);
+}
+
+.dark .contact-input-field:focus {
+  border-color: #6888F7;
+  box-shadow: 0 0 0 3px rgba(104, 136, 247, 0.2);
+}
+
+.contact-input-field.is-invalid {
+  border-color: #DC2626 !important;
+  background-color: rgba(220, 38, 38, 0.02);
+}
+
+.dark .contact-input-field.is-invalid {
+  border-color: #EF4444 !important;
+  background-color: rgba(239, 68, 68, 0.04);
+}
+
+.contact-field-error {
+  display: none;
+  font-size: 0.75rem;
+  color: #DC2626;
+  margin-top: 0.375rem;
+}
+
+.dark .contact-field-error {
+  color: #F87171;
+}
+
+.contact-field-error.visible {
+  display: block;
+}
+
+/* --- Section 04: Editorial Abstract Vector Map Visual --- */
+.contact-map-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(10, 17, 40, 0.08);
+  background: #EDF2F9;
+  box-shadow: 0 8px 30px rgba(10, 17, 40, 0.04);
+}
+
+.dark .contact-map-viewport {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: #070B18;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.contact-map-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.map-arterial-stroke {
+  stroke: #CBD5E1;
+  stroke-width: 6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dark .map-arterial-stroke {
+  stroke: #16203D;
+}
+
+.map-secondary-stroke {
+  stroke: #E2E8F0;
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dark .map-secondary-stroke {
+  stroke: #0E162B;
+}
+
+.map-block-fill {
+  fill: #F1F5F9;
+  stroke: #E2E8F0;
+  stroke-width: 1;
+}
+
+.dark .map-block-fill {
+  fill: #0B1022;
+  stroke: #141C35;
+}
+
+.map-park-fill {
+  fill: #E2ECF7;
+}
+
+.dark .map-park-fill {
+  fill: #091226;
+}
+
+.map-pin-pulse {
+  animation: mapPulse 2.5s infinite ease-out;
+}
+
+@keyframes mapPulse {
+  0% {
+    r: 12;
+    opacity: 0.8;
+  }
+  70% {
+    r: 32;
+    opacity: 0;
+  }
+  100% {
+    r: 32;
+    opacity: 0;
+  }
+}
+
+/* Reduced motion for map & pathways */
+@media (prefers-reduced-motion: reduce) {
+  .contact-pathway-card,
+  .contact-pathway-icon,
+  .contact-pathway-action-btn,
+  .contact-input-field {
+    transition: none !important;
+    transform: none !important;
+  }
+  .map-pin-pulse {
+    animation: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   PHASE 14: CLINICAL OPERATIONS DASHBOARD STYLES (SomnaClinic)
+   ========================================================================== */
+
+.dashboard-shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: #F0F3FB;
+  color: #0A1128;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.dark .dashboard-shell {
+  background-color: #000000;
+  color: #F8FAFC;
+}
+
+/* Sidebar Navigation Rail */
+.dashboard-sidebar {
+  width: 270px;
+  flex-shrink: 0;
+  background-color: #FFFFFF;
+  border-right: 1px solid rgba(10, 17, 40, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s ease;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 40;
+}
+
+[dir="rtl"] .dashboard-sidebar {
+  border-right: none;
+  border-left: 1px solid rgba(10, 17, 40, 0.08);
+}
+
+.dark .dashboard-sidebar {
+  background-color: #070B18;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Collapsed Sidebar on Desktop */
+.dashboard-sidebar.collapsed {
+  width: 80px;
+}
+
+.dashboard-sidebar.collapsed .sidebar-full-label {
+  display: none !important;
+}
+
+.dashboard-sidebar.collapsed .sidebar-logo-text {
+  display: none !important;
+}
+
+.dashboard-sidebar.collapsed .sidebar-header {
+  justify-content: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.dashboard-sidebar.collapsed .dashboard-nav-btn {
+  justify-content: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.dashboard-sidebar.collapsed .sidebar-footer {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Navigation Link / Button */
+.dashboard-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4A5578;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+[dir="rtl"] .dashboard-nav-btn {
+  text-align: right;
+}
+
+.dark .dashboard-nav-btn {
+  color: #E2E8F0;
+}
+
+.dashboard-nav-btn:hover,
+.dashboard-nav-btn:focus-visible {
+  background-color: rgba(59, 91, 219, 0.06);
+  color: #3B5BDB;
+}
+
+.dark .dashboard-nav-btn:hover,
+.dark .dashboard-nav-btn:focus-visible {
+  background-color: rgba(104, 136, 247, 0.1);
+  color: #6888F7;
+}
+
+.dashboard-nav-btn.active {
+  background-color: rgba(59, 91, 219, 0.1);
+  color: #3B5BDB;
+  font-weight: 600;
+  border-left: 3px solid #3B5BDB;
+}
+
+[dir="rtl"] .dashboard-nav-btn.active {
+  border-left: none;
+  border-right: 3px solid #3B5BDB;
+}
+
+.dark .dashboard-nav-btn.active {
+  background-color: rgba(104, 136, 247, 0.15);
+  color: #6888F7;
+  border-color: #6888F7;
+}
+
+/* Topbar */
+.dashboard-topbar {
+  height: 76px;
+  background-color: rgba(240, 243, 251, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(10, 17, 40, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.dark .dashboard-topbar {
+  background-color: rgba(0, 0, 0, 0.88);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Modules Display Views */
+.dashboard-module-view {
+  display: none;
+}
+
+.dashboard-module-view.active {
+  display: block;
+  animation: dashboardFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dashboardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Intentional Empty State Card */
+.dashboard-empty-card {
+  border-radius: 1.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(10, 17, 40, 0.08);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(10, 17, 40, 0.03);
+}
+
+.dark .dashboard-empty-card {
+  background-color: #0B1022;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Overview Operational Grid Item */
+.overview-module-card {
+  border-radius: 1.25rem;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(10, 17, 40, 0.08);
+  padding: 1.75rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dark .overview-module-card {
+  background-color: #0B1022;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.overview-module-card:hover {
+  transform: translateY(-2px);
+  border-color: #3B5BDB;
+  box-shadow: 0 10px 25px -5px rgba(59, 91, 219, 0.12);
+}
+
+.dark .overview-module-card:hover {
+  border-color: #6888F7;
+  box-shadow: 0 10px 25px -5px rgba(59, 91, 219, 0.25);
+}
+
+/* Mobile Drawer Overlay */
+.dashboard-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.dashboard-drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-sidebar,
+  .dashboard-nav-btn,
+  .dashboard-module-view.active,
+  .overview-module-card {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+
+/* Mobile Sidebar Drawer */
+@media (max-width: 1023px) {
+  .dashboard-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    z-index: 60;
+    transform: translateX(-100%);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  [dir="rtl"] .dashboard-sidebar {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  .dashboard-sidebar.mobile-open {
+    transform: translateX(0) !important;
   }
 }
