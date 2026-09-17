@@ -1,6 +1,6 @@
 /* ==========================================================================
-   StepWell Podiatry & Foot Care Clinic — Motion & Interaction System
-   Theme: Warm Clinical Canvas
+   SomnaClinic Sleep Disorder Clinic — Motion & Interaction System
+   Theme: Midnight Clinical
    ========================================================================== */
 
 /* Motion Easing Tokens */
@@ -62,7 +62,8 @@
 }
 
 /* Live Pulse Indicator */
-.pulse-teal-subtle {
+.pulse-teal-subtle,
+.pulse-brand-subtle {
   position: relative;
 }
 
@@ -260,7 +261,7 @@
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(23, 34, 31, 0.65);
+  background: rgba(13, 20, 54, 0.65);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 100;
@@ -283,7 +284,7 @@
   border-radius: 28px;
   max-width: 600px;
   width: 100%;
-  box-shadow: 0 30px 60px -15px rgba(23, 34, 31, 0.25);
+  box-shadow: 0 30px 60px -15px rgba(23, 30, 56, 0.25);
   transform: scale(0.94) translateY(12px);
   transition: transform 0.35s var(--ease-out-fluid), opacity 0.3s ease;
   opacity: 0;
@@ -292,10 +293,10 @@
 }
 
 .dark .modal-content {
-  background: #0B0B0B;
-  border-color: #292D2B;
+  background: #09090F;
+  border-color: #1A1D30;
   box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9);
-  color: #F5F7F6;
+  color: #EEF0FA;
 }
 
 .modal-backdrop.open .modal-content {
@@ -326,8 +327,8 @@
 }
 
 .dark .dashboard-sidebar-link:hover {
-  background: #141414;
-  color: #65B8AD;
+  background: #10101C;
+  color: #7A9BE8;
 }
 
 [dir="rtl"] .dashboard-sidebar-link:hover {
@@ -337,13 +338,13 @@
 .dashboard-sidebar-link.active {
   background: var(--brand-primary);
   color: #FFFFFF;
-  box-shadow: 0 4px 16px rgba(23, 107, 99, 0.28);
+  box-shadow: 0 4px 16px rgba(59, 91, 219, 0.28);
 }
 
 .dark .dashboard-sidebar-link.active {
-  background: #65B8AD;
+  background: #7A9BE8;
   color: #000000;
-  box-shadow: 0 4px 16px rgba(101, 184, 173, 0.35);
+  box-shadow: 0 4px 16px rgba(122, 155, 232, 0.35);
 }
 
 .tab-pane {

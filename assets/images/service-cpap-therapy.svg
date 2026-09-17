@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cpapBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09122B"/>
+      <stop offset="100%" stop-color="#14214D"/>
+    </linearGradient>
+    <linearGradient id="airFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B5BDB" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#7A9BE8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#53C8B8" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" rx="18" fill="url(#cpapBg)"/>
+
+  <!-- Advanced Positive Airway Pressure Unit Representation -->
+  <g transform="translate(100, 100)">
+    <!-- Device Body -->
+    <rect x="0" y="50" width="220" height="150" rx="16" fill="#172247" stroke="#31437D" stroke-width="1.5"/>
+    <!-- Humidifier Chamber -->
+    <rect x="140" y="70" width="60" height="110" rx="8" fill="#1C2D5C" stroke="#3D5599" stroke-width="1"/>
+    <!-- LED Control Interface -->
+    <rect x="25" y="70" width="95" height="60" rx="8" fill="#0A0F24" stroke="#253569" stroke-width="1"/>
+    <text x="72" y="98" font-family="'DM Sans', sans-serif" font-size="16" font-weight="700" fill="#7A9BE8" text-anchor="middle">10.5</text>
+    <text x="72" y="116" font-family="'DM Sans', sans-serif" font-size="9" font-weight="600" fill="#9AA3C8" text-anchor="middle">cm H2O Auto</text>
+    
+    <!-- Power / Ramp Indicator -->
+    <circle cx="45" cy="160" r="10" fill="#3B5BDB" opacity="0.4"/>
+    <circle cx="45" cy="160" r="5" fill="#7A9BE8"/>
+    <rect x="70" y="155" width="40" height="10" rx="5" fill="#253569"/>
+
+    <!-- Airway Delivery Tubing & Airflow Path -->
+    <path d="M220 120 C 270 120, 290 80, 340 80 C 370 80, 380 130, 420 130" fill="none" stroke="#2D3E78" stroke-width="16" stroke-linecap="round"/>
+    <path d="M220 120 C 270 120, 290 80, 340 80 C 370 80, 380 130, 420 130" fill="none" stroke="url(#airFlow)" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Ergonomic Mask Contour -->
+    <path d="M420 110 C 440 90, 460 110, 460 130 C 460 150, 440 170, 420 150 Z" fill="#1C2D5C" stroke="#53C8B8" stroke-width="2"/>
+  </g>
+
+  <!-- Clinical Titration Features Badge -->
+  <g transform="translate(60, 330)">
+    <rect width="480" height="70" rx="12" fill="#0C1536" stroke="#263870" stroke-width="1"/>
+    <g transform="translate(20, 22)">
+      <circle cx="12" cy="12" r="12" fill="#3B5BDB" opacity="0.3"/>
+      <text x="12" y="16" font-family="'DM Sans', sans-serif" font-size="12" font-weight="700" fill="#7A9BE8" text-anchor="middle">✓</text>
+      <text x="36" y="10" font-family="'DM Sans', sans-serif" font-size="11" font-weight="700" fill="#EEF0FA">Auto-CPAP Titration</text>
+      <text x="36" y="24" font-family="'DM Sans', sans-serif" font-size="9" fill="#9AA3C8">Dynamic pressure adjustment</text>
+    </g>
+    <g transform="translate(260, 22)">
+      <circle cx="12" cy="12" r="12" fill="#48BB78" opacity="0.3"/>
+      <text x="12" y="16" font-family="'DM Sans', sans-serif" font-size="12" font-weight="700" fill="#48BB78" text-anchor="middle">✓</text>
+      <text x="36" y="10" font-family="'DM Sans', sans-serif" font-size="11" font-weight="700" fill="#EEF0FA">Digital Telemetry</text>
+      <text x="36" y="24" font-family="'DM Sans', sans-serif" font-size="9" fill="#9AA3C8">Remote compliance monitoring</text>
+    </g>
+  </g>
+</svg>

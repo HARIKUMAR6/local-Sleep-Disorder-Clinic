@@ -1,6 +1,6 @@
 /**
- * StepWell Podiatry & Foot Care Clinic — Main Application Script
- * Theme toggle, RTL/LTR support, Mobile drawer, Modals, FAQ accordion, Tabs
+ * SomnaClinic Sleep Disorder Clinic — Main Application Script
+ * Theme toggle, RTL/LTR support, Desktop dropdown, Mobile drawer, Modals, FAQ accordion, Tabs
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbarWrapper');
   const handleScroll = () => {
     if (!navbar) return;
-    if (window.pageYOffset > 25) {
+    if (window.pageYOffset > 15) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
@@ -36,13 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
         moon?.classList.remove('hidden');
         sun?.classList.add('hidden');
       }
+      btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
     });
   };
 
   const toggleTheme = () => {
     document.documentElement.classList.toggle('dark');
     const isDark = document.documentElement.classList.contains('dark');
-    localStorage.setItem('stepwell-theme', isDark ? 'dark' : 'light');
+    localStorage.setItem('somna-theme', isDark ? 'dark' : 'light');
     updateThemeUI(isDark);
   };
 
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Init theme
-  const savedTheme = localStorage.getItem('stepwell-theme');
+  const savedTheme = localStorage.getItem('somna-theme');
   if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
     updateThemeUI(true);
@@ -70,72 +71,158 @@ document.addEventListener('DOMContentLoaded', () => {
     rtlBtns.forEach(b => {
       if (b) {
         b.classList.toggle('active', isRtl);
-        b.style.color = isRtl ? '#2DD4BF' : '';
+        b.setAttribute('aria-pressed', isRtl ? 'true' : 'false');
       }
     });
   };
 
   const toggleRtl = () => {
     const isRtl = document.documentElement.dir !== 'rtl';
-    localStorage.setItem('stepwell-dir', isRtl ? 'rtl' : 'ltr');
+    localStorage.setItem('somna-dir', isRtl ? 'rtl' : 'ltr');
     updateRtlUI(isRtl);
   };
 
   rtlBtns.forEach(b => b?.addEventListener('click', toggleRtl));
-  if (localStorage.getItem('stepwell-dir') === 'rtl') {
+  if (localStorage.getItem('somna-dir') === 'rtl') {
     updateRtlUI(true);
+  } else {
+    updateRtlUI(false);
   }
 
   // =========================================================================
-  // 4. MOBILE NAVIGATION DRAWER
+  // 4. DESKTOP HOME DROPDOWN (Click-to-toggle, accessible, escape & outside close)
+  // =========================================================================
+  const homeDropdownWrapper = document.getElementById('home-dropdown-wrapper');
+  const homeDropdownBtn = document.getElementById('home-dropdown-btn');
+  const homeDropdownMenu = document.getElementById('home-dropdown-menu');
+
+  if (homeDropdownBtn && homeDropdownWrapper) {
+    const toggleDesktopDropdown = (forceState) => {
+      const isOpen = forceState !== undefined ? forceState : !homeDropdownWrapper.classList.contains('open');
+      homeDropdownWrapper.classList.toggle('open', isOpen);
+      homeDropdownBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      const chev = homeDropdownBtn.querySelector('.fa-chevron-down');
+      if (chev) {
+        chev.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    };
+
+    homeDropdownBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleDesktopDropdown();
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (!homeDropdownWrapper.contains(e.target)) {
+        toggleDesktopDropdown(false);
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggleDesktopDropdown(false);
+      }
+    });
+
+    // Close on clicking menu links
+    if (homeDropdownMenu) {
+      homeDropdownMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          toggleDesktopDropdown(false);
+        });
+      });
+    }
+  }
+
+  // =========================================================================
+  // 5. MOBILE NAVIGATION DRAWER & SUBMENU
   // =========================================================================
   const mobileToggle = document.getElementById('mobile-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  const toggleIcon = mobileToggle?.querySelector('i');
+  const mobileHomeBtn = document.getElementById('mobile-home-btn');
+  const mobileHomeSubmenu = document.getElementById('mobile-home-submenu');
+
+  const closeMobileMenu = () => {
+    if (!mobileMenu || !mobileMenu.classList.contains('open')) return;
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    if (mobileToggle) {
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      const icon = mobileToggle.querySelector('i');
+      if (icon) icon.className = 'fas fa-bars';
+    }
+    document.body.style.overflow = '';
+  };
+
+  const openMobileMenu = () => {
+    if (!mobileMenu) return;
+    mobileMenu.classList.add('open');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    if (mobileToggle) {
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      const icon = mobileToggle.querySelector('i');
+      if (icon) icon.className = 'fas fa-times';
+    }
+    // Mandatory rule: Home 1 and Home 2 must NOT automatically appear when mobile menu opens
+    if (mobileHomeSubmenu) {
+      mobileHomeSubmenu.classList.remove('show');
+    }
+    if (mobileHomeBtn) {
+      mobileHomeBtn.setAttribute('aria-expanded', 'false');
+      const chev = mobileHomeBtn.querySelector('.fa-chevron-down');
+      if (chev) chev.style.transform = 'rotate(0deg)';
+    }
+    document.body.style.overflow = 'hidden';
+  };
 
   if (mobileToggle && mobileMenu) {
-    mobileToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      if (toggleIcon) {
-        toggleIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
       }
-      // Reset Home submenu to collapsed every time the mobile menu opens
-      if (isOpen) {
-        mobileMenu.querySelectorAll('.mobile-dropdown > div').forEach(sub => {
-          sub.classList.remove('show');
-        });
-        mobileMenu.querySelectorAll('.mobile-dropdown-btn .fa-chevron-down').forEach(chev => {
-          chev.style.transform = 'rotate(0deg)';
-        });
-      }
-      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close on navigation click
+    // Close when clicking links inside mobile drawer
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        if (toggleIcon) toggleIcon.className = 'fas fa-bars';
-        document.body.style.overflow = '';
+        closeMobileMenu();
       });
+    });
+
+    // Close on backdrop click (click outside inner menu)
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
     });
   }
 
-  // =========================================================================
-  // 5. MOBILE SUBMENU DROPDOWN
-  // =========================================================================
-  document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  // Mobile Home Accordion Submenu
+  if (mobileHomeBtn && mobileHomeSubmenu) {
+    mobileHomeBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const content = btn.nextElementSibling;
-      if (!content) return;
-      const isShowing = content.classList.toggle('show');
-      const chev = btn.querySelector('.fa-chevron-down');
+      e.stopPropagation();
+      const isShowing = mobileHomeSubmenu.classList.toggle('show');
+      mobileHomeBtn.setAttribute('aria-expanded', isShowing ? 'true' : 'false');
+      const chev = mobileHomeBtn.querySelector('.fa-chevron-down');
       if (chev) {
         chev.style.transform = isShowing ? 'rotate(180deg)' : 'rotate(0deg)';
       }
     });
-  });
+  }
 
   // =========================================================================
   // 6. MODAL DIALOGS
@@ -189,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         buttons.forEach(b => {
           b.classList.remove('active');
-          b.classList.remove('bg-teal-600');
+          b.classList.remove('bg-indigo-600');
           b.classList.remove('text-white');
         });
         btn.classList.add('active');
@@ -219,12 +306,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const toast = document.createElement('div');
     toast.style.cssText = `
-      background: #0A2540;
+      background: #0D1436;
       color: #FFFFFF;
       padding: 14px 22px;
       border-radius: 16px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-      border-left: 4px solid #2DD4BF;
+      box-shadow: 0 15px 35px rgba(13, 20, 54, 0.35);
+      border-left: 4px solid #3B5BDB;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -235,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       pointer-events: auto;
     `;
-    toast.innerHTML = `<i class="fas fa-check-circle text-teal-400 text-lg"></i><span>${message}</span>`;
+    toast.innerHTML = `<i class="fas fa-check-circle text-indigo-400 text-lg"></i><span>${message}</span>`;
     container.appendChild(toast);
 
     requestAnimationFrame(() => {
@@ -249,4 +336,12 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => toast.remove(), 350);
     }, 4000);
   };
+
+  // =========================================================================
+  // 9. DYNAMIC FOOTER YEAR
+  // =========================================================================
+  const footerYear = document.getElementById('footer-year');
+  if (footerYear) {
+    footerYear.textContent = new Date().getFullYear();
+  }
 });

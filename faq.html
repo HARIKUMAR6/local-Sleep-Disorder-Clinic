@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Frequently Asked Questions | SomnaClinic Sleep Medicine & Diagnostics</title>
+    <meta name="description" content="Find answers to common questions about sleep studies, CPAP therapy, insomnia treatments, and clinical consultations at SomnaClinic.">
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'clinic-canvas': '#F0F3FB',
+                        'clinic-surface': '#FFFFFF',
+                        'clinic-slate': '#E4EAF7',
+                        'clinic-accent': '#D5DEEF',
+                        'clinic-primary': '#171E38',
+                        'clinic-secondary': '#464F72',
+                        'clinic-muted': '#737DA0',
+                        'clinic-border': '#C4CCDF',
+                        'clinic-brand': '#3B5BDB',
+                        'clinic-brand-hover': '#2B4ABF',
+                        'clinic-hero': '#0D1436',
+                        'clinic-dark-canvas': '#000000',
+                        'clinic-dark-surface': '#09090F',
+                        'clinic-dark-elevated': '#10101C',
+                        'clinic-dark-deep': '#161627',
+                        'clinic-dark-primary': '#EEF0FA',
+                        'clinic-dark-secondary': '#9AA3C8',
+                        'clinic-dark-border': '#1A1D30',
+                        'clinic-dark-accent': '#7A9BE8',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"DM Sans"', '"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/motion.css">
+</head>
+<body class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans overflow-x-hidden w-full relative">
+
+    <!-- ===== CLINICAL STICKY HEADER ===== -->
+    <header class="navbar-wrapper" id="navbarWrapper">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo-wrapper" id="nav-brand-logo" aria-label="SomnaClinic Home">
+                <div class="logo-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="logo-brand">
+                    <span class="logo-text">Somna<span class="highlight">Clinic</span></span>
+                    <span class="logo-sub">Sleep Medicine &amp; Diagnostics</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" aria-label="Main Navigation">
+                <div class="dropdown-wrapper" id="home-dropdown-wrapper">
+                    <button type="button" class="nav-link dropdown-toggle" id="home-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                        <span>Home</span> <i class="fas fa-chevron-down text-[9px] ml-1 transition-transform duration-200"></i>
+                    </button>
+                    <div class="dropdown-menu" id="home-dropdown-menu" role="menu" aria-labelledby="home-dropdown-btn">
+                        <a href="index.html" class="dropdown-item" role="menuitem" id="nav-item-home1">
+                            <i class="fas fa-bed-pulse text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>Home 1 — Clinical Sleep Medicine</span>
+                        </a>
+                        <a href="home2.html" class="dropdown-item" role="menuitem" id="nav-item-home2">
+                            <i class="fas fa-moon text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>Home 2 — Sleep Study Experience</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="nav-link" id="nav-item-about">About Us</a>
+                <a href="services.html" class="nav-link" id="nav-item-services">Services</a>
+                <a href="doctors.html" class="nav-link" id="nav-item-doctors">Doctors</a>
+                <a href="faq.html" class="nav-link active" id="nav-item-faq">FAQ</a>
+                <a href="contact.html" class="nav-link" id="nav-item-contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="rtl-toggle" class="btn-rtl-control" title="Toggle RTL / LTR Direction" aria-label="Toggle text direction">
+                    <i class="fas fa-globe"></i>
+                    <span>RTL</span>
+                </button>
+
+                <button id="theme-toggle" class="btn-icon-rounded" title="Toggle Light / Dark Theme" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun hidden"></i>
+                </button>
+
+                <a href="dashboard.html" class="btn-primary-pill nav-cta-btn hidden lg:inline-flex">
+                    <i class="fas fa-chart-line"></i> <span>Dashboard</span>
+                </a>
+
+                <button id="mobile-toggle" class="mobile-toggle lg:hidden" aria-label="Open mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+            <div class="mobile-menu-inner">
+                <div class="mobile-dropdown">
+                    <button type="button" class="mobile-dropdown-btn mobile-menu-item" id="mobile-home-btn" aria-expanded="false">
+                        <span><i class="fas fa-home text-clinic-brand dark:text-clinic-dark-accent mr-2.5"></i> Home</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-200 opacity-60"></i>
+                    </button>
+                    <div class="mobile-submenu" id="mobile-home-submenu">
+                        <a href="index.html" class="mobile-subitem" id="mobile-item-home1">
+                            <i class="fas fa-bed-pulse text-xs mr-2 text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>Home 1 — Clinical Sleep Medicine</span>
+                        </a>
+                        <a href="home2.html" class="mobile-subitem" id="mobile-item-home2">
+                            <i class="fas fa-moon text-xs mr-2 text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>Home 2 — Sleep Study Experience</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="mobile-menu-item" id="mobile-item-about">
+                    <span><i class="fas fa-hospital text-clinic-brand dark:text-clinic-dark-accent mr-2.5"></i> About Us</span>
+                </a>
+                <a href="services.html" class="mobile-menu-item" id="mobile-item-services">
+                    <span><i class="fas fa-stethoscope text-clinic-brand dark:text-clinic-dark-accent mr-2.5"></i> Services</span>
+                </a>
+                <a href="doctors.html" class="mobile-menu-item" id="mobile-item-doctors">
+                    <span><i class="fas fa-user-md text-clinic-brand dark:text-clinic-dark-accent mr-2.5"></i> Doctors</span>
+                </a>
+                <a href="faq.html" class="mobile-menu-item active" id="mobile-item-faq">
+                    <span><i class="fas fa-circle-question text-clinic-brand dark:text-clinic-dark-accent mr-2.5"></i> FAQ</span>
+                </a>
+                <a href="contact.html" class="mobile-menu-item" id="mobile-item-contact">
+                    <span><i class="fas fa-calendar-check text-clinic-brand dark:text-clinic-dark-accent mr-2.5"></i> Contact</span>
+                </a>
+
+                <div class="mobile-menu-cta">
+                    <a href="dashboard.html" class="btn-primary-pill w-full justify-center">
+                        <i class="fas fa-chart-line"></i> <span>Dashboard</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title / Hero Header -->
+    <section class="pt-36 pb-16 px-6 bg-gradient-to-b from-clinic-slate/60 to-clinic-canvas dark:from-clinic-dark-elevated dark:to-clinic-dark-canvas border-b border-clinic-border dark:border-clinic-dark-border">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="text-xs uppercase tracking-widest font-bold text-clinic-brand dark:text-clinic-dark-accent mb-3 block">Patient Knowledge Center</span>
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-clinic-primary dark:text-clinic-dark-primary mb-4">
+                Frequently Asked <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Questions</span>
+            </h1>
+            <p class="text-base sm:text-lg text-clinic-secondary dark:text-clinic-dark-secondary max-w-2xl mx-auto leading-relaxed">
+                Clear, medically backed answers to help you prepare for sleep diagnostics, understand therapies, and navigate your journey to restorative rest.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <!-- FAQ 1 -->
+            <div class="faq-accordion-item">
+                <details>
+                    <summary class="faq-summary">
+                        <span>What happens during an overnight sleep study (polysomnography)?</span>
+                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </summary>
+                    <div class="faq-body">
+                        During an in-lab polysomnogram, you sleep in a private, hotel-quality bedroom while non-invasive sensors record brain waves, heart rate, breathing patterns, blood oxygen levels, and body movements. Our certified technologists monitor data in real time to diagnose conditions like sleep apnea, periodic limb movement disorder, and parasomnias.
+                    </div>
+                </details>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-accordion-item">
+                <details>
+                    <summary class="faq-summary">
+                        <span>Do I need a doctor's referral to book a consultation?</span>
+                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </summary>
+                    <div class="faq-body">
+                        While many of our patients are referred by primary care physicians or cardiologists, self-referrals are welcome for comprehensive clinical evaluations. Some insurance policies require a physician referral for diagnostic testing coverage; our patient coordination team will verify your benefits prior to your first appointment.
+                    </div>
+                </details>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-accordion-item">
+                <details>
+                    <summary class="faq-summary">
+                        <span>What is the difference between home sleep apnea testing and in-lab studies?</span>
+                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </summary>
+                    <div class="faq-body">
+                        A home sleep apnea test (HSAT) is a compact, portable device measuring breathing effort, airflow, and oxygen levels in your own bed. It is specifically designed to detect moderate-to-severe obstructive sleep apnea. In-lab studies provide comprehensive neurological, muscular, and respiratory diagnostics necessary for complex insomnia, narcolepsy, or parasomnias.
+                    </div>
+                </details>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-accordion-item">
+                <details>
+                    <summary class="faq-summary">
+                        <span>How long does it take to receive sleep study results?</span>
+                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </summary>
+                    <div class="faq-body">
+                        Sleep study recordings are scored by a registered polysomnographic technologist and thoroughly interpreted by a board-certified sleep physician. Your comprehensive diagnostic report and customized treatment plan are typically ready within 5 to 7 business days for your follow-up consultation.
+                    </div>
+                </details>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-accordion-item">
+                <details>
+                    <summary class="faq-summary">
+                        <span>What if I cannot tolerate a CPAP machine?</span>
+                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </summary>
+                    <div class="faq-body">
+                        CPAP is one of several proven treatment modalities. For patients who struggle with CPAP tolerance, our clinical faculty specializes in custom oral appliance therapy (mandibular advancement devices), positional therapy, upper airway stimulation (Inspire), and cognitive behavioral therapy for insomnia (CBT-I).
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation CTA -->
+    <section class="py-16 px-6 bg-clinic-slate/40 dark:bg-clinic-dark-surface border-t border-clinic-border dark:border-clinic-dark-border">
+        <div class="max-w-3xl mx-auto text-center">
+            <h3 class="font-serif text-3xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">Still have questions?</h3>
+            <p class="text-clinic-secondary dark:text-clinic-dark-secondary mb-8">Our clinical care team is here to assist with referrals, appointment scheduling, and treatment inquiries.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="contact.html" class="btn-primary-pill">
+                    <i class="fas fa-envelope"></i> Contact Clinic
+                </a>
+                <a href="dashboard.html" class="btn-outline-pill">
+                    <i class="fas fa-chart-line"></i> Clinic Dashboard
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <!-- ===== GLOBAL CLINICAL FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
+                <!-- Col 1: Brand & Clinical Mission -->
+                <div class="space-y-4">
+                    <a href="index.html" class="logo-wrapper" aria-label="SomnaClinic Home">
+                        <div class="logo-icon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <div class="logo-brand">
+                            <span class="logo-text text-white">Somna<span class="highlight">Clinic</span></span>
+                            <span class="logo-sub text-clinic-dark-secondary">Sleep Medicine &amp; Diagnostics</span>
+                        </div>
+                    </a>
+                    <p class="text-sm leading-relaxed text-[#9AA3C8]">
+                        Comprehensive diagnostic testing, clinical evaluations, and evidence-based therapies for sleep apnea, insomnia, and complex circadian sleep disorders.
+                    </p>
+                    <div class="pt-2">
+                        <span class="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-clinic-dark-primary">
+                            <i class="fas fa-certificate text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            <span>Board-Certified Sleep Medicine</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="footer-heading">Navigation</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="index.html" class="footer-link">Home 1 — Clinical Sleep</a></li>
+                        <li><a href="home2.html" class="footer-link">Home 2 — Sleep Study</a></li>
+                        <li><a href="about.html" class="footer-link">About Our Clinic</a></li>
+                        <li><a href="services.html" class="footer-link">Clinical Services</a></li>
+                        <li><a href="doctors.html" class="footer-link">Sleep Physicians</a></li>
+                        <li><a href="faq.html" class="footer-link">Patient FAQ</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact &amp; Location</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Clinical Care Links -->
+                <div>
+                    <h4 class="footer-heading">Sleep Care</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="services.html" class="footer-link">Overnight Sleep Studies (PSG)</a></li>
+                        <li><a href="services.html" class="footer-link">Home Sleep Apnea Testing (HSAT)</a></li>
+                        <li><a href="services.html" class="footer-link">CPAP Therapy &amp; Titration</a></li>
+                        <li><a href="services.html" class="footer-link">Insomnia Treatment (CBT-I)</a></li>
+                        <li><a href="services.html" class="footer-link">Pediatric Sleep Evaluations</a></li>
+                        <li><a href="services.html" class="footer-link">Narcolepsy &amp; Movement Care</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Consultation & Dashboard Access -->
+                <div>
+                    <h4 class="footer-heading">Care Access</h4>
+                    <p class="text-sm leading-relaxed text-[#9AA3C8] mb-5">
+                        Consultations and overnight diagnostic studies are scheduled by appointment with physician referral or direct clinical inquiry.
+                    </p>
+                    <div class="mb-5">
+                        <a href="contact.html" class="btn-primary-pill text-xs inline-flex items-center gap-2">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Contact Our Clinic</span>
+                        </a>
+                    </div>
+                    <div class="pt-3 border-t border-white/10 dark:border-clinic-dark-border">
+                        <span class="block text-[11px] uppercase tracking-wider text-[#737DA0] mb-1">Clinical Operations</span>
+                        <a href="dashboard.html" class="footer-link text-clinic-brand dark:text-clinic-dark-accent font-semibold gap-1.5">
+                            <i class="fas fa-chart-line text-xs"></i>
+                            <span>Clinic Dashboard</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row: Copyright & Neutral Legal Info -->
+            <div class="footer-bottom-row">
+                <p>&copy; <span id="footer-year">2026</span> SomnaClinic. All rights reserved. Sleep Medicine &amp; Diagnostic Center.</p>
+                <div class="flex items-center gap-6">
+                    <a href="contact.html" class="footer-link text-xs">Patient Inquiries</a>
+                    <a href="faq.html" class="footer-link text-xs">Care Guidelines</a>
+                    <a href="dashboard.html" class="footer-link text-xs">Clinic Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="js/motion.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

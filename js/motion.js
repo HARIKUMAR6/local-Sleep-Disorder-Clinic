@@ -1,5 +1,5 @@
 /**
- * StepWell Podiatry & Foot Care Clinic — Motion & Animation Controller
+ * SomnaClinic Sleep Disorder Clinic — Motion & Animation Controller
  * Coordinates IntersectionObserver scroll reveals, staggered animations,
  * counter transitions, and scroll interactions.
  */
@@ -135,9 +135,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 5. HERO ENTRANCE FALLBACK
   // =========================================================================
-  // In case CSS animation doesn't immediately fire, force class
-  const heroItems = document.querySelectorAll('.hero-reveal-item');
-  heroItems.forEach(item => {
-    item.style.opacity = '1';
-  });
+  // Non-destructive fallback: only sets opacity if still unrevealed after timeout
+  setTimeout(() => {
+    const heroItems = document.querySelectorAll('.hero-reveal-item');
+    heroItems.forEach(item => {
+      if (getComputedStyle(item).opacity === '0') {
+        item.style.opacity = '1';
+      }
+    });
+  }, 1200);
 });
