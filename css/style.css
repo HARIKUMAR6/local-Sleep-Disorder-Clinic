@@ -383,10 +383,10 @@ img, svg, video {
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%) translateY(8px);
-  min-width: 260px;
+  min-width: 160px;
   background: var(--bg-surface);
-  border-radius: 16px;
-  padding: 8px 6px;
+  border-radius: 14px;
+  padding: 6px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
