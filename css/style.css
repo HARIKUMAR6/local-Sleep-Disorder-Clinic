@@ -1101,6 +1101,339 @@ details[open] .faq-icon-chevron {
 }
 
 /* ==========================================================================
+   PHASE 7 — HOME 1 CLINICAL SLEEP MEDICINE STYLES
+   ========================================================================== */
+
+/* Section 01: Hero */
+.hero-sleep-container {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 7rem;
+  padding-bottom: 4.5rem;
+}
+
+.hero-breathing-line {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: breathingLineAnim 6s ease-in-out infinite;
+}
+
+@keyframes breathingLineAnim {
+  0% {
+    stroke-dashoffset: 600;
+    opacity: 0.3;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+  100% {
+    stroke-dashoffset: -600;
+    opacity: 0.3;
+  }
+}
+
+.hero-image-frame {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -10px rgba(13, 20, 54, 0.15);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+.dark .hero-image-frame {
+  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(122, 155, 232, 0.15);
+  border-color: rgba(122, 155, 232, 0.2);
+}
+
+.hero-image-frame:hover {
+  transform: translateY(-4px);
+}
+
+/* Section 02: Sleep Health Intro */
+.sleep-intro-statement {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.editorial-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-color) 0%, transparent 100%);
+}
+
+[dir="rtl"] .editorial-divider {
+  background: linear-gradient(270deg, var(--border-color) 0%, transparent 100%);
+}
+
+/* Section 03: Sleep Care Services Interactive Selector */
+.service-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.service-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+[dir="rtl"] .service-tab-btn {
+  text-align: right;
+}
+
+.service-tab-btn:hover {
+  background: rgba(59, 91, 219, 0.05);
+  border-color: rgba(59, 91, 219, 0.15);
+}
+
+.dark .service-tab-btn:hover {
+  background: rgba(122, 155, 232, 0.08);
+  border-color: rgba(122, 155, 232, 0.2);
+}
+
+.service-tab-btn.active {
+  background: var(--bg-surface);
+  border-color: var(--color-brand);
+  box-shadow: 0 10px 30px -5px rgba(59, 91, 219, 0.12);
+}
+
+.dark .service-tab-btn.active {
+  background: #101528;
+  border-color: var(--color-accent-teal);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
+}
+
+.service-tab-btn::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  left: 0;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--color-brand);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: scaleY(0.4);
+}
+
+[dir="rtl"] .service-tab-btn::before {
+  left: auto;
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.dark .service-tab-btn::before {
+  background: var(--color-accent-teal);
+}
+
+.service-tab-btn.active::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.service-num-badge {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.25s ease;
+  min-width: 2rem;
+}
+
+.service-tab-btn.active .service-num-badge {
+  color: var(--color-brand);
+}
+
+.dark .service-tab-btn.active .service-num-badge {
+  color: var(--color-accent-teal);
+}
+
+.service-panel-view {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.service-panel-view.active {
+  display: grid;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section 04: Your Sleep Care Journey Timeline */
+.timeline-track-wrapper {
+  position: relative;
+}
+
+.timeline-connector-bar {
+  position: absolute;
+  top: 32px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(59, 91, 219, 0.2) 0%, rgba(59, 91, 219, 0.6) 50%, rgba(59, 91, 219, 0.2) 100%);
+  z-index: 0;
+}
+
+.dark .timeline-connector-bar {
+  background: linear-gradient(90deg, rgba(122, 155, 232, 0.15) 0%, rgba(122, 155, 232, 0.5) 50%, rgba(122, 155, 232, 0.15) 100%);
+}
+
+.timeline-step-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step-marker-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 16px rgba(13, 20, 54, 0.06);
+}
+
+.dark .step-marker-circle {
+  background: #0D1326;
+  border-color: #202D54;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-step-node:hover .step-marker-circle {
+  border-color: var(--color-brand);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(59, 91, 219, 0.2);
+}
+
+.dark .timeline-step-node:hover .step-marker-circle {
+  border-color: var(--color-accent-teal);
+  box-shadow: 0 8px 24px rgba(122, 155, 232, 0.25);
+}
+
+/* Mobile Vertical Timeline */
+@media (max-width: 1023px) {
+  .timeline-connector-bar {
+    top: 32px;
+    bottom: 32px;
+    left: 31px;
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, rgba(59, 91, 219, 0.2) 0%, rgba(59, 91, 219, 0.6) 50%, rgba(59, 91, 219, 0.2) 100%);
+  }
+
+  [dir="rtl"] .timeline-connector-bar {
+    left: auto;
+    right: 31px;
+  }
+
+  .timeline-step-node {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+  }
+
+  [dir="rtl"] .timeline-step-node {
+    text-align: right;
+  }
+
+  .step-marker-circle {
+    flex-shrink: 0;
+  }
+}
+
+/* Section 05: Meet Our Specialists */
+.specialist-portrait-frame {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 20px 48px -12px rgba(13, 20, 54, 0.12);
+  border: 1px solid var(--border-color);
+}
+
+.dark .specialist-portrait-frame {
+  border-color: #202946;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8);
+}
+
+/* Section 06: Final Appointment CTA */
+.final-cta-field {
+  position: relative;
+  background: linear-gradient(145deg, #090E24 0%, #121A3E 60%, #162456 100%);
+  border-radius: 2.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(122, 155, 232, 0.2);
+  box-shadow: 0 30px 70px -15px rgba(6, 10, 30, 0.6);
+}
+
+.dark .final-cta-field {
+  background: linear-gradient(145deg, #04060F 0%, #090E24 60%, #0E1638 100%);
+  border-color: rgba(122, 155, 232, 0.15);
+}
+
+/* Sleep Study Booking Modal */
+.clinical-modal-dialog {
+  background: var(--bg-surface);
+  border-radius: 1.5rem;
+  border: 1px solid var(--border-color);
+  max-width: 580px;
+  width: 92%;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4);
+}
+
+.dark .clinical-modal-dialog {
+  background: #0A0F22;
+  border-color: #202D56;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-breathing-line {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .hero-image-frame,
+  .service-tab-btn,
+  .service-panel-view,
+  .timeline-step-node,
+  .step-marker-circle {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
    HOME 2 — RESPONSIVE FIXES (Mobile & Tablet)
    Desktop (≥ 1024px) is unchanged. All rules scoped to narrow viewports.
    ========================================================================== */

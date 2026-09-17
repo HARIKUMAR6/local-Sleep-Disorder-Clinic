@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>StepWell Podiatry & Foot Care Clinic | Advanced Foot & Ankle Center</title>
+    <title>SomnaClinic — Sleep Medicine &amp; Diagnostics | Expert Sleep Care &amp; Polysomnography</title>
     <meta name="description"
-        content="Premier podiatry and foot care medical clinic specializing in biomechanical gait analysis, custom 3D orthotics, diabetic foot health, heel pain relief, and minimally invasive surgery.">
+        content="SomnaClinic is a specialized clinical sleep medicine and diagnostics center providing in-lab polysomnography (PSG), home sleep apnea testing (HSAT), CPAP therapy, and cognitive insomnia treatment.">
 
-    <!-- Favicon — StepWell Brand Logomark -->
+    <!-- Favicon — SomnaClinic Logomark -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192x192.png">
 
-    <!-- Tailwind CSS CDN with Warm Clinical Canvas Design System -->
+    <!-- Tailwind CSS CDN with Midnight Clinical Canvas Design System -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,38 +22,38 @@
             theme: {
                 extend: {
                     colors: {
-                        'clinic-canvas': '#F4F1EA',
+                        'clinic-canvas': '#F0F3FB',
                         'clinic-surface': '#FFFFFF',
-                        'clinic-sage': '#E9EFE9',
-                        'clinic-accent': '#DCE7E2',
-                        'clinic-primary': '#17221F',
-                        'clinic-secondary': '#52605B',
-                        'clinic-muted': '#71807A',
-                        'clinic-border': '#D8DED9',
-                        'clinic-brand': '#176B63',
-                        'clinic-brand-hover': '#0F514B',
+                        'clinic-sage': '#E4EAF7',
+                        'clinic-accent': '#D5DEEF',
+                        'clinic-primary': '#171E38',
+                        'clinic-secondary': '#464F72',
+                        'clinic-muted': '#737DA0',
+                        'clinic-border': '#C4CCDF',
+                        'clinic-brand': '#3B5BDB',
+                        'clinic-brand-hover': '#2B4ABF',
 
-                        // Genuine Dark Mode Tokens (Pure #000000 background)
+                        // Genuine Midnight Dark Mode Tokens (#000000 pure black canvas)
                         'clinic-dark-canvas': '#000000',
-                        'clinic-dark-surface': '#0B0B0B',
-                        'clinic-dark-elevated': '#141414',
-                        'clinic-dark-primary': '#F5F7F6',
-                        'clinic-dark-secondary': '#B8C2BE',
-                        'clinic-dark-border': '#292D2B',
-                        'clinic-dark-accent': '#65B8AD',
+                        'clinic-dark-surface': '#09090F',
+                        'clinic-dark-elevated': '#10101C',
+                        'clinic-dark-primary': '#EEF0FA',
+                        'clinic-dark-secondary': '#9AA3C8',
+                        'clinic-dark-border': '#1A1D30',
+                        'clinic-dark-accent': '#7A9BE8',
 
-                        // Compatibility aliases
-                        'clinic-navy': '#17221F',
-                        'clinic-navy-dark': '#0B0B0B',
-                        'clinic-teal': '#176B63',
-                        'clinic-teal-light': '#176B63',
-                        'clinic-mint': '#65B8AD',
-                        'clinic-ice': '#E9EFE9',
+                        // Midnight Clinical Indigo Aliases
+                        'clinic-navy': '#171E38',
+                        'clinic-navy-dark': '#09090F',
+                        'clinic-teal': '#3B5BDB',
+                        'clinic-teal-light': '#7A9BE8',
+                        'clinic-mint': '#4DABF7',
+                        'clinic-ice': '#E4EAF7',
                         'clinic-dark': '#000000',
                     },
                     fontFamily: {
                         serif: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
                     }
                 }
             }
@@ -63,11 +63,11 @@
     <!-- FontAwesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
         rel="stylesheet">
 
     <!-- Project Stylesheets -->
@@ -77,8 +77,7 @@
 
 <body
     class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans overflow-x-hidden w-full relative">
-
-        <!-- ===== CLINICAL STICKY HEADER ===== -->
+<!-- ===== CLINICAL STICKY HEADER ===== -->
     <header class="navbar-wrapper" id="navbarWrapper">
         <div class="navbar-inner">
             <!-- Brand Logo -->
@@ -191,844 +190,755 @@
         </div>
     </header>
 
-    <!-- ===== SECTION 1: HERO — ASYMMETRIC CLINICAL FRAMING ===== -->
-    <section id="hero"
-        class="hero-section relative min-h-[88vh] lg:min-h-[90vh] flex items-center pt-28 sm:pt-32 pb-16 overflow-hidden bg-[#032626] dark:bg-black text-white">
-        <!-- Background Layer: Clinical subject positioned predominantly on the right -->
-        <div class="hero-background absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
-            <img src="assets/images/patient_foot_care.jpg"
-                alt="Specialist Podiatrist Examining Patient Foot at StepWell Clinic"
-                class="w-full h-full object-cover object-[72%_center] lg:object-[68%_center] scale-[1.02] transition-transform duration-1000 ease-out">
+    <!-- ==========================================================================
+         SECTION 01: HERO — "Better Sleep Starts With Understanding"
+         ========================================================================== -->
+    <section id="hero" class="hero-sleep-container bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary border-b border-clinic-border/60 dark:border-[#161B30]" aria-labelledby="hero-title">
+        <!-- Subtle Ambient Radial Glow -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+            <div class="absolute top-1/4 start-1/12 w-[550px] h-[550px] bg-clinic-brand/5 dark:bg-clinic-brand/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 end-1/12 w-[450px] h-[450px] bg-clinic-dark-accent/5 dark:bg-clinic-dark-accent/8 rounded-full blur-3xl"></div>
         </div>
 
-        <!-- Directional Scrim: Dark readable negative space on LEFT, clinical action visible on RIGHT -->
-        <!-- Desktop / Tablet Scrim (Horizontal left-to-right in LTR, reversed in RTL) -->
-        <div
-            class="hero-scrim hidden md:block absolute inset-0 z-[1] pointer-events-none bg-gradient-to-r rtl:bg-gradient-to-l from-[#032626] via-[#032626]/90 via-38% to-transparent dark:from-black dark:via-black/92 dark:to-transparent">
-        </div>
-        <div
-            class="hero-scrim-deep hidden md:block absolute inset-y-0 start-0 w-2/5 z-[1] pointer-events-none bg-gradient-to-r rtl:bg-gradient-to-l from-[#032626] dark:from-black via-[#032626]/85 dark:via-black/85 to-transparent">
-        </div>
-
-        <!-- Mobile Scrim (Vertical top-to-bottom for stacked composition) -->
-        <div
-            class="hero-scrim-mobile md:hidden absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent via-[#032626]/75 via-42% to-[#032626] dark:via-black/85 dark:to-black">
-        </div>
-
-        <!-- Clinical Hotspots (Desktop & Tablet only, positioned over right-side clinical action) -->
-        <div class="hero-hotspots hidden md:block pointer-events-none" aria-hidden="true">
-            <!-- Hotspot 1: Clinical Foot Care -->
-            <div
-                class="absolute top-[32%] left-[58%] lg:left-[60%] rtl:left-auto rtl:right-[58%] lg:rtl:right-[60%] z-10 pointer-events-auto">
-                <div
-                    class="hotspot-pin inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 dark:bg-black/50 backdrop-blur-md border border-white/25 dark:border-white/15 text-white text-xs font-medium shadow-lg transition-transform hover:scale-105">
-                    <span class="relative flex h-2 w-2">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#53C8B8] opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#53C8B8]"></span>
-                    </span>
-                    <span>Clinical Foot Care</span>
-                </div>
-                <!-- Subtle connecting line pointing toward clinical interaction -->
-                <svg class="w-12 h-8 text-white/30 stroke-current -mt-1 ml-4 rtl:ml-0 rtl:mr-4" viewBox="0 0 48 32"
-                    fill="none">
-                    <path d="M4 2 L22 22 L42 22" stroke-width="1" stroke-dasharray="2 2" />
-                </svg>
-            </div>
-
-            <!-- Hotspot 2: Custom Orthotics -->
-            <div
-                class="absolute top-[56%] left-[74%] lg:left-[76%] rtl:left-auto rtl:right-[74%] lg:rtl:right-[76%] z-10 pointer-events-auto">
-                <div
-                    class="hotspot-pin inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 dark:bg-black/50 backdrop-blur-md border border-white/25 dark:border-white/15 text-white text-xs font-medium shadow-lg transition-transform hover:scale-105">
-                    <span class="relative flex h-2 w-2">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#53C8B8] opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#53C8B8]"></span>
-                    </span>
-                    <span>Custom Orthotics</span>
-                </div>
-                <!-- Subtle connecting line -->
-                <svg class="w-12 h-8 text-white/30 stroke-current -mt-1 ml-4 rtl:ml-0 rtl:mr-4" viewBox="0 0 48 32"
-                    fill="none">
-                    <path d="M4 2 L20 20 L40 20" stroke-width="1" stroke-dasharray="2 2" />
-                </svg>
-            </div>
-        </div>
-
-        <!-- Floating Information Badge (Desktop & Tablet: Lower-right region) -->
-        <div
-            class="hero-proof hidden md:flex absolute bottom-10 right-8 lg:right-14 rtl:right-auto rtl:left-8 lg:rtl:left-14 z-10 items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/15 dark:bg-black/50 backdrop-blur-xl border border-white/25 dark:border-white/15 shadow-2xl">
-            <div class="w-10 h-10 rounded-xl bg-[#53C8B8]/20 flex items-center justify-center text-[#53C8B8]">
-                <i class="fas fa-heartbeat text-base"></i>
-            </div>
-            <div class="text-left rtl:text-right">
-                <div class="text-[11px] font-bold text-[#53C8B8] uppercase tracking-wider">Foot Care</div>
-                <div class="text-xs font-semibold text-white">Personalized Treatment</div>
-            </div>
-        </div>
-
-        <!-- Main Content Layer: Positioned inside Left Negative Space -->
-        <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-10 py-10 md:py-16">
-            <div class="hero-content max-w-xl text-left rtl:text-right space-y-6">
-                <!-- Eyebrow & Micro Indicator -->
-                <div class="inline-flex items-center gap-3">
-                    <span class="text-[11px] font-mono font-bold tracking-widest text-[#53C8B8] uppercase">01 / FOOT
-                        CARE</span>
-                    <span class="w-1 h-1 rounded-full bg-white/30"></span>
-                    <span class="text-xs font-semibold tracking-wider text-white/90 uppercase">PODIATRY & FOOT
-                        CARE</span>
-                </div>
-
-                <!-- Main Heading (Plus Jakarta Sans) -->
-                <h1
-                    class="font-sans text-3xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-bold leading-[1.06] tracking-tight text-white">
-                    Better Foot Care Starts With the <span class="text-[#53C8B8]">Right Step</span>
-                </h1>
-
-                <!-- Supporting Description -->
-                <p class="text-base sm:text-lg text-white/80 font-normal leading-relaxed max-w-lg">
-                    Thoughtful podiatry care focused on common foot concerns, personalized treatment planning, and
-                    ongoing support.
-                </p>
-
-                <!-- CTA Actions -->
-                <div class="flex flex-wrap items-center gap-4 pt-2">
-                    <a href="booking.html"
-                        class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg bg-[#53C8B8] hover:bg-[#3db3a3] text-[#032626] font-bold text-sm tracking-wide shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#53C8B8] focus:ring-offset-2 focus:ring-offset-[#032626]">
-                        <span>Book a Visit</span>
-                        <i class="far fa-calendar-alt text-xs"></i>
-                    </a>
-                    <a href="services.html"
-                        class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg border border-white/30 hover:border-white/70 bg-white/5 hover:bg-white/10 text-white font-semibold text-sm tracking-wide backdrop-blur-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50">
-                        <span>Explore Treatments</span>
-                        <i class="fas fa-arrow-right rtl:rotate-180 text-xs"></i>
-                    </a>
-                </div>
-
-                <!-- Mobile Information Badge (Normal flow below CTA on mobile ≤ 767px) -->
-                <div class="flex md:hidden items-center gap-3.5 pt-5 border-t border-white/15">
-                    <div
-                        class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-[#53C8B8]">
-                        <i class="fas fa-heartbeat text-sm"></i>
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Left Editorial Column -->
+                <div class="lg:col-span-7 space-y-7 animate-fade-in-up">
+                    <!-- Clinical Eyebrow -->
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0D1436] border border-clinic-border dark:border-[#25356B] shadow-xs">
+                        <span class="w-2 h-2 rounded-full bg-clinic-brand dark:bg-clinic-dark-accent animate-pulse"></span>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-clinic-brand dark:text-clinic-dark-accent">
+                            Sleep Medicine &amp; Diagnostics
+                        </span>
                     </div>
-                    <div>
-                        <div class="text-[11px] font-bold text-[#53C8B8] uppercase tracking-wider">Foot Care</div>
-                        <div class="text-xs font-semibold text-white/90">Personalized Treatment</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== SECTION 2: INTERACTIVE SYMPTOM TRIAGE BAR ===== -->
-    <section class="relative z-20 -mt-10 max-w-7xl mx-auto px-6">
-        <div
-            class="bg-clinic-surface dark:bg-clinic-dark-surface rounded-3xl p-6 shadow-xl border border-clinic-border dark:border-clinic-dark-border">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="flex items-center gap-3">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xl">
-                        <i class="fas fa-stethoscope"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-clinic-primary dark:text-clinic-dark-primary">Quick Symptom
-                            Checker</h3>
-                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Select what you are feeling
-                            for tailored recommendations</p>
-                    </div>
-                </div>
+                    <!-- Main Editorial Heading -->
+                    <h1 id="hero-title" class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.12] text-clinic-primary dark:text-clinic-dark-primary tracking-tight">
+                        Better Sleep Starts <br class="hidden sm:inline">With Understanding.
+                    </h1>
 
-                <div class="flex flex-wrap gap-2 justify-center">
-                    <button
-                        class="triage-btn px-4 py-2 rounded-full text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-primary dark:text-clinic-dark-primary hover:border-clinic-brand hover:bg-clinic-accent dark:hover:bg-clinic-dark-border transition"
-                        onclick="selectTriage('Heel Pain & Plantar Fasciitis')">
-                        ⚡ Morning Heel Pain
-                    </button>
-                    <button
-                        class="triage-btn px-4 py-2 rounded-full text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-primary dark:text-clinic-dark-primary hover:border-clinic-brand hover:bg-clinic-accent dark:hover:bg-clinic-dark-border transition"
-                        onclick="selectTriage('Diabetic Foot Care & Neuropathy')">
-                        🩸 Diabetic Foot Check
-                    </button>
-                    <button
-                        class="triage-btn px-4 py-2 rounded-full text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-primary dark:text-clinic-dark-primary hover:border-clinic-brand hover:bg-clinic-accent dark:hover:bg-clinic-dark-border transition"
-                        onclick="selectTriage('Bunion & Hammertoe Realignment')">
-                        🦴 Bunion / Big Toe Deformity
-                    </button>
-                    <button
-                        class="triage-btn px-4 py-2 rounded-full text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-primary dark:text-clinic-dark-primary hover:border-clinic-brand hover:bg-clinic-accent dark:hover:bg-clinic-dark-border transition"
-                        onclick="selectTriage('Sports Podiatry & Achilles Rehab')">
-                        🏃 Sports Ankle Sprain
-                    </button>
-                    <button
-                        class="triage-btn px-4 py-2 rounded-full text-xs font-semibold border border-clinic-border dark:border-clinic-dark-border bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-primary dark:text-clinic-dark-primary hover:border-clinic-brand hover:bg-clinic-accent dark:hover:bg-clinic-dark-border transition"
-                        onclick="selectTriage('Laser Fungal & Wart Therapy')">
-                        🔬 Thick Toenail / Wart
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SECTION 3: CLINICAL SERVICES (SUPPORTING SECTION — SOFT SAGE) ===== -->
-    <section class="py-24 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas transition-colors duration-300">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <span
-                    class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs">Comprehensive
-                    Care</span>
-                <h2
-                    class="font-serif text-4xl sm:text-5xl font-bold mt-2 text-clinic-primary dark:text-clinic-dark-primary">
-                    Our Specialized <span class="italic text-clinic-brand dark:text-clinic-dark-accent">Podiatry
-                        Treatments</span>
-                </h2>
-                <div class="w-20 h-1 bg-clinic-brand dark:bg-clinic-dark-accent mx-auto mt-4 rounded-full"></div>
-                <p class="text-clinic-secondary dark:text-clinic-dark-secondary max-w-2xl mx-auto mt-4 text-base">
-                    Evidence-based conservative medicine and advanced surgical interventions tailored specifically to
-                    lower extremity anatomy and biomechanics.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-group">
-                <!-- Service Card 1 -->
-                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-100">
-                    <div>
-                        <div class="icon-box mb-6">
-                            <i class="fas fa-shoe-prints"></i>
-                        </div>
-                        <h3
-                            class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">
-                            Heel Pain & Plantar Fasciitis</h3>
-                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
-                            Targeted shockwave therapy (ESWT), ultrasound-guided injections, and regenerative therapies
-                            to eradicate debilitating morning heel pain without incisions.
-                        </p>
-                    </div>
-                    <div
-                        class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
-                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i
-                                class="fas fa-bolt mr-1"></i> Non-Invasive Shockwave</span>
-                        <a href="services.html"
-                            class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details
-                            →</a>
-                    </div>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-200">
-                    <div>
-                        <div class="icon-box mb-6">
-                            <i class="fas fa-cube"></i>
-                        </div>
-                        <h3
-                            class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">
-                            Custom 3D-Printed Orthotics</h3>
-                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
-                            Engineered from digital dynamic gait scans to correct pronation, supination, high arches,
-                            and flat feet with lightweight medical-grade carbon fiber polymers.
-                        </p>
-                    </div>
-                    <div
-                        class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
-                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i
-                                class="fas fa-check mr-1"></i> 10-Year Shell Warranty</span>
-                        <a href="services.html"
-                            class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details
-                            →</a>
-                    </div>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-300">
-                    <div>
-                        <div class="icon-box mb-6">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <h3
-                            class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">
-                            Diabetic Limb Preservation</h3>
-                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
-                            Comprehensive sensory neuropathy screenings, vascular Doppler flow evaluations, proactive
-                            ulcer debridement, and custom therapeutic footwear.
-                        </p>
-                    </div>
-                    <div
-                        class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
-                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i
-                                class="fas fa-shield-alt mr-1"></i> Ulcer Prevention</span>
-                        <a href="services.html"
-                            class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details
-                            →</a>
-                    </div>
-                </div>
-
-                <!-- Service Card 4 -->
-                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-100">
-                    <div>
-                        <div class="icon-box mb-6">
-                            <i class="fas fa-bone"></i>
-                        </div>
-                        <h3
-                            class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">
-                            Minimally Invasive Bunion Surgery</h3>
-                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
-                            State-of-the-art percutaneous realignments through tiny 3mm micro-incisions. Walk out in a
-                            surgical shoe with minimal post-op swelling and no large scars.
-                        </p>
-                    </div>
-                    <div
-                        class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
-                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i
-                                class="fas fa-walking mr-1"></i> Immediate Weight Bearing</span>
-                        <a href="services.html"
-                            class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details
-                            →</a>
-                    </div>
-                </div>
-
-                <!-- Service Card 5 -->
-                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-200">
-                    <div>
-                        <div class="icon-box mb-6">
-                            <i class="fas fa-running"></i>
-                        </div>
-                        <h3
-                            class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">
-                            Sports Podiatry & Achilles Rehab</h3>
-                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
-                            Precision biomechanical rehabilitation for runners, dancers, and athletes. Treatment for
-                            shin splints, stress fractures, and chronic Achilles tendinopathy.
-                        </p>
-                    </div>
-                    <div
-                        class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
-                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i
-                                class="fas fa-trophy mr-1"></i> Rapid Return to Sport</span>
-                        <a href="home2.html"
-                            class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details
-                            →</a>
-                    </div>
-                </div>
-
-                <!-- Service Card 6 -->
-                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-300">
-                    <div>
-                        <div class="icon-box mb-6">
-                            <i class="fas fa-sun"></i>
-                        </div>
-                        <h3
-                            class="font-serif text-2xl font-bold mb-3 text-clinic-primary dark:text-clinic-dark-primary">
-                            Laser Therapy for Fungal Nails & Warts</h3>
-                        <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed mb-6">
-                            FDA-cleared 1064nm Nd:YAG laser penetrates deep into the nail bed to safely eliminate
-                            stubborn onychomycosis and verruca without systemic liver medication risks.
-                        </p>
-                    </div>
-                    <div
-                        class="border-t border-clinic-border dark:border-clinic-dark-border pt-4 flex items-center justify-between">
-                        <span class="text-xs text-clinic-brand dark:text-clinic-dark-accent font-semibold"><i
-                                class="fas fa-star mr-1"></i> Pain-Free Laser</span>
-                        <a href="services.html"
-                            class="text-clinic-brand dark:text-clinic-dark-accent font-bold text-sm hover:translate-x-1 transition flex items-center gap-1">Details
-                            →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12 reveal">
-                <a href="services.html" class="btn-primary-pill py-3 px-8 text-base">
-                    <i class="fas fa-notes-medical"></i> View All 14 Clinical Procedures
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SECTION 4: 3D BIOMECHANICS & ORTHOTICS SPOTLIGHT (CONTENT — WHITE SURFACE) ===== -->
-    <section
-        class="py-24 px-6 bg-clinic-surface dark:bg-clinic-dark-surface transition-colors duration-300 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <!-- Left Column: Visual with Image and Overlay -->
-                <div class="lg:col-span-6 relative reveal-left">
-                    <div
-                        class="image-reveal-frame rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-2xl overflow-hidden group">
-                        <img src="assets/images/orthotics_3d_scan.jpg"
-                            alt="3D Custom Orthotic Insoles & Biomechanical Tablet"
-                            class="w-full h-[480px] object-cover">
-                        <div class="scan-line-overlay"></div>
-                        <div
-                            class="absolute bottom-4 left-4 bg-black/85 backdrop-blur-md px-5 py-2.5 rounded-full border border-clinic-dark-border text-xs text-white flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-[#65B8AD] animate-pulse"></span>
-                            <span>Dynamic Foot Arch Pressure Mapping</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Features & Explanations -->
-                <div class="lg:col-span-6 space-y-6 reveal-right">
-                    <span
-                        class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs block">Engineering
-                        Meets Podiatry</span>
-                    <h2
-                        class="font-serif text-4xl sm:text-5xl font-bold text-clinic-primary dark:text-clinic-dark-primary leading-tight">
-                        Custom 3D Orthotics Engineered for <span
-                            class="italic text-clinic-brand dark:text-clinic-dark-accent">Your Biomechanics</span>
-                    </h2>
-                    <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base leading-relaxed">
-                        Off-the-shelf drugstore insoles only cushion — they do not realign skeletal joints. At StepWell,
-                        our high-speed laser cameras capture 120 frames per second of your foot strike to craft custom
-                        medical orthotics that relieve knee, hip, and lumbar strain.
+                    <!-- Supporting Message -->
+                    <p class="text-base sm:text-lg text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed max-w-2xl">
+                        Sleep problems can compromise daytime energy, cognitive focus, nocturnal breathing, physical recovery, and cardiovascular longevity. Our physician-led clinic provides comprehensive clinical evaluations and diagnostic sleep studies to pinpoint the exact physiological causes of sleep disruption.
                     </p>
 
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold flex-shrink-0">
-                                <i class="fas fa-microchip"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary">Dynamic 3D
-                                    Pressure Sensors</h4>
-                                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm">Measures exact
-                                    force distributions across 4,096 micro-sensors per foot in real-time.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold flex-shrink-0">
-                                <i class="fas fa-feather-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary">Featherlight
-                                    Carbon-Fiber Lattice</h4>
-                                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm">40% lighter and
-                                    3x more durable than traditional plaster casts, fitting seamlessly into dress shoes
-                                    and trainers.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold flex-shrink-0">
-                                <i class="fas fa-history"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary">Lifetime Gait
-                                    Optimization</h4>
-                                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm">Free
-                                    biomechanical checkups every 6 months to ensure your realignment stays optimal as
-                                    your stride improves.</p>
-                            </div>
-                        </div>
+                    <!-- Breathing Wave Motion Line Motif -->
+                    <div class="py-1 w-full max-w-md" aria-hidden="true">
+                        <svg viewBox="0 0 400 30" class="w-full h-7 overflow-visible">
+                            <path class="hero-breathing-line" d="M 0,15 Q 50,0 100,15 T 200,15 T 300,15 T 400,15" fill="none" stroke="url(#heroWaveGrad)" stroke-width="2.5" stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="heroWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#3B5BDB" stop-opacity="0.3" />
+                                    <stop offset="50%" stop-color="#7A9BE8" stop-opacity="1" />
+                                    <stop offset="100%" stop-color="#3B5BDB" stop-opacity="0.3" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
                     </div>
 
-                    <div class="pt-4 flex items-center gap-4">
-                        <a href="booking.html" class="btn-primary-pill py-3 px-8">
-                            <i class="fas fa-laptop-medical"></i> Schedule 3D Scan ($0 with PPO)
+                    <!-- Primary & Secondary Action CTAs -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button type="button" onclick="openModal('sleepStudyModal')" class="btn-primary-pill text-sm py-3.5 px-7 inline-flex items-center gap-2.5 shadow-md hover:shadow-lg transition">
+                            <i class="fas fa-bed-pulse"></i>
+                            <span>Book a Sleep Study</span>
+                        </button>
+                        <a href="services.html" class="btn-outline-pill text-sm py-3.5 px-7 inline-flex items-center gap-2.5">
+                            <span>Explore Sleep Care</span>
+                            <i class="fas fa-arrow-right text-xs"></i>
                         </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== SECTION 5: DOCTOR SPOTLIGHT & WHY CHOOSE US (WARM IVORY CANVAS) ===== -->
-    <section class="py-24 px-6 bg-clinic-canvas dark:bg-clinic-dark-canvas transition-colors duration-300">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-6 space-y-6 reveal-left">
-                    <span
-                        class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs block">Physician-Led
-                        Care</span>
-                    <h2
-                        class="font-serif text-4xl sm:text-5xl font-bold text-clinic-primary dark:text-clinic-dark-primary leading-tight">
-                        Compassionate Expertise in Every <span
-                            class="italic text-clinic-brand dark:text-clinic-dark-accent">Step</span>
-                    </h2>
-                    <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-base leading-relaxed">
-                        Foot pain should never be accepted as a normal part of aging or athletics. Our team of
-                        board-certified podiatric surgeons (DPM, FACFAS) combines academic excellence with a warm,
-                        bedside approach that treats the whole patient, not just the foot.
-                    </p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <div
-                            class="bg-clinic-surface dark:bg-clinic-dark-surface p-5 rounded-2xl border border-clinic-border dark:border-clinic-dark-border shadow-sm">
-                            <i class="fas fa-user-md text-2xl text-clinic-brand dark:text-clinic-dark-accent mb-2"></i>
-                            <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-base">Fellowship
-                                Trained</h4>
-                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-1">Specialized
-                                residency training at top US teaching hospitals.</p>
+                    <!-- Clinical Trust Attributes -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-clinic-border/60 dark:border-[#1A1D30]">
+                        <div class="flex items-center gap-2.5">
+                            <i class="fas fa-certificate text-clinic-brand dark:text-clinic-dark-accent text-sm"></i>
+                            <span class="text-xs font-medium text-clinic-secondary dark:text-clinic-dark-secondary">AASM Accredited Center</span>
                         </div>
-                        <div
-                            class="bg-clinic-surface dark:bg-clinic-dark-surface p-5 rounded-2xl border border-clinic-border dark:border-clinic-dark-border shadow-sm">
-                            <i
-                                class="fas fa-hospital-user text-2xl text-clinic-brand dark:text-clinic-dark-accent mb-2"></i>
-                            <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-base">In-Office
-                                Fluoroscopy</h4>
-                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-1">Real-time
-                                digital motion X-rays with minimal radiation dosage.</p>
+                        <div class="flex items-center gap-2.5">
+                            <i class="fas fa-stethoscope text-clinic-brand dark:text-clinic-dark-accent text-sm"></i>
+                            <span class="text-xs font-medium text-clinic-secondary dark:text-clinic-dark-secondary">Physician-Supervised</span>
                         </div>
-                        <div
-                            class="bg-clinic-surface dark:bg-clinic-dark-surface p-5 rounded-2xl border border-clinic-border dark:border-clinic-dark-border shadow-sm">
-                            <i class="fas fa-band-aid text-2xl text-clinic-brand dark:text-clinic-dark-accent mb-2"></i>
-                            <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-base">Same-Day
-                                Urgent Care</h4>
-                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-1">Emergency
-                                slots reserved daily for fractures and infections.</p>
+                        <div class="flex items-center gap-2.5 col-span-2 sm:col-span-1">
+                            <i class="fas fa-house-medical text-clinic-brand dark:text-clinic-dark-accent text-sm"></i>
+                            <span class="text-xs font-medium text-clinic-secondary dark:text-clinic-dark-secondary">In-Lab &amp; Home Testing</span>
                         </div>
-                        <div
-                            class="bg-clinic-surface dark:bg-clinic-dark-surface p-5 rounded-2xl border border-clinic-border dark:border-clinic-dark-border shadow-sm">
-                            <i
-                                class="fas fa-file-invoice-dollar text-2xl text-clinic-brand dark:text-clinic-dark-accent mb-2"></i>
-                            <h4 class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-base">
-                                Transparent Pricing</h4>
-                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-1">Direct
-                                insurance verification before any procedure begins.</p>
-                        </div>
-                    </div>
-
-                    <div class="pt-4">
-                        <a href="about.html" class="btn-outline-pill py-3 px-7">
-                            <i class="fas fa-info-circle"></i> Learn About Our Medical Team
-                        </a>
                     </div>
                 </div>
 
-                <div class="lg:col-span-6 relative reveal-right">
-                    <div
-                        class="image-reveal-frame rounded-3xl border border-clinic-border dark:border-clinic-dark-border shadow-2xl overflow-hidden group">
-                        <img src="assets/images/podiatrist_exam.jpg"
-                            alt="Podiatrist examining patient foot with tablet scan"
-                            class="w-full h-[500px] object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                <!-- Right Editorial Visual Composition -->
+                <div class="lg:col-span-5 relative">
+                    <div class="hero-image-frame p-2 sm:p-3 bg-white dark:bg-[#0A0E22]">
+                        <img src="assets/images/hero-sleep-clinic.svg" 
+                             alt="SomnaClinic Sleep Medicine Diagnostic Suite &amp; Polysomnography Telemetry" 
+                             class="w-full h-auto object-cover rounded-2xl aspect-[4/3] sm:aspect-[4/3] shadow-sm"
+                             loading="eager">
+                        
+                        <!-- Small clinical metadata badge (No fake numbers) -->
+                        <div class="absolute bottom-6 start-6 end-6 bg-white/95 dark:bg-[#0D1436]/95 backdrop-blur-md p-3.5 rounded-xl border border-clinic-border/80 dark:border-[#25356B] shadow-lg flex items-center justify-between">
                             <div class="flex items-center gap-3">
-                                <img src="assets/images/dr_sarah_chen.jpg" alt="Dr. Evelyn Chen"
-                                    class="w-12 h-12 rounded-full border-2 border-clinic-brand dark:border-clinic-dark-accent object-cover">
+                                <div class="w-9 h-9 rounded-lg bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-sm font-semibold">
+                                    <i class="fas fa-wave-square"></i>
+                                </div>
                                 <div>
-                                    <h4 class="font-bold text-white text-base">Dr. Evelyn Chen, DPM, FACFAS</h4>
-                                    <p class="text-xs text-[#65B8AD]">Chief of Reconstructive Foot Surgery</p>
+                                    <div class="text-xs font-semibold text-clinic-primary dark:text-clinic-dark-primary">Polysomnography Telemetry</div>
+                                    <div class="text-[11px] text-clinic-muted dark:text-clinic-dark-secondary">Synchronized Biometric Recording</div>
+                                </div>
+                            </div>
+                            <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent dark:bg-clinic-dark-accent/10">Active Suite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 02: SLEEP HEALTH INTRODUCTION — "Understanding Your Sleep Changes Everything"
+         ========================================================================== -->
+    <section id="sleep-intro" class="py-24 bg-clinic-surface dark:bg-[#070A17] border-b border-clinic-border/60 dark:border-[#161B30]" aria-labelledby="intro-title">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Left Editorial Statement & Supporting Copy -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-clinic-brand dark:text-clinic-dark-accent">
+                        <i class="fas fa-notes-medical"></i>
+                        <span>Clinical Sleep Health</span>
+                    </div>
+
+                    <h2 id="intro-title" class="sleep-intro-statement">
+                        Understanding Your Sleep Changes Everything.
+                    </h2>
+
+                    <p class="text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                        Restorative sleep is not simply a period of inactivity; it is an active, essential physiological state that regulates neurocognitive consolidation, cardiovascular pressure, immune resilience, and metabolic balance. When sleep architecture is repeatedly disrupted, daytime fatigue is usually only the visible indicator of deeper underlying physiological stress.
+                    </p>
+
+                    <div class="editorial-divider my-4"></div>
+
+                    <!-- Clinical Indications / Observation Areas -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-clinic-canvas dark:bg-[#0C122A] border border-clinic-border/60 dark:border-[#1A2242]">
+                            <div class="w-8 h-8 rounded-lg bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xs mb-2.5">
+                                <i class="fas fa-battery-quarter"></i>
+                            </div>
+                            <h3 class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Persistent Tiredness</h3>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-normal">
+                                Unrefreshed awakening, morning grogginess, or midday energy deficits despite adequate hours in bed.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-clinic-canvas dark:bg-[#0C122A] border border-clinic-border/60 dark:border-[#1A2242]">
+                            <div class="w-8 h-8 rounded-lg bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xs mb-2.5">
+                                <i class="fas fa-lungs"></i>
+                            </div>
+                            <h3 class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Breathing Interruptions</h3>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-normal">
+                                Chronic loud snoring, witnessed gasping episodes, or nocturnal choking sounds noted by partners.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-clinic-canvas dark:bg-[#0C122A] border border-clinic-border/60 dark:border-[#1A2242]">
+                            <div class="w-8 h-8 rounded-lg bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xs mb-2.5">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <h3 class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Sleep Initiation Difficulty</h3>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-normal">
+                                Racing cognitive thoughts, prolonged sleep latency, or inability to wind down at night.
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-clinic-canvas dark:bg-[#0C122A] border border-clinic-border/60 dark:border-[#1A2242]">
+                            <div class="w-8 h-8 rounded-lg bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xs mb-2.5">
+                                <i class="fas fa-hourglass-half"></i>
+                            </div>
+                            <h3 class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Frequent Awakenings</h3>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-normal">
+                                Fragmented nocturnal sleep, nocturnal restlessness, or early morning awakenings with inability to fall back asleep.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Editorial Illustration & Biometric Insight -->
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="rounded-2xl overflow-hidden border border-clinic-border/70 dark:border-[#1E274A] shadow-md bg-white dark:bg-[#0A0E22]">
+                        <img src="assets/images/sleep-health-intro.svg" 
+                             alt="Circadian Sleep Architecture and Biometric Waveform Monitoring" 
+                             class="w-full h-auto object-cover"
+                             loading="lazy">
+                    </div>
+                    <div class="p-4 rounded-xl bg-clinic-sage/50 dark:bg-[#0B1028] border border-clinic-border/50 dark:border-[#1C2548] flex items-center gap-3">
+                        <i class="fas fa-circle-info text-clinic-brand dark:text-clinic-dark-accent text-base flex-shrink-0"></i>
+                        <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                            Clinical evaluations are non-invasive diagnostic investigations designed to clarify sleep architecture rather than assign speculative labels.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 03: SLEEP CARE SERVICES — Interactive Vertical Service Selector
+         ========================================================================== -->
+    <section id="sleep-services" class="py-24 bg-clinic-sage/40 dark:bg-[#090D20] border-b border-clinic-border/60 dark:border-[#161B30]" aria-labelledby="services-title">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="max-w-3xl mb-14">
+                <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-clinic-brand dark:text-clinic-dark-accent mb-3">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>Specialized Clinical Scope</span>
+                </div>
+                <h2 id="services-title" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-4 leading-tight">
+                    Sleep Care, From Evaluation to Treatment.
+                </h2>
+                <p class="text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                    Our clinical services cover the complete continuum of sleep medicine: from initial diagnostic polysomnography to positive airway pressure therapy, behavioral sleep interventions, and longitudinal follow-up care.
+                </p>
+            </div>
+
+            <!-- Interactive Service Selector Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Left: Numbered Vertical Service Selector -->
+                <div class="lg:col-span-5 service-nav-list" role="tablist" aria-label="Sleep Care Clinical Services">
+                    <!-- Service 01 -->
+                    <button type="button" 
+                            class="service-tab-btn active" 
+                            id="tab-btn-service-1" 
+                            role="tab" 
+                            aria-selected="true" 
+                            aria-controls="panel-service-1"
+                            tabindex="0"
+                            data-service-target="1">
+                        <span class="service-num-badge">01</span>
+                        <div class="flex-1">
+                            <div class="text-base font-semibold text-clinic-primary dark:text-clinic-dark-primary">Sleep Studies</div>
+                            <div class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary">In-Lab Polysomnography &amp; Home Testing</div>
+                        </div>
+                        <i class="fas fa-chevron-right text-xs text-clinic-muted opacity-60"></i>
+                    </button>
+
+                    <!-- Service 02 -->
+                    <button type="button" 
+                            class="service-tab-btn" 
+                            id="tab-btn-service-2" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="panel-service-2"
+                            tabindex="-1"
+                            data-service-target="2">
+                        <span class="service-num-badge">02</span>
+                        <div class="flex-1">
+                            <div class="text-base font-semibold text-clinic-primary dark:text-clinic-dark-primary">CPAP Therapy</div>
+                            <div class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary">Titration, Mask Fitting &amp; Pressure Support</div>
+                        </div>
+                        <i class="fas fa-chevron-right text-xs text-clinic-muted opacity-60"></i>
+                    </button>
+
+                    <!-- Service 03 -->
+                    <button type="button" 
+                            class="service-tab-btn" 
+                            id="tab-btn-service-3" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="panel-service-3"
+                            tabindex="-1"
+                            data-service-target="3">
+                        <span class="service-num-badge">03</span>
+                        <div class="flex-1">
+                            <div class="text-base font-semibold text-clinic-primary dark:text-clinic-dark-primary">Insomnia Care</div>
+                            <div class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary">Cognitive Behavioral Therapy for Insomnia (CBT-I)</div>
+                        </div>
+                        <i class="fas fa-chevron-right text-xs text-clinic-muted opacity-60"></i>
+                    </button>
+
+                    <!-- Service 04 -->
+                    <button type="button" 
+                            class="service-tab-btn" 
+                            id="tab-btn-service-4" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="panel-service-4"
+                            tabindex="-1"
+                            data-service-target="4">
+                        <span class="service-num-badge">04</span>
+                        <div class="flex-1">
+                            <div class="text-base font-semibold text-clinic-primary dark:text-clinic-dark-primary">Follow-up Care</div>
+                            <div class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary">Compliance Tracking &amp; Continuous Optimization</div>
+                        </div>
+                        <i class="fas fa-chevron-right text-xs text-clinic-muted opacity-60"></i>
+                    </button>
+                </div>
+
+                <!-- Right: Large Changing Content & Image Panel -->
+                <div class="lg:col-span-7 bg-white dark:bg-[#0A0F24] rounded-2xl border border-clinic-border dark:border-[#20294A] p-6 sm:p-8 shadow-sm">
+                    <!-- Panel 1: Sleep Studies -->
+                    <div id="panel-service-1" class="service-panel-view active grid grid-cols-1 gap-6" role="tabpanel" aria-labelledby="tab-btn-service-1">
+                        <div class="rounded-xl overflow-hidden border border-clinic-border/70 dark:border-[#25356B]">
+                            <img src="assets/images/service-sleep-studies.svg" 
+                                 alt="Overnight Polysomnography (PSG) and Home Sleep Apnea Testing Diagnostic Telemetry" 
+                                 class="w-full h-auto object-cover aspect-[16/10]"
+                                 loading="lazy">
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wider bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent dark:bg-clinic-dark-accent/15">Diagnostic Testing</span>
+                                <span class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Standard of Care Protocol</span>
+                            </div>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-clinic-primary dark:text-clinic-dark-primary">
+                                Overnight Sleep Studies &amp; Telemetry
+                            </h3>
+                            <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                                Diagnostic polysomnography (PSG) records neurophysiological and cardiorespiratory metrics during natural sleep, including electroencephalography (EEG), airflow patterns, oxygen saturation, and body positions. We also offer calibrated Home Sleep Apnea Testing (HSAT) for qualifying patients.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Physiologic Stage Scoring (NREM &amp; REM)</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Apnea-Hypopnea Index (AHI) Measurement</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Private, Temperature-Controlled Soundproof Suites</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Physician-Reviewed Interpretation Report</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 flex items-center gap-4">
+                                <button type="button" onclick="openModal('sleepStudyModal')" class="btn-primary-pill text-xs py-2.5 px-5">
+                                    <i class="fas fa-calendar-check mr-1.5"></i> Request Sleep Study
+                                </button>
+                                <a href="services.html" class="text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent hover:underline inline-flex items-center gap-1.5">
+                                    <span>View Diagnostic Details</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 2: CPAP Therapy -->
+                    <div id="panel-service-2" class="service-panel-view grid grid-cols-1 gap-6" role="tabpanel" aria-labelledby="tab-btn-service-2">
+                        <div class="rounded-xl overflow-hidden border border-clinic-border/70 dark:border-[#25356B]">
+                            <img src="assets/images/service-cpap-therapy.svg" 
+                                 alt="CPAP Titration, Airflow Pressure Management and Mask Interface Setup" 
+                                 class="w-full h-auto object-cover aspect-[16/10]"
+                                 loading="lazy">
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wider bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent dark:bg-clinic-dark-accent/15">Airway Management</span>
+                                <span class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Continuous Positive Airway Pressure</span>
+                            </div>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-clinic-primary dark:text-clinic-dark-primary">
+                                Precision CPAP Therapy &amp; Titration
+                            </h3>
+                            <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                                Continuous Positive Airway Pressure (CPAP) and Bi-level therapy pneumatic splints maintain an open upper airway during sleep. Our clinical team works personally with you to calibrate pressure levels, minimize mask leak, and optimize comfort for sustainable nightly compliance.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Custom Anatomical Mask Sizing &amp; Seal Fit</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Auto-Adjusting Pressure Calibration (APAP)</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Heated Humidification &amp; Tubing Adjustment</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Remote Cellular Adherence Telemetry</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 flex items-center gap-4">
+                                <a href="contact.html" class="btn-primary-pill text-xs py-2.5 px-5">
+                                    <i class="fas fa-lungs mr-1.5"></i> Schedule CPAP Consultation
+                                </a>
+                                <a href="services.html" class="text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent hover:underline inline-flex items-center gap-1.5">
+                                    <span>Explore Airway Protocols</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 3: Insomnia Care -->
+                    <div id="panel-service-3" class="service-panel-view grid grid-cols-1 gap-6" role="tabpanel" aria-labelledby="tab-btn-service-3">
+                        <div class="rounded-xl overflow-hidden border border-clinic-border/70 dark:border-[#25356B]">
+                            <img src="assets/images/service-insomnia-care.svg" 
+                                 alt="Cognitive Behavioral Therapy for Insomnia (CBT-I) Protocol Architecture" 
+                                 class="w-full h-auto object-cover aspect-[16/10]"
+                                 loading="lazy">
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wider bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent dark:bg-clinic-dark-accent/15">Evidence-Based Therapy</span>
+                                <span class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">First-Line Medical Guideline</span>
+                            </div>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-clinic-primary dark:text-clinic-dark-primary">
+                                Behavioral Sleep Medicine &amp; CBT-I
+                            </h3>
+                            <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                                Cognitive Behavioral Therapy for Insomnia (CBT-I) is the clinically validated first-line treatment for chronic sleeplessness. By retraining conditioned sleep arousal, establishing stimulus control, and consolidating sleep drive, patients re-establish restorative natural sleep cycles without dependence on sedative medications.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Sleep Restriction &amp; Consolidation Protocols</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Stimulus Control &amp; Bed-Sleep Association</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Circadian Light Therapy &amp; Chronobiology</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Structured 6-Week Clinical Progress Reviews</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 flex items-center gap-4">
+                                <a href="contact.html" class="btn-primary-pill text-xs py-2.5 px-5">
+                                    <i class="fas fa-moon mr-1.5"></i> Inquire About CBT-I
+                                </a>
+                                <a href="services.html" class="text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent hover:underline inline-flex items-center gap-1.5">
+                                    <span>Review Behavioral Approach</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 4: Follow-up Care -->
+                    <div id="panel-service-4" class="service-panel-view grid grid-cols-1 gap-6" role="tabpanel" aria-labelledby="tab-btn-service-4">
+                        <div class="rounded-xl overflow-hidden border border-clinic-border/70 dark:border-[#25356B]">
+                            <img src="assets/images/service-followup-care.svg" 
+                                 alt="Longitudinal Sleep Health Adherence and Compliance Optimization" 
+                                 class="w-full h-auto object-cover aspect-[16/10]"
+                                 loading="lazy">
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="px-2.5 py-1 rounded text-xs font-bold uppercase tracking-wider bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent dark:bg-clinic-dark-accent/15">Continuity of Care</span>
+                                <span class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Longitudinal Monitoring</span>
+                            </div>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-clinic-primary dark:text-clinic-dark-primary">
+                                Longitudinal Management &amp; Adherence
+                            </h3>
+                            <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                                Effective sleep medicine does not end with initial equipment or recommendations. Our dedicated clinicians monitor adherence telemetry, conduct regular 30, 60, and 90-day clinical checkpoints, and adapt therapies as your life, weight, or schedule evolves.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Regular Telemetry &amp; Leak Assessment</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Routine Cushion &amp; Filter Replacements</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Annual Physician Re-Evaluation Visits</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-clinic-primary dark:text-clinic-dark-primary">
+                                    <i class="fas fa-check text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                    <span>Coordination with Primary Care Providers</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 flex items-center gap-4">
+                                <a href="contact.html" class="btn-primary-pill text-xs py-2.5 px-5">
+                                    <i class="fas fa-clipboard-check mr-1.5"></i> Schedule Follow-up Visit
+                                </a>
+                                <a href="services.html" class="text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent hover:underline inline-flex items-center gap-1.5">
+                                    <span>Learn About Care Cycles</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 04: YOUR SLEEP CARE JOURNEY — Horizontal Desktop / Vertical Mobile Timeline
+         ========================================================================== -->
+    <section id="sleep-journey" class="py-24 bg-clinic-canvas dark:bg-clinic-dark-canvas border-b border-clinic-border/60 dark:border-[#161B30]" aria-labelledby="journey-title">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-clinic-brand dark:text-clinic-dark-accent mb-3">
+                    <i class="fas fa-route"></i>
+                    <span>Structured Clinical Pathway</span>
+                </div>
+                <h2 id="journey-title" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-4 leading-tight">
+                    A Clear Path From Concern to Care.
+                </h2>
+                <p class="text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                    Navigating sleep health should be straightforward and reassuring. Here is how our clinical team guides you through every step of diagnostic evaluation and treatment.
+                </p>
+            </div>
+
+            <!-- Timeline Component -->
+            <div class="timeline-track-wrapper">
+                <!-- Connecting Line (Desktop Horizontal / Mobile Vertical) -->
+                <div class="timeline-connector-bar" aria-hidden="true"></div>
+
+                <!-- 6 Steps Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-6 gap-8 lg:gap-4 relative z-10">
+                    <!-- Step 01 -->
+                    <div class="timeline-step-node">
+                        <div class="step-marker-circle mb-3">
+                            <span class="text-[11px] font-bold text-clinic-brand dark:text-clinic-dark-accent">01</span>
+                            <i class="fas fa-comments text-xs text-clinic-secondary dark:text-clinic-dark-secondary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Consultation</h3>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-normal">
+                                Thorough review of your symptoms, nocturnal schedule, and medical background.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 02 -->
+                    <div class="timeline-step-node">
+                        <div class="step-marker-circle mb-3">
+                            <span class="text-[11px] font-bold text-clinic-brand dark:text-clinic-dark-accent">02</span>
+                            <i class="fas fa-clipboard-user text-xs text-clinic-secondary dark:text-clinic-dark-secondary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Sleep Assessment</h3>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-normal">
+                                Clinical screening of airway anatomy, sleepiness scale, and testing qualification.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 03 -->
+                    <div class="timeline-step-node">
+                        <div class="step-marker-circle mb-3">
+                            <span class="text-[11px] font-bold text-clinic-brand dark:text-clinic-dark-accent">03</span>
+                            <i class="fas fa-bed-pulse text-xs text-clinic-secondary dark:text-clinic-dark-secondary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Sleep Study</h3>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-normal">
+                                Attended overnight polysomnography or calibrated home testing kit.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 04 -->
+                    <div class="timeline-step-node">
+                        <div class="step-marker-circle mb-3">
+                            <span class="text-[11px] font-bold text-clinic-brand dark:text-clinic-dark-accent">04</span>
+                            <i class="fas fa-chart-line text-xs text-clinic-secondary dark:text-clinic-dark-secondary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Results &amp; Review</h3>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-normal">
+                                Dedicated physician appointment to discuss your telemetry report and findings.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 05 -->
+                    <div class="timeline-step-node">
+                        <div class="step-marker-circle mb-3">
+                            <span class="text-[11px] font-bold text-clinic-brand dark:text-clinic-dark-accent">05</span>
+                            <i class="fas fa-file-medical text-xs text-clinic-secondary dark:text-clinic-dark-secondary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Treatment Plan</h3>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-normal">
+                                Individualized prescription: CPAP calibration, oral appliance, or CBT-I.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 06 -->
+                    <div class="timeline-step-node">
+                        <div class="step-marker-circle mb-3">
+                            <span class="text-[11px] font-bold text-clinic-brand dark:text-clinic-dark-accent">06</span>
+                            <i class="fas fa-heart-pulse text-xs text-clinic-secondary dark:text-clinic-dark-secondary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Follow-up</h3>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-normal">
+                                Continuous adherence monitoring, mask comfort checks, and ongoing sleep health.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 05: MEET OUR SPECIALISTS — Editorial Specialist Presentation
+         ========================================================================== -->
+    <section id="sleep-specialists" class="py-24 bg-clinic-surface dark:bg-[#070A17] border-b border-clinic-border/60 dark:border-[#161B30]" aria-labelledby="specialists-title">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Left: Featured Specialist Large Portrait -->
+                <div class="lg:col-span-5 relative">
+                    <div class="specialist-portrait-frame p-2 bg-white dark:bg-[#0C122A]">
+                        <img src="assets/images/dr_marcus_vance.jpg" 
+                             alt="Dr. Marcus Vance, MD — Board-Certified Sleep Medicine Specialist" 
+                             class="w-full h-auto object-cover rounded-2xl aspect-[4/5] shadow-sm"
+                             loading="lazy">
+                        
+                        <!-- Floating verified credential pill -->
+                        <div class="absolute bottom-6 start-6 end-6 bg-white/95 dark:bg-[#0B1028]/95 backdrop-blur-md p-3.5 rounded-xl border border-clinic-border/80 dark:border-[#20294C] shadow-md flex items-center justify-between">
+                            <div>
+                                <div class="text-xs font-bold text-clinic-primary dark:text-clinic-dark-primary">Dr. Marcus Vance, MD</div>
+                                <div class="text-[11px] text-clinic-muted dark:text-clinic-dark-secondary">Sleep Medicine &amp; Clinical Diagnostics</div>
+                            </div>
+                            <span class="inline-flex items-center gap-1 text-[10px] uppercase font-bold px-2 py-1 rounded bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent dark:bg-clinic-dark-accent/15">
+                                <i class="fas fa-check-circle text-[9px]"></i> Verified
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Editorial Narrative & Expertise Indicators -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-clinic-brand dark:text-clinic-dark-accent">
+                        <i class="fas fa-user-doctor"></i>
+                        <span>Physician Leadership</span>
+                    </div>
+
+                    <h2 id="specialists-title" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-clinic-primary dark:text-clinic-dark-primary leading-tight">
+                        Expertise Built Around Better Sleep.
+                    </h2>
+
+                    <p class="text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                        Accurate diagnosis in sleep medicine requires detailed biometric interpretation, an understanding of upper airway dynamics, and close patient listening. Our clinical team evaluates each patient individually, avoiding generic recommendations in favor of evidence-based, customized medical solutions.
+                    </p>
+
+                    <!-- Clinical Competencies (Truthful & Verified) -->
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-clinic-canvas dark:bg-[#0B1028] border border-clinic-border/60 dark:border-[#1C2548]">
+                            <div class="w-8 h-8 rounded-lg bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary">Polysomnography &amp; Architecture Scoring</div>
+                                <div class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                                    Direct physician analysis of sleep stages, arousals, and respiratory waveforms to diagnose complex sleep disorders.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-clinic-canvas dark:bg-[#0B1028] border border-clinic-border/60 dark:border-[#1C2548]">
+                            <div class="w-8 h-8 rounded-lg bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
+                                <i class="fas fa-mask-ventilator"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary">Sleep-Disordered Breathing Management</div>
+                                <div class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                                    Personalized CPAP and Bi-level titration for obstructive, central, and mixed sleep apnea syndromes.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-clinic-canvas dark:bg-[#0B1028] border border-clinic-border/60 dark:border-[#1C2548]">
+                            <div class="w-8 h-8 rounded-lg bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-clinic-primary dark:text-clinic-dark-primary">Circadian Rhythm &amp; Insomnia Protocols</div>
+                                <div class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                                    Non-pharmacological clinical strategies tailored for shift workers, delayed sleep phase, and conditioned insomnia.
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== SECTION 6: STATS COUNTERS (ACCENT AREA — SOFT SAGE ACCENT) ===== -->
-    <section
-        class="py-20 px-6 bg-clinic-accent dark:bg-clinic-dark-canvas transition-colors duration-300 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="text-center mb-14 reveal">
-                <span
-                    class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs">Proven
-                    Clinical Track Record</span>
-                <h2
-                    class="font-serif text-4xl sm:text-5xl font-bold mt-2 text-clinic-primary dark:text-clinic-dark-primary">
-                    Clinical Results by the Numbers</h2>
-                <div class="w-20 h-1 bg-clinic-brand dark:bg-clinic-dark-accent mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-group">
-                <div
-                    class="bg-clinic-surface/90 dark:bg-clinic-dark-surface/90 rounded-2xl p-6 text-center border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition flex flex-col items-center justify-center shadow-sm reveal delay-100">
-                    <i class="fas fa-users text-3xl text-clinic-brand dark:text-clinic-dark-accent mb-3"></i>
-                    <div class="text-4xl sm:text-5xl font-bold text-clinic-brand dark:text-clinic-dark-accent"
-                        data-counter-target="15400" data-counter-suffix="+">15,400+</div>
-                    <div
-                        class="text-xs sm:text-sm text-clinic-secondary dark:text-clinic-dark-secondary mt-2 font-medium">
-                        Patients Treated</div>
-                </div>
-
-                <div
-                    class="bg-clinic-surface/90 dark:bg-clinic-dark-surface/90 rounded-2xl p-6 text-center border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition flex flex-col items-center justify-center shadow-sm reveal delay-200">
-                    <i class="fas fa-check-circle text-3xl text-clinic-brand dark:text-clinic-dark-accent mb-3"></i>
-                    <div class="text-4xl sm:text-5xl font-bold text-clinic-brand dark:text-clinic-dark-accent"
-                        data-counter-target="99" data-counter-suffix="%">99%</div>
-                    <div
-                        class="text-xs sm:text-sm text-clinic-secondary dark:text-clinic-dark-secondary mt-2 font-medium">
-                        Surgical & Conservative Success</div>
-                </div>
-
-                <div
-                    class="bg-clinic-surface/90 dark:bg-clinic-dark-surface/90 rounded-2xl p-6 text-center border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition flex flex-col items-center justify-center shadow-sm reveal delay-300">
-                    <i class="fas fa-shoe-prints text-3xl text-clinic-brand dark:text-clinic-dark-accent mb-3"></i>
-                    <div class="text-4xl sm:text-5xl font-bold text-clinic-brand dark:text-clinic-dark-accent"
-                        data-counter-target="8650" data-counter-suffix="+">8,650+</div>
-                    <div
-                        class="text-xs sm:text-sm text-clinic-secondary dark:text-clinic-dark-secondary mt-2 font-medium">
-                        Custom Orthotics Engineered</div>
-                </div>
-
-                <div
-                    class="bg-clinic-surface/90 dark:bg-clinic-dark-surface/90 rounded-2xl p-6 text-center border border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition flex flex-col items-center justify-center shadow-sm reveal delay-400">
-                    <i class="fas fa-award text-3xl text-clinic-brand dark:text-clinic-dark-accent mb-3"></i>
-                    <div class="text-4xl sm:text-5xl font-bold text-clinic-brand dark:text-clinic-dark-accent"
-                        data-counter-target="18" data-counter-suffix=" Yrs">18 Yrs</div>
-                    <div
-                        class="text-xs sm:text-sm text-clinic-secondary dark:text-clinic-dark-secondary mt-2 font-medium">
-                        Excellence in Podiatry</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SECTION 7: PATIENT TESTIMONIALS (SUPPORTING — SOFT SAGE) ===== -->
-    <section class="py-24 px-6 bg-clinic-sage dark:bg-clinic-dark-canvas transition-colors duration-300">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <span
-                    class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs">Patient
-                    Stories</span>
-                <h2
-                    class="font-serif text-4xl sm:text-5xl font-bold mt-2 text-clinic-primary dark:text-clinic-dark-primary">
-                    Restoring Active <span
-                        class="italic text-clinic-brand dark:text-clinic-dark-accent">Lifestyles</span>
-                </h2>
-                <div class="w-20 h-1 bg-clinic-brand dark:bg-clinic-dark-accent mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-group">
-                <!-- Testimonial 1 -->
-                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-100">
-                    <div>
-                        <div class="flex text-amber-500 text-sm mb-4">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <p
-                            class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed italic mb-6">
-                            "For over 8 months I could barely put weight on my left heel getting out of bed. Dr. Chen
-                            recommended shockwave therapy combined with custom 3D orthotics. In just 4 sessions, the
-                            plantar fasciitis pain was 100% gone."
-                        </p>
-                    </div>
-                    <div
-                        class="flex items-center gap-3 border-t border-clinic-border dark:border-clinic-dark-border pt-4">
-                        <div
-                            class="w-10 h-10 rounded-full bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent font-bold flex items-center justify-center">
-                            MK
-                        </div>
-                        <div>
-                            <div class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-sm">Margaret
-                                Klein</div>
-                            <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Heel Pain Patient •
-                                School Teacher</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-200">
-                    <div>
-                        <div class="flex text-amber-500 text-sm mb-4">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <p
-                            class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed italic mb-6">
-                            "As a marathon runner, Achilles tendonitis threatened to end my training season. The dynamic
-                            gait pressure scan showed I had severe overpronation. The custom sport orthotics corrected
-                            my strike instantly."
-                        </p>
-                    </div>
-                    <div
-                        class="flex items-center gap-3 border-t border-clinic-border dark:border-clinic-dark-border pt-4">
-                        <div
-                            class="w-10 h-10 rounded-full bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent font-bold flex items-center justify-center">
-                            JT
-                        </div>
-                        <div>
-                            <div class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-sm">Jonathan
-                                Torres</div>
-                            <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Distance Runner •
-                                Achilles Rehab</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="clinical-card p-8 flex flex-col justify-between reveal delay-300">
-                    <div>
-                        <div class="flex text-amber-500 text-sm mb-4">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <p
-                            class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm leading-relaxed italic mb-6">
-                            "I had delayed bunion surgery for years fearing painful recovery. Dr. Vance performed
-                            minimally invasive surgery. I walked out the same afternoon wearing a recovery shoe. Minimal
-                            discomfort and no visible scarring."
-                        </p>
-                    </div>
-                    <div
-                        class="flex items-center gap-3 border-t border-clinic-border dark:border-clinic-dark-border pt-4">
-                        <div
-                            class="w-10 h-10 rounded-full bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent font-bold flex items-center justify-center">
-                            SB
-                        </div>
-                        <div>
-                            <div class="font-bold text-clinic-primary dark:text-clinic-dark-primary text-sm">Sophia
-                                Brooks</div>
-                            <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Minimally Invasive
-                                Bunion Patient</div>
-                        </div>
+                    <!-- Direct Navigation to Specialists Page -->
+                    <div class="pt-3">
+                        <a href="doctors.html" class="btn-outline-pill text-xs py-3 px-6 inline-flex items-center gap-2">
+                            <span>Meet Our Full Clinical Team</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SECTION 8: FAQ ACCORDION (CONTENT — WHITE) ===== -->
-    <section class="py-24 px-6 bg-clinic-surface dark:bg-clinic-dark-surface transition-colors duration-300">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <span
-                    class="text-clinic-brand dark:text-clinic-dark-accent font-bold uppercase tracking-widest text-xs">Patient
-                    Resources</span>
-                <h2
-                    class="font-serif text-4xl sm:text-5xl font-bold mt-2 text-clinic-primary dark:text-clinic-dark-primary">
-                    Frequently Asked <span
-                        class="italic text-clinic-brand dark:text-clinic-dark-accent">Questions</span>
-                </h2>
-                <div class="w-20 h-1 bg-clinic-brand dark:bg-clinic-dark-accent mx-auto mt-4 rounded-full"></div>
-                <p class="text-clinic-secondary dark:text-clinic-dark-secondary text-sm max-w-xl mx-auto mt-4">
-                    Clear answers regarding appointment preparation, insurance coverage, and modern podiatric
-                    procedures.
-                </p>
-            </div>
+    <!-- ==========================================================================
+         SECTION 06: FINAL APPOINTMENT CTA — Deep Clinical Closing Section
+         ========================================================================== -->
+    <section id="sleep-cta" class="py-24 bg-clinic-canvas dark:bg-clinic-dark-canvas" aria-labelledby="cta-title">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="final-cta-field p-8 sm:p-12 lg:p-16 text-center text-white relative">
+                <!-- Subtle Breathing Wave Backdrop (Decorative) -->
+                <div class="absolute inset-0 pointer-events-none opacity-20 flex items-center justify-center" aria-hidden="true">
+                    <svg viewBox="0 0 1000 300" class="w-full h-full object-cover">
+                        <path d="M 0,150 Q 250,50 500,150 T 1000,150" fill="none" stroke="#7A9BE8" stroke-width="2" stroke-dasharray="6,8" />
+                        <path d="M 0,180 Q 250,80 500,180 T 1000,180" fill="none" stroke="#3B5BDB" stroke-width="1.5" />
+                    </svg>
+                </div>
 
-            <div class="space-y-4 reveal">
-                <!-- FAQ 1 -->
-                <details class="faq-accordion-item group" open>
-                    <summary class="faq-summary">
-                        <span class="text-clinic-primary dark:text-clinic-dark-primary">How do custom 3D orthotics
-                            differ from store insoles?</span>
-                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
-                    </summary>
-                    <div class="faq-body">
-                        Over-the-counter insoles provide generic foam cushioning but cannot correct biomechanical joint
-                        angles. Our custom medical orthotics are fabricated using dynamic laser gait mapping to balance
-                        your subtalar joint, lift arches precisely, and relieve pressure on tendons and lower back
-                        joints.
+                <div class="max-w-3xl mx-auto space-y-6 relative z-10">
+                    <div class="inline-flex items-center gap-2 text-xs uppercase font-semibold tracking-wider px-3 py-1 rounded-full bg-white/10 text-[#7A9BE8] border border-white/15">
+                        <i class="fas fa-sparkles"></i>
+                        <span>Take The Next Step</span>
                     </div>
-                </details>
 
-                <!-- FAQ 2 -->
-                <details class="faq-accordion-item group">
-                    <summary class="faq-summary">
-                        <span class="text-clinic-primary dark:text-clinic-dark-primary">Is shockwave therapy for plantar
-                            fasciitis painful?</span>
-                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
-                    </summary>
-                    <div class="faq-body">
-                        Extracorporeal Shockwave Therapy (ESWT) delivers acoustic sound pulses into the inflamed fascia
-                        to trigger micro-circulation and stem-cell repair. Patients experience a mild tapping sensation
-                        that is well-tolerated. No needles, anesthesia, or downtime are required, and you can
-                        immediately resume normal daily activities.
-                    </div>
-                </details>
+                    <h2 id="cta-title" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight">
+                        Start Understanding Your Sleep.
+                    </h2>
 
-                <!-- FAQ 3 -->
-                <details class="faq-accordion-item group">
-                    <summary class="faq-summary">
-                        <span class="text-clinic-primary dark:text-clinic-dark-primary">Do you accept Medicare and major
-                            PPO insurance plans?</span>
-                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
-                    </summary>
-                    <div class="faq-body">
-                        Yes. StepWell Podiatry is an in-network provider with Medicare, Blue Cross Blue Shield, Aetna,
-                        Cigna, United Healthcare, and most major commercial PPO plans. Our billing team verifies your
-                        exact benefits prior to treatment and handles all claims.
-                    </div>
-                </details>
+                    <p class="text-sm sm:text-base text-[#C4CCDF] leading-relaxed max-w-2xl mx-auto">
+                        Whether you are concerned about persistent exhaustion, chronic snoring, or daytime sleepiness, our board-certified sleep medicine team is here to help you regain restorative nights and energized days.
+                    </p>
 
-                <!-- FAQ 4 -->
-                <details class="faq-accordion-item group">
-                    <summary class="faq-summary">
-                        <span class="text-clinic-primary dark:text-clinic-dark-primary">What is the recovery time for
-                            minimally invasive bunion surgery?</span>
-                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
-                    </summary>
-                    <div class="faq-body">
-                        Unlike traditional open surgeries that require large 5-7cm incisions and weeks of cast
-                        immobilization, our percutaneous technique uses tiny 3mm entry points. Patients walk out
-                        immediately in a post-op boot, experience significantly less swelling, and typically return to
-                        supportive sneakers within 3 to 4 weeks.
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+                        <button type="button" onclick="openModal('sleepStudyModal')" class="btn-primary-pill text-sm py-3.5 px-8 bg-white text-[#0D1436] hover:bg-[#F0F3FB] shadow-lg hover:shadow-xl inline-flex items-center gap-2">
+                            <i class="fas fa-bed-pulse"></i>
+                            <span>Book a Sleep Study</span>
+                        </button>
+                        <a href="contact.html" class="btn-outline-pill text-sm py-3.5 px-8 text-white border-white/30 hover:border-white hover:bg-white/10 inline-flex items-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact Our Clinic</span>
+                        </a>
                     </div>
-                </details>
 
-                <!-- FAQ 5 -->
-                <details class="faq-accordion-item group">
-                    <summary class="faq-summary">
-                        <span class="text-clinic-primary dark:text-clinic-dark-primary">How often should diabetic
-                            patients have their feet examined?</span>
-                        <div class="faq-icon-chevron"><i class="fas fa-chevron-down"></i></div>
-                    </summary>
-                    <div class="faq-body">
-                        The American Podiatric Medical Association (APMA) strongly recommends a comprehensive podiatric
-                        examination at least once per year for all diabetic patients, or every 3 to 6 months if you
-                        experience sensory neuropathy, peripheral artery disease (PAD), or previous foot ulcers.
+                    <!-- Clinical Referral & Trust Badges -->
+                    <div class="flex flex-wrap items-center justify-center gap-6 pt-6 text-xs text-[#9AA3C8] border-t border-white/10">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-file-signature text-[#7A9BE8]"></i>
+                            <span>Physician Referrals Accepted</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-calendar-check text-[#7A9BE8]"></i>
+                            <span>Direct Self-Inquiries Welcomed</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-shield-halved text-[#7A9BE8]"></i>
+                            <span>Confidential Clinical Care</span>
+                        </div>
                     </div>
-                </details>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- ===== SECTION 9: CALL TO ACTION BANNER (BRAND ACCENT) ===== -->
-    <section
-        class="py-20 px-6 bg-clinic-brand dark:bg-clinic-dark-surface text-white relative overflow-hidden dark:border-t dark:border-b dark:border-clinic-dark-border">
-        <div class="absolute inset-0 opacity-15 pointer-events-none">
-            <div class="absolute -top-10 -right-10 w-96 h-96 bg-clinic-accent rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="max-w-5xl mx-auto text-center relative z-10 space-y-6 reveal">
-            <div
-                class="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-white/15 text-white text-2xl mb-2">
-                <i class="fas fa-calendar-check"></i>
-            </div>
-            <h2 class="font-serif text-4xl sm:text-6xl font-bold leading-tight text-white">
-                Ready to Take Your First <span class="italic text-clinic-accent dark:text-clinic-dark-accent">Pain-Free
-                    Step?</span>
-            </h2>
-            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-                Do not let chronic heel, arch, or ankle pain restrict your life. Schedule your clinical consultation
-                with our board-certified podiatrists today.
-            </p>
-
-            <div class="flex flex-wrap gap-4 justify-center pt-4">
-                <a href="booking.html"
-                    class="px-8 py-3.5 rounded-full font-semibold text-base bg-white text-clinic-brand hover:bg-clinic-sage transition shadow-md">
-                    <i class="far fa-calendar-check"></i> Book Online Consultation
-                </a>
-                <a href="tel:8885557837"
-                    class="px-8 py-3.5 rounded-full font-semibold text-base border-2 border-white text-white hover:bg-white/10 transition">
-                    <i class="fas fa-phone-alt"></i> Call (888) 555-STEP
-                </a>
-            </div>
-
-            <div class="pt-8 flex flex-wrap justify-center items-center gap-6 text-xs text-white/80">
-                <span class="flex items-center gap-1.5"><i
-                        class="fas fa-check text-clinic-accent dark:text-clinic-dark-accent"></i> Free Insurance Benefit
-                    Check</span>
-                <span class="flex items-center gap-1.5"><i
-                        class="fas fa-check text-clinic-accent dark:text-clinic-dark-accent"></i> Same-Day Emergency
-                    Openings</span>
-                <span class="flex items-center gap-1.5"><i
-                        class="fas fa-check text-clinic-accent dark:text-clinic-dark-accent"></i> Free Dedicated Patient
-                    Parking</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-
-    <!-- ===== GLOBAL CLINICAL FOOTER ===== -->
-    <footer class="site-footer">
+<footer class="site-footer">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
                 <!-- Col 1: Brand & Clinical Mission -->
@@ -1114,68 +1024,72 @@
         </div>
     </footer>
 
-<!-- ===== QUICK TRIAGE MODAL ===== -->
-    <div id="quickModal" class="modal-backdrop">
-        <div class="modal-content p-6 sm:p-8">
-            <div
-                class="flex items-center justify-between pb-4 border-b border-clinic-border dark:border-clinic-dark-border mb-6">
+    <!-- ===== SLEEP STUDY BOOKING MODAL ===== -->
+    <div id="sleepStudyModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="clinical-modal-dialog p-6 sm:p-8">
+            <div class="flex items-center justify-between pb-4 border-b border-clinic-border dark:border-[#1A1D30] mb-6">
                 <div class="flex items-center gap-3">
-                    <div
-                        class="w-10 h-10 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold">
-                        <i class="fas fa-notes-medical"></i>
+                    <div class="w-10 h-10 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold">
+                        <i class="fas fa-bed-pulse"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg text-clinic-primary dark:text-clinic-dark-primary">60-Second Foot
-                            Health Triage</h3>
-                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Instant physician
-                            evaluation guideline</p>
+                        <h3 id="modalTitle" class="font-bold text-lg text-clinic-primary dark:text-clinic-dark-primary">Book a Sleep Study</h3>
+                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">SomnaClinic Diagnostic Scheduling</p>
                     </div>
                 </div>
-                <button data-modal-close
-                    class="text-clinic-muted dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-clinic-dark-primary text-xl">
+                <button type="button" data-modal-close class="text-clinic-muted dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-clinic-dark-primary text-xl p-1" aria-label="Close dialog">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
 
-            <div class="space-y-4">
-                <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary">
-                    Where is your discomfort most pronounced today?
-                </p>
+            <form id="sleepStudyForm" onsubmit="handleSleepStudySubmit(event)" class="space-y-4">
+                <div>
+                    <label for="patientName" class="block text-xs font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Full Name</label>
+                    <input type="text" id="patientName" required class="w-full px-3.5 py-2.5 rounded-xl border border-clinic-border dark:border-[#20294C] bg-clinic-canvas dark:bg-[#070A17] text-clinic-primary dark:text-clinic-dark-primary text-sm focus:outline-hidden focus:ring-2 focus:ring-clinic-brand" placeholder="e.g. John Doe">
+                </div>
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <button
-                        class="p-3 text-left border rounded-xl border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand hover:bg-clinic-sage/50 dark:hover:bg-clinic-dark-elevated transition text-xs font-semibold"
-                        onclick="handleTriageModalSelect('Plantar Fasciitis / Heel Spur Protocol')">
-                        🦶 Under Heel upon waking
-                    </button>
-                    <button
-                        class="p-3 text-left border rounded-xl border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand hover:bg-clinic-sage/50 dark:hover:bg-clinic-dark-elevated transition text-xs font-semibold"
-                        onclick="handleTriageModalSelect('Bunion Deformity Realignment')">
-                        🦴 Base of Big Toe joint bump
-                    </button>
-                    <button
-                        class="p-3 text-left border rounded-xl border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand hover:bg-clinic-sage/50 dark:hover:bg-clinic-dark-elevated transition text-xs font-semibold"
-                        onclick="handleTriageModalSelect('Diabetic Sensory Screening')">
-                        🩸 Numbness / Tingling / Burning
-                    </button>
-                    <button
-                        class="p-3 text-left border rounded-xl border-clinic-border dark:border-clinic-dark-border hover:border-clinic-brand hover:bg-clinic-sage/50 dark:hover:bg-clinic-dark-elevated transition text-xs font-semibold"
-                        onclick="handleTriageModalSelect('Sports Tendon Rehabilitation')">
-                        🏃 Achilles tendon stiffness after run
-                    </button>
+                    <div>
+                        <label for="patientPhone" class="block text-xs font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Phone Number</label>
+                        <input type="tel" id="patientPhone" required class="w-full px-3.5 py-2.5 rounded-xl border border-clinic-border dark:border-[#20294C] bg-clinic-canvas dark:bg-[#070A17] text-clinic-primary dark:text-clinic-dark-primary text-sm focus:outline-hidden focus:ring-2 focus:ring-clinic-brand" placeholder="(555) 000-0000">
+                    </div>
+                    <div>
+                        <label for="patientEmail" class="block text-xs font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Email Address</label>
+                        <input type="email" id="patientEmail" required class="w-full px-3.5 py-2.5 rounded-xl border border-clinic-border dark:border-[#20294C] bg-clinic-canvas dark:bg-[#070A17] text-clinic-primary dark:text-clinic-dark-primary text-sm focus:outline-hidden focus:ring-2 focus:ring-clinic-brand" placeholder="john@example.com">
+                    </div>
                 </div>
 
-                <div id="triageResultBox"
-                    class="hidden p-4 rounded-xl bg-clinic-sage dark:bg-clinic-dark-elevated border border-clinic-brand/30 dark:border-clinic-dark-accent/30 text-clinic-brand dark:text-clinic-dark-accent text-xs">
-                    <div class="font-bold mb-1" id="triageResultTitle">Recommended Clinical Pathway</div>
-                    <p id="triageResultDesc">Our podiatry team can provide immediate diagnostic imaging and tailored
-                        pain relief.</p>
+                <div>
+                    <label for="serviceInterest" class="block text-xs font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Service / Study of Interest</label>
+                    <select id="serviceInterest" class="w-full px-3.5 py-2.5 rounded-xl border border-clinic-border dark:border-[#20294C] bg-clinic-canvas dark:bg-[#070A17] text-clinic-primary dark:text-clinic-dark-primary text-sm focus:outline-hidden focus:ring-2 focus:ring-clinic-brand">
+                        <option value="In-Lab Sleep Study (PSG)">Overnight In-Lab Sleep Study (Polysomnography)</option>
+                        <option value="Home Sleep Apnea Test (HSAT)">Home Sleep Apnea Testing (HSAT)</option>
+                        <option value="Clinical Consultation">Initial Sleep Physician Consultation</option>
+                        <option value="CPAP Titration &amp; Setup">CPAP Titration &amp; Equipment Calibration</option>
+                        <option value="Insomnia CBT-I Evaluation">Insomnia Behavioral Health Evaluation (CBT-I)</option>
+                    </select>
                 </div>
 
-                <div class="pt-4 flex justify-end gap-3">
-                    <button data-modal-close class="btn-outline-pill text-xs py-2 px-4">Close</button>
-                    <a href="booking.html" class="btn-primary-pill text-xs py-2 px-5">Proceed to Schedule</a>
+                <div>
+                    <label for="preferredTime" class="block text-xs font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Preferred Timeframe</label>
+                    <select id="preferredTime" class="w-full px-3.5 py-2.5 rounded-xl border border-clinic-border dark:border-[#20294C] bg-clinic-canvas dark:bg-[#070A17] text-clinic-primary dark:text-clinic-dark-primary text-sm focus:outline-hidden focus:ring-2 focus:ring-clinic-brand">
+                        <option value="Weekday Morning Consultation">Weekday Morning Consultation</option>
+                        <option value="Weekday Afternoon Consultation">Weekday Afternoon Consultation</option>
+                        <option value="Overnight Sleep Study (Mon-Thu)">Overnight Sleep Study (Mon–Thu)</option>
+                        <option value="Overnight Sleep Study (Fri-Sun)">Overnight Sleep Study (Fri–Sun)</option>
+                    </select>
                 </div>
-            </div>
+
+                <div>
+                    <label for="clinicalNotes" class="block text-xs font-semibold text-clinic-primary dark:text-clinic-dark-primary mb-1">Primary Symptoms / Notes (Optional)</label>
+                    <textarea id="clinicalNotes" rows="2" class="w-full px-3.5 py-2.5 rounded-xl border border-clinic-border dark:border-[#20294C] bg-clinic-canvas dark:bg-[#070A17] text-clinic-primary dark:text-clinic-dark-primary text-sm focus:outline-hidden focus:ring-2 focus:ring-clinic-brand" placeholder="Describe symptoms such as snoring, witnessed pauses, insomnia, or daytime tiredness..."></textarea>
+                </div>
+
+                <div class="pt-3 flex items-center justify-end gap-3 border-t border-clinic-border/60 dark:border-[#1A1D30]">
+                    <button type="button" data-modal-close class="btn-outline-pill text-xs py-2.5 px-4">Cancel</button>
+                    <button type="submit" class="btn-primary-pill text-xs py-2.5 px-6">Submit Appointment Request</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -1183,22 +1097,77 @@
     <script src="js/motion.js"></script>
     <script src="js/main.js"></script>
     <script>
-        function selectTriage(condition) {
-            showToast(`Selected triage pathway: ${condition}. Directing to specialized service...`);
-            setTimeout(() => {
-                window.location.href = 'services.html?triage=' + encodeURIComponent(condition);
-            }, 1200);
-        }
+        // Service Selector Interactive Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabButtons = document.querySelectorAll('.service-tab-btn');
+            const panels = document.querySelectorAll('.service-panel-view');
 
-        function handleTriageModalSelect(protocol) {
-            const box = document.getElementById('triageResultBox');
-            const title = document.getElementById('triageResultTitle');
-            const desc = document.getElementById('triageResultDesc');
-            if (box && title && desc) {
-                box.classList.remove('hidden');
-                title.textContent = `Recommended Pathway: ${protocol}`;
-                desc.textContent = `Based on your symptoms, we recommend an initial in-office digital gait and fluoroscopy evaluation with our specialists.`;
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-service-target');
+                    
+                    // Update buttons
+                    tabButtons.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-selected', 'false');
+                        b.setAttribute('tabindex', '-1');
+                    });
+                    this.classList.add('active');
+                    this.setAttribute('aria-selected', 'true');
+                    this.setAttribute('tabindex', '0');
+
+                    // Update panels
+                    panels.forEach(panel => {
+                        panel.classList.remove('active');
+                    });
+                    const activePanel = document.getElementById('panel-service-' + targetId);
+                    if (activePanel) {
+                        activePanel.classList.add('active');
+                    }
+                });
+
+                // Keyboard Accessibility for Tabs (Arrow navigation)
+                btn.addEventListener('keydown', function (e) {
+                    const btnArray = Array.from(tabButtons);
+                    const index = btnArray.indexOf(this);
+                    let nextBtn = null;
+
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        nextBtn = btnArray[(index + 1) % btnArray.length];
+                    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        nextBtn = btnArray[(index - 1 + btnArray.length) % btnArray.length];
+                    }
+
+                    if (nextBtn) {
+                        nextBtn.focus();
+                        nextBtn.click();
+                    }
+                });
+            });
+        });
+
+        // Sleep Study Modal Submission Handler
+        function handleSleepStudySubmit(event) {
+            event.preventDefault();
+            const service = document.getElementById('serviceInterest')?.value || 'Sleep Study';
+            const name = document.getElementById('patientName')?.value || 'Patient';
+            
+            if (typeof window.showToast === 'function') {
+                window.showToast(`Thank you, ${name}. Your request for ${service} has been received. Our clinical coordinator will contact you shortly.`);
+            } else {
+                alert(`Thank you, ${name}. Your request for ${service} has been received.`);
             }
+
+            if (typeof window.closeModal === 'function') {
+                window.closeModal('sleepStudyModal');
+            } else {
+                const modal = document.getElementById('sleepStudyModal');
+                if (modal) modal.classList.remove('open');
+            }
+
+            document.getElementById('sleepStudyForm')?.reset();
         }
     </script>
 </body>
