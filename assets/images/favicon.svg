@@ -2,15 +2,17 @@
   <defs>
     <style>
       :root {
-        --bg-color: #176B63;
-        --border-color: #0F514B;
-        --icon-color: #FFFFFF;
+        --bg-color: #0B1528;
+        --border-color: #1E2D4A;
+        --icon-color: #3B5BDB;
+        --accent-color: #7A9BE8;
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg-color: #141414;
-          --border-color: #292D2B;
-          --icon-color: #65B8AD;
+          --bg-color: #000000;
+          --border-color: #1A2242;
+          --icon-color: #7A9BE8;
+          --accent-color: #A5BFF5;
         }
       }
       .brand-bg {
@@ -18,15 +20,23 @@
         stroke: var(--border-color);
         stroke-width: 14px;
       }
-      .brand-icon {
-        fill: var(--icon-color);
+      .brand-ribbon {
+        stroke: var(--icon-color);
+        stroke-width: 28px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      .brand-node {
+        fill: var(--accent-color);
       }
     </style>
   </defs>
-  <!-- Approved Brand Mark Container: 35% corner radius, brand teal background, subtle border -->
-  <rect class="brand-bg" x="7" y="7" width="498" height="498" rx="175" ry="175" />
-  <!-- Approved Brand Mark Symbol: FontAwesome 6 shoe-prints -->
-  <g transform="translate(115.2, 143.36) scale(0.44)">
-    <path class="brand-icon" d="M416 0C352.3 0 256 32 256 32l0 128c48 0 76 16 104 32s56 32 104 32c56.4 0 176-16 176-96S512 0 416 0zM128 96c0 35.3 28.7 64 64 64l32 0 0-128-32 0c-35.3 0-64 28.7-64 64zM288 512c96 0 224-48 224-128s-119.6-96-176-96c-48 0-76 16-104 32s-56 32-104 32l0 128s96.3 32 160 32zM0 416c0 35.3 28.7 64 64 64l32 0 0-128-32 0c-35.3 0-64 28.7-64 64z"/>
+  <!-- SomnaClinic Luxury Background: Circular midnight container with subtle rim -->
+  <rect class="brand-bg" x="12" y="12" width="488" height="488" rx="140" ry="140" />
+  <!-- The Somna Circadian Ribbon: Scale from 44x44 to 512x512 -->
+  <g transform="translate(68, 68) scale(8.55)">
+    <path class="brand-ribbon" d="M12 28C10 24 10 18 15 13C20 8 28 8 33 13C36 16 36.5 20 35 23.5C33 28 27.5 29 23 27C18.5 25 15 26 13 29C11 32 12 36 16 38C21 40 27 38 31 34" />
+    <circle class="brand-node" cx="28" cy="17.5" r="2.8" />
   </g>
 </svg>

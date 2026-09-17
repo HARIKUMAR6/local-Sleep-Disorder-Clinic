@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="somna-brandmark-svg" aria-hidden="true">
+  <!-- SomnaClinic Circadian Ribbon: A continuous geometric monogram uniting the nocturnal arch, respiratory wave, and clinical diagnostic focus -->
+  <path d="M12 28C10 24 10 18 15 13C20 8 28 8 33 13C36 16 36.5 20 35 23.5C33 28 27.5 29 23 27C18.5 25 15 26 13 29C11 32 12 36 16 38C21 40 27 38 31 34" 
+        stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="28" cy="17.5" r="2.4" fill="currentColor"/>
+</svg>
