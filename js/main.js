@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sun?.classList.add('hidden');
       }
       btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+      btn.setAttribute('title', isDark ? 'Switch to light theme' : 'Switch to dark theme');
     });
   };
 
@@ -146,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileHomeSubmenu = document.getElementById('mobile-home-submenu');
 
   const closeMobileMenu = () => {
-    if (!mobileMenu || !mobileMenu.classList.contains('open')) return;
+    if (!mobileMenu) return;
     mobileMenu.classList.remove('open');
     mobileMenu.setAttribute('aria-hidden', 'true');
     if (mobileToggle) {
@@ -156,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.body.style.overflow = '';
   };
+  window.closeMobileMenu = closeMobileMenu;
 
   const openMobileMenu = () => {
     if (!mobileMenu) return;
@@ -207,6 +209,18 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
         closeMobileMenu();
       }
+    });
+
+    // Close mobile menu on resize to desktop (>= 1024px)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+
+    // Ensure menu is cleanly closed and scroll restored on bfcache restore
+    window.addEventListener('pageshow', () => {
+      closeMobileMenu();
     });
   }
 

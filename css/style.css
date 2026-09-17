@@ -210,8 +210,6 @@ img, svg, video {
   width: 100%;
   z-index: 50;
   background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(148, 163, 184, 0.22);
   transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.3s ease,
@@ -236,6 +234,8 @@ img, svg, video {
 }
 
 .navbar-inner {
+  position: relative;
+  z-index: 101;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 32px;
@@ -244,6 +244,8 @@ img, svg, video {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -408,7 +410,44 @@ img, svg, video {
 
 @media (max-width: 1200px) {
   .nav-links {
-    gap: 22px;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .navbar-inner {
+    padding: 0 12px;
+    gap: 10px;
+  }
+  .nav-links {
+    gap: 10px;
+  }
+  .nav-link {
+    font-size: 0.80rem;
+    padding: 4px 0;
+  }
+  .btn-primary-header {
+    padding: 6px 12px;
+    font-size: 0.74rem;
+    gap: 5px;
+  }
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+  }
+  .somna-brandmark-svg {
+    width: 22px;
+    height: 22px;
+  }
+  .logo-somna {
+    font-size: 1.12rem;
+  }
+  .logo-clinic {
+    font-size: 0.70rem;
+  }
+  .logo-sub {
+    font-size: 0.42rem;
   }
 }
 
@@ -651,6 +690,28 @@ img, svg, video {
 .dark .btn-icon-rounded:hover {
   border-color: #7A9BE8;
   color: #7A9BE8;
+}
+
+/* Theme Toggle Icon Switching (Light: Moon, Dark: Sun) */
+.dark #theme-toggle .fa-moon,
+.dark #theme-toggle-mobile .fa-moon,
+.dark .btn-icon-rounded .fa-moon {
+  display: none !important;
+}
+.dark #theme-toggle .fa-sun,
+.dark #theme-toggle-mobile .fa-sun,
+.dark .btn-icon-rounded .fa-sun {
+  display: inline-block !important;
+}
+html:not(.dark) #theme-toggle .fa-moon,
+html:not(.dark) #theme-toggle-mobile .fa-moon,
+html:not(.dark) .btn-icon-rounded .fa-moon {
+  display: inline-block !important;
+}
+html:not(.dark) #theme-toggle .fa-sun,
+html:not(.dark) #theme-toggle-mobile .fa-sun,
+html:not(.dark) .btn-icon-rounded .fa-sun {
+  display: none !important;
 }
 
 /* Primary Pill CTA */
@@ -1257,9 +1318,25 @@ details[open] .faq-icon-chevron {
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 1023px) {
+  .navbar-wrapper {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+  }
+  .dark .navbar-wrapper {
+    background: rgba(0, 0, 0, 0.96) !important;
+  }
+  .navbar-wrapper.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+  }
+  .dark .navbar-wrapper.scrolled {
+    background: rgba(0, 0, 0, 0.98) !important;
+  }
   .navbar-inner {
     height: 76px;
     padding: 0 24px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
   .navbar-wrapper.scrolled .navbar-inner {
     height: 70px;
@@ -1278,8 +1355,32 @@ details[open] .faq-icon-chevron {
   .nav-links {
     display: none !important;
   }
-  .nav-cta-btn {
+  .nav-cta-btn,
+  #header-primary-cta,
+  .header-actions .btn-primary-header,
+  .nav-actions .btn-primary-header {
     display: none !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .mobile-menu-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    border-radius: 0 0 20px 20px;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    padding: 18px 24px 24px 24px;
+    box-shadow: 0 24px 48px -12px rgba(23, 30, 56, 0.18);
+  }
+  .dark .mobile-menu-inner {
+    border-left-color: #1A1D30;
+    border-right-color: #1A1D30;
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.95);
+  }
+  .mobile-menu-item {
+    padding: 13px 16px;
+    font-size: 0.98rem;
   }
 }
 
