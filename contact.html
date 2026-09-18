@@ -164,20 +164,6 @@
         <!-- Mobile Navigation Drawer -->
         <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
             <div class="mobile-menu-inner">
-                <!-- Mobile Utility Strip -->
-                <div class="mobile-utility-strip flex items-center justify-between pb-3 mb-2 border-b border-clinic-border/60 dark:border-[#1A2242]">
-                    <span class="text-[11px] font-semibold tracking-wider uppercase text-clinic-muted dark:text-clinic-dark-secondary">Controls</span>
-                    <div class="flex items-center gap-2">
-                        <button id="rtl-toggle-mobile" class="btn-rtl-control text-xs" type="button" aria-label="Toggle text direction">
-                            <i class="fas fa-right-left mr-1" aria-hidden="true"></i>
-                            <span>RTL</span>
-                        </button>
-                        <button id="theme-toggle-mobile" class="btn-icon-rounded text-xs" type="button" aria-label="Toggle theme">
-                            <i class="fas fa-moon" aria-hidden="true"></i>
-                            <i class="fas fa-sun hidden" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
 
                 <!-- Home accordion (Closed initially, opens only on tap) -->
                 <div class="mobile-dropdown">
@@ -296,7 +282,7 @@
                                 <div class="overflow-hidden rounded-2xl aspect-[4/5] relative">
                                     <img src="assets/images/contact-hero-editorial.jpg"
                                          alt="Calm clinical consultation desk with notebook, ambient light, and conversation-ready atmosphere"
-                                         class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                                         class="w-full h-full object-cover object-[center_25%] transition-transform duration-700 hover:scale-105"
                                          loading="eager">
                                     <!-- Subtle gradient tint -->
                                     <div class="absolute inset-0 bg-gradient-to-t from-[#0A1128]/40 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
@@ -598,85 +584,27 @@
                     <!-- Left: Custom Abstract / Editorial Vector Map Visual (58% width on lg) -->
                     <div class="lg:col-span-7 order-2 lg:order-1" data-reveal="fade-right">
                         <div class="contact-map-viewport relative">
-                            <!-- SVG Abstract Vector Map -->
-                            <svg class="contact-map-svg" viewBox="0 0 700 440" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Abstract clinical district map visual showing location area" role="img">
-                                <defs>
-                                    <pattern id="grid-subtle" width="35" height="35" patternUnits="userSpaceOnUse">
-                                        <path d="M 35 0 L 0 0 0 35" fill="none" stroke="currentColor" class="text-slate-300/40 dark:text-slate-800/40" stroke-width="0.75" />
-                                    </pattern>
-                                </defs>
+                            <!-- Responsive Dummy Google Maps Embed -->
+                            <iframe src="https://maps.google.com/maps?q=Medical%20Center%20District&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+                                    class="contact-map-iframe" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade" 
+                                    title="SomnaClinic Demonstration Location Map"></iframe>
 
-                                <!-- Base Grid Pattern -->
-                                <rect width="700" height="440" fill="url(#grid-subtle)" />
-
-                                <!-- Abstract Neighborhood Blocks -->
-                                <rect x="40" y="40" width="120" height="90" rx="8" class="map-block-fill" />
-                                <rect x="180" y="40" width="160" height="70" rx="8" class="map-block-fill" />
-                                <rect x="360" y="40" width="140" height="110" rx="8" class="map-block-fill" />
-                                <rect x="520" y="50" width="140" height="100" rx="8" class="map-block-fill" />
-
-                                <rect x="40" y="160" width="110" height="110" rx="8" class="map-park-fill" />
-                                <rect x="170" y="130" width="150" height="110" rx="8" class="map-block-fill" />
-                                
-                                <!-- Clinic District Block -->
-                                <rect x="300" y="180" width="180" height="130" rx="12" class="map-block-fill" stroke-dasharray="4 3" />
-                                <rect x="500" y="180" width="160" height="100" rx="8" class="map-block-fill" />
-
-                                <rect x="50" y="300" width="180" height="90" rx="8" class="map-block-fill" />
-                                <rect x="250" y="330" width="180" height="70" rx="8" class="map-park-fill" />
-                                <rect x="450" y="310" width="210" height="80" rx="8" class="map-block-fill" />
-
-                                <!-- Secondary Road Network -->
-                                <path d="M 0 145 L 700 145" class="map-secondary-stroke" />
-                                <path d="M 0 280 L 700 280" class="map-secondary-stroke" />
-                                <path d="M 160 0 L 160 440" class="map-secondary-stroke" />
-                                <path d="M 490 0 L 490 440" class="map-secondary-stroke" />
-
-                                <!-- Main Arterial Avenues -->
-                                <path d="M 0 200 C 180 200, 240 220, 390 220 C 520 220, 580 180, 700 180" class="map-arterial-stroke" />
-                                <path d="M 340 0 C 340 140, 360 260, 360 440" class="map-arterial-stroke" />
-
-                                <!-- Roundabout Junction -->
-                                <circle cx="360" cy="220" r="32" class="map-block-fill" />
-                                <circle cx="360" cy="220" r="22" fill="none" class="map-arterial-stroke" stroke-width="4" />
-
-                                <!-- Location Pulse & Marker Elements -->
-                                <g transform="translate(390, 245)">
-                                    <!-- Pulsing circles -->
-                                    <circle cx="0" cy="0" r="16" fill="rgba(59, 91, 219, 0.25)" class="map-pin-pulse" />
-                                    <circle cx="0" cy="0" r="8" fill="#3B5BDB" />
-                                    <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" />
-                                </g>
-
-                                <!-- Compass Indicator -->
-                                <g transform="translate(640, 50)" opacity="0.6">
-                                    <circle cx="0" cy="0" r="18" fill="rgba(255,255,255,0.7)" class="dark:fill-[#0F1629]" stroke="currentColor" class="text-slate-300 dark:text-slate-700" stroke-width="1" />
-                                    <path d="M 0 -11 L 3.5 0 L 0 -2 L -3.5 0 Z" fill="#3B5BDB" />
-                                    <path d="M 0 11 L 3.5 0 L 0 2 L -3.5 0 Z" fill="#94A3B8" />
-                                    <text x="0" y="-13" text-anchor="middle" font-size="7" font-weight="bold" fill="currentColor" class="text-slate-600 dark:text-slate-300">N</text>
-                                </g>
-
-                                <!-- Scale Bar Indicator -->
-                                <g transform="translate(30, 410)" opacity="0.6">
-                                    <line x1="0" y1="0" x2="60" y2="0" stroke="currentColor" class="text-slate-400 dark:text-slate-600" stroke-width="1.5" />
-                                    <line x1="0" y1="-3" x2="0" y2="3" stroke="currentColor" class="text-slate-400 dark:text-slate-600" stroke-width="1.5" />
-                                    <line x1="60" y1="-3" x2="60" y2="3" stroke="currentColor" class="text-slate-400 dark:text-slate-600" stroke-width="1.5" />
-                                    <text x="30" y="-5" text-anchor="middle" font-size="8" fill="currentColor" class="text-slate-500 dark:text-slate-400">200 m</text>
-                                </g>
-                            </svg>
-
-                            <!-- Overlay Map Marker Pill -->
-                            <div class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none mt-6">
-                                <div class="bg-white/95 dark:bg-[#0B1022]/95 backdrop-blur-md px-4 py-2 rounded-full border border-clinic-brand/20 dark:border-clinic-dark-accent/30 shadow-xl flex items-center gap-2">
+                            <!-- Overlay Map Marker Pill (Clear Demo Designation) -->
+                            <div class="absolute top-4 start-4 pointer-events-none z-10">
+                                <div class="bg-white/95 dark:bg-[#0B1022]/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-clinic-brand/20 dark:border-clinic-dark-accent/30 shadow-lg flex items-center gap-2">
                                     <span class="w-2 h-2 rounded-full bg-clinic-brand dark:bg-clinic-dark-accent animate-ping"></span>
-                                    <span class="text-xs font-bold tracking-wider uppercase text-clinic-primary dark:text-clinic-dark-primary">CLINIC LOCATION</span>
+                                    <span class="text-[11px] font-bold tracking-wider uppercase text-clinic-primary dark:text-clinic-dark-primary">DEMO LOCATION — APPOINTMENT ACCESS</span>
                                 </div>
                             </div>
 
                             <!-- Bottom Badge Note -->
-                            <div class="absolute bottom-3 end-3 pointer-events-none">
-                                <span class="text-[10px] uppercase tracking-wider text-clinic-muted dark:text-clinic-dark-secondary bg-white/80 dark:bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-md border border-clinic-border/60 dark:border-white/10">
-                                    Editorial Clinical District Map
+                            <div class="absolute bottom-3 end-3 pointer-events-none z-10">
+                                <span class="text-[10px] uppercase tracking-wider text-clinic-muted dark:text-clinic-dark-secondary bg-white/90 dark:bg-black/80 backdrop-blur-xs px-2.5 py-1 rounded-md border border-clinic-border/60 dark:border-white/10 shadow-xs">
+                                    Interactive Map Preview
                                 </span>
                             </div>
                         </div>
@@ -915,9 +843,9 @@
             </div>
 
             <!-- Medical Disclaimer Area -->
-            <div class="py-6 border-b border-white/8 text-xs text-[#737DA0] leading-relaxed">
+            <div class="py-6 border-b border-white/8 footer-medical-disclaimer text-[#C2CCE2] leading-relaxed">
                 <p>
-                    <strong class="text-[#8E9BB5] font-semibold">Medical Disclaimer:</strong> Information on this website is provided for general educational purposes and is not a substitute for professional medical advice, clinical diagnosis, or treatment. Always consult a qualified physician regarding any medical condition or sleep disturbance.
+                    <strong class="text-[#F0F4FC] font-semibold">Medical Disclaimer:</strong> Information on this website is provided for general educational purposes and is not a substitute for professional medical advice, clinical diagnosis, or treatment. Always consult a qualified physician regarding any medical condition or sleep disturbance.
                 </p>
             </div>
 

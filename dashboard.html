@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="overflow-x-hidden">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -99,19 +99,19 @@
             
             <!-- Sidebar Header / Brand -->
             <div class="sidebar-header flex items-center justify-between p-5 border-b border-clinic-border/60 dark:border-[#1A2440]">
-                <a href="index.html" class="logo-wrapper flex items-center gap-3" aria-label="SomnaClinic Home">
-                    <div class="logo-icon w-9 h-9 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold text-sm shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="w-5 h-5" aria-hidden="true">
+                <a href="index.html" class="logo-wrapper flex items-center gap-3" id="dashboard-brand-logo" aria-label="SomnaClinic Home">
+                    <div class="logo-icon shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="somna-brandmark-svg" aria-hidden="true">
                             <path d="M12 28C10 24 10 18 15 13C20 8 28 8 33 13C36 16 36.5 20 35 23.5C33 28 27.5 29 23 27C18.5 25 15 26 13 29C11 32 12 36 16 38C21 40 27 38 31 34" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
                             <circle cx="28" cy="17.5" r="2.4" fill="currentColor"/>
                         </svg>
                     </div>
                     <div class="sidebar-logo-text min-w-0">
                         <div class="logo-title-row">
-                            <span class="logo-somna text-base text-clinic-primary dark:text-white">SOMNA</span>
-                            <span class="logo-clinic text-xs text-clinic-brand dark:text-clinic-dark-accent">CLINIC</span>
+                            <span class="logo-somna">SOMNA</span>
+                            <span class="logo-clinic">CLINIC</span>
                         </div>
-                        <span class="logo-sub text-[10px] text-clinic-muted dark:text-clinic-dark-secondary block truncate mt-0.5">
+                        <span class="logo-sub">
                             Sleep Medicine &amp; Diagnostics
                         </span>
                     </div>
@@ -217,6 +217,16 @@
                     <button type="button" id="mobile-sidebar-toggle" class="lg:hidden btn-icon-rounded w-9 h-9 shrink-0" aria-label="Open sidebar menu">
                         <i class="fas fa-bars"></i>
                     </button>
+
+                    <!-- Mobile Brand Logo -->
+                    <a href="index.html" class="lg:hidden flex items-center shrink-0" aria-label="SomnaClinic Home">
+                        <div class="w-8 h-8 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center font-bold text-xs shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="w-4 h-4" aria-hidden="true">
+                                <path d="M12 28C10 24 10 18 15 13C20 8 28 8 33 13C36 16 36.5 20 35 23.5C33 28 27.5 29 23 27C18.5 25 15 26 13 29C11 32 12 36 16 38C21 40 27 38 31 34" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="28" cy="17.5" r="2.4" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </a>
 
                     <!-- Header Context Titles -->
                     <div class="min-w-0">

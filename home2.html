@@ -175,20 +175,6 @@
         <!-- Mobile Navigation Drawer -->
         <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
             <div class="mobile-menu-inner">
-                <!-- Mobile Utility Strip -->
-                <div class="mobile-utility-strip flex items-center justify-between pb-3 mb-2 border-b border-clinic-border/60 dark:border-[#1A2242]">
-                    <span class="text-[11px] font-semibold tracking-wider uppercase text-clinic-muted dark:text-clinic-dark-secondary">Controls</span>
-                    <div class="flex items-center gap-2">
-                        <button id="rtl-toggle-mobile" class="btn-rtl-control text-xs" type="button" aria-label="Toggle text direction">
-                            <i class="fas fa-right-left mr-1" aria-hidden="true"></i>
-                            <span>RTL</span>
-                        </button>
-                        <button id="theme-toggle-mobile" class="btn-icon-rounded text-xs" type="button" aria-label="Toggle theme">
-                            <i class="fas fa-moon" aria-hidden="true"></i>
-                            <i class="fas fa-sun hidden" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
 
                 <!-- Home accordion (Closed initially, opens only on tap) -->
                 <div class="mobile-dropdown">
@@ -621,10 +607,10 @@
          ========================================================================== -->
     <section id="sleep-pathway" class="py-24 bg-clinic-canvas dark:bg-clinic-dark-canvas border-b border-clinic-border/60 dark:border-[#161B30]" aria-labelledby="pathway-title">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
                 
                 <!-- Left Side: Editorial Introduction (Approx 38-40% width) -->
-                <div class="lg:col-span-5 flex flex-col justify-center">
+                <div class="lg:col-span-5 flex flex-col justify-center lg:sticky lg:top-28">
                     <!-- Eyebrow -->
                     <div class="home2-section-eyebrow reveal inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wider text-clinic-brand dark:text-clinic-dark-accent mb-4">
                         <i class="fas fa-microscope text-xs" aria-hidden="true"></i>
@@ -693,14 +679,14 @@
                             
                             <!-- 01 — Observe -->
                             <div class="investigation-step-node investigation-step-01" tabindex="0" role="article" aria-label="Step 1: Observe">
-                                <div class="flex items-start justify-between gap-3 mb-1">
-                                    <div class="flex items-center gap-2.5">
+                                <div class="flex items-center justify-between gap-4 mb-2">
+                                    <div class="flex items-center gap-3">
                                         <div class="investigation-step-icon">
                                             <i class="fas fa-eye" aria-hidden="true"></i>
                                         </div>
                                         <span class="investigation-step-title">Observe</span>
                                     </div>
-                                    <div class="flex items-center gap-2">
+                                    <div class="flex items-center gap-2.5">
                                         <span class="investigation-step-indicator" aria-hidden="true"></span>
                                         <span class="investigation-step-num">01</span>
                                     </div>
@@ -712,14 +698,14 @@
 
                             <!-- 02 — Assess -->
                             <div class="investigation-step-node investigation-step-02" tabindex="0" role="article" aria-label="Step 2: Assess">
-                                <div class="flex items-start justify-between gap-3 mb-1">
-                                    <div class="flex items-center gap-2.5">
+                                <div class="flex items-center justify-between gap-4 mb-2">
+                                    <div class="flex items-center gap-3">
                                         <div class="investigation-step-icon">
                                             <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
                                         </div>
                                         <span class="investigation-step-title">Assess</span>
                                     </div>
-                                    <div class="flex items-center gap-2">
+                                    <div class="flex items-center gap-2.5">
                                         <span class="investigation-step-indicator" aria-hidden="true"></span>
                                         <span class="investigation-step-num">02</span>
                                     </div>
@@ -731,14 +717,14 @@
 
                             <!-- 03 — Study -->
                             <div class="investigation-step-node investigation-step-03" tabindex="0" role="article" aria-label="Step 3: Study">
-                                <div class="flex items-start justify-between gap-3 mb-1">
-                                    <div class="flex items-center gap-2.5">
+                                <div class="flex items-center justify-between gap-4 mb-2">
+                                    <div class="flex items-center gap-3">
                                         <div class="investigation-step-icon">
                                             <i class="fas fa-wave-square" aria-hidden="true"></i>
                                         </div>
                                         <span class="investigation-step-title">Study</span>
                                     </div>
-                                    <div class="flex items-center gap-2">
+                                    <div class="flex items-center gap-2.5">
                                         <span class="investigation-step-indicator" aria-hidden="true"></span>
                                         <span class="investigation-step-num">03</span>
                                     </div>
@@ -750,14 +736,14 @@
 
                             <!-- 04 — Understand -->
                             <div class="investigation-step-node investigation-step-04" tabindex="0" role="article" aria-label="Step 4: Understand">
-                                <div class="flex items-start justify-between gap-3 mb-1">
-                                    <div class="flex items-center gap-2.5">
+                                <div class="flex items-center justify-between gap-4 mb-2">
+                                    <div class="flex items-center gap-3">
                                         <div class="investigation-step-icon">
                                             <i class="fas fa-lightbulb" aria-hidden="true"></i>
                                         </div>
                                         <span class="investigation-step-title">Understand</span>
                                     </div>
-                                    <div class="flex items-center gap-2">
+                                    <div class="flex items-center gap-2.5">
                                         <span class="investigation-step-indicator" aria-hidden="true"></span>
                                         <span class="investigation-step-num">04</span>
                                     </div>
@@ -807,42 +793,42 @@
                     </p>
 
                     <!-- 4 Supporting Pillars -->
-                    <div class="stagger-group grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <div class="home2-feature-card reveal delay-100 p-5 rounded-2xl bg-clinic-canvas dark:bg-[#0B1028] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-lg">
-                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mb-3">
+                    <div class="stagger-group grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 pt-2">
+                        <div class="home2-feature-card reveal delay-100 p-5 sm:p-6 rounded-2xl bg-clinic-canvas dark:bg-[#0B1028] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-lg">
+                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mb-3.5">
                                 <i class="fas fa-file-lines" aria-hidden="true"></i>
                             </div>
-                            <h3 class="home2-feature-title mb-1.5">Evidence-Informed Care</h3>
+                            <h3 class="home2-feature-title mb-2">Evidence-Informed Care</h3>
                             <p class="home2-feature-desc leading-relaxed">
                                 Medical recommendations grounded in verified clinical research and established standard-of-care guidelines.
                             </p>
                         </div>
 
-                        <div class="home2-feature-card reveal delay-200 p-5 rounded-2xl bg-clinic-canvas dark:bg-[#0B1028] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-lg">
-                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mb-3">
+                        <div class="home2-feature-card reveal delay-200 p-5 sm:p-6 rounded-2xl bg-clinic-canvas dark:bg-[#0B1028] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-lg">
+                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mb-3.5">
                                 <i class="fas fa-sliders" aria-hidden="true"></i>
                             </div>
-                            <h3 class="home2-feature-title mb-1.5">Personalised Planning</h3>
+                            <h3 class="home2-feature-title mb-2">Personalised Planning</h3>
                             <p class="home2-feature-desc leading-relaxed">
                                 Therapy protocols calibrated specifically around your nocturnal airway pressure, anatomy, and lifestyle.
                             </p>
                         </div>
 
-                        <div class="home2-feature-card reveal delay-300 p-5 rounded-2xl bg-clinic-canvas dark:bg-[#0B1028] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-lg">
-                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mb-3">
+                        <div class="home2-feature-card reveal delay-300 p-5 sm:p-6 rounded-2xl bg-clinic-canvas dark:bg-[#0B1028] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-lg">
+                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mb-3.5">
                                 <i class="fas fa-calendar-check" aria-hidden="true"></i>
                             </div>
-                            <h3 class="home2-feature-title mb-1.5">Ongoing Follow-up</h3>
+                            <h3 class="home2-feature-title mb-2">Ongoing Follow-up</h3>
                             <p class="home2-feature-desc leading-relaxed">
                                 Structured 30, 60, and 90-day progress checks ensuring sustained compliance, comfort, and restorative rest.
                             </p>
                         </div>
 
-                        <div class="home2-feature-card reveal delay-400 p-5 rounded-2xl bg-clinic-canvas dark:bg-[#0B1028] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-lg">
-                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mb-3">
+                        <div class="home2-feature-card reveal delay-400 p-5 sm:p-6 rounded-2xl bg-clinic-canvas dark:bg-[#0B1028] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-lg">
+                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mb-3.5">
                                 <i class="fas fa-comments" aria-hidden="true"></i>
                             </div>
-                            <h3 class="home2-feature-title mb-1.5">Clear Communication</h3>
+                            <h3 class="home2-feature-title mb-2">Clear Communication</h3>
                             <p class="home2-feature-desc leading-relaxed">
                                 Dedicated time with your sleep physician to explain telemetry results clearly, without medical jargon.
                             </p>
@@ -875,36 +861,36 @@
                     </p>
 
                     <div class="stagger-group space-y-4 pt-2">
-                        <div class="home2-feature-card reveal delay-100 flex items-start gap-4 p-4.5 rounded-2xl bg-white dark:bg-[#0A0E22] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-md">
-                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mt-0.5">
+                        <div class="home2-feature-card reveal delay-100 flex items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#0A0E22] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-md">
+                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mt-0.5 shrink-0">
                                 <i class="fas fa-lightbulb" aria-hidden="true"></i>
                             </div>
                             <div>
-                                <h3 class="home2-feature-title mb-1">Ambient Lighting &amp; Circadian Tone</h3>
+                                <h3 class="home2-feature-title mb-1.5">Ambient Lighting &amp; Circadian Tone</h3>
                                 <p class="home2-feature-desc leading-relaxed">
                                     Eliminating blue-spectrum light 60 minutes before bedtime supports natural endogenous melatonin synthesis.
                                 </p>
                             </div>
                         </div>
 
-                        <div class="home2-feature-card reveal delay-200 flex items-start gap-4 p-4.5 rounded-2xl bg-white dark:bg-[#0A0E22] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-md">
-                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mt-0.5">
+                        <div class="home2-feature-card reveal delay-200 flex items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#0A0E22] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-md">
+                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mt-0.5 shrink-0">
                                 <i class="fas fa-temperature-half" aria-hidden="true"></i>
                             </div>
                             <div>
-                                <h3 class="home2-feature-title mb-1">Thermal &amp; Acoustic Regulation</h3>
+                                <h3 class="home2-feature-title mb-1.5">Thermal &amp; Acoustic Regulation</h3>
                                 <p class="home2-feature-desc leading-relaxed">
                                     Cool ambient room temperatures (65–68°F / 18–20°C) facilitate the biological core-temperature drop required for deep N3 sleep.
                                 </p>
                             </div>
                         </div>
 
-                        <div class="home2-feature-card reveal delay-300 flex items-start gap-4 p-4.5 rounded-2xl bg-white dark:bg-[#0A0E22] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-md">
-                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mt-0.5">
+                        <div class="home2-feature-card reveal delay-300 flex items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#0A0E22] border border-clinic-border/60 dark:border-[#1C2548] transition hover:shadow-md">
+                            <div class="home2-feature-icon-box bg-clinic-brand/10 text-clinic-brand dark:text-clinic-dark-accent mt-0.5 shrink-0">
                                 <i class="fas fa-hourglass-half" aria-hidden="true"></i>
                             </div>
                             <div>
-                                <h3 class="home2-feature-title mb-1">Predictable Wind-Down Rhythm</h3>
+                                <h3 class="home2-feature-title mb-1.5">Predictable Wind-Down Rhythm</h3>
                                 <p class="home2-feature-desc leading-relaxed">
                                     A structured 30-minute transitional ritual conditions parasympathetic nervous activation for seamless sleep onset.
                                 </p>
@@ -1115,9 +1101,9 @@
             </div>
 
             <!-- Medical Disclaimer Area -->
-            <div class="py-6 border-b border-white/8 text-xs text-[#737DA0] leading-relaxed">
+            <div class="py-6 border-b border-white/8 footer-medical-disclaimer text-[#C2CCE2] leading-relaxed">
                 <p>
-                    <strong class="text-[#8E9BB5] font-semibold">Medical Disclaimer:</strong> Information on this website is provided for general educational purposes and is not a substitute for professional medical advice, clinical diagnosis, or treatment. Always consult a qualified physician regarding any medical condition or sleep disturbance.
+                    <strong class="text-[#F0F4FC] font-semibold">Medical Disclaimer:</strong> Information on this website is provided for general educational purposes and is not a substitute for professional medical advice, clinical diagnosis, or treatment. Always consult a qualified physician regarding any medical condition or sleep disturbance.
                 </p>
             </div>
 

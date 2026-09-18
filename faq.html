@@ -175,21 +175,6 @@
         <!-- Mobile Navigation Drawer -->
         <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
             <div class="mobile-menu-inner">
-                <!-- Mobile Utility Strip -->
-                <div class="mobile-utility-strip flex items-center justify-between pb-3 mb-2 border-b border-clinic-border/60 dark:border-[#1A2242]">
-                    <span class="text-[11px] font-semibold tracking-wider uppercase text-clinic-muted dark:text-clinic-dark-secondary">Controls</span>
-                    <div class="flex items-center gap-2">
-                        <button id="rtl-toggle-mobile" class="btn-rtl-control text-xs" type="button" aria-label="Toggle text direction">
-                            <i class="fas fa-right-left mr-1" aria-hidden="true"></i>
-                            <span>RTL</span>
-                        </button>
-                        <button id="theme-toggle-mobile" class="btn-icon-rounded text-xs" type="button" aria-label="Toggle theme">
-                            <i class="fas fa-moon" aria-hidden="true"></i>
-                            <i class="fas fa-sun hidden" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
-
                 <!-- Home accordion (Closed initially, opens only on tap) -->
                 <div class="mobile-dropdown">
                     <button type="button" class="mobile-dropdown-btn mobile-menu-item " id="mobile-home-btn" aria-expanded="false">
@@ -666,434 +651,150 @@
         </section>
 
 
-        <!-- ==================================================================
-             SECTION 03: CLINICAL KNOWLEDGE — THE KNOWLEDGE READER
-             Editorial asymmetric reading interface (Question Index + Answer Reader)
+                <!-- ==================================================================
+             SECTION 03: SLEEP CARE PREPARATION
+             Editorial Asymmetric Preparation Guide (40% Intro + 60% Pathway)
              ================================================================== -->
-        <section id="faq-answers" class="py-20 sm:py-28 md:py-32 bg-clinic-canvas dark:bg-[#000000] border-b border-clinic-border/40 dark:border-[#1A1D30] relative overflow-hidden" aria-labelledby="clinical-knowledge-heading">
+        <section id="sleep-care-preparation" class="py-24 md:py-32 bg-clinic-canvas dark:bg-[#000000] border-b border-clinic-border/40 dark:border-[#1A1D30] relative overflow-hidden" aria-labelledby="sleep-care-prep-heading">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <!-- Section Intro (Compact Editorial Header) -->
-                <div class="max-w-3xl mb-12 sm:mb-16" data-reveal="fade-up">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-clinic-brand/10 text-clinic-brand dark:bg-clinic-dark-accent/10 dark:text-clinic-dark-accent mb-4 border border-clinic-brand/15 dark:border-clinic-dark-accent/20">
-                        <i class="fa-solid fa-book-open text-xs"></i>
-                        <span>CLINICAL KNOWLEDGE</span>
-                    </div>
-
-                    <h2 id="clinical-knowledge-heading" class="faq-reader-heading font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-clinic-primary dark:text-clinic-dark-primary leading-[1.15] mb-4">
-                        Clear Answers to Common Sleep Questions.
-                    </h2>
-
-                    <p class="faq-reader-intro-copy text-base sm:text-lg text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
-                        Explore practical information about sleep evaluation, treatment, appointments, and ongoing care.
-                    </p>
-                </div>
-
-                <!-- Main Asymmetric Structure: Left Question Index (38%) + Right Answer Reader (62%) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
+                <!-- Main Asymmetric Grid: 40% Left Editorial Intro + 60% Right Preparation Pathway -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-start">
                     
-                    <!-- LEFT: QUESTION INDEX (lg:col-span-5) -->
-                    <div class="lg:col-span-5 flex flex-col" data-reveal="fade-up">
-                        <div class="flex items-center justify-between pb-3 mb-2 border-b border-clinic-border/60 dark:border-[#1A1D30]">
-                            <span class="text-xs font-mono uppercase tracking-widest text-clinic-brand dark:text-clinic-dark-accent font-semibold flex items-center gap-2">
-                                <i class="fa-solid fa-list-ol text-[11px]"></i>
-                                <span>QUESTION INDEX</span>
-                            </span>
-                            <span class="text-xs text-clinic-muted dark:text-clinic-dark-secondary font-mono" id="faq-index-counter">16 Questions</span>
+                    <!-- LEFT SIDE — EDITORIAL INTRO (~40% on Desktop: lg:col-span-5) -->
+                    <div class="lg:col-span-5 lg:sticky lg:top-28" data-reveal="fade-up">
+                        
+                        <!-- Eyebrow Badge -->
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-clinic-brand/10 text-clinic-brand dark:bg-clinic-dark-accent/10 dark:text-clinic-dark-accent mb-6 border border-clinic-brand/15 dark:border-clinic-dark-accent/20">
+                            <i class="fa-solid fa-compass text-xs"></i>
+                            <span>BEFORE YOU REACH OUT</span>
                         </div>
 
-                        <!-- Question Index List -->
-                        <div class="faq-reader-index flex flex-col divide-y divide-clinic-border/30 dark:divide-[#1A1D30]/60" role="tablist" aria-label="Clinical Questions Index">
-                            
-                            <!-- 01: Sleep Studies -->
-                            <button type="button" 
-                                    class="faq-reader-item active group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="0" 
-                                    data-id="faq-ans-1" 
-                                    data-category="studies" 
-                                    id="faq-index-item-1" 
-                                    role="tab" 
-                                    aria-selected="true" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(0)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">01</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        What is a sleep study, and why might it be recommended?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
+                        <!-- Main Heading -->
+                        <h2 id="sleep-care-prep-heading" class="sleep-prep-heading font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-clinic-primary dark:text-clinic-dark-primary leading-[1.15] mb-5">
+                            A Simple Way to Prepare for Better Sleep Care.
+                        </h2>
 
-                            <!-- 02: Sleep Studies -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="1" 
-                                    data-id="faq-ans-2" 
-                                    data-category="studies" 
-                                    id="faq-index-item-2" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(1)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">02</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        What should I expect during an overnight sleep study?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
+                        <!-- Supporting Copy -->
+                        <p class="sleep-prep-intro-copy text-base sm:text-lg text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-8">
+                            Knowing what to notice, what to ask, and what to bring can make your first conversation more useful and more comfortable.
+                        </p>
 
-                            <!-- 03: Sleep Studies -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="2" 
-                                    data-id="faq-ans-3" 
-                                    data-category="studies" 
-                                    id="faq-index-item-3" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(2)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">03</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        Will I receive preparation instructions before the study?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 04: Sleep Studies -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="3" 
-                                    data-id="faq-ans-4" 
-                                    data-category="studies" 
-                                    id="faq-index-item-4" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(3)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">04</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        What happens after the sleep study is completed?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 05: CPAP & Apnea -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="4" 
-                                    data-id="faq-ans-5" 
-                                    data-category="cpap" 
-                                    id="faq-index-item-5" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(4)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">05</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        What is CPAP therapy, and how does it work?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 06: CPAP & Apnea -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="5" 
-                                    data-id="faq-ans-6" 
-                                    data-category="cpap" 
-                                    id="faq-index-item-6" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(5)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">06</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        How does a CPAP consultation usually begin?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 07: CPAP & Apnea -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="6" 
-                                    data-id="faq-ans-7" 
-                                    data-category="cpap" 
-                                    id="faq-index-item-7" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(6)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">07</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        Can questions about comfort or equipment be discussed during follow-up?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 08: CPAP & Apnea -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="7" 
-                                    data-id="faq-ans-8" 
-                                    data-category="cpap" 
-                                    id="faq-index-item-8" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(7)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">08</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        What should I bring to a CPAP follow-up visit?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 09: Insomnia & Sleep Habits -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="8" 
-                                    data-id="faq-ans-9" 
-                                    data-category="insomnia" 
-                                    id="faq-index-item-9" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(8)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">09</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        What should I discuss if I have trouble sleeping?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 10: Insomnia & Sleep Habits -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="9" 
-                                    data-id="faq-ans-10" 
-                                    data-category="insomnia" 
-                                    id="faq-index-item-10" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(9)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">10</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        How can daily sleep habits be reviewed during a consultation?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 11: Insomnia & Sleep Habits -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="10" 
-                                    data-id="faq-ans-11" 
-                                    data-category="insomnia" 
-                                    id="faq-index-item-11" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(10)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">11</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        What information is useful to share about my sleep routine?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 12: Insomnia & Sleep Habits -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="11" 
-                                    data-id="faq-ans-12" 
-                                    data-category="insomnia" 
-                                    id="faq-index-item-12" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(11)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">12</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        What can I expect from an insomnia-care conversation?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 13: Appointments & Follow-up -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="12" 
-                                    data-id="faq-ans-13" 
-                                    data-category="appointments" 
-                                    id="faq-index-item-13" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(12)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">13</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        How do I request an initial appointment?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 14: Appointments & Follow-up -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="13" 
-                                    data-id="faq-ans-14" 
-                                    data-category="appointments" 
-                                    id="faq-index-item-14" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(13)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">14</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        What should I bring to my appointment?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 15: Appointments & Follow-up -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="14" 
-                                    data-id="faq-ans-15" 
-                                    data-category="appointments" 
-                                    id="faq-index-item-15" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(14)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">15</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        Can I ask questions during a follow-up consultation?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
-                            <!-- 16: Appointments & Follow-up -->
-                            <button type="button" 
-                                    class="faq-reader-item group w-full text-start py-3.5 px-3 sm:px-4 rounded-xl transition-all duration-200 flex items-start gap-3.5 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50" 
-                                    data-index="15" 
-                                    data-id="faq-ans-16" 
-                                    data-category="appointments" 
-                                    id="faq-index-item-16" 
-                                    role="tab" 
-                                    aria-selected="false" 
-                                    aria-controls="faq-reader-panel"
-                                    onclick="selectFaqQuestion(15)">
-                                <span class="faq-reader-num font-serif text-base sm:text-lg font-medium shrink-0 pt-0.5 w-6 tabular-nums transition-colors">16</span>
-                                <div class="grow pr-2">
-                                    <span class="faq-reader-item-title text-sm sm:text-[15px] font-medium block leading-snug transition-colors">
-                                        How can I contact the clinic if I have another question?
-                                    </span>
-                                </div>
-                                <i class="fa-solid fa-arrow-right text-xs shrink-0 pt-1 transition-all group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:rotate-180 faq-reader-arrow"></i>
-                            </button>
-
+                        <!-- Subtle Directional Cue / Preparation Summary Indicator -->
+                        <div class="pt-6 border-t border-clinic-border/60 dark:border-[#1A1D30] flex items-center justify-between gap-4">
+                            <div class="flex items-center gap-3 text-clinic-secondary dark:text-clinic-dark-secondary">
+                                <span class="w-8 h-px bg-clinic-brand dark:bg-clinic-dark-accent"></span>
+                                <span class="text-xs font-mono uppercase tracking-widest text-clinic-brand dark:text-clinic-dark-accent font-semibold">3-Stage Pathway</span>
+                            </div>
+                            <div class="inline-flex items-center gap-2 text-xs text-clinic-muted dark:text-clinic-dark-secondary">
+                                <span>Notice &bull; Ask &bull; Prepare</span>
+                                <i class="fa-solid fa-arrow-down text-[10px] text-clinic-brand dark:text-clinic-dark-accent"></i>
+                            </div>
                         </div>
+
                     </div>
 
-                    <!-- RIGHT: ANSWER READER (lg:col-span-7) -->
-                    <div class="lg:col-span-7 lg:sticky lg:top-28" data-reveal="fade-up">
-                        <div class="faq-reader-surface rounded-2xl md:rounded-3xl border border-clinic-border/50 dark:border-[#1A1D30] bg-clinic-surface dark:bg-[#09090F] p-6 sm:p-8 md:p-10 lg:p-12 transition-all duration-300 relative shadow-sm" id="faq-reader-panel" role="region" aria-live="polite">
+                    <!-- RIGHT SIDE — PREPARATION PATHWAY (~60% on Desktop: lg:col-span-7) -->
+                    <div class="lg:col-span-7" data-reveal="fade-up">
+                        
+                        <!-- Editorial Vertical Pathway with Connecting Element -->
+                        <div class="sleep-prep-pathway relative flex flex-col">
                             
-                            <!-- Animated Content Wrapper -->
-                            <div id="faq-reader-content" class="faq-reader-content">
-                                
-                                <!-- Editorial Header / Topic Metadata -->
-                                <div class="flex items-center justify-between gap-4 pb-6 mb-6 border-b border-clinic-border/40 dark:border-[#1A1D30]">
-                                    <div class="flex items-center gap-3.5">
-                                        <div class="w-10 h-10 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-base shrink-0" id="faq-reader-icon-box">
-                                            <i id="faq-reader-topic-icon" class="fa-solid fa-wave-square"></i>
-                                        </div>
-                                        <div>
-                                            <span id="faq-reader-topic-label" class="text-xs uppercase tracking-wider font-semibold font-mono text-clinic-brand dark:text-clinic-dark-accent block">SLEEP STUDIES</span>
-                                            <span id="faq-reader-progress-label" class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Question 01 of 16</span>
+                            <!-- Continuous Vertical Connector Line (Unique Visual Element) -->
+                            <div class="sleep-prep-connector-line hidden sm:block" aria-hidden="true"></div>
+
+                            <!-- Step 01: NOTICE -->
+                            <article class="sleep-prep-step group relative pb-10 sm:pb-12 border-b border-clinic-border/40 dark:border-[#1A1D30]/80">
+                                <div class="flex items-start gap-4 sm:gap-6">
+                                    
+                                    <!-- Number & Icon Node -->
+                                    <div class="relative z-10 flex flex-col items-center shrink-0">
+                                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-clinic-surface dark:bg-[#10101C] border-2 border-clinic-brand/40 dark:border-clinic-dark-accent/40 group-hover:border-clinic-brand dark:group-hover:border-clinic-dark-accent flex items-center justify-center text-clinic-brand dark:text-clinic-dark-accent shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:shadow-md">
+                                            <i class="fa-solid fa-eye text-sm sm:text-base transition-transform group-hover:scale-110"></i>
                                         </div>
                                     </div>
-                                    <span id="faq-reader-editorial-num" class="font-serif text-3xl sm:text-4xl font-light text-clinic-brand/40 dark:text-clinic-dark-accent/30 tabular-nums">01</span>
+
+                                    <!-- Step Content -->
+                                    <div class="grow pt-1 transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+                                        <div class="flex items-center gap-3 mb-2">
+                                            <span class="sleep-prep-num text-2xl sm:text-3xl font-serif font-light text-clinic-brand dark:text-clinic-dark-accent tabular-nums">01</span>
+                                            <span class="text-xs font-mono uppercase tracking-widest text-clinic-brand dark:text-clinic-dark-accent font-semibold">NOTICE</span>
+                                        </div>
+                                        
+                                        <h3 class="sleep-prep-step-title text-xl sm:text-2xl font-bold text-clinic-primary dark:text-clinic-dark-primary mb-3">
+                                            Pay attention to your sleep patterns.
+                                        </h3>
+                                        
+                                        <p class="sleep-prep-body text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                                            Take note of subtle patterns in your nightly routine: changes in overall sleep quality, difficulty falling or staying asleep, unusual nighttime disturbances, or persistent daytime tiredness. Observing how often these moments occur provides valuable context for your clinical evaluation.
+                                        </p>
+                                    </div>
+
                                 </div>
+                            </article>
 
-                                <!-- Question Title -->
-                                <div class="mb-6">
-                                    <h3 id="faq-reader-title" class="faq-reader-question-title font-serif text-2xl sm:text-3xl lg:text-[32px] font-medium text-clinic-primary dark:text-clinic-dark-primary leading-[1.25] tracking-tight">
-                                        What is a sleep study, and why might it be recommended?
-                                    </h3>
+                            <!-- Step 02: ASK -->
+                            <article class="sleep-prep-step group relative py-10 sm:py-12 border-b border-clinic-border/40 dark:border-[#1A1D30]/80">
+                                <div class="flex items-start gap-4 sm:gap-6">
+                                    
+                                    <!-- Number & Icon Node -->
+                                    <div class="relative z-10 flex flex-col items-center shrink-0">
+                                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-clinic-surface dark:bg-[#10101C] border-2 border-clinic-brand/40 dark:border-clinic-dark-accent/40 group-hover:border-clinic-brand dark:group-hover:border-clinic-dark-accent flex items-center justify-center text-clinic-brand dark:text-clinic-dark-accent shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:shadow-md">
+                                            <i class="fa-solid fa-circle-question text-sm sm:text-base transition-transform group-hover:scale-110"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- Step Content -->
+                                    <div class="grow pt-1 transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+                                        <div class="flex items-center gap-3 mb-2">
+                                            <span class="sleep-prep-num text-2xl sm:text-3xl font-serif font-light text-clinic-brand dark:text-clinic-dark-accent tabular-nums">02</span>
+                                            <span class="text-xs font-mono uppercase tracking-widest text-clinic-brand dark:text-clinic-dark-accent font-semibold">ASK</span>
+                                        </div>
+                                        
+                                        <h3 class="sleep-prep-step-title text-xl sm:text-2xl font-bold text-clinic-primary dark:text-clinic-dark-primary mb-3">
+                                            Bring the questions that matter to you.
+                                        </h3>
+                                        
+                                        <p class="sleep-prep-body text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                                            Reflect on what you have been experiencing, approximately when the concern began, what you would like to understand better, and what you hope to explore during your consultation. Writing down your core questions ensures your personal priorities lead the conversation.
+                                        </p>
+                                    </div>
+
                                 </div>
+                            </article>
 
-                                <!-- Subtle Accent Divider -->
-                                <div class="w-12 h-0.5 bg-clinic-brand/40 dark:bg-clinic-dark-accent/40 mb-6"></div>
+                            <!-- Step 03: PREPARE -->
+                            <article class="sleep-prep-step group relative pt-10 sm:pt-12">
+                                <div class="flex items-start gap-4 sm:gap-6">
+                                    
+                                    <!-- Number & Icon Node -->
+                                    <div class="relative z-10 flex flex-col items-center shrink-0">
+                                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-clinic-surface dark:bg-[#10101C] border-2 border-clinic-brand/40 dark:border-clinic-dark-accent/40 group-hover:border-clinic-brand dark:group-hover:border-clinic-dark-accent flex items-center justify-center text-clinic-brand dark:text-clinic-dark-accent shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:shadow-md">
+                                            <i class="fa-solid fa-clipboard-check text-sm sm:text-base transition-transform group-hover:scale-110"></i>
+                                        </div>
+                                    </div>
 
-                                <!-- Answer Body Container (Comfortable editorial width) -->
-                                <div class="faq-reader-body mb-10 max-w-[680px]">
-                                    <p id="faq-reader-answer" class="faq-reader-answer-text text-base sm:text-[17px] text-clinic-secondary dark:text-clinic-dark-secondary leading-[1.75]">
-                                        A sleep study (such as overnight in-lab polysomnography or home sleep apnea testing) evaluates physiologic signals during sleep—including respiration, heart rhythm, blood oxygen saturation, brain waves, and body movements. It helps clarify underlying nocturnal disturbances when someone experiences persistent snoring, unrefreshing sleep, nocturnal awakenings, or daytime fatigue.
-                                    </p>
+                                    <!-- Step Content -->
+                                    <div class="grow pt-1 transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+                                        <div class="flex items-center gap-3 mb-2">
+                                            <span class="sleep-prep-num text-2xl sm:text-3xl font-serif font-light text-clinic-brand dark:text-clinic-dark-accent tabular-nums">03</span>
+                                            <span class="text-xs font-mono uppercase tracking-widest text-clinic-brand dark:text-clinic-dark-accent font-semibold">PREPARE</span>
+                                        </div>
+                                        
+                                        <h3 class="sleep-prep-step-title text-xl sm:text-2xl font-bold text-clinic-primary dark:text-clinic-dark-primary mb-3">
+                                            Bring useful information to the conversation.
+                                        </h3>
+                                        
+                                        <p class="sleep-prep-body text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                                            Gather any general observations that help describe your sleep situation: current concerns, questions regarding evaluation options, or existing notes you may already have. Bringing these reflections ensures an unhurried, comfortable start to your care.
+                                        </p>
+                                    </div>
+
                                 </div>
-
-                            </div>
-
-                            <!-- Reader Footer / Subtle Previous - Next Navigation -->
-                            <div class="pt-6 border-t border-clinic-border/40 dark:border-[#1A1D30] flex items-center justify-between gap-4">
-                                <button type="button" 
-                                        id="faq-reader-prev-btn" 
-                                        onclick="stepFaqQuestion(-1)" 
-                                        class="faq-reader-nav-btn text-xs sm:text-sm font-semibold text-clinic-secondary hover:text-clinic-brand dark:text-clinic-dark-secondary dark:hover:text-clinic-dark-accent inline-flex items-center gap-2 transition-colors py-2 px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50 rounded"
-                                        aria-label="Previous Question">
-                                    <i class="fa-solid fa-arrow-left text-xs rtl:rotate-180"></i>
-                                    <span>Previous Question</span>
-                                </button>
-
-                                <span id="faq-reader-category-indicator" class="hidden sm:inline-block text-xs font-mono text-clinic-muted dark:text-clinic-dark-secondary tracking-wider">
-                                    SLEEP STUDIES
-                                </span>
-
-                                <button type="button" 
-                                        id="faq-reader-next-btn" 
-                                        onclick="stepFaqQuestion(1)" 
-                                        class="faq-reader-nav-btn text-xs sm:text-sm font-semibold text-clinic-secondary hover:text-clinic-brand dark:text-clinic-dark-secondary dark:hover:text-clinic-dark-accent inline-flex items-center gap-2 transition-colors py-2 px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-brand/50 rounded"
-                                        aria-label="Next Question">
-                                    <span>Next Question</span>
-                                    <i class="fa-solid fa-arrow-right text-xs rtl:rotate-180"></i>
-                                </button>
-                            </div>
+                            </article>
 
                         </div>
+
                     </div>
 
                 </div>
@@ -1426,9 +1127,9 @@
             </div>
 
             <!-- Medical Disclaimer Area -->
-            <div class="py-6 border-b border-white/8 text-xs text-[#737DA0] leading-relaxed">
+            <div class="py-6 border-b border-white/8 text-xs footer-medical-disclaimer text-[#C2CCE2] leading-relaxed">
                 <p>
-                    <strong class="text-[#8E9BB5] font-semibold">Medical Disclaimer:</strong> Information on this website is provided for general educational purposes and is not a substitute for professional medical advice, clinical diagnosis, or treatment. Always consult a qualified physician regarding any medical condition or sleep disturbance.
+                    <strong class="text-[#F0F4FC] font-semibold">Medical Disclaimer:</strong> Information on this website is provided for general educational purposes and is not a substitute for professional medical advice, clinical diagnosis, or treatment. Always consult a qualified physician regarding any medical condition or sleep disturbance.
                 </p>
             </div>
 

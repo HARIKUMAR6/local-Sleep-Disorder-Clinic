@@ -175,20 +175,6 @@
         <!-- Mobile Navigation Drawer -->
         <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
             <div class="mobile-menu-inner">
-                <!-- Mobile Utility Strip -->
-                <div class="mobile-utility-strip flex items-center justify-between pb-3 mb-2 border-b border-clinic-border/60 dark:border-[#1A2242]">
-                    <span class="text-[11px] font-semibold tracking-wider uppercase text-clinic-muted dark:text-clinic-dark-secondary">Controls</span>
-                    <div class="flex items-center gap-2">
-                        <button id="rtl-toggle-mobile" class="btn-rtl-control text-xs" type="button" aria-label="Toggle text direction">
-                            <i class="fas fa-right-left mr-1" aria-hidden="true"></i>
-                            <span>RTL</span>
-                        </button>
-                        <button id="theme-toggle-mobile" class="btn-icon-rounded text-xs" type="button" aria-label="Toggle theme">
-                            <i class="fas fa-moon" aria-hidden="true"></i>
-                            <i class="fas fa-sun hidden" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
 
                 <!-- Home accordion (Closed initially, opens only on tap) -->
                 <div class="mobile-dropdown">
@@ -301,8 +287,8 @@
 
                     <!-- Right Column: Asymmetric Portrait/Consultation Image with Floating Metadata -->
                     <div class="lg:col-span-5 relative" data-reveal="clip-right">
-                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-clinic-border/60 dark:border-[#1A1D30] group aspect-4/3 lg:aspect-4/5">
-                            <img src="assets/images/doctors-hero-editorial.jpg" alt="Thoughtful sleep medicine clinician in consultation suite" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="eager">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-clinic-border/60 dark:border-[#1A1D30] group aspect-[4/5]">
+                            <img src="assets/images/doctors-hero-editorial.jpg" alt="Thoughtful sleep medicine clinician in consultation suite" class="w-full h-full object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-105" loading="eager">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-60"></div>
                             
                             <!-- Floating Editorial Label -->
@@ -347,7 +333,7 @@
                 </div>
 
                 <!-- 2-Column Asymmetric Layout: Vertical Sequential Process (Left) + Supporting Image (Right) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                     
                     <!-- Left Column: Connected 4-Stage Process Timeline -->
                     <div class="lg:col-span-7 doctors-process-track flex flex-col gap-8 sm:gap-10 ps-2" data-reveal="fade-up">
@@ -426,8 +412,8 @@
 
                     </div>
 
-                    <!-- Right Column: Supporting Care Process Image -->
-                    <div class="lg:col-span-5 relative" data-reveal="clip-left">
+                    <!-- Right Column: Supporting Care Process Image (Balanced Sticky Companion) -->
+                    <div class="lg:col-span-5 relative lg:sticky lg:top-28" data-reveal="clip-left">
                         <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-clinic-border/60 dark:border-[#1A1D30] group aspect-4/5">
                             <img src="assets/images/doctors-care-process.jpg" alt="Clinician and patient engaged in thoughtful sleep evaluation discussion" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
@@ -534,12 +520,12 @@
                     </div>
 
                     <!-- Right: Single Evolving Editorial Canvas Display Panels -->
-                    <div class="lg:col-span-7">
+                    <div class="lg:col-span-7 concern-panels-wrapper">
                         
                         <!-- Panel 1: Sleep Apnea -->
-                        <div id="panel-apnea" role="tabpanel" aria-labelledby="tab-apnea" class="concern-tab-panel active">
-                            <div class="bg-clinic-surface dark:bg-[#10101C] rounded-3xl p-6 sm:p-8 lg:p-10 border border-clinic-border/60 dark:border-[#1A1D30] shadow-xl">
-                                <div class="relative rounded-2xl overflow-hidden aspect-16/9 mb-8 border border-clinic-border/50 dark:border-[#1A1D30]">
+                        <div id="panel-apnea" role="tabpanel" aria-labelledby="tab-apnea" aria-hidden="false" class="concern-tab-panel active">
+                            <div class="concern-card flex flex-col h-full bg-clinic-surface dark:bg-[#10101C] rounded-3xl p-6 sm:p-8 lg:p-10 border border-clinic-border/60 dark:border-[#1A1D30] shadow-xl">
+                                <div class="relative rounded-2xl overflow-hidden aspect-video aspect-[16/9] mb-8 border border-clinic-border/50 dark:border-[#1A1D30] shrink-0">
                                     <img src="assets/images/doctors-apnea.jpg" alt="Clinical airway and sleep apnea consultation setting" class="w-full h-full object-cover" loading="lazy">
                                     <div class="absolute top-4 start-4">
                                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/90 dark:bg-[#09090F]/90 text-clinic-brand dark:text-clinic-dark-accent backdrop-blur-md shadow-sm">
@@ -552,11 +538,11 @@
                                 <h3 class="font-heading text-2xl sm:text-3xl font-medium text-clinic-primary dark:text-clinic-dark-primary mb-3">
                                     Sleep Apnea &amp; Airway Evaluation
                                 </h3>
-                                <p class="text-sm sm:text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-6">
+                                <p class="text-sm sm:text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-6 grow">
                                     Sleep-disordered breathing can involve partial or complete pauses in respiration during sleep, often leading to oxygen desaturations and micro-arousals. Our team evaluates obstructive, central, and mixed patterns through objective polysomnography and provides supportive CPAP guidance.
                                 </p>
 
-                                <div class="pt-6 border-t border-clinic-border/60 dark:border-[#1A1D30] flex flex-wrap items-center justify-between gap-4">
+                                <div class="pt-6 border-t border-clinic-border/60 dark:border-[#1A1D30] flex flex-wrap items-center justify-between gap-4 mt-auto shrink-0">
                                     <div class="flex items-center gap-2 text-xs text-clinic-muted dark:text-clinic-dark-secondary">
                                         <i class="fa-solid fa-circle-check text-clinic-brand dark:text-clinic-dark-accent"></i>
                                         <span>In-lab &amp; home testing telemetry</span>
@@ -570,10 +556,10 @@
                         </div>
 
                         <!-- Panel 2: Insomnia -->
-                        <div id="panel-insomnia" role="tabpanel" aria-labelledby="tab-insomnia" class="concern-tab-panel">
-                            <div class="bg-clinic-surface dark:bg-[#10101C] rounded-3xl p-6 sm:p-8 lg:p-10 border border-clinic-border/60 dark:border-[#1A1D30] shadow-xl">
-                                <div class="relative rounded-2xl overflow-hidden aspect-16/9 mb-8 border border-clinic-border/50 dark:border-[#1A1D30]">
-                                    <img src="assets/images/doctors-insomnia.jpg" alt="Calm behavioral consultation setting for insomnia evaluation" class="w-full h-full object-cover" loading="lazy">
+                        <div id="panel-insomnia" role="tabpanel" aria-labelledby="tab-insomnia" aria-hidden="true" class="concern-tab-panel">
+                            <div class="concern-card flex flex-col h-full bg-clinic-surface dark:bg-[#10101C] rounded-3xl p-6 sm:p-8 lg:p-10 border border-clinic-border/60 dark:border-[#1A1D30] shadow-xl">
+                                <div class="relative rounded-2xl overflow-hidden aspect-video aspect-[16/9] mb-8 border border-clinic-border/50 dark:border-[#1A1D30] shrink-0">
+                                    <img src="assets/images/doctors-insomnia.jpg" alt="Calm behavioral consultation setting for insomnia evaluation" class="w-full h-full object-cover object-[center_25%]" loading="lazy">
                                     <div class="absolute top-4 start-4">
                                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/90 dark:bg-[#09090F]/90 text-clinic-brand dark:text-clinic-dark-accent backdrop-blur-md shadow-sm">
                                             <i class="fa-solid fa-moon text-[10px]"></i>
@@ -585,11 +571,11 @@
                                 <h3 class="font-heading text-2xl sm:text-3xl font-medium text-clinic-primary dark:text-clinic-dark-primary mb-3">
                                     Insomnia &amp; Behavioral Sleep Reconditioning
                                 </h3>
-                                <p class="text-sm sm:text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-6">
+                                <p class="text-sm sm:text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-6 grow">
                                     Ongoing difficulty initiating or maintaining sleep often stems from conditioned hyperarousal, irregular sleep schedules, or cognitive patterns around rest. Our behavioral clinicians help identify underlying factors and re-establish natural restorative sleep rhythm.
                                 </p>
 
-                                <div class="pt-6 border-t border-clinic-border/60 dark:border-[#1A1D30] flex flex-wrap items-center justify-between gap-4">
+                                <div class="pt-6 border-t border-clinic-border/60 dark:border-[#1A1D30] flex flex-wrap items-center justify-between gap-4 mt-auto shrink-0">
                                     <div class="flex items-center gap-2 text-xs text-clinic-muted dark:text-clinic-dark-secondary">
                                         <i class="fa-solid fa-circle-check text-clinic-brand dark:text-clinic-dark-accent"></i>
                                         <span>Cognitive behavioral sleep approaches</span>
@@ -603,9 +589,9 @@
                         </div>
 
                         <!-- Panel 3: Disrupted Sleep -->
-                        <div id="panel-disrupted-sleep" role="tabpanel" aria-labelledby="tab-disrupted-sleep" class="concern-tab-panel">
-                            <div class="bg-clinic-surface dark:bg-[#10101C] rounded-3xl p-6 sm:p-8 lg:p-10 border border-clinic-border/60 dark:border-[#1A1D30] shadow-xl">
-                                <div class="relative rounded-2xl overflow-hidden aspect-16/9 mb-8 border border-clinic-border/50 dark:border-[#1A1D30]">
+                        <div id="panel-disrupted-sleep" role="tabpanel" aria-labelledby="tab-disrupted-sleep" aria-hidden="true" class="concern-tab-panel">
+                            <div class="concern-card flex flex-col h-full bg-clinic-surface dark:bg-[#10101C] rounded-3xl p-6 sm:p-8 lg:p-10 border border-clinic-border/60 dark:border-[#1A1D30] shadow-xl">
+                                <div class="relative rounded-2xl overflow-hidden aspect-video aspect-[16/9] mb-8 border border-clinic-border/50 dark:border-[#1A1D30] shrink-0">
                                     <img src="assets/images/doctors-disrupted-sleep.jpg" alt="Clinical review of fragmented sleep patterns and circadian rhythm" class="w-full h-full object-cover" loading="lazy">
                                     <div class="absolute top-4 start-4">
                                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/90 dark:bg-[#09090F]/90 text-clinic-brand dark:text-clinic-dark-accent backdrop-blur-md shadow-sm">
@@ -618,11 +604,11 @@
                                 <h3 class="font-heading text-2xl sm:text-3xl font-medium text-clinic-primary dark:text-clinic-dark-primary mb-3">
                                     Disrupted Sleep &amp; Circadian Rhythm Care
                                 </h3>
-                                <p class="text-sm sm:text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-6">
+                                <p class="text-sm sm:text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-6 grow">
                                     Fragmented sleep architecture, frequent unprompted awakenings, shift work sleep disorder, and delayed phase syndromes disrupt natural sleep stages. Our specialists examine biological clock timing, light cues, and nocturnal stability.
                                 </p>
 
-                                <div class="pt-6 border-t border-clinic-border/60 dark:border-[#1A1D30] flex flex-wrap items-center justify-between gap-4">
+                                <div class="pt-6 border-t border-clinic-border/60 dark:border-[#1A1D30] flex flex-wrap items-center justify-between gap-4 mt-auto shrink-0">
                                     <div class="flex items-center gap-2 text-xs text-clinic-muted dark:text-clinic-dark-secondary">
                                         <i class="fa-solid fa-circle-check text-clinic-brand dark:text-clinic-dark-accent"></i>
                                         <span>Circadian phase realignment methods</span>
@@ -636,10 +622,10 @@
                         </div>
 
                         <!-- Panel 4: Daytime Sleepiness -->
-                        <div id="panel-daytime-sleepiness" role="tabpanel" aria-labelledby="tab-daytime-sleepiness" class="concern-tab-panel">
-                            <div class="bg-clinic-surface dark:bg-[#10101C] rounded-3xl p-6 sm:p-8 lg:p-10 border border-clinic-border/60 dark:border-[#1A1D30] shadow-xl">
-                                <div class="relative rounded-2xl overflow-hidden aspect-16/9 mb-8 border border-clinic-border/50 dark:border-[#1A1D30]">
-                                    <img src="assets/images/doctors-daytime-sleepiness.jpg" alt="Daytime fatigue and vigilance assessment in modern clinic" class="w-full h-full object-cover" loading="lazy">
+                        <div id="panel-daytime-sleepiness" role="tabpanel" aria-labelledby="tab-daytime-sleepiness" aria-hidden="true" class="concern-tab-panel">
+                            <div class="concern-card flex flex-col h-full bg-clinic-surface dark:bg-[#10101C] rounded-3xl p-6 sm:p-8 lg:p-10 border border-clinic-border/60 dark:border-[#1A1D30] shadow-xl">
+                                <div class="relative rounded-2xl overflow-hidden aspect-video aspect-[16/9] mb-8 border border-clinic-border/50 dark:border-[#1A1D30] shrink-0">
+                                    <img src="assets/images/doctors-daytime-sleepiness.jpg" alt="Daytime fatigue and vigilance assessment in modern clinic" class="w-full h-full object-cover object-[center_25%]" loading="lazy">
                                     <div class="absolute top-4 start-4">
                                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/90 dark:bg-[#09090F]/90 text-clinic-brand dark:text-clinic-dark-accent backdrop-blur-md shadow-sm">
                                             <i class="fa-solid fa-battery-half text-[10px]"></i>
@@ -651,11 +637,11 @@
                                 <h3 class="font-heading text-2xl sm:text-3xl font-medium text-clinic-primary dark:text-clinic-dark-primary mb-3">
                                     Daytime Sleepiness &amp; Vigilance Review
                                 </h3>
-                                <p class="text-sm sm:text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-6">
+                                <p class="text-sm sm:text-base text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-6 grow">
                                     Excessive daytime sleepiness (EDS), mental fog, and unrefreshing rest can indicate underlying sleep fragmentation, sleep debt, or hypersomnolence conditions. Clinical evaluation measures sleep propensity and identifies contributory systemic factors.
                                 </p>
 
-                                <div class="pt-6 border-t border-clinic-border/60 dark:border-[#1A1D30] flex flex-wrap items-center justify-between gap-4">
+                                <div class="pt-6 border-t border-clinic-border/60 dark:border-[#1A1D30] flex flex-wrap items-center justify-between gap-4 mt-auto shrink-0">
                                     <div class="flex items-center gap-2 text-xs text-clinic-muted dark:text-clinic-dark-secondary">
                                         <i class="fa-solid fa-circle-check text-clinic-brand dark:text-clinic-dark-accent"></i>
                                         <span>Objective daytime latency evaluations</span>
@@ -682,34 +668,38 @@
              ================================================================== -->
         <section id="doctors-human-care" class="py-24 md:py-32 bg-clinic-surface dark:bg-[#09090F] border-b border-clinic-border/40 dark:border-[#1A1D30] relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Section Header: Consultation Ethos Statement -->
+                <div class="max-w-3xl mb-14 sm:mb-16" data-reveal="fade-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-clinic-brand/10 text-clinic-brand dark:bg-clinic-dark-accent/10 dark:text-clinic-dark-accent mb-4 border border-clinic-brand/15 dark:border-clinic-dark-accent/20 w-fit">
+                        <i class="fa-solid fa-heart-pulse text-xs"></i>
+                        <span>CONSULTATION ETHOS</span>
+                    </div>
+
+                    <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-clinic-primary dark:text-clinic-dark-primary leading-tight mb-4">
+                        “Expertise Should Still Feel <span class="text-clinic-brand dark:text-clinic-dark-accent italic">Human.”</span>
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
+                        High-level medical knowledge is only as effective as the conversation that delivers it. We prioritize patient dignity, open questions, and transparent explanations throughout every visit.
+                    </p>
+                </div>
+
+                <!-- Two-Column Balanced Composition: Image (Left) & Principles Cards (Right) -->
+                <div class="ethos-grid grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-stretch">
                     
-                    <!-- Left Column: Large Statement & Supporting Image -->
-                    <div class="lg:col-span-6 flex flex-col" data-reveal="fade-up">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-clinic-brand/10 text-clinic-brand dark:bg-clinic-dark-accent/10 dark:text-clinic-dark-accent mb-6 border border-clinic-brand/15 dark:border-clinic-dark-accent/20 w-fit">
-                            <i class="fa-solid fa-heart-pulse text-xs"></i>
-                            <span>CONSULTATION ETHOS</span>
-                        </div>
-
-                        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-clinic-primary dark:text-clinic-dark-primary leading-tight mb-6">
-                            “Expertise Should Still Feel <span class="text-clinic-brand dark:text-clinic-dark-accent italic">Human.”</span>
-                        </h2>
-
-                        <p class="text-base sm:text-lg text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-8">
-                            High-level medical knowledge is only as effective as the conversation that delivers it. We prioritize patient dignity, open questions, and transparent explanations throughout every visit.
-                        </p>
-
-                        <!-- Supporting Asymmetric Image -->
-                        <div class="relative rounded-2xl overflow-hidden border border-clinic-border/60 dark:border-[#1A1D30] shadow-lg aspect-16/10 group">
-                            <img src="assets/images/doctors-human-consultation.jpg" alt="Warm and attentive clinical consultation setting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                    <!-- Left Column: Consultation Ethos Visual Showcase -->
+                    <div class="ethos-image-col lg:col-span-6 flex flex-col" data-reveal="fade-up">
+                        <div class="ethos-image-container relative w-full h-full min-h-[300px] sm:min-h-[380px] lg:min-h-0 rounded-2xl overflow-hidden border border-clinic-border/60 dark:border-[#1A1D30] shadow-lg group">
+                            <img src="assets/images/doctors-human-consultation.jpg" alt="Warm and attentive clinical consultation setting" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy">
                         </div>
                     </div>
 
                     <!-- Right Column: Three Human Principles -->
-                    <div class="lg:col-span-6 flex flex-col gap-6" data-reveal="fade-up">
+                    <div class="ethos-cards-col lg:col-span-6 flex flex-col justify-between gap-5 sm:gap-6" data-reveal="fade-up">
                         
                         <!-- Principle 1: Clear Conversation -->
-                        <div class="bg-clinic-canvas dark:bg-[#10101C] p-6 sm:p-8 rounded-2xl border border-clinic-border/60 dark:border-[#1A1D30] transition-transform duration-300 hover:translate-x-1 rtl:hover:-translate-x-1">
+                        <div class="ethos-card bg-clinic-canvas dark:bg-[#10101C] p-6 sm:p-7 xl:p-8 rounded-2xl border border-clinic-border/60 dark:border-[#1A1D30] transition-transform duration-300 hover:translate-x-1 rtl:hover:-translate-x-1 flex-1 flex flex-col justify-center">
                             <div class="flex items-start gap-4 sm:gap-5">
                                 <div class="w-12 h-12 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg shrink-0">
                                     <i class="fa-solid fa-comments"></i>
@@ -724,7 +714,7 @@
                         </div>
 
                         <!-- Principle 2: Thoughtful Review -->
-                        <div class="bg-clinic-canvas dark:bg-[#10101C] p-6 sm:p-8 rounded-2xl border border-clinic-border/60 dark:border-[#1A1D30] transition-transform duration-300 hover:translate-x-1 rtl:hover:-translate-x-1">
+                        <div class="ethos-card bg-clinic-canvas dark:bg-[#10101C] p-6 sm:p-7 xl:p-8 rounded-2xl border border-clinic-border/60 dark:border-[#1A1D30] transition-transform duration-300 hover:translate-x-1 rtl:hover:-translate-x-1 flex-1 flex flex-col justify-center">
                             <div class="flex items-start gap-4 sm:gap-5">
                                 <div class="w-12 h-12 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg shrink-0">
                                     <i class="fa-solid fa-file-lines"></i>
@@ -739,7 +729,7 @@
                         </div>
 
                         <!-- Principle 3: Shared Understanding -->
-                        <div class="bg-clinic-canvas dark:bg-[#10101C] p-6 sm:p-8 rounded-2xl border border-clinic-border/60 dark:border-[#1A1D30] transition-transform duration-300 hover:translate-x-1 rtl:hover:-translate-x-1">
+                        <div class="ethos-card bg-clinic-canvas dark:bg-[#10101C] p-6 sm:p-7 xl:p-8 rounded-2xl border border-clinic-border/60 dark:border-[#1A1D30] transition-transform duration-300 hover:translate-x-1 rtl:hover:-translate-x-1 flex-1 flex flex-col justify-center">
                             <div class="flex items-start gap-4 sm:gap-5">
                                 <div class="w-12 h-12 rounded-xl bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center text-lg shrink-0">
                                     <i class="fa-solid fa-handshake"></i>
@@ -958,9 +948,9 @@
             </div>
 
             <!-- Medical Disclaimer Area -->
-            <div class="py-6 border-b border-white/8 text-xs text-[#737DA0] leading-relaxed">
+            <div class="py-6 border-b border-white/8 footer-medical-disclaimer text-[#C2CCE2] leading-relaxed">
                 <p>
-                    <strong class="text-[#8E9BB5] font-semibold">Medical Disclaimer:</strong> Information on this website is provided for general educational purposes and is not a substitute for professional medical advice, clinical diagnosis, or treatment. Always consult a qualified physician regarding any medical condition or sleep disturbance.
+                    <strong class="text-[#F0F4FC] font-semibold">Medical Disclaimer:</strong> Information on this website is provided for general educational purposes and is not a substitute for professional medical advice, clinical diagnosis, or treatment. Always consult a qualified physician regarding any medical condition or sleep disturbance.
                 </p>
             </div>
 
@@ -1069,6 +1059,7 @@
                 // Deactivate all panels
                 panels.forEach(p => {
                     p.classList.remove('active');
+                    p.setAttribute('aria-hidden', 'true');
                 });
 
                 // Activate selected tab
@@ -1082,6 +1073,7 @@
                 const targetPanel = document.getElementById(targetPanelId);
                 if (targetPanel) {
                     targetPanel.classList.add('active');
+                    targetPanel.setAttribute('aria-hidden', 'false');
                 }
             }
 

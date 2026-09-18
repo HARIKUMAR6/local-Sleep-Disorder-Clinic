@@ -124,13 +124,16 @@ html {
   box-sizing: inherit;
 }
 
+html, body, .overflow-x-hidden {
+  overflow-x: clip !important;
+}
+
 body {
   font-family: 'DM Sans', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg-canvas);
   color: var(--text-primary);
   min-height: 100vh;
   transition: background-color 0.35s ease, color 0.35s ease;
-  overflow-x: hidden;
   overflow-wrap: break-word;
 }
 
@@ -860,6 +863,12 @@ html:not(.dark) .btn-icon-rounded .fa-sun {
 
 .mobile-menu.open .mobile-menu-inner {
   transform: translateY(0);
+}
+
+.mobile-utility-strip,
+#rtl-toggle-mobile,
+#theme-toggle-mobile {
+  display: none !important;
 }
 
 .mobile-menu-item {
@@ -3362,28 +3371,28 @@ details[open] .faq-icon-chevron {
 /* Right Side: Organic Visual Stage */
 .investigation-stage {
   position: relative;
-  min-height: 600px;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0;
 }
 
 .investigation-photo-frame {
   position: relative;
   width: 100%;
-  max-width: 530px;
-  height: 450px;
-  border-radius: 48px 18px 64px 22px;
+  max-width: 100%;
+  height: 280px;
+  border-radius: 36px 16px 44px 20px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(13, 20, 54, 0.14);
+  box-shadow: 0 20px 40px -12px rgba(13, 20, 54, 0.12);
   border: 1px solid rgba(22, 107, 107, 0.15);
   background: var(--bg-surface);
   transition: box-shadow 0.6s ease, border-color 0.6s ease;
 }
 
 .dark .investigation-photo-frame {
-  border-radius: 48px 18px 64px 22px;
+  border-radius: 36px 16px 44px 20px;
   border-color: rgba(32, 41, 74, 0.9);
   box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
   background: #090E22;
@@ -3391,7 +3400,7 @@ details[open] .faq-icon-chevron {
 
 [dir="rtl"] .investigation-photo-frame,
 .dark [dir="rtl"] .investigation-photo-frame {
-  border-radius: 18px 48px 22px 64px;
+  border-radius: 16px 36px 20px 44px;
 }
 
 .investigation-photo-frame img {
@@ -3425,14 +3434,15 @@ details[open] .faq-icon-chevron {
   pointer-events: none;
 }
 
-/* Connecting Flowing SVG Line */
+/* Connecting Flowing SVG Line (Background Telemetry Accent) */
 .investigation-flow-svg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
+  opacity: 0.15;
 }
 
 .investigation-flow-path {
@@ -3458,57 +3468,68 @@ details[open] .faq-icon-chevron {
   filter: drop-shadow(0 0 6px rgba(45, 178, 178, 0.4));
 }
 
-/* Methodology Step Markers */
+/* Methodology Step Markers Container (Clean Vertical Editorial Sequence) */
 .investigation-steps-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 2;
 }
 
-.investigation-step-node {
+/* Continuous Vertical Connector Line Behind Steps */
+.investigation-steps-container::before {
+  content: '';
   position: absolute;
-  z-index: 3;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  inset-inline-start: 2.25rem; /* Aligns through the center of icon nodes */
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(22, 107, 107, 0.35) 0%,
+    rgba(45, 178, 178, 0.5) 50%,
+    rgba(59, 91, 219, 0.35) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dark .investigation-steps-container::before {
+  background: linear-gradient(
+    180deg,
+    rgba(122, 155, 232, 0.3) 0%,
+    rgba(45, 178, 178, 0.5) 50%,
+    rgba(122, 155, 232, 0.3) 100%
+  );
+}
+
+/* Independent Editorial Card (Normal Document Flow, Zero Overlap) */
+.investigation-step-node {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  max-width: 275px;
-  background: rgba(255, 255, 255, 0.94);
+  max-width: 100%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(22, 107, 107, 0.16);
   border-radius: 1.25rem;
-  padding: 1.15rem 1.25rem;
-  box-shadow: 0 12px 30px -8px rgba(13, 20, 54, 0.08);
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 20px -4px rgba(13, 20, 54, 0.06);
   cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s ease,
-              border-color 0.4s ease,
-              background-color 0.4s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease,
+              background-color 0.3s ease;
   outline: none;
 }
 
 .dark .investigation-step-node {
   background: rgba(10, 15, 36, 0.94);
   border-color: rgba(40, 52, 90, 0.8);
-  box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.6);
-}
-
-/* Asymmetric Placement in Desktop */
-.investigation-step-01 {
-  top: 15px;
-  inset-inline-start: -15px;
-}
-
-.investigation-step-02 {
-  top: 80px;
-  inset-inline-end: -15px;
-}
-
-.investigation-step-03 {
-  bottom: 80px;
-  inset-inline-start: -10px;
-}
-
-.investigation-step-04 {
-  bottom: 15px;
-  inset-inline-end: -15px;
+  box-shadow: 0 6px 22px -6px rgba(0, 0, 0, 0.65);
 }
 
 /* Step Node Elements */
@@ -3562,9 +3583,10 @@ details[open] .faq-icon-chevron {
 .investigation-step-desc {
   font-family: 'DM Sans', system-ui, sans-serif;
   font-size: 0.8125rem;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--text-secondary);
   margin-top: 0.35rem;
+  transition: color 0.35s ease;
 }
 
 .dark .investigation-step-desc {
@@ -3585,18 +3607,23 @@ details[open] .faq-icon-chevron {
   opacity: 0.5;
 }
 
-/* Hover & Focus Interactions */
+/* Hover & Focus Interactions (Translates along X only - Zero vertical overlap) */
 .investigation-step-node:hover,
 .investigation-step-node:focus-visible {
   border-color: var(--color-brand);
-  box-shadow: 0 18px 40px -10px rgba(22, 107, 107, 0.18);
-  transform: translateY(-3px);
+  box-shadow: 0 14px 34px -8px rgba(22, 107, 107, 0.16);
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .investigation-step-node:hover,
+[dir="rtl"] .investigation-step-node:focus-visible {
+  transform: translateX(-4px);
 }
 
 .dark .investigation-step-node:hover,
 .dark .investigation-step-node:focus-visible {
   border-color: var(--color-accent-teal);
-  box-shadow: 0 18px 45px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 16px 38px -8px rgba(0, 0, 0, 0.75);
 }
 
 .investigation-step-node:focus-visible {
@@ -3624,18 +3651,11 @@ details[open] .faq-icon-chevron {
 .investigation-step-node:hover .investigation-step-num,
 .investigation-step-node:focus-visible .investigation-step-num {
   opacity: 0.7;
-  transform: translateY(-2px);
 }
 
 .investigation-step-node:hover .investigation-step-title,
 .investigation-step-node:focus-visible .investigation-step-title {
-  transform: translateX(3px);
   color: var(--color-brand);
-}
-
-[dir="rtl"] .investigation-step-node:hover .investigation-step-title,
-[dir="rtl"] .investigation-step-node:focus-visible .investigation-step-title {
-  transform: translateX(-3px);
 }
 
 .dark .investigation-step-node:hover .investigation-step-title,
@@ -3651,76 +3671,37 @@ details[open] .faq-icon-chevron {
 
 /* Tablet & Mobile Responsive */
 @media (max-width: 1023px) {
-  .investigation-stage {
-    min-height: auto;
-    display: block;
-    padding: 0;
-  }
-
   .investigation-photo-frame {
-    max-width: 100%;
-    height: 350px;
-    border-radius: 36px 14px 44px 18px;
-    margin-bottom: 2.25rem;
+    height: 240px;
+    border-radius: 28px 14px 36px 16px;
   }
 
   [dir="rtl"] .investigation-photo-frame {
-    border-radius: 14px 36px 18px 44px;
-  }
-
-  .investigation-flow-svg {
-    display: none;
-  }
-
-  .investigation-steps-container {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-  }
-
-  .investigation-step-node {
-    position: static;
-    max-width: 100%;
-    transform: none !important;
+    border-radius: 14px 28px 16px 36px;
   }
 }
 
 @media (max-width: 639px) {
   .investigation-photo-frame {
-    height: 260px;
-    border-radius: 28px 12px 36px 14px;
-    margin-bottom: 1.75rem;
+    height: 200px;
+    border-radius: 24px 12px 30px 14px;
   }
 
   [dir="rtl"] .investigation-photo-frame {
-    border-radius: 12px 28px 14px 36px;
+    border-radius: 12px 24px 14px 30px;
   }
 
   .investigation-steps-container {
-    grid-template-columns: 1fr;
     gap: 1rem;
-    position: relative;
-    padding-inline-start: 1.25rem;
   }
 
-  /* Flowing vertical clinical connector line on mobile */
   .investigation-steps-container::before {
-    content: '';
-    position: absolute;
-    inset-inline-start: 4px;
-    top: 15px;
-    bottom: 15px;
-    width: 2px;
-    background: linear-gradient(180deg, rgba(22, 107, 107, 0.4) 0%, rgba(45, 178, 178, 0.6) 50%, rgba(22, 107, 107, 0.4) 100%);
-  }
-
-  .dark .investigation-steps-container::before {
-    background: linear-gradient(180deg, rgba(122, 155, 232, 0.3) 0%, rgba(45, 178, 178, 0.5) 50%, rgba(122, 155, 232, 0.3) 100%);
+    inset-inline-start: 1.85rem;
   }
 
   .investigation-step-node {
     padding: 1rem 1.15rem;
+    border-radius: 1rem;
   }
 }
 
@@ -6666,18 +6647,57 @@ details[open] .faq-icon-chevron {
    PHASE 11 — DOCTORS PAGE STYLING
    ========================================================================== */
 
-/* Concern Navigator Panels (Section 03) */
+/* Concern Navigator Panels (Section 03) — Consistent Unified Grid Stacking & Sizing */
+.concern-panels-wrapper {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  align-items: stretch;
+}
+
 .concern-tab-panel {
-  display: none;
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
   opacity: 0;
+  pointer-events: none;
   transform: translateY(8px);
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+  z-index: 1;
 }
 
 .concern-tab-panel.active {
-  display: block;
+  visibility: visible;
   opacity: 1;
+  pointer-events: auto;
   transform: translateY(0);
+  z-index: 2;
+}
+
+.concern-tab-panel .concern-card,
+.concern-tab-panel > div {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.concern-tab-panel [class*="aspect-16/9"],
+.concern-tab-panel .aspect-video {
+  aspect-ratio: 16 / 9 !important;
+  width: 100% !important;
+  flex-shrink: 0 !important;
+}
+
+.concern-tab-panel p {
+  flex-grow: 1 !important;
+}
+
+.concern-tab-panel .border-t {
+  margin-top: auto !important;
+  flex-shrink: 0 !important;
 }
 
 /* Concern Nav Button */
@@ -7038,8 +7058,13 @@ details[open] .faq-icon-chevron {
    SECTION 03: CLINICAL KNOWLEDGE — THE KNOWLEDGE READER
    ========================================================================== */
 
-/* Section Heading Responsive Clamps */
-.faq-reader-heading {
+/* ==========================================================================
+   SECTION 03: SLEEP CARE PREPARATION
+   Editorial Asymmetric Preparation Guide (40% Intro + 60% Pathway)
+   ========================================================================== */
+
+/* Section Heading Responsive Typography Clamps */
+.sleep-prep-heading {
   font-family: var(--font-serif, "Cormorant Garamond", serif);
   font-size: clamp(2.25rem, 3.2vw + 1rem, 3.625rem); /* 36px mobile -> 58px desktop */
   line-height: 1.15;
@@ -7047,193 +7072,95 @@ details[open] .faq-icon-chevron {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .faq-reader-heading {
-    font-size: clamp(2.625rem, 2.5vw + 1.25rem, 3.125rem); /* 42px -> 50px */
+  .sleep-prep-heading {
+    font-size: clamp(2.625rem, 2.5vw + 1.25rem, 3.125rem); /* 42px -> 50px tablet */
   }
 }
 
-/* Question Title Responsive Clamps */
-.faq-reader-question-title {
-  font-family: var(--font-serif, "Cormorant Garamond", serif);
-  font-size: clamp(1.375rem, 1.8vw + 0.5rem, 2.125rem); /* 22px mobile -> 34px desktop */
-  line-height: 1.25;
-  letter-spacing: -0.015em;
+/* Step Titles Responsive Clamps */
+.sleep-prep-step-title {
+  font-family: var(--font-sans, "DM Sans", sans-serif);
+  font-size: clamp(1.1875rem, 0.6vw + 1rem, 1.625rem); /* 19px mobile -> 26px desktop */
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .faq-reader-question-title {
-    font-size: clamp(1.5625rem, 1.5vw + 0.75rem, 1.875rem); /* 25px -> 30px */
+  .sleep-prep-step-title {
+    font-size: clamp(1.3125rem, 0.5vw + 1rem, 1.5rem); /* 21px -> 24px tablet */
   }
 }
 
-/* Answer Body Typography & Reading Width */
-.faq-reader-answer-text {
+/* Body / Description Typography */
+.sleep-prep-body {
   font-family: var(--font-sans, "DM Sans", sans-serif);
-  font-size: clamp(0.9375rem, 0.4vw + 0.8rem, 1.125rem); /* 15px mobile -> 18px desktop */
+  font-size: clamp(0.9375rem, 0.3vw + 0.85rem, 1.125rem); /* 15px mobile -> 18px desktop */
   line-height: 1.75;
-  max-width: 680px;
 }
 
-/* Left Question Index List & Items */
-.faq-reader-index {
+.sleep-prep-intro-copy {
+  font-family: var(--font-sans, "DM Sans", sans-serif);
+  font-size: clamp(1rem, 0.4vw + 0.9rem, 1.125rem); /* 16px mobile -> 18px desktop */
+  line-height: 1.75;
+}
+
+/* Preparation Pathway Container */
+.sleep-prep-pathway {
   position: relative;
 }
 
-.faq-reader-item {
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  min-height: 48px; /* Touch target >= 44px */
-  padding: 0.875rem 1rem;
-  border-radius: 0.75rem;
-  background: transparent;
-  border: 1px solid transparent;
-  border-left: 3px solid transparent;
-  cursor: pointer;
-  text-align: left;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+/* Continuous Vertical Connector Line (Unique Visual Element) */
+.sleep-prep-connector-line {
+  position: absolute;
+  top: 2rem;
+  bottom: 2.5rem;
+  left: 1.75rem; /* Exactly centered through w-14 (3.5rem) icon nodes */
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(59, 91, 219, 0.4) 0%,
+    rgba(59, 91, 219, 0.25) 50%,
+    rgba(59, 91, 219, 0.08) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
-[dir="rtl"] .faq-reader-item {
-  text-align: right;
-  border-left: 1px solid transparent;
-  border-right: 3px solid transparent;
+[dir="rtl"] .sleep-prep-connector-line {
+  left: auto;
+  right: 1.75rem;
 }
 
-.faq-reader-item .faq-reader-num {
-  color: var(--color-muted, #737DA0);
-  font-family: var(--font-serif, "Cormorant Garamond", serif);
-  font-size: 1.125rem;
-  transition: color 0.2s ease;
+.dark .sleep-prep-connector-line {
+  background: linear-gradient(
+    180deg,
+    rgba(122, 155, 232, 0.5) 0%,
+    rgba(122, 155, 232, 0.3) 50%,
+    rgba(122, 155, 232, 0.08) 100%
+  );
 }
 
-.dark .faq-reader-item .faq-reader-num {
-  color: #9AA3C8;
+/* Step Items & Refined Hover Feedback */
+.sleep-prep-step {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
 }
 
-.faq-reader-item .faq-reader-item-title {
-  font-size: clamp(0.9375rem, 0.3vw + 0.8rem, 1.0625rem); /* 15px to 17px */
-  color: var(--color-primary, #171E38);
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.dark .faq-reader-item .faq-reader-item-title {
-  color: #EEF0FA;
-}
-
-.faq-reader-item .faq-reader-arrow {
-  color: rgba(115, 125, 160, 0.6);
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-/* Hover States */
-.faq-reader-item:hover {
-  background: rgba(59, 91, 219, 0.04);
-}
-
-.dark .faq-reader-item:hover {
-  background: rgba(122, 155, 232, 0.06);
-}
-
-.faq-reader-item:hover .faq-reader-num,
-.faq-reader-item:hover .faq-reader-item-title,
-.faq-reader-item:hover .faq-reader-arrow {
-  color: var(--color-brand, #3B5BDB);
-}
-
-.dark .faq-reader-item:hover .faq-reader-num,
-.dark .faq-reader-item:hover .faq-reader-item-title,
-.dark .faq-reader-item:hover .faq-reader-arrow {
-  color: var(--color-brand-dark, #7A9BE8);
-}
-
-/* Active Question State (Editorial Indicator, NOT a heavy card) */
-.faq-reader-item.active {
-  background: rgba(59, 91, 219, 0.06);
-  border-left: 3px solid var(--color-brand, #3B5BDB);
-}
-
-[dir="rtl"] .faq-reader-item.active {
-  border-left: 1px solid transparent;
-  border-right: 3px solid var(--color-brand, #3B5BDB);
-}
-
-.dark .faq-reader-item.active {
-  background: rgba(122, 155, 232, 0.08);
-  border-left: 3px solid var(--color-brand-dark, #7A9BE8);
-}
-
-[dir="rtl"].dark .faq-reader-item.active,
-.dark [dir="rtl"] .faq-reader-item.active {
-  border-left: 1px solid transparent;
-  border-right: 3px solid var(--color-brand-dark, #7A9BE8);
-}
-
-.faq-reader-item.active .faq-reader-num {
-  color: var(--color-brand, #3B5BDB);
-  font-weight: 700;
-}
-
-.dark .faq-reader-item.active .faq-reader-num {
-  color: var(--color-brand-dark, #7A9BE8);
-  font-weight: 700;
-}
-
-.faq-reader-item.active .faq-reader-item-title {
-  color: var(--color-brand, #3B5BDB);
-  font-weight: 600;
-}
-
-.dark .faq-reader-item.active .faq-reader-item-title {
-  color: var(--color-brand-dark, #7A9BE8);
-  font-weight: 600;
-}
-
-.faq-reader-item.active .faq-reader-arrow {
-  color: var(--color-brand, #3B5BDB);
-  transform: translateX(2px);
-}
-
-[dir="rtl"] .faq-reader-item.active .faq-reader-arrow {
-  transform: translateX(-2px) rotate(180deg);
-}
-
-.dark .faq-reader-item.active .faq-reader-arrow {
-  color: var(--color-brand-dark, #7A9BE8);
-}
-
-/* Right Answer Reader Surface */
-.faq-reader-surface {
-  min-height: 460px;
-  background: #FFFFFF;
-  border: 1px solid var(--border-color, #C4CCDF);
-  box-shadow: 0 4px 20px -4px rgba(23, 30, 56, 0.04);
-}
-
-.dark .faq-reader-surface {
-  background: #09090F;
-  border-color: #1A1D30;
-  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.6);
-}
-
-/* Answer Transition Animation (Opacity + translateY 350ms) */
-.faq-reader-content {
+.sleep-prep-step:hover {
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
 }
 
-.faq-reader-content.animating {
-  opacity: 0;
-  transform: translateY(6px);
+.sleep-prep-num {
+  font-family: var(--font-serif, "Cormorant Garamond", serif);
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  transition: color 0.25s ease;
 }
 
-/* Bulletproof Icon Visibility Guarantees for Clinical Knowledge Section */
-#faq-answers i,
-#faq-answers .fa-solid,
-#faq-answers .fa-regular {
+/* Icon Guarantees for Sleep Care Preparation Section */
+#sleep-care-preparation i,
+#sleep-care-preparation .fa-solid,
+#sleep-care-preparation .fa-regular {
   opacity: 1 !important;
   visibility: visible !important;
   display: inline-block !important;
@@ -7241,17 +7168,12 @@ details[open] .faq-icon-chevron {
 
 /* Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
-  .faq-reader-content {
+  .sleep-prep-step,
+  .sleep-prep-step *,
+  .sleep-prep-connector-line {
     transition: none !important;
     transform: none !important;
-  }
-  .faq-reader-item {
-    transition: none !important;
-    transform: none !important;
-  }
-  .faq-reader-arrow {
-    transition: none !important;
-    transform: none !important;
+    animation: none !important;
   }
 }
 
@@ -7836,3 +7758,137 @@ details[open] .faq-icon-chevron {
     transform: translateX(0) !important;
   }
 }
+
+/* ==========================================================================
+   CLIENT BUG FIXES & UI ENHANCEMENTS
+   ========================================================================== */
+
+/* 1. Medical Disclaimer High-Contrast Standards */
+.footer-medical-disclaimer {
+  color: #C2CCE2 !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.65 !important;
+}
+
+.footer-medical-disclaimer strong {
+  color: #F0F4FC !important;
+  font-weight: 600 !important;
+}
+
+/* 2. Contact Page Responsive Google Maps Embed */
+.contact-map-iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 380px !important;
+  border: 0 !important;
+  display: block !important;
+}
+
+@media (min-width: 640px) {
+  .contact-map-iframe {
+    min-height: 420px !important;
+  }
+}
+
+/* 3. Doctors Page — Areas of Specialist Care Last Card Alignment */
+.concern-nav-btn:last-child {
+  margin-bottom: 0 !important;
+  width: 100% !important;
+}
+
+/* 4. Dashboard Brand Logo Alignment & Visibility */
+.dashboard-sidebar .logo-wrapper {
+  max-width: 100%;
+}
+
+.dashboard-sidebar .logo-icon {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.dashboard-sidebar .logo-icon .somna-brandmark-svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.dashboard-sidebar.collapsed .sidebar-header {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  justify-content: center !important;
+}
+
+.dashboard-sidebar.collapsed .logo-wrapper {
+  gap: 0 !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+/* 5. Doctors Page — Consultation Ethos Column & Card Equal Alignment */
+#doctors-human-care .ethos-grid {
+  width: 100%;
+}
+
+#doctors-human-care .ethos-image-col {
+  width: 100%;
+}
+
+#doctors-human-care .ethos-image-container {
+  width: 100%;
+  position: relative;
+}
+
+#doctors-human-care .ethos-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+#doctors-human-care .ethos-cards-col {
+  width: 100%;
+}
+
+#doctors-human-care .ethos-card {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  #doctors-human-care .ethos-grid {
+    align-items: stretch !important;
+  }
+
+  #doctors-human-care .ethos-image-col {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+  }
+
+  #doctors-human-care .ethos-image-container {
+    height: 100% !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+  }
+
+  #doctors-human-care .ethos-cards-col {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+  }
+
+  #doctors-human-care .ethos-card {
+    flex: 1 1 0% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+}
+
+
