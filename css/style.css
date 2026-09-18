@@ -267,13 +267,18 @@ img, svg, video {
   flex-shrink: 0;
   cursor: pointer;
   transition: opacity 0.2s ease;
+  filter: none !important;
+  opacity: 1;
 }
 
 .logo-wrapper:hover {
-  opacity: 0.94;
+  opacity: 1;
 }
 
-.logo-icon {
+/* Brand Monogram Icon Container */
+.logo-icon,
+.brand-logo,
+.brand-mark {
   width: 44px;
   height: 44px;
   min-width: 44px;
@@ -290,13 +295,19 @@ img, svg, video {
               background-color 0.25s ease,
               border-color 0.25s ease,
               box-shadow 0.25s ease;
+  filter: none !important;
 }
 
-.dark .logo-icon {
-  background: rgba(122, 155, 232, 0.12);
-  border-color: rgba(122, 155, 232, 0.22);
-  color: #7A9BE8;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+/* Dark mode header brand logo: clearly visible, luminous, high-contrast */
+.dark .logo-icon,
+.dark .site-header .brand-mark,
+.dark .site-header .brand-logo,
+.dark .site-header .logo-icon,
+.dark .navbar-wrapper .logo-icon {
+  background: rgba(240, 238, 229, 0.10);
+  border-color: rgba(240, 238, 229, 0.26);
+  color: #F0EEE5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .logo-wrapper:hover .logo-icon {
@@ -311,8 +322,17 @@ img, svg, video {
   color: inherit;
   flex-shrink: 0;
   transition: color 0.2s ease;
+  filter: none !important;
 }
 
+.dark .somna-brandmark-svg,
+.dark .site-header .brand-mark svg,
+.dark .site-header .brand-logo svg,
+.dark .navbar-wrapper .somna-brandmark-svg {
+  color: #F0EEE5;
+}
+
+/* Footer Brand Logo Icon */
 .footer-logo-icon {
   background: #3B5BDB;
   border-color: #5577EF;
@@ -323,6 +343,25 @@ img, svg, video {
   color: #FFFFFF;
 }
 
+/* Dark mode footer brand logo */
+.dark .footer-logo-icon,
+.dark .site-footer .logo-icon,
+.dark .site-footer .footer-logo-icon,
+.dark .site-footer .brand-mark,
+.dark .site-footer .brand-logo {
+  background: rgba(240, 238, 229, 0.12);
+  border-color: rgba(240, 238, 229, 0.28);
+  color: #F0EEE5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.dark .footer-logo-icon .somna-brandmark-svg,
+.dark .site-footer .somna-brandmark-svg,
+.dark .site-footer .brand-mark svg,
+.dark .site-footer .brand-logo svg {
+  color: #F0EEE5;
+}
+
 .logo-brand,
 .logo-wrapper > div:not(.logo-icon) {
   display: flex;
@@ -330,14 +369,19 @@ img, svg, video {
   justify-content: center;
   min-width: 0;
   flex-shrink: 0;
+  transform: none !important;
+  filter: none !important;
 }
 
 /* Wordmark Typography: Luxury Editorial Serif + Clinical Sans */
-.logo-title-row {
+.logo-title-row,
+.brand-name {
   display: flex;
   align-items: baseline;
   gap: 3px;
   line-height: 1;
+  filter: none !important;
+  transform: none !important;
 }
 
 .logo-somna {
@@ -347,10 +391,21 @@ img, svg, video {
   letter-spacing: 0.04em;
   color: var(--text-primary);
   display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-.dark .logo-somna {
-  color: #FFFFFF;
+/* Dark mode header & footer brand name: high-contrast light text */
+.dark .logo-somna,
+.dark .site-header .brand-name,
+.dark .site-header .brand-name .logo-somna,
+.dark .site-header .logo-somna,
+.dark .navbar-wrapper .logo-somna,
+.dark .site-footer .brand-name,
+.dark .site-footer .brand-name .logo-somna,
+.dark .site-footer .logo-somna {
+  color: #F0EEE5 !important;
 }
 
 .logo-clinic {
@@ -361,24 +416,73 @@ img, svg, video {
   text-transform: uppercase;
   color: var(--brand-primary);
   display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-.dark .logo-clinic {
+.dark .logo-clinic,
+.dark .site-header .logo-clinic,
+.dark .site-footer .logo-clinic,
+.dark .navbar-wrapper .logo-clinic {
   color: #7A9BE8;
 }
 
-/* Supporting Clinical Descriptor */
-.logo-sub {
-  font-family: var(--font-sans, 'DM Sans', sans-serif);
-  font-size: 0.50rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+.dark .site-header .brand-name .logo-clinic,
+.dark .site-footer .brand-name .logo-clinic {
+  color: #F0EEE5;
+}
+
+/* Supporting Clinical Descriptor ("SLEEP MEDICINE & DIAGNOSTICS") */
+.logo-sub,
+.brand-subtitle,
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle {
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.75rem;
+  line-height: 1.4;
   font-weight: 600;
-  margin-top: 4px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #202522;
+  margin-top: 3px;
   display: block;
   white-space: nowrap;
-  line-height: 1;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+  text-shadow: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Dark mode header subtitle: sharp, crisp, high-contrast */
+.dark .logo-sub,
+.dark .brand-subtitle,
+.dark .site-header .brand-subtitle,
+.dark .site-header .logo-sub,
+.dark .navbar-wrapper .logo-sub {
+  color: #F0EEE5 !important;
+}
+
+/* Footer supporting clinical text in dark & light modes */
+.site-footer .logo-sub {
+  color: #D4D6CF !important;
+  font-size: 0.75rem !important;
+  line-height: 1.4 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+}
+
+.dark .site-footer .logo-sub,
+.dark .site-footer .brand-subtitle {
+  color: #F0EEE5 !important;
+}
+
+.dark .site-footer .brand-description,
+.dark .site-footer p.text-sm {
+  color: #A9ADA7 !important;
 }
 
 /* Backwards compatibility for existing logo text */
@@ -450,7 +554,8 @@ img, svg, video {
     font-size: 0.70rem;
   }
   .logo-sub {
-    font-size: 0.42rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
   }
 }
 
@@ -818,51 +923,139 @@ html:not(.dark) .btn-icon-rounded .fa-sun {
   color: #7A9BE8;
 }
 
+/* ==========================================================================
+   FULL-VIEWPORT FIXED MOBILE MENU OVERLAY ARCHITECTURE
+   ========================================================================== */
+
+/* Background page scroll lock when mobile menu is open */
+html:has(#mobile-menu.open),
+body:has(#mobile-menu.open) {
+  overflow: hidden !important;
+  height: 100% !important;
+  overscroll-behavior: none !important;
+  touch-action: none !important;
+}
+
+/* Default closed mobile menu: fully hidden and inert */
 .mobile-menu {
-  position: fixed;
-  top: 70px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(23, 30, 56, 0.45);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  z-index: 49;
+  display: none;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s;
 }
 
-.dark .mobile-menu {
-  background: rgba(0, 0, 0, 0.7);
+/* Entire Header + Menu unit elevated to full-viewport fixed overlay when open */
+.navbar-wrapper:has(#mobile-menu.open) {
+  position: fixed !important;
+  inset: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  max-height: 100vh !important;
+  max-height: 100dvh !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: var(--bg-surface) !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+  touch-action: none !important;
 }
 
-.mobile-menu.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.dark .navbar-wrapper:has(#mobile-menu.open) {
+  background: #000000 !important;
 }
 
-.mobile-menu-inner {
-  background: var(--bg-surface);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 20px 40px -10px rgba(23, 30, 56, 0.12);
-  padding: 14px 16px 20px 16px;
-  max-height: calc(100vh - 80px);
-  overflow-y: auto;
-  transform: translateY(-12px);
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+/* Pinned top mobile header bar inside fixed overlay */
+.navbar-wrapper:has(#mobile-menu.open) .navbar-inner {
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  background: var(--bg-surface) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  z-index: 2 !important;
 }
 
-.dark .mobile-menu-inner {
-  background: #09090F;
-  border-color: #1A1D30;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.9);
+.dark .navbar-wrapper:has(#mobile-menu.open) .navbar-inner {
+  background: #000000 !important;
+  border-bottom-color: #1A1D30 !important;
 }
 
+/* Mobile menu container: fills remaining viewport height and scrolls internally */
+.navbar-wrapper .mobile-menu.open,
+.navbar-wrapper:has(#mobile-menu.open) .mobile-menu {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  background: var(--bg-surface) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  touch-action: pan-y !important;
+  z-index: 1 !important;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+}
+
+.dark .navbar-wrapper .mobile-menu.open,
+.dark .navbar-wrapper:has(#mobile-menu.open) .mobile-menu {
+  background: #000000 !important;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.mobile-menu::-webkit-scrollbar {
+  width: 5px;
+}
+.mobile-menu::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 4px;
+}
+.dark .mobile-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Inner menu list container */
+.navbar-wrapper:has(#mobile-menu.open) .mobile-menu-inner,
 .mobile-menu.open .mobile-menu-inner {
-  transform: translateY(0);
+  width: 100% !important;
+  max-width: 580px !important;
+  margin: 0 auto !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow-y: visible !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  padding: 16px 20px 48px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
 }
 
 .mobile-utility-strip,
@@ -903,6 +1096,17 @@ html:not(.dark) .btn-icon-rounded .fa-sun {
 
 [dir="rtl"] .mobile-menu-item {
   text-align: right;
+}
+
+[dir="rtl"] .mobile-menu-item i:first-child,
+[dir="rtl"] .mobile-menu-item span > i:first-child {
+  margin-right: 0 !important;
+  margin-left: 0.625rem !important;
+}
+
+[dir="rtl"] .mobile-subitem i {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
 }
 
 /* Mobile Home Submenu (Collapsible) */
@@ -1350,13 +1554,8 @@ details[open] .faq-icon-chevron {
   .navbar-wrapper.scrolled .navbar-inner {
     height: 70px;
   }
-  .mobile-menu {
-    top: 76px;
-    display: block !important;
-  }
-  .navbar-wrapper.scrolled + .mobile-menu,
-  .navbar-wrapper.scrolled .mobile-menu {
-    top: 70px;
+  .mobile-menu:not(.open) {
+    display: none !important;
   }
   .mobile-toggle {
     display: inline-flex !important;
@@ -1373,20 +1572,6 @@ details[open] .faq-icon-chevron {
 }
 
 @media (min-width: 640px) and (max-width: 1023px) {
-  .mobile-menu-inner {
-    max-width: 640px;
-    margin: 0 auto;
-    border-radius: 0 0 20px 20px;
-    border-left: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
-    padding: 18px 24px 24px 24px;
-    box-shadow: 0 24px 48px -12px rgba(23, 30, 56, 0.18);
-  }
-  .dark .mobile-menu-inner {
-    border-left-color: #1A1D30;
-    border-right-color: #1A1D30;
-    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.95);
-  }
   .mobile-menu-item {
     padding: 13px 16px;
     font-size: 0.98rem;
@@ -1424,9 +1609,9 @@ details[open] .faq-icon-chevron {
   .logo-text {
     font-size: 1.15rem;
   }
-  .logo-sub {
-    font-size: 0.44rem;
-    letter-spacing: 0.14em;
+  .navbar-wrapper .logo-sub {
+    font-size: 0.70rem;
+    letter-spacing: 0.07em;
   }
   .btn-rtl-control {
     height: 32px;
@@ -1443,13 +1628,6 @@ details[open] .faq-icon-chevron {
     height: 36px;
     font-size: 0.95rem;
   }
-  .mobile-menu {
-    top: 64px;
-  }
-  .navbar-wrapper.scrolled + .mobile-menu,
-  .navbar-wrapper.scrolled .mobile-menu {
-    top: 60px;
-  }
   .clinical-card {
     border-radius: 20px;
   }
@@ -1463,13 +1641,6 @@ details[open] .faq-icon-chevron {
   }
   .navbar-wrapper.scrolled .navbar-inner {
     height: 56px;
-  }
-  .mobile-menu {
-    top: 60px;
-  }
-  .navbar-wrapper.scrolled + .mobile-menu,
-  .navbar-wrapper.scrolled .mobile-menu {
-    top: 56px;
   }
   .logo-wrapper {
     gap: 8px;
@@ -1490,9 +1661,9 @@ details[open] .faq-icon-chevron {
   .logo-clinic {
     font-size: 0.68rem;
   }
-  .logo-sub {
-    font-size: 0.40rem;
-    letter-spacing: 0.12em;
+  .navbar-wrapper .logo-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
   }
   .nav-actions {
     gap: 6px;
@@ -5856,12 +6027,6 @@ details[open] .faq-icon-chevron {
     padding-left: 0.25rem;
   }
 
-  /* --- All pages: mobile menu max-height for tall menus --- */
-  .mobile-menu.open {
-    max-height: 75vh;
-    overflow-y: auto;
-  }
-
   /* --- All pages: scroll-to-top button repositioned on small screens --- */
   .scroll-top-btn {
     bottom: 16px;
@@ -5886,6 +6051,10 @@ details[open] .faq-icon-chevron {
   .navbar-inner {
     padding: 4px 8px;
     height: 50px;
+  }
+  .navbar-wrapper .logo-sub {
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
   }
 
   /* --- Index hero h1: tighten to fit 320px --- */
@@ -5984,11 +6153,6 @@ details[open] .faq-icon-chevron {
     padding-bottom: 2rem;
   }
 
-  /* --- Mobile menu max height in landscape so it scrolls --- */
-  .mobile-menu.open {
-    max-height: 70vh;
-    overflow-y: auto;
-  }
 }
 
 
