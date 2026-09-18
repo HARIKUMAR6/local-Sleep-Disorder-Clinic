@@ -711,15 +711,17 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 <!-- Left: Featured Specialist Large Portrait -->
-                <div class="lg:col-span-5 relative">
-                    <div class="specialist-portrait-frame p-2 bg-white dark:bg-[#0C122A]">
-                        <img src="assets/images/dr_marcus_vance.jpg" 
-                             alt="Dr. Marcus Vance, MD — Sleep Medicine Specialist" 
-                             class="w-full h-auto object-cover rounded-2xl aspect-[4/5] shadow-sm"
-                             loading="lazy">
+                <div class="lg:col-span-5">
+                    <div class="specialist-portrait-frame p-2 sm:p-2.5 bg-white dark:bg-[#0C122A] rounded-2xl border border-clinic-border/60 dark:border-[#1A2444] shadow-sm">
+                        <div class="specialist-image-wrapper overflow-hidden rounded-xl bg-clinic-canvas dark:bg-[#080C1B]">
+                            <img src="assets/images/dr_marcus_vance.jpg" 
+                                 alt="Dr. Marcus Vance, MD — Sleep Medicine Specialist" 
+                                 class="w-full h-auto object-contain aspect-square rounded-xl shadow-xs"
+                                 loading="lazy">
+                        </div>
                         
-                        <!-- Floating verified credential pill -->
-                        <div class="absolute bottom-6 start-6 end-6 bg-white/95 dark:bg-[#0B1028]/95 backdrop-blur-md p-3.5 rounded-xl border border-clinic-border/80 dark:border-[#20294C] shadow-md flex items-center justify-between">
+                        <!-- Verified credential pill -->
+                        <div class="specialist-credential-pill mt-2.5 sm:mt-3 bg-clinic-canvas/90 dark:bg-[#0B1028]/95 p-3.5 rounded-xl border border-clinic-border/70 dark:border-[#20294C] flex items-center justify-between">
                             <div>
                                 <div class="text-sm font-bold text-clinic-primary dark:text-clinic-dark-primary">Dr. Marcus Vance, MD</div>
                                 <div class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">Sleep Medicine &amp; Clinical Diagnostics</div>
