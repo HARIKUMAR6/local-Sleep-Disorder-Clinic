@@ -817,9 +817,6 @@ img, svg, video {
   border-color: #7A9BE8;
   color: #FFFFFF;
 }
-  color: var(--brand-primary);
-  transform: translateY(-1px);
-}
 
 .dark .btn-icon-rounded:hover {
   border-color: #7A9BE8;
@@ -1561,7 +1558,9 @@ details[open] .faq-icon-chevron {
 /* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
-@media (max-width: 1023px) {
+
+/* Tablet Portrait & Mobile Screens: Show Mobile Menu Drawer instead of desktop header (including iPad Pro 13" Portrait) */
+@media (max-width: 1032px), (max-width: 1180px) and (orientation: portrait), (min-width: 1024px) and (max-width: 1376px) and (orientation: portrait) {
   .navbar-wrapper {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -1602,7 +1601,25 @@ details[open] .faq-icon-chevron {
   }
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
+/* Landscape View: Show Desktop Header Navigation for iPad Pro 13", Tablets and Desktops */
+@media (min-width: 1024px) and (orientation: landscape), (min-width: 1181px) {
+  .mobile-toggle {
+    display: none !important;
+  }
+  .nav-links {
+    display: flex !important;
+  }
+  .mobile-menu {
+    display: none !important;
+  }
+  #header-primary-cta,
+  .header-actions .btn-primary-header,
+  .nav-actions .btn-primary-header {
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1080px) {
   .mobile-menu-item {
     padding: 13px 16px;
     font-size: 0.98rem;
@@ -1610,6 +1627,13 @@ details[open] .faq-icon-chevron {
 }
 
 @media (max-width: 768px) {
+  /* Mobile View: Hide Login Portal Icon in Header */
+  #nav-login-portal,
+  .btn-portal-control,
+  .btn-login-header,
+  a[href="login.html"].btn-icon-rounded {
+    display: none !important;
+  }
   .navbar-inner {
     height: 64px;
     padding: 0 16px;
