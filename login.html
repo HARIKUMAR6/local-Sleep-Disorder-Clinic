@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Secure Portal Login — SomnaClinic | Sleep Medicine &amp; Diagnostics</title>
+    <meta name="description"
+        content="Access your SomnaClinic patient sleep study results, polysomnography reports, CPAP telemetry, or clinician diagnostic workspace. Static secure portal.">
+
+    <!-- Favicon — SomnaClinic Logomark -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+
+    <!-- Tailwind CSS CDN with Midnight Clinical Canvas Design System -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'clinic-canvas': '#F0F3FB',
+                        'clinic-surface': '#FFFFFF',
+                        'clinic-sage': '#E4EAF7',
+                        'clinic-accent': '#D5DEEF',
+                        'clinic-primary': '#171E38',
+                        'clinic-secondary': '#464F72',
+                        'clinic-muted': '#737DA0',
+                        'clinic-border': '#C4CCDF',
+                        'clinic-brand': '#3B5BDB',
+                        'clinic-brand-hover': '#2B4ABF',
+
+                        // Genuine Midnight Dark Mode Tokens
+                        'clinic-dark-canvas': '#000000',
+                        'clinic-dark-surface': '#09090F',
+                        'clinic-dark-elevated': '#10101C',
+                        'clinic-dark-primary': '#EEF0FA',
+                        'clinic-dark-secondary': '#9AA3C8',
+                        'clinic-dark-border': '#1A1D30',
+                        'clinic-dark-accent': '#7A9BE8',
+
+                        'clinic-navy': '#171E38',
+                        'clinic-navy-dark': '#09090F',
+                        'clinic-teal': '#3B5BDB',
+                        'clinic-teal-light': '#7A9BE8',
+                        'clinic-mint': '#4DABF7',
+                        'clinic-ice': '#E4EAF7',
+                        'clinic-dark': '#000000',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Immediate Direction & Theme Initialization (Prevents FOUC) -->
+    <script>
+        (function () {
+            var theme = localStorage.getItem('somna-theme');
+            if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            var dir = localStorage.getItem('somna-dir');
+            if (dir === 'rtl') {
+                document.documentElement.setAttribute('dir', 'rtl');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+            }
+        })();
+    </script>
+
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Project Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/motion.css">
+
+    <style>
+        .portal-glow-halo {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59, 91, 219, 0.14) 0%, rgba(77, 171, 247, 0.05) 50%, transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .dark .portal-glow-halo {
+            background: radial-gradient(circle, rgba(122, 155, 232, 0.16) 0%, rgba(59, 91, 219, 0.08) 50%, transparent 75%);
+        }
+        .portal-glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(196, 204, 223, 0.7);
+        }
+        .dark .portal-glass-card {
+            background: rgba(9, 9, 15, 0.85);
+            border-color: rgba(26, 29, 48, 0.9);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+        .portal-input {
+            width: 100%;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 12px;
+            border: 1.5px solid #C4CCDF;
+            background: #FFFFFF;
+            color: #171E38;
+            font-size: 0.9375rem;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            outline: none;
+        }
+        .portal-input:focus {
+            border-color: #3B5BDB;
+            box-shadow: 0 0 0 4px rgba(59, 91, 219, 0.12);
+        }
+        .dark .portal-input {
+            background: #10101C;
+            border-color: #1A1D30;
+            color: #EEF0FA;
+        }
+        .dark .portal-input:focus {
+            border-color: #7A9BE8;
+            box-shadow: 0 0 0 4px rgba(122, 155, 232, 0.16);
+        }
+        .btn-portal-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            height: 36px;
+            padding: 0 14px;
+            border-radius: 18px;
+            background: rgba(59, 91, 219, 0.08);
+            color: #3B5BDB;
+            border: 1.5px solid #3B5BDB;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+        .btn-portal-action:hover {
+            background: #3B5BDB;
+            color: #FFFFFF;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(59, 91, 219, 0.25);
+        }
+        .dark .btn-portal-action {
+            border-color: #7A9BE8;
+            color: #EEF0FA;
+            background: rgba(122, 155, 232, 0.12);
+        }
+        .dark .btn-portal-action:hover {
+            background: #3B5BDB;
+            border-color: #3B5BDB;
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px rgba(59, 91, 219, 0.4);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-clinic-canvas dark:bg-clinic-dark-canvas text-clinic-primary dark:text-clinic-dark-primary transition-colors duration-300 font-sans min-h-screen flex flex-col justify-between relative overflow-x-hidden selection:bg-clinic-brand/20 selection:text-clinic-brand">
+
+    <!-- Accessibility Skip Link -->
+    <a href="#portal-main" class="skip-link">Skip to portal login</a>
+
+    <!-- Background Ambient Glow -->
+    <div class="portal-glow-halo top-[-100px] left-[-100px]" aria-hidden="true"></div>
+    <div class="portal-glow-halo bottom-[-150px] right-[-150px]" aria-hidden="true"></div>
+
+    <!-- =========================================================================
+         PORTAL HEADER (Brand Name & Logo, Home Icon, Direction Icon, Theme Icon)
+         ========================================================================= -->
+    <header class="w-full border-b border-clinic-border/60 dark:border-clinic-dark-border bg-white/80 dark:bg-[#09090F]/80 backdrop-blur-md sticky top-0 z-40 transition-colors duration-300" role="banner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Left: SomnaClinic Brand Identity (Brand Name & Logo) -->
+            <a href="index.html" class="logo-wrapper group flex items-center gap-3" id="portal-brand-logo" aria-label="SomnaClinic Home">
+                <div class="logo-icon shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="somna-brandmark-svg"
+                        aria-hidden="true">
+                        <path
+                            d="M12 28C10 24 10 18 15 13C20 8 28 8 33 13C36 16 36.5 20 35 23.5C33 28 27.5 29 23 27C18.5 25 15 26 13 29C11 32 12 36 16 38C21 40 27 38 31 34"
+                            stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="28" cy="17.5" r="2.4" fill="currentColor" />
+                    </svg>
+                </div>
+                <div class="logo-brand">
+                    <div class="logo-title-row">
+                        <span class="logo-somna">SOMNA</span>
+                        <span class="logo-clinic">CLINIC</span>
+                    </div>
+                    <span class="logo-sub">Sleep Medicine &amp; Diagnostics</span>
+                </div>
+            </a>
+
+            <!-- Right: HOME ICON, DIRECTION ICON (RTL/LTR), THEME ICON (Dark/Light) - All Same Size Utility Icons -->
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <!-- HOME UTILITY ICON (Navigates to Web Home Page: index.html) -->
+                <a href="index.html" class="btn-icon-rounded" id="portal-home-icon-btn" title="Return to Main Website Home" aria-label="Return to Main Website Home">
+                    <i class="fas fa-house" aria-hidden="true"></i>
+                </a>
+
+                <!-- DIRECTION UTILITY ICON (RTL / LTR Toggle) -->
+                <button id="rtl-toggle" class="btn-icon-rounded" type="button" title="Toggle RTL / LTR Direction"
+                    aria-label="Toggle text direction">
+                    <i class="fas fa-right-left" aria-hidden="true"></i>
+                </button>
+
+                <!-- THEME UTILITY ICON (Dark / Light Toggle) -->
+                <button id="theme-toggle" class="btn-icon-rounded" type="button" title="Toggle Light / Dark Theme"
+                    aria-label="Toggle theme">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun hidden" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         PORTAL MAIN CONTENT (Static Clinical Authentication Canvas)
+         ========================================================================= -->
+    <main id="portal-main" class="flex-1 flex items-center justify-center py-10 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-4xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Left Column: Clinical Highlights & Patient Services (Desktop Only) -->
+            <div class="lg:col-span-5 hidden lg:flex flex-col justify-between space-y-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent border border-clinic-brand/20 dark:border-clinic-dark-accent/30 mb-3">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>SomnaCloud™ Secure Gateway</span>
+                    </div>
+                    <h1 class="text-3xl font-serif font-bold text-clinic-primary dark:text-clinic-dark-primary tracking-tight leading-snug">
+                        Dedicated Clinical Sleep Care Portal
+                    </h1>
+                    <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary mt-2.5 leading-relaxed">
+                        Securely review your overnight polysomnography (PSG) reports, manage CPAP device telemetry compliance, and consult with board-certified somnologists.
+                    </p>
+                </div>
+
+                <!-- Feature Benefits List -->
+                <div class="space-y-3.5">
+                    <div class="flex items-start gap-3 p-3 rounded-xl bg-white/60 dark:bg-white/[0.03] border border-clinic-border/50 dark:border-clinic-dark-border">
+                        <div class="w-9 h-9 rounded-lg bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center shrink-0">
+                            <i class="fas fa-bed-pulse text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-clinic-primary dark:text-clinic-dark-primary uppercase tracking-wider">Diagnostic Hypnograms</h4>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-0.5">Instant access to sleep architecture staging and AHI metrics.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 p-3 rounded-xl bg-white/60 dark:bg-white/[0.03] border border-clinic-border/50 dark:border-clinic-dark-border">
+                        <div class="w-9 h-9 rounded-lg bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center shrink-0">
+                            <i class="fas fa-lungs text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-clinic-primary dark:text-clinic-dark-primary uppercase tracking-wider">CPAP Telemetry Sync</h4>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-0.5">Automated 90-day pressure compliance &amp; leak-rate verification.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 p-3 rounded-xl bg-white/60 dark:bg-white/[0.03] border border-clinic-border/50 dark:border-clinic-dark-border">
+                        <div class="w-9 h-9 rounded-lg bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent flex items-center justify-center shrink-0">
+                            <i class="fas fa-shield-halved text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-clinic-primary dark:text-clinic-dark-primary uppercase tracking-wider">HIPAA &amp; HL7/FHIR Certified</h4>
+                            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary mt-0.5">Zero-compromise medical data isolation and cryptographic security.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Return to website link -->
+                <div class="pt-2">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent hover:underline">
+                        <i class="fas fa-arrow-left flip-rtl"></i>
+                        <span>Back to SomnaClinic Main Website</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Portal Login Authentication Card -->
+            <div class="lg:col-span-7">
+                <div class="portal-glass-card rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+                    
+                    <!-- Decorative subtle top border accent -->
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-clinic-brand via-[#4DABF7] to-[#7A9BE8]"></div>
+
+                    <!-- Role Switcher Segmented Control -->
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-clinic-border/60 dark:border-clinic-dark-border">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-clinic-brand dark:text-clinic-dark-accent block">
+                                Authentication Gateway
+                            </span>
+                            <h2 class="text-2xl font-serif font-bold text-clinic-primary dark:text-clinic-dark-primary mt-0.5">
+                                Sign In to Portal
+                            </h2>
+                        </div>
+                        
+                        <!-- Role Toggle Tabs -->
+                        <div class="inline-flex p-1 rounded-xl bg-clinic-canvas dark:bg-[#10101C] border border-clinic-border/70 dark:border-clinic-dark-border text-xs font-semibold" role="tablist">
+                            <button type="button" id="tab-patient" class="px-3 py-1.5 rounded-lg bg-clinic-brand text-white shadow-xs transition-all" role="tab" aria-selected="true">
+                                <i class="fas fa-user mr-1 text-[11px]"></i> Patient
+                            </button>
+                            <button type="button" id="tab-clinician" class="px-3 py-1.5 rounded-lg text-clinic-secondary dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-white transition-all" role="tab" aria-selected="false">
+                                <i class="fas fa-user-doctor mr-1 text-[11px]"></i> Clinician
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Status Notification Banner -->
+                    <div id="portal-status-banner" class="hidden mb-5 p-3.5 rounded-xl text-xs font-medium flex items-center gap-2.5 transition-all" role="alert" aria-live="polite">
+                        <i class="fas fa-circle-info text-sm shrink-0" id="status-icon"></i>
+                        <span id="status-text">Ready</span>
+                    </div>
+
+                    <!-- Quick Demo Fill Helpers -->
+                    <div class="mb-5 bg-clinic-brand/[0.04] dark:bg-clinic-dark-accent/[0.06] border border-clinic-brand/15 dark:border-clinic-dark-accent/20 rounded-xl p-3">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-clinic-brand dark:text-clinic-dark-accent">
+                                <i class="fas fa-bolt mr-1"></i> Quick Demo Accounts
+                            </span>
+                            <span class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary">Static Demo Portal</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <button type="button" id="btn-fill-patient" class="text-left p-2 rounded-lg bg-white dark:bg-[#151728] border border-clinic-border/60 dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent text-xs transition-all group">
+                                <div class="font-semibold text-clinic-primary dark:text-white flex items-center justify-between">
+                                    <span>Elena Vance (Patient)</span>
+                                    <i class="fas fa-arrow-right text-[10px] opacity-0 group-hover:opacity-100 transition-opacity text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                </div>
+                                <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary truncate">MRN: SOMNA-7842 | OSA Follow-up</div>
+                            </button>
+                            <button type="button" id="btn-fill-clinician" class="text-left p-2 rounded-lg bg-white dark:bg-[#151728] border border-clinic-border/60 dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent text-xs transition-all group">
+                                <div class="font-semibold text-clinic-primary dark:text-white flex items-center justify-between">
+                                    <span>Dr. Julian Aris, MD</span>
+                                    <i class="fas fa-arrow-right text-[10px] opacity-0 group-hover:opacity-100 transition-opacity text-clinic-brand dark:text-clinic-dark-accent"></i>
+                                </div>
+                                <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary truncate">NPI: 18492041 | Board Somnologist</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Login Form -->
+                    <form id="portal-login-form" novalidate>
+                        <div class="space-y-4">
+                            
+                            <!-- Identifier Field -->
+                            <div>
+                                <label for="portal-identifier" id="label-identifier" class="block text-xs font-bold uppercase tracking-wider text-clinic-secondary dark:text-clinic-dark-secondary mb-1.5">
+                                    Patient MRN or Email Address <span class="text-rose-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <input type="text" id="portal-identifier" name="identifier" class="portal-input pr-10"
+                                        placeholder="e.g. SOMNA-7842 or elena.vance@somnacloud.org" required autocomplete="username">
+                                    <i class="fas fa-id-card absolute right-3.5 top-1/2 -translate-y-1/2 text-clinic-muted dark:text-clinic-dark-secondary text-sm pointer-events-none"></i>
+                                </div>
+                            </div>
+
+                            <!-- Password / PIN Field -->
+                            <div>
+                                <div class="flex items-center justify-between mb-1.5">
+                                    <label for="portal-password" id="label-password" class="block text-xs font-bold uppercase tracking-wider text-clinic-secondary dark:text-clinic-dark-secondary">
+                                        Password or Portal PIN <span class="text-rose-500">*</span>
+                                    </label>
+                                    <button type="button" id="btn-forgot-pin" class="text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent hover:underline">
+                                        Forgot PIN?
+                                    </button>
+                                </div>
+                                <div class="relative">
+                                    <input type="password" id="portal-password" name="password" class="portal-input pr-10"
+                                        placeholder="Enter your confidential access key" required autocomplete="current-password">
+                                    <button type="button" id="btn-toggle-eye" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-clinic-muted hover:text-clinic-primary dark:text-clinic-dark-secondary dark:hover:text-white transition-colors" aria-label="Toggle password visibility">
+                                        <i class="fas fa-eye text-sm" id="eye-icon"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Remember Me & Biometrics -->
+                            <div class="flex items-center justify-between pt-1">
+                                <label class="inline-flex items-center gap-2 cursor-pointer text-xs text-clinic-secondary dark:text-clinic-dark-secondary select-none">
+                                    <input type="checkbox" id="remember-me" checked class="w-4 h-4 rounded border-clinic-border text-clinic-brand focus:ring-clinic-brand accent-clinic-brand">
+                                    <span>Remember this clinical device</span>
+                                </label>
+                                <span class="text-[11px] text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                                    <i class="fas fa-lock text-[10px]"></i> 256-Bit SSL
+                                </span>
+                            </div>
+
+                            <!-- Submit Action Button -->
+                            <div class="pt-2">
+                                <button type="submit" id="btn-submit-portal" class="btn-primary-header w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm shadow-md hover:shadow-lg transition-all">
+                                    <span id="btn-submit-label">Sign In to Secure Portal</span>
+                                    <i class="fas fa-arrow-right text-xs" id="btn-submit-icon"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+
+                    <!-- Portal Auxiliary Navigation Links -->
+                    <div class="mt-6 pt-5 border-t border-clinic-border/60 dark:border-clinic-dark-border text-center space-y-2">
+                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">
+                            First-time clinical visitor? 
+                            <a href="booking.html" class="text-clinic-brand dark:text-clinic-dark-accent font-semibold hover:underline">
+                                Request In-Lab Sleep Study Registration
+                            </a>
+                        </p>
+                        <div class="flex items-center justify-center gap-4 text-[11px] text-clinic-muted dark:text-clinic-dark-secondary pt-1">
+                            <a href="faq.html" class="hover:underline">Portal FAQ</a>
+                            <span>•</span>
+                            <a href="contact.html" class="hover:underline">Technical Support</a>
+                            <span>•</span>
+                            <a href="dashboard.html" class="hover:underline text-clinic-brand dark:text-clinic-dark-accent font-medium">Preview Operations Dashboard</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- =========================================================================
+         PORTAL FOOTER (Static Disclaimers & Security Certifications)
+         ========================================================================= -->
+    <footer class="w-full border-t border-clinic-border/60 dark:border-clinic-dark-border py-4 bg-white/50 dark:bg-[#09090F]/50 backdrop-blur-sm relative z-10" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-clinic-muted dark:text-clinic-dark-secondary">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-shield-halved text-clinic-brand dark:text-clinic-dark-accent"></i>
+                <span>SomnaCloud™ Healthcare Information System • Static Demo Environment</span>
+            </div>
+            <div>
+                &copy; 2026 SomnaClinic Clinical Sleep Medicine &amp; Diagnostics. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================================================
+         MODAL / TOAST FOR FORGOT PIN ASSISTANCE
+         ========================================================================= -->
+    <div id="pin-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4" aria-modal="true" role="dialog" aria-labelledby="modal-pin-title">
+        <div class="bg-clinic-surface dark:bg-[#10101C] border border-clinic-border dark:border-clinic-dark-border max-w-md w-full rounded-2xl p-6 shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2 text-clinic-brand dark:text-clinic-dark-accent">
+                    <i class="fas fa-key text-lg"></i>
+                    <h3 id="modal-pin-title" class="font-bold text-base text-clinic-primary dark:text-white">Portal Access Assistance</h3>
+                </div>
+                <button type="button" id="btn-close-modal" class="text-clinic-muted hover:text-clinic-primary dark:hover:text-white p-1" aria-label="Close dialog">
+                    <i class="fas fa-times text-base"></i>
+                </button>
+            </div>
+            <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-4">
+                For patient privacy and HIPAA compliance, diagnostic sleep access codes are provided upon completion of your Polysomnography intake or sent via encrypted SMS to your primary registered mobile device.
+            </p>
+            <div class="bg-clinic-canvas dark:bg-[#09090F] p-3 rounded-xl border border-clinic-border/60 dark:border-clinic-dark-border text-xs mb-4 space-y-1.5">
+                <div class="flex items-center justify-between">
+                    <span class="text-clinic-muted dark:text-clinic-dark-secondary">Clinic Direct Line:</span>
+                    <strong class="text-clinic-primary dark:text-white font-mono">+1 (800) 555-SLEEP</strong>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-clinic-muted dark:text-clinic-dark-secondary">Portal Helpdesk:</span>
+                    <strong class="text-clinic-primary dark:text-white font-mono">support@somnaclinic.med</strong>
+                </div>
+            </div>
+            <button type="button" id="btn-dismiss-modal" class="w-full btn-primary-header py-2.5 rounded-xl text-xs font-bold text-center">
+                Close &amp; Use Demo Credentials
+            </button>
+        </div>
+    </div>
+
+    <!-- Application Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Portal Interactive Handlers
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabPatient = document.getElementById('tab-patient');
+            const tabClinician = document.getElementById('tab-clinician');
+            const inputIdentifier = document.getElementById('portal-identifier');
+            const inputPassword = document.getElementById('portal-password');
+            const labelIdentifier = document.getElementById('label-identifier');
+            const labelPassword = document.getElementById('label-password');
+            const btnFillPatient = document.getElementById('btn-fill-patient');
+            const btnFillClinician = document.getElementById('btn-fill-clinician');
+            const btnToggleEye = document.getElementById('btn-toggle-eye');
+            const eyeIcon = document.getElementById('eye-icon');
+            const banner = document.getElementById('portal-status-banner');
+            const statusIcon = document.getElementById('status-icon');
+            const statusText = document.getElementById('status-text');
+            const form = document.getElementById('portal-login-form');
+            const btnSubmit = document.getElementById('btn-submit-portal');
+            const submitLabel = document.getElementById('btn-submit-label');
+            const submitIcon = document.getElementById('btn-submit-icon');
+            const btnForgotPin = document.getElementById('btn-forgot-pin');
+            const modal = document.getElementById('pin-modal');
+            const btnCloseModal = document.getElementById('btn-close-modal');
+            const btnDismissModal = document.getElementById('btn-dismiss-modal');
+
+            let currentRole = 'patient';
+
+            // Show Banner helper
+            function showBanner(type, message) {
+                banner.className = 'mb-5 p-3.5 rounded-xl text-xs font-medium flex items-center gap-2.5 transition-all';
+                statusText.textContent = message;
+                banner.classList.remove('hidden');
+
+                if (type === 'success') {
+                    banner.classList.add('bg-emerald-500/10', 'text-emerald-700', 'dark:text-emerald-300', 'border', 'border-emerald-500/30');
+                    statusIcon.className = 'fas fa-circle-check text-emerald-500 text-sm shrink-0';
+                } else if (type === 'error') {
+                    banner.classList.add('bg-rose-500/10', 'text-rose-700', 'dark:text-rose-300', 'border', 'border-rose-500/30');
+                    statusIcon.className = 'fas fa-circle-exclamation text-rose-500 text-sm shrink-0';
+                } else if (type === 'info') {
+                    banner.classList.add('bg-clinic-brand/10', 'text-clinic-brand', 'dark:text-clinic-dark-accent', 'border', 'border-clinic-brand/20');
+                    statusIcon.className = 'fas fa-circle-notch fa-spin text-clinic-brand text-sm shrink-0';
+                }
+            }
+
+            // Role Switcher
+            function setRole(role) {
+                currentRole = role;
+                if (role === 'patient') {
+                    tabPatient.className = 'px-3 py-1.5 rounded-lg bg-clinic-brand text-white shadow-xs transition-all';
+                    tabPatient.setAttribute('aria-selected', 'true');
+                    tabClinician.className = 'px-3 py-1.5 rounded-lg text-clinic-secondary dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-white transition-all';
+                    tabClinician.setAttribute('aria-selected', 'false');
+                    labelIdentifier.innerHTML = 'Patient MRN or Email Address <span class="text-rose-500">*</span>';
+                    inputIdentifier.placeholder = 'e.g. SOMNA-7842 or elena.vance@somnacloud.org';
+                    labelPassword.innerHTML = 'Password or Portal PIN <span class="text-rose-500">*</span>';
+                    submitLabel.textContent = 'Sign In to Patient Portal';
+                } else {
+                    tabClinician.className = 'px-3 py-1.5 rounded-lg bg-clinic-brand text-white shadow-xs transition-all';
+                    tabClinician.setAttribute('aria-selected', 'true');
+                    tabPatient.className = 'px-3 py-1.5 rounded-lg text-clinic-secondary dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-white transition-all';
+                    tabPatient.setAttribute('aria-selected', 'false');
+                    labelIdentifier.innerHTML = 'Clinician NPI or Staff Email <span class="text-rose-500">*</span>';
+                    inputIdentifier.placeholder = 'e.g. dr.aris@somnaclinic.med or NPI-18492041';
+                    labelPassword.innerHTML = 'Clinical Security Token / Password <span class="text-rose-500">*</span>';
+                    submitLabel.textContent = 'Sign In to Clinician Workspace';
+                }
+            }
+
+            tabPatient?.addEventListener('click', () => setRole('patient'));
+            tabClinician?.addEventListener('click', () => setRole('clinician'));
+
+            // Quick Fill demo buttons
+            btnFillPatient?.addEventListener('click', () => {
+                setRole('patient');
+                inputIdentifier.value = 'elena.vance@somnacloud.org';
+                inputPassword.value = 'SomnaSleep2026!';
+                showBanner('success', 'Elena Vance credentials loaded (Static Demo Patient).');
+            });
+
+            btnFillClinician?.addEventListener('click', () => {
+                setRole('clinician');
+                inputIdentifier.value = 'dr.aris@somnaclinic.med';
+                inputPassword.value = 'NeuroSomna2026!';
+                showBanner('success', 'Dr. Julian Aris credentials loaded (Static Demo Clinician).');
+            });
+
+            // Toggle Password eye
+            btnToggleEye?.addEventListener('click', () => {
+                const isPassword = inputPassword.type === 'password';
+                inputPassword.type = isPassword ? 'text' : 'password';
+                eyeIcon.className = isPassword ? 'fas fa-eye-slash text-sm' : 'fas fa-eye text-sm';
+            });
+
+            // Modal Handlers
+            btnForgotPin?.addEventListener('click', () => modal?.classList.remove('hidden'));
+            btnCloseModal?.addEventListener('click', () => modal?.classList.add('hidden'));
+            btnDismissModal?.addEventListener('click', () => {
+                modal?.classList.add('hidden');
+                btnFillPatient?.click();
+            });
+            modal?.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.add('hidden');
+            });
+
+            // Form Submit Simulation
+            form?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const idVal = inputIdentifier.value.trim();
+                const passVal = inputPassword.value.trim();
+
+                if (!idVal || !passVal) {
+                    showBanner('error', 'Please enter both your identifier and access password/PIN.');
+                    return;
+                }
+
+                // Simulating static validation and authentication
+                btnSubmit.disabled = true;
+                submitLabel.textContent = 'Authenticating with SomnaCloud™...';
+                submitIcon.className = 'fas fa-circle-notch fa-spin text-xs';
+                showBanner('info', 'Verifying credentials against SomnaCloud™ PSG Vault...');
+
+                setTimeout(() => {
+                    btnSubmit.disabled = false;
+                    submitIcon.className = 'fas fa-check text-xs';
+                    submitLabel.textContent = 'Access Granted!';
+                    showBanner('success', `Welcome back, ${idVal.split('@')[0]}! Redirecting to Clinical Dashboard...`);
+
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html';
+                    }, 1200);
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+
+</html>

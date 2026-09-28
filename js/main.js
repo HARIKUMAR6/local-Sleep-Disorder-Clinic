@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 2. THEME TOGGLE (Light / Dark)
   // =========================================================================
-  const themeBtns = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
+  const themeBtns = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile, [data-theme-toggle], .btn-theme-toggle');
   
   const updateThemeUI = (isDark) => {
     themeBtns.forEach(btn => {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 3. RTL / LTR TOGGLE
   // =========================================================================
-  const rtlBtns = document.querySelectorAll('#rtl-toggle, #rtl-toggle-mobile');
+  const rtlBtns = document.querySelectorAll('#rtl-toggle, #rtl-toggle-mobile, [data-dir-toggle], [data-rtl-toggle]');
   
   const updateRtlUI = (isRtl) => {
     document.documentElement.dir = isRtl ? 'rtl' : 'ltr';

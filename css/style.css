@@ -731,46 +731,15 @@ img, svg, video {
   flex-shrink: 0;
 }
 
-/* RTL / LTR Outlined Control */
-.btn-rtl-control {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  height: 36px;
-  padding: 0 12px;
-  border-radius: 18px;
-  border: 1.5px solid var(--brand-primary);
-  background: transparent;
-  color: var(--brand-primary);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-rtl-control:hover {
-  background: var(--brand-subtle);
-  transform: translateY(-1px);
-}
-
-.btn-rtl-control.active,
-[dir="rtl"] .btn-rtl-control {
-  background: var(--brand-primary);
-  color: #FFFFFF;
-}
-
-.dark [dir="rtl"] .btn-rtl-control {
-  background: var(--brand-primary);
-  color: #000000;
-}
-
-/* Theme Icon Button */
-.btn-icon-rounded {
+/* Universal Utility Icon Buttons (Theme, Direction, Portal, Home) */
+.btn-icon-rounded,
+.btn-rtl-control,
+.btn-portal-control,
+.btn-portal-action {
   width: 36px;
   height: 36px;
+  min-width: 36px;
+  min-height: 36px;
   border-radius: 50%;
   background: var(--bg-surface);
   color: var(--text-primary);
@@ -781,16 +750,73 @@ img, svg, video {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   border: 1px solid var(--border-color);
   font-size: 0.88rem;
+  padding: 0;
+  text-decoration: none;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
-.dark .btn-icon-rounded {
+.btn-icon-rounded:hover,
+.btn-rtl-control:hover,
+.btn-portal-control:hover,
+.btn-portal-action:hover {
+  background: var(--brand-subtle);
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+  transform: translateY(-1px);
+}
+
+.dark .btn-icon-rounded,
+.dark .btn-rtl-control,
+.dark .btn-portal-control,
+.dark .btn-portal-action {
   background: #09090F;
   border-color: #1A1D30;
   color: #EEF0FA;
 }
 
-.btn-icon-rounded:hover {
+.dark .btn-icon-rounded:hover,
+.dark .btn-rtl-control:hover,
+.dark .btn-portal-control:hover,
+.dark .btn-portal-action:hover {
+  background: rgba(122, 155, 232, 0.14);
+  border-color: #7A9BE8;
+  color: #7A9BE8;
+}
+
+/* Active State for RTL / LTR Direction Toggle */
+.btn-rtl-control.active,
+[dir="rtl"] .btn-rtl-control,
+#rtl-toggle.active,
+[dir="rtl"] #rtl-toggle {
+  background: var(--brand-primary);
   border-color: var(--brand-primary);
+  color: #FFFFFF;
+}
+
+.dark .btn-rtl-control.active,
+.dark [dir="rtl"] .btn-rtl-control,
+.dark #rtl-toggle.active,
+.dark [dir="rtl"] #rtl-toggle {
+  background: #3B5BDB;
+  border-color: #7A9BE8;
+  color: #FFFFFF;
+}
+
+/* Active State for Portal Navigation */
+.btn-portal-control.active,
+#nav-login-portal.active {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #FFFFFF;
+}
+
+.dark .btn-portal-control.active,
+.dark #nav-login-portal.active {
+  background: #3B5BDB;
+  border-color: #7A9BE8;
+  color: #FFFFFF;
+}
   color: var(--brand-primary);
   transform: translateY(-1px);
 }
@@ -810,6 +836,11 @@ img, svg, video {
 .dark #theme-toggle-mobile .fa-sun,
 .dark .btn-icon-rounded .fa-sun {
   display: inline-block !important;
+}
+.dark #theme-toggle .fa-moon,
+.dark #theme-toggle-mobile .fa-moon,
+.dark .btn-icon-rounded .fa-moon {
+  display: none !important;
 }
 html:not(.dark) #theme-toggle .fa-moon,
 html:not(.dark) #theme-toggle-mobile .fa-moon,
@@ -1613,6 +1644,11 @@ details[open] .faq-icon-chevron {
     font-size: 0.70rem;
     letter-spacing: 0.07em;
   }
+  .btn-portal-control {
+    height: 32px;
+    padding: 0 10px;
+    font-size: 0.72rem;
+  }
   .btn-rtl-control {
     height: 32px;
     padding: 0 8px;
@@ -1668,6 +1704,12 @@ details[open] .faq-icon-chevron {
   .nav-actions {
     gap: 6px;
   }
+  .btn-portal-control {
+    height: 32px;
+    padding: 0 8px;
+    font-size: 0.70rem;
+    gap: 4px;
+  }
   .btn-rtl-control {
     height: 32px;
     padding: 0 7px;
@@ -1719,6 +1761,16 @@ details[open] .faq-icon-chevron {
   .logo-wrapper span.font-serif,
   .logo-text {
     font-size: 0.95rem !important;
+  }
+  .btn-portal-control span {
+    display: none;
+  }
+  .btn-portal-control {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0.75rem;
   }
   .btn-rtl-control {
     height: 28px;
