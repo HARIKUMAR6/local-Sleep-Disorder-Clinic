@@ -98,27 +98,27 @@
         <aside id="dashboard-sidebar" class="dashboard-sidebar" aria-label="Clinical Operations Navigation">
             
             <!-- Sidebar Header / Brand -->
-            <div class="sidebar-header flex items-center justify-between p-5 border-b border-clinic-border/60 dark:border-[#1A2440]">
-                <a href="index.html" class="logo-wrapper flex items-center gap-3" id="dashboard-brand-logo" aria-label="SomnaClinic Home">
+            <div class="sidebar-header flex items-center justify-between p-4 border-b border-clinic-border/60 dark:border-[#1A2440] min-w-0 max-w-full overflow-hidden">
+                <a href="index.html" class="logo-wrapper flex items-center gap-2.5 min-w-0 max-w-full overflow-hidden" id="dashboard-brand-logo" aria-label="SomnaClinic Home">
                     <div class="logo-icon shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="somna-brandmark-svg" aria-hidden="true">
                             <path d="M12 28C10 24 10 18 15 13C20 8 28 8 33 13C36 16 36.5 20 35 23.5C33 28 27.5 29 23 27C18.5 25 15 26 13 29C11 32 12 36 16 38C21 40 27 38 31 34" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
                             <circle cx="28" cy="17.5" r="2.4" fill="currentColor"/>
                         </svg>
                     </div>
-                    <div class="sidebar-logo-text min-w-0">
+                    <div class="sidebar-logo-text min-w-0 flex-1 overflow-hidden">
                         <div class="logo-title-row">
                             <span class="logo-somna">SOMNA</span>
                             <span class="logo-clinic">CLINIC</span>
                         </div>
-                        <span class="logo-sub">
+                        <span class="logo-sub truncate block max-w-[170px]">
                             Sleep Medicine &amp; Diagnostics
                         </span>
                     </div>
                 </a>
 
                 <!-- Mobile Drawer Close Button -->
-                <button type="button" id="drawer-close-btn" class="lg:hidden text-clinic-muted hover:text-clinic-primary dark:hover:text-white p-1" aria-label="Close navigation">
+                <button type="button" id="drawer-close-btn" class="lg:hidden text-clinic-muted hover:text-clinic-primary dark:hover:text-white p-1 shrink-0 ml-1" aria-label="Close navigation">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -178,16 +178,15 @@
             <div class="p-3 border-t border-clinic-border/60 dark:border-[#1A2440] flex flex-col gap-2">
                 <!-- Theme & Direction Switchers -->
                 <div class="sidebar-footer flex items-center justify-between gap-2 px-1">
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-1.5">
                         <!-- RTL Toggle -->
-                        <button id="rtl-toggle-sidebar" class="btn-icon-rounded" data-rtl-toggle title="Toggle RTL / LTR Direction" aria-label="Toggle text direction">
-                            <i class="fas fa-right-left"></i>
+                        <button id="rtl-toggle-sidebar" class="btn-mode-pill text-[11px] h-7 min-h-[28px] py-0.5 px-2.5" data-dir-toggle title="Toggle RTL / LTR Direction" aria-label="Toggle text direction">
+                            <span class="dir-text">RTL</span>
                         </button>
 
                         <!-- Theme Toggle -->
-                        <button id="theme-toggle-sidebar" class="btn-icon-rounded" data-theme-toggle title="Toggle Light / Dark Theme" aria-label="Toggle theme">
-                            <i class="fas fa-moon"></i>
-                            <i class="fas fa-sun hidden"></i>
+                        <button id="theme-toggle-sidebar" class="btn-mode-pill text-[11px] h-7 min-h-[28px] py-0.5 px-2.5" data-theme-toggle title="Toggle Light / Dark Theme" aria-label="Toggle theme">
+                            <span class="theme-text">Dark</span>
                         </button>
                     </div>
 
@@ -241,14 +240,13 @@
                 <!-- Right Utility Actions -->
                 <div class="flex items-center gap-2 sm:gap-2.5">
                     <!-- RTL Direction Utility Toggle -->
-                    <button id="rtl-toggle" class="btn-icon-rounded" type="button" title="Toggle RTL / LTR Direction" aria-label="Toggle text direction">
-                        <i class="fas fa-right-left text-xs" aria-hidden="true"></i>
+                    <button id="rtl-toggle" class="btn-mode-pill" type="button" title="Toggle RTL / LTR Direction" aria-label="Toggle text direction">
+                        <span class="dir-text">RTL</span>
                     </button>
 
                     <!-- Theme Utility Toggle -->
-                    <button id="theme-toggle" class="btn-icon-rounded" type="button" title="Toggle Light / Dark Theme" aria-label="Toggle theme">
-                        <i class="fas fa-moon text-xs" aria-hidden="true"></i>
-                        <i class="fas fa-sun text-xs hidden" aria-hidden="true"></i>
+                    <button id="theme-toggle" class="btn-mode-pill" type="button" title="Toggle Light / Dark Theme" aria-label="Toggle theme">
+                        <span class="theme-text">Dark</span>
                     </button>
 
                     <!-- Operational Mode Status Pill -->

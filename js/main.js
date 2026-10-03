@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 2. THEME TOGGLE (Light / Dark)
   // =========================================================================
-  const themeBtns = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile, [data-theme-toggle], .btn-theme-toggle');
+  const themeBtns = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile, #theme-toggle-sidebar, [data-theme-toggle], .btn-theme-toggle');
   
   const updateThemeUI = (isDark) => {
     themeBtns.forEach(btn => {
@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         moon?.classList.remove('hidden');
         sun?.classList.add('hidden');
+      }
+      const themeText = btn.querySelector('.theme-text');
+      if (themeText) {
+        themeText.textContent = isDark ? 'Light' : 'Dark';
       }
       btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
       btn.setAttribute('title', isDark ? 'Switch to light theme' : 'Switch to dark theme');
@@ -65,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 3. RTL / LTR TOGGLE
   // =========================================================================
-  const rtlBtns = document.querySelectorAll('#rtl-toggle, #rtl-toggle-mobile, [data-dir-toggle], [data-rtl-toggle]');
+  const rtlBtns = document.querySelectorAll('#rtl-toggle, #rtl-toggle-mobile, #rtl-toggle-sidebar, [data-dir-toggle], [data-rtl-toggle]');
   
   const updateRtlUI = (isRtl) => {
     document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
@@ -73,6 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (b) {
         b.classList.toggle('active', isRtl);
         b.setAttribute('aria-pressed', isRtl ? 'true' : 'false');
+        const dirText = b.querySelector('.dir-text');
+        if (dirText) {
+          dirText.textContent = isRtl ? 'LTR' : 'RTL';
+        }
+        b.setAttribute('title', isRtl ? 'Switch to LTR Direction' : 'Switch to RTL Direction');
+        b.setAttribute('aria-label', isRtl ? 'Switch to LTR Direction' : 'Switch to RTL Direction');
       }
     });
   };

@@ -818,6 +818,66 @@ img, svg, video {
   color: #FFFFFF;
 }
 
+/* Universal Text Mode/Direction Buttons (Theme: Light/Dark, Direction: RTL/LTR) */
+.btn-mode-pill {
+  height: 36px;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 9999px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-sans, 'DM Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.btn-mode-pill:hover {
+  background: var(--brand-subtle);
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+  transform: translateY(-1px);
+}
+
+.dark .btn-mode-pill {
+  background: #09090F;
+  border-color: #1A1D30;
+  color: #EEF0FA;
+}
+
+.dark .btn-mode-pill:hover {
+  background: rgba(122, 155, 232, 0.14);
+  border-color: #7A9BE8;
+  color: #7A9BE8;
+}
+
+.btn-mode-pill.active,
+[dir="rtl"] #rtl-toggle.btn-mode-pill,
+[dir="rtl"] #rtl-toggle-sidebar.btn-mode-pill {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #FFFFFF;
+}
+
+.dark .btn-mode-pill.active,
+.dark [dir="rtl"] #rtl-toggle.btn-mode-pill,
+.dark [dir="rtl"] #rtl-toggle-sidebar.btn-mode-pill {
+  background: #3B5BDB;
+  border-color: #7A9BE8;
+  color: #FFFFFF;
+}
+
 .dark .btn-icon-rounded:hover {
   border-color: #7A9BE8;
   color: #7A9BE8;
@@ -1830,14 +1890,12 @@ details[open] .faq-icon-chevron {
 /* Section 01: Hero — Panoramic Editorial */
 .hero-sleep-container {
   position: relative;
-  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
-  padding-top: 6.5rem;
-  padding-bottom: 5rem;
+  padding-top: 2.75rem;
+  padding-bottom: 4.5rem;
 }
 
 /* Atmospheric Background: soft slate -> subtle cool blue tint -> existing canvas */
@@ -3096,12 +3154,12 @@ details[open] .faq-icon-chevron {
 /* Section 01: Hero Home 2 (Cinematic Immersive Editorial) */
 .hero-home2-cinematic {
   position: relative;
-  min-height: 90vh;
+  min-height: 75vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 8rem;
-  padding-bottom: 5.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
 }
 
 .hero-home2-backdrop {
@@ -4476,11 +4534,10 @@ details[open] .faq-icon-chevron {
 
 .about-page #about-hero.about-hero-section {
   position: relative;
-  min-height: 88vh;
   display: flex;
   align-items: center;
-  padding-top: 8.5rem;
-  padding-bottom: 4.5rem;
+  padding-top: 3.25rem;
+  padding-bottom: 4rem;
   overflow: visible;
 }
 
@@ -4889,8 +4946,8 @@ details[open] .faq-icon-chevron {
 /* 5. Responsive Fine-Tuning */
 @media (max-width: 1023px) {
   .about-page #about-hero.about-hero-section {
-    padding-top: 7rem;
-    padding-bottom: 3.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
     min-height: auto;
   }
   .about-page #about-hero .about-hero-heading {
@@ -4917,8 +4974,8 @@ details[open] .faq-icon-chevron {
 
 @media (max-width: 767px) {
   .about-page #about-hero.about-hero-section {
-    padding-top: 6rem;
-    padding-bottom: 2.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2.25rem;
   }
   .about-page #about-hero .about-hero-heading {
     font-size: clamp(2.25rem, 7vw, 2.75rem) !important; /* ~36px-44px */
@@ -5981,9 +6038,11 @@ details[open] .faq-icon-chevron {
   }
 
   /* --- All pages: page header sections padding on mobile --- */
-  header[class*="pt-36"] {
-    padding-top: 7rem;
-    padding-bottom: 2.5rem;
+  header[class*="pt-36"],
+  header[class*="pt-10"],
+  header[class*="pt-12"] {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
   }
 
   /* --- All pages: h1/h2 in interior page headers scale down --- */
@@ -6219,14 +6278,16 @@ details[open] .faq-icon-chevron {
   #hero,
   #hero-home2 {
     min-height: auto;
-    padding-top: 5rem;
-    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   /* --- Interior page headers shorten in landscape --- */
-  header[class*="pt-36"] {
-    padding-top: 5.5rem;
-    padding-bottom: 2rem;
+  header[class*="pt-36"],
+  header[class*="pt-10"],
+  header[class*="pt-12"] {
+    padding-top: 2.5rem;
+    padding-bottom: 1.75rem;
   }
 
 }
@@ -7836,6 +7897,41 @@ details[open] .faq-icon-chevron {
 .dark .dashboard-sidebar {
   background-color: #070B18;
   border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Sidebar Brand & Logo Overflow Fix */
+.dashboard-sidebar .sidebar-header {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.dashboard-sidebar .logo-wrapper {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  gap: 10px;
+}
+
+.dashboard-sidebar .sidebar-logo-text {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.dashboard-sidebar .logo-title-row {
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.dashboard-sidebar .logo-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 175px;
 }
 
 /* Collapsed Sidebar on Desktop */
