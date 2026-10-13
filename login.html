@@ -176,6 +176,41 @@
             color: #FFFFFF;
             box-shadow: 0 4px 14px rgba(59, 91, 219, 0.4);
         }
+        .btn-social-auth {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            height: 42px;
+            border-radius: 12px;
+            border: 1.5px solid #C4CCDF;
+            background: #FFFFFF;
+            color: #171E38;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            box-shadow: 0 1px 2px rgba(10, 17, 40, 0.04);
+            user-select: none;
+        }
+        .btn-social-auth:hover {
+            background: #F0F3FB;
+            border-color: #3B5BDB;
+            color: #3B5BDB;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 91, 219, 0.14);
+        }
+        .dark .btn-social-auth {
+            background: #10101C;
+            border-color: #1A1D30;
+            color: #EEF0FA;
+        }
+        .dark .btn-social-auth:hover {
+            background: #181B30;
+            border-color: #7A9BE8;
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+        }
     </style>
 </head>
 
@@ -193,10 +228,10 @@
          PORTAL HEADER (Brand Name & Logo, Home Icon, Direction Icon, Theme Icon)
          ========================================================================= -->
     <header class="w-full border-b border-clinic-border/60 dark:border-clinic-dark-border bg-white/80 dark:bg-[#09090F]/80 backdrop-blur-md sticky top-0 z-40 transition-colors duration-300" role="banner">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
             
             <!-- Left: SomnaClinic Brand Identity (Brand Name & Logo) -->
-            <a href="index.html" class="logo-wrapper group flex items-center gap-3" id="portal-brand-logo" aria-label="SomnaClinic Home">
+            <a href="index.html" class="logo-wrapper group flex items-center gap-2 sm:gap-3 min-w-0" id="portal-brand-logo" aria-label="SomnaClinic Home">
                 <div class="logo-icon shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="somna-brandmark-svg"
                         aria-hidden="true">
@@ -206,17 +241,17 @@
                         <circle cx="28" cy="17.5" r="2.4" fill="currentColor" />
                     </svg>
                 </div>
-                <div class="logo-brand">
+                <div class="logo-brand min-w-0">
                     <div class="logo-title-row">
                         <span class="logo-somna">SOMNA</span>
                         <span class="logo-clinic">CLINIC</span>
                     </div>
-                    <span class="logo-sub">Sleep Medicine &amp; Diagnostics</span>
+                    <span class="logo-sub hidden sm:block">Sleep Medicine &amp; Diagnostics</span>
                 </div>
             </a>
 
-            <!-- Right: HOME ICON, DIRECTION ICON (RTL/LTR), THEME ICON (Dark/Light) - All Same Size Utility Icons -->
-            <div class="flex items-center gap-2.5 sm:gap-3">
+            <!-- Right: HOME ICON, DIRECTION ICON (RTL/LTR), THEME ICON (Dark/Light) - High-Density Clean Controls -->
+            <div class="nav-actions portal-header-actions flex items-center gap-1.5 sm:gap-2.5 shrink-0" id="portal-header-actions">
                 <!-- HOME UTILITY ICON (Navigates to Web Home Page: index.html) -->
                 <a href="index.html" class="btn-icon-rounded" id="portal-home-icon-btn" title="Return to Main Website Home" aria-label="Return to Main Website Home">
                     <i class="fas fa-house" aria-hidden="true"></i>
@@ -253,8 +288,8 @@
                     <h1 class="text-3xl font-serif font-bold text-clinic-primary dark:text-clinic-dark-primary tracking-tight leading-snug">
                         Dedicated Clinical Sleep Care Portal
                     </h1>
-                    <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary mt-2.5 leading-relaxed">
-                        Securely review your overnight polysomnography (PSG) reports, manage CPAP device telemetry compliance, and consult with board-certified somnologists.
+                    <p class="text-sm text-clinic-secondary dark:text-clinic-dark-secondary mt-2 leading-relaxed">
+                        Access diagnostic sleep reports, CPAP telemetry compliance, and clinical consultations.
                     </p>
                 </div>
 
@@ -418,20 +453,48 @@
                         </div>
                     </form>
 
-                    <!-- Portal Auxiliary Navigation Links -->
-                    <div class="mt-6 pt-5 border-t border-clinic-border/60 dark:border-clinic-dark-border text-center space-y-2">
-                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">
-                            First-time clinical visitor? 
+                    <!-- Social SSO Authentication Divider -->
+                    <div class="relative my-5">
+                        <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                            <div class="w-full border-t border-clinic-border/60 dark:border-clinic-dark-border"></div>
+                        </div>
+                        <div class="relative flex justify-center text-[11px] uppercase tracking-wider">
+                            <span class="px-3 bg-white/95 dark:bg-[#0E1020] text-clinic-muted dark:text-clinic-dark-secondary font-medium">
+                                Or continue with
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Social SSO Action Buttons -->
+                    <div class="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
+                        <button type="button" class="btn-social-auth flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-clinic-border/80 dark:border-clinic-dark-border bg-white/80 dark:bg-[#121426] hover:bg-clinic-canvas dark:hover:bg-[#181C34] text-clinic-primary dark:text-white transition-all text-xs font-semibold shadow-2xs hover:border-clinic-brand/50 dark:hover:border-clinic-dark-accent/50 group" data-provider="Google" aria-label="Sign in with Google">
+                            <i class="fab fa-google text-red-500 text-sm group-hover:scale-110 transition-transform"></i>
+                            <span class="hidden xs:inline">Google</span>
+                        </button>
+                        <button type="button" class="btn-social-auth flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-clinic-border/80 dark:border-clinic-dark-border bg-white/80 dark:bg-[#121426] hover:bg-clinic-canvas dark:hover:bg-[#181C34] text-clinic-primary dark:text-white transition-all text-xs font-semibold shadow-2xs hover:border-clinic-brand/50 dark:hover:border-clinic-dark-accent/50 group" data-provider="Apple" aria-label="Sign in with Apple">
+                            <i class="fab fa-apple text-sm group-hover:scale-110 transition-transform"></i>
+                            <span class="hidden xs:inline">Apple</span>
+                        </button>
+                        <button type="button" class="btn-social-auth flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-clinic-border/80 dark:border-clinic-dark-border bg-white/80 dark:bg-[#121426] hover:bg-clinic-canvas dark:hover:bg-[#181C34] text-clinic-primary dark:text-white transition-all text-xs font-semibold shadow-2xs hover:border-clinic-brand/50 dark:hover:border-clinic-dark-accent/50 group" data-provider="Microsoft" aria-label="Sign in with Microsoft">
+                            <i class="fab fa-microsoft text-blue-500 text-sm group-hover:scale-110 transition-transform"></i>
+                            <span class="hidden xs:inline">Microsoft</span>
+                        </button>
+                    </div>
+
+                    <!-- Clean Minimalist Footer Links (Simple & Clean instead of paragraph) -->
+                    <div class="pt-4 border-t border-clinic-border/60 dark:border-clinic-dark-border flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs text-clinic-muted dark:text-clinic-dark-secondary">
+                        <div class="flex items-center gap-1.5">
+                            <span>New patient?</span>
                             <a href="booking.html" class="text-clinic-brand dark:text-clinic-dark-accent font-semibold hover:underline">
-                                Request In-Lab Sleep Study Registration
+                                Register
                             </a>
-                        </p>
-                        <div class="flex items-center justify-center gap-4 text-[11px] text-clinic-muted dark:text-clinic-dark-secondary pt-1">
+                        </div>
+                        <div class="flex items-center gap-3 text-[11px]">
                             <a href="faq.html" class="hover:underline">Portal FAQ</a>
-                            <span>•</span>
-                            <a href="contact.html" class="hover:underline">Technical Support</a>
-                            <span>•</span>
-                            <a href="dashboard.html" class="hover:underline text-clinic-brand dark:text-clinic-dark-accent font-medium">Preview Operations Dashboard</a>
+                            <span class="opacity-40">•</span>
+                            <a href="contact.html" class="hover:underline">Support</a>
+                            <span class="opacity-40">•</span>
+                            <a href="dashboard.html" class="text-clinic-brand dark:text-clinic-dark-accent font-medium hover:underline">Demo Ops</a>
                         </div>
                     </div>
 
@@ -471,7 +534,7 @@
                 </button>
             </div>
             <p class="text-xs text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed mb-4">
-                For patient privacy and HIPAA compliance, diagnostic sleep access codes are provided upon completion of your Polysomnography intake or sent via encrypted SMS to your primary registered mobile device.
+                Access codes are sent via encrypted SMS to your registered mobile device or provided during clinic intake.
             </p>
             <div class="bg-clinic-canvas dark:bg-[#09090F] p-3 rounded-xl border border-clinic-border/60 dark:border-clinic-dark-border text-xs mb-4 space-y-1.5">
                 <div class="flex items-center justify-between">
@@ -576,6 +639,27 @@
                 inputIdentifier.value = 'dr.aris@somnaclinic.med';
                 inputPassword.value = 'NeuroSomna2026!';
                 showBanner('success', 'Dr. Julian Aris credentials loaded (Static Demo Clinician).');
+            });
+
+            // Social SSO Simulation Handlers
+            document.querySelectorAll('.btn-social-auth').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const provider = btn.getAttribute('data-provider') || 'SSO';
+                    showBanner('info', `Connecting to ${provider} Healthcare SSO Gateway...`);
+                    btn.disabled = true;
+                    setTimeout(() => {
+                        btn.disabled = false;
+                        if (currentRole === 'patient') {
+                            btnFillPatient?.click();
+                        } else {
+                            btnFillClinician?.click();
+                        }
+                        showBanner('success', `Authenticated with ${provider} SSO! Redirecting to Dashboard...`);
+                        setTimeout(() => {
+                            window.location.href = 'dashboard.html';
+                        }, 1200);
+                    }, 800);
+                });
             });
 
             // Toggle Password eye

@@ -261,98 +261,82 @@
          ========================================================================== -->
     <main id="main-content">
         <section id="hero"
-            class="hero-sleep-container bg-clinic-canvas dark:bg-[#000000] text-clinic-primary dark:text-clinic-dark-primary border-b border-clinic-border/60 dark:border-[#161B30]"
+            class="hero-sleep-container border-b border-clinic-border/60 dark:border-[#161B30]"
             aria-labelledby="hero-title">
-            <!-- Subtle Atmospheric Background -->
-            <div class="hero-atmospheric-bg" aria-hidden="true"></div>
+            <!-- Background Editorial Image -->
+            <img src="assets/images/home1-hero-editorial.jpg"
+                alt="Serene luxury sleep clinic suite with calm ambient evening lighting and refined modern interior"
+                class="hero-home1-backdrop" loading="eager">
+
+            <!-- Scrim Overlay for High Contrast & Visual Depth -->
+            <div class="hero-home1-scrim" aria-hidden="true"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex flex-col items-center">
-                <!-- 1. Eyebrow: SOMNACLINIC (Reveal with Image at 0ms) -->
-                <div class="hero-reveal-item hero-delay-image text-center mb-4 sm:mb-5">
+                <!-- Localized Radial Light Backing — Protects Text Readability Without Blurring the Room -->
+                <div class="hero-text-backing" aria-hidden="true"></div>
+
+                <!-- 1. Eyebrow Badge -->
+                <div class="hero-reveal-item hero-delay-image text-center mb-5 sm:mb-6">
                     <div
-                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/85 dark:bg-[#0D1436]/85 backdrop-blur-xs border border-clinic-border/80 dark:border-[#25356B] shadow-2xs">
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 dark:bg-[#0D1436]/95 border border-clinic-border/80 dark:border-[#25356B] shadow-xs">
                         <span
                             class="w-1.5 h-1.5 rounded-full bg-clinic-brand dark:bg-clinic-dark-accent animate-pulse"></span>
-                        <span class="home1-eyebrow text-clinic-brand dark:text-clinic-dark-accent">
-                            SOMNACLINIC
+                        <span class="home1-eyebrow text-xs font-semibold tracking-wider uppercase text-clinic-brand dark:text-clinic-dark-accent">
+                            SOMNACLINIC • CLINICAL SLEEP CARE
                         </span>
                     </div>
                 </div>
 
-                <!-- 2. Wide Panoramic Image Container (Reveal: 0ms) -->
-                <div
-                    class="hero-reveal-item hero-delay-image hero-panoramic-wrapper w-[94%] max-w-[1140px] mx-auto relative">
-                    <div class="hero-panoramic-frame">
-                        <img src="assets/images/home1-hero-editorial.jpg"
-                            alt="Serene luxury sleep clinic suite with calm ambient evening lighting and refined modern interior"
-                            class="hero-panoramic-img" loading="eager">
-                        <!-- Subtle Image Light Movement (Breathing nocturnal atmosphere) -->
-                        <div class="hero-light-shimmer" aria-hidden="true"></div>
-                    </div>
-
-                    <!-- 3. Overlapping Visual Badge (Reveal: 150ms + Gentle Float) -->
-                    <div class="hero-overlapping-badge hero-reveal-badge hero-badge-float">
-                        <i class="fas fa-moon text-clinic-brand dark:text-clinic-dark-accent text-xs"></i>
-                        <span
-                            class="text-xs sm:text-[13px] font-medium tracking-wide text-clinic-primary dark:text-clinic-dark-primary">
-                            Clinical Sleep Care
-                        </span>
-                    </div>
-                </div>
-
-                <!-- 4. Centered Editorial Headline Area (Reveal: 300ms) -->
-                <div class="hero-reveal-item hero-delay-heading text-center max-w-3xl mx-auto mt-7 sm:mt-8 px-2">
+                <!-- 2. Centered Editorial Headline Area -->
+                <div class="hero-reveal-item hero-delay-heading text-center max-w-4xl mx-auto mb-5 px-2">
                     <h1 id="hero-title"
-                        class="font-serif font-normal text-clinic-primary dark:text-clinic-dark-primary">
+                        class="home1-hero-heading font-serif font-medium tracking-tight">
                         Better Sleep Starts <br class="hidden sm:inline">With Understanding.
                     </h1>
                 </div>
 
-                <!-- 5. Short Supporting Copy (Reveal: 420ms) -->
-                <div class="hero-reveal-item hero-delay-paragraph text-center max-w-2xl mx-auto mt-4 sm:mt-5 px-4">
-                    <p class="home1-supporting-paragraph text-clinic-secondary dark:text-clinic-dark-secondary">
+                <!-- 3. Short Supporting Copy -->
+                <div class="hero-reveal-item hero-delay-paragraph text-center max-w-2xl mx-auto mb-7 px-4">
+                    <p class="home1-supporting-paragraph leading-relaxed">
                         Sleep architecture regulates cognitive clarity, daytime energy, and physical recovery. Our
                         clinical evaluations and comprehensive sleep diagnostics help pinpoint the physiological
                         foundations of disrupted rest.
                     </p>
                 </div>
 
-                <!-- 6. Minimal Information Strip (Reveal: 520ms) -->
+                <!-- 4. Minimal Information Strip -->
                 <div
-                    class="hero-reveal-item hero-delay-infostrip hero-info-strip w-full max-w-3xl mx-auto mt-6 sm:mt-7 px-4">
+                    class="hero-reveal-item hero-delay-infostrip hero-info-strip w-full max-w-3xl mx-auto mb-8 px-4">
                     <div
-                        class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 py-3.5 sm:py-4 border-y border-clinic-border/60 dark:border-[#1A2242]">
-                        <div class="hero-info-item">
+                        class="hero-info-strip-inner flex flex-wrap items-center justify-center gap-6 sm:gap-10 py-3.5 sm:py-4 border-y border-clinic-border/60 dark:border-[#253358]">
+                        <div class="hero-info-item flex items-center gap-2">
                             <i class="fas fa-bed-pulse text-clinic-brand dark:text-clinic-dark-accent text-sm"
                                 aria-hidden="true"></i>
-                            <span class="font-medium text-clinic-secondary dark:text-clinic-dark-secondary">Sleep
-                                Understanding</span>
+                            <span class="font-semibold text-xs sm:text-sm">Sleep Understanding</span>
                         </div>
-                        <div class="hero-info-item">
+                        <div class="hero-info-item flex items-center gap-2">
                             <i class="fas fa-comment-medical text-clinic-brand dark:text-clinic-dark-accent text-sm"
                                 aria-hidden="true"></i>
-                            <span class="font-medium text-clinic-secondary dark:text-clinic-dark-secondary">Clear
-                                Communication</span>
+                            <span class="font-semibold text-xs sm:text-sm">Clear Communication</span>
                         </div>
-                        <div class="hero-info-item">
+                        <div class="hero-info-item flex items-center gap-2">
                             <i class="fas fa-hand-holding-heart text-clinic-brand dark:text-clinic-dark-accent text-sm"
                                 aria-hidden="true"></i>
-                            <span class="font-medium text-clinic-secondary dark:text-clinic-dark-secondary">Thoughtful
-                                Care</span>
+                            <span class="font-semibold text-xs sm:text-sm">Thoughtful Care</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 7. Primary & Secondary CTA Area (Reveal: 620ms) -->
+                <!-- 5. Primary & Secondary CTA Area -->
                 <div
-                    class="hero-reveal-item hero-delay-cta flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 sm:mt-7 w-full px-4">
+                    class="hero-reveal-item hero-delay-cta flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4">
                     <button type="button" onclick="openModal('sleepStudyModal')"
-                        class="btn-primary-pill hero-btn-primary py-3.5 px-8 inline-flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition min-h-[44px] w-full sm:w-auto">
+                        class="btn-primary-pill hero-btn-primary py-3.5 px-8 inline-flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition min-h-[46px] w-full sm:w-auto font-bold text-sm">
                         <i class="fas fa-bed-pulse"></i>
                         <span>Book a Sleep Study</span>
                     </button>
                     <a href="services.html"
-                        class="btn-outline-pill hero-btn-secondary py-3.5 px-8 inline-flex items-center justify-center gap-2.5 min-h-[44px] w-full sm:w-auto">
+                        class="btn-outline-pill hero-btn-secondary py-3.5 px-8 inline-flex items-center justify-center gap-2.5 min-h-[46px] w-full sm:w-auto font-semibold text-sm">
                         <span>Explore Sleep Care</span>
                         <i class="fas fa-arrow-right text-xs hero-cta-arrow"></i>
                     </a>
