@@ -247,50 +247,50 @@
         <!-- Scrim Overlay for Contrast -->
         <div class="hero-home2-scrim" aria-hidden="true"></div>
 
-        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
-            <div class="max-w-3xl space-y-5 sm:space-y-6">
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col items-center">
+            <div class="max-w-4xl mx-auto text-center flex flex-col items-center space-y-6 sm:space-y-7">
                 <!-- Eyebrow Tag -->
-                <div class="hero-reveal-item hero-delay-badge hero-eyebrow inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-                    <i class="fas fa-wave-square text-xs text-[#7A9BE8]" aria-hidden="true"></i>
-                    <span class="text-xs font-semibold uppercase tracking-wider text-[#EEF0FA]">
+                <div class="hero-reveal-item hero-delay-badge hero-eyebrow inline-flex items-center justify-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 dark:bg-white/[0.08] backdrop-blur-md border border-white/20 dark:border-white/25 shadow-sm">
+                    <i class="fas fa-wave-square text-xs text-[#7A9BE8] dark:text-[#93C5FD]" aria-hidden="true"></i>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-[#EEF0FA] dark:text-[#FFFFFF]">
                         Clinical Sleep Intelligence
                     </span>
                 </div>
 
                 <!-- Main Heading -->
-                <h1 id="hero-title" class="hero-reveal-item hero-delay-heading font-serif text-white tracking-tight">
+                <h1 id="hero-title" class="hero-reveal-item hero-delay-heading font-serif text-white tracking-tight text-center max-w-3xl mx-auto">
                     Sleep is not just rest.<br class="hidden sm:inline"> It is information about your health.
                 </h1>
 
                 <!-- Supporting Copy -->
-                <p class="hero-reveal-item hero-delay-paragraph hero-paragraph max-w-2xl text-[#C4CCDF]">
+                <p class="hero-reveal-item hero-delay-paragraph hero-paragraph max-w-2xl mx-auto text-center text-[#D6DEEF] dark:text-[#EEF0FA]">
                     Every hour of nocturnal sleep produces complex physiological signals. At SomnaClinic, our clinical sleep specialists decode these neurological, respiratory, and circadian biomarkers to identify the true physiological root causes of sleep disruption.
                 </p>
 
                 <!-- Dual Action CTAs -->
-                <div class="hero-reveal-item hero-delay-cta flex flex-wrap items-center gap-4 pt-2">
-                    <button type="button" onclick="openModal('sleepStudyModal')" class="hero-cta-btn btn-primary-pill text-sm py-3.5 px-8 bg-white text-[#0D1436] hover:bg-[#F0F3FB] shadow-xl hover:shadow-2xl inline-flex items-center gap-2.5 transition">
+                <div class="hero-reveal-item hero-delay-cta flex flex-wrap items-center justify-center gap-4 pt-2 w-full">
+                    <button type="button" onclick="openModal('sleepStudyModal')" class="hero-cta-btn hero-cta-primary btn-primary-pill text-sm py-3.5 px-8 inline-flex items-center justify-center gap-2.5 transition">
                         <i class="fas fa-bed-pulse" aria-hidden="true"></i>
                         <span>Book a Consultation</span>
                     </button>
-                    <a href="#sleep-pathway" class="hero-cta-btn btn-outline-pill text-sm py-3.5 px-7 text-white border-white/40 hover:border-white hover:bg-white/10 backdrop-blur-xs inline-flex items-center gap-2.5">
+                    <a href="#sleep-pathway" class="hero-cta-btn hero-cta-secondary btn-outline-pill text-sm py-3.5 px-7 inline-flex items-center justify-center gap-2.5">
                         <span>Explore Our Approach</span>
                         <i class="fas fa-arrow-down text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
 
                 <!-- Biometric Telemetry Verification Pill -->
-                <div class="hero-reveal-item hero-delay-6 pt-4 flex flex-wrap items-center gap-6 border-t border-white/15 text-xs text-[#A4B3D6]">
-                    <div class="hero-telemetry-item flex items-center gap-2">
-                        <i class="fas fa-wave-square text-[#7A9BE8]" aria-hidden="true"></i>
+                <div class="hero-reveal-item hero-delay-6 pt-5 flex flex-wrap items-center justify-center gap-6 sm:gap-10 border-t border-white/20 dark:border-white/15 text-xs text-[#C4CCDF] dark:text-[#CBD5E1] w-full max-w-3xl mx-auto hero-telemetry-container">
+                    <div class="hero-telemetry-item flex items-center justify-center gap-2">
+                        <i class="fas fa-wave-square text-[#7A9BE8] dark:text-[#93C5FD]" aria-hidden="true"></i>
                         <span>Physician-Interpreted Biometrics</span>
                     </div>
-                    <div class="hero-telemetry-item flex items-center gap-2">
-                        <i class="fas fa-lungs text-[#7A9BE8]" aria-hidden="true"></i>
+                    <div class="hero-telemetry-item flex items-center justify-center gap-2">
+                        <i class="fas fa-lungs text-[#7A9BE8] dark:text-[#93C5FD]" aria-hidden="true"></i>
                         <span>Airflow &amp; Oxygenation Telemetry</span>
                     </div>
-                    <div class="hero-telemetry-item flex items-center gap-2">
-                        <i class="fas fa-brain text-[#7A9BE8]" aria-hidden="true"></i>
+                    <div class="hero-telemetry-item flex items-center justify-center gap-2">
+                        <i class="fas fa-brain text-[#7A9BE8] dark:text-[#93C5FD]" aria-hidden="true"></i>
                         <span>Sleep Stage Architecture Scoring</span>
                     </div>
                 </div>

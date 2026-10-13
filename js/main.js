@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateThemeUI(isDark);
   };
 
+  window.toggleTheme = toggleTheme;
+  window.updateThemeUI = updateThemeUI;
+
   themeBtns.forEach(btn => {
     btn?.addEventListener('click', toggleTheme);
   });
@@ -92,6 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('somna-dir', isRtl ? 'rtl' : 'ltr');
     updateRtlUI(isRtl);
   };
+
+  window.toggleRtl = toggleRtl;
+  window.updateRtlUI = updateRtlUI;
 
   rtlBtns.forEach(b => b?.addEventListener('click', toggleRtl));
   if (localStorage.getItem('somna-dir') === 'rtl') {

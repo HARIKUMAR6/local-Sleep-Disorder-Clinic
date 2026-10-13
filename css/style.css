@@ -240,13 +240,15 @@ img, svg, video {
   position: relative;
   z-index: 101;
   max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 24px;
   height: 84px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
+  box-sizing: border-box;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -506,24 +508,19 @@ img, svg, video {
   color: #7A9BE8;
 }
 
-/* Desktop Navigation Links (Reference Clean Text Style & Breathing Room) */
+/* Desktop Navigation Links (Proper spacing that stays within container) */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
-  flex: 1;
+  gap: clamp(12px, 1.5vw, 20px);
+  flex: 1 1 auto;
   justify-content: center;
+  min-width: 0;
 }
 
-@media (max-width: 1200px) {
-  .nav-links {
-    gap: 16px;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1180px) {
+@media (min-width: 1024px) and (max-width: 1240px) {
   .navbar-inner {
-    padding: 0 12px;
+    padding: 0 16px;
     gap: 10px;
   }
   .nav-links {
@@ -532,30 +529,54 @@ img, svg, video {
   .nav-link {
     font-size: 0.80rem;
     padding: 4px 0;
+    gap: 3px;
   }
-  .btn-primary-header {
-    padding: 6px 12px;
-    font-size: 0.74rem;
-    gap: 5px;
+  .logo-wrapper {
+    gap: 8px;
   }
   .logo-icon {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
   }
   .somna-brandmark-svg {
     width: 22px;
     height: 22px;
   }
   .logo-somna {
-    font-size: 1.12rem;
+    font-size: 1.10rem;
   }
   .logo-clinic {
-    font-size: 0.70rem;
+    font-size: 0.68rem;
   }
   .logo-sub {
-    font-size: 0.72rem;
-    letter-spacing: 0.07em;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+  }
+  .nav-actions {
+    gap: 6px;
+  }
+  .nav-actions .btn-icon-rounded {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+  .btn-primary-header {
+    height: 42px;
+    min-height: 42px;
+    padding: 0 13px;
+    font-size: 0.68rem;
+    gap: 4px;
+    letter-spacing: 0.04em;
+    box-sizing: border-box;
+  }
+  .btn-mode-pill {
+    height: 42px;
+    min-height: 42px;
+    padding: 0 10px;
+    font-size: 0.70rem;
+    box-sizing: border-box;
   }
 }
 
@@ -565,7 +586,7 @@ img, svg, video {
   border-radius: 0;
   font-family: var(--font-sans, 'DM Sans', sans-serif);
   font-weight: 500;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   letter-spacing: 0.01em;
   color: #1E293B;
   transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
@@ -575,9 +596,10 @@ img, svg, video {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   background: transparent;
   border: none;
+  flex-shrink: 0;
 }
 
 .dark .nav-link {
@@ -611,23 +633,26 @@ img, svg, video {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   height: 42px;
-  padding: 0 22px;
+  min-height: 42px;
+  padding: 0 18px;
   border-radius: 9999px;
   background: var(--brand-primary);
   color: #FFFFFF;
   font-family: var(--font-sans, 'DM Sans', sans-serif);
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-decoration: none;
   cursor: pointer;
   border: 1px solid var(--brand-hover);
   box-shadow: 0 4px 14px rgba(59, 91, 219, 0.25);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .btn-primary-header:hover {
@@ -727,7 +752,28 @@ img, svg, video {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Header Section: Maintain identical button height for RTL, Theme, and CTA buttons */
+.nav-actions .btn-mode-pill,
+.nav-actions .btn-primary-header,
+.navbar-wrapper .btn-mode-pill,
+.navbar-wrapper .btn-primary-header,
+#rtl-toggle.btn-mode-pill,
+#theme-toggle.btn-mode-pill,
+#header-primary-cta.btn-primary-header {
+  height: 42px;
+  min-height: 42px;
+  box-sizing: border-box;
+}
+
+.nav-actions .btn-icon-rounded {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
   flex-shrink: 0;
 }
 
@@ -820,9 +866,9 @@ img, svg, video {
 
 /* Universal Text Mode/Direction Buttons (Theme: Light/Dark, Direction: RTL/LTR) */
 .btn-mode-pill {
-  height: 36px;
-  min-height: 36px;
-  padding: 0 14px;
+  height: 42px;
+  min-height: 42px;
+  padding: 0 13px;
   border-radius: 9999px;
   background: var(--bg-surface);
   color: var(--text-primary);
@@ -833,7 +879,7 @@ img, svg, video {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   border: 1px solid var(--border-color);
   font-family: var(--font-sans, 'DM Sans', sans-serif);
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -878,6 +924,16 @@ img, svg, video {
   color: #FFFFFF;
 }
 
+/* Dashboard Sidebar Toggle Buttons remain compact */
+#rtl-toggle-sidebar.btn-mode-pill,
+#theme-toggle-sidebar.btn-mode-pill,
+.dashboard-sidebar .btn-mode-pill {
+  height: 28px !important;
+  min-height: 28px !important;
+  padding: 2px 10px !important;
+  font-size: 11px !important;
+}
+
 .dark .btn-icon-rounded:hover {
   border-color: #7A9BE8;
   color: #7A9BE8;
@@ -910,12 +966,206 @@ html:not(.dark) .btn-icon-rounded .fa-sun {
   display: none !important;
 }
 
+/* ==========================================================================
+   GLOBAL HERO DESIGN SYSTEM: UNIFIED CONSISTENT HERO SECTION HEIGHT
+   Calibrates all page hero sections to an identical, premium viewport height:
+   - Desktop (≥ 1024px): clamp(620px, 72vh, 760px)
+   - Tablet (768px – 1023px): clamp(520px, 58vh, 640px)
+   - Mobile (≤ 767px): auto with unified balanced vertical padding
+   ========================================================================== */
+:root {
+  --hero-consistent-min-height-desktop: clamp(620px, 72vh, 760px);
+  --hero-consistent-min-height-tablet: clamp(520px, 58vh, 640px);
+}
+
+/* 1. All Major Page Hero Sections — Unified Minimum Height & Vertical Centering */
+#hero.hero-sleep-container,
+#hero-home2.hero-home2-cinematic,
+#about-hero.about-hero-section,
+#services-hero,
+#doctors-hero,
+#faq-hero,
+#contact-hero {
+  min-height: var(--hero-consistent-min-height-desktop) !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  position: relative;
+}
+
+/* Ensure inner content container stretches to full width inside flex hero */
+#hero > .max-w-7xl,
+#hero-home2 > div,
+#about-hero > .max-w-7xl,
+#services-hero > .max-w-7xl,
+#doctors-hero > .max-w-7xl,
+#faq-hero > .max-w-7xl,
+#contact-hero > .max-w-7xl {
+  width: 100% !important;
+}
+
+/* 2. Interior Editorial Page Heroes — Standardized Vertical Padding */
+#about-hero.about-hero-section,
+#services-hero,
+#doctors-hero,
+#faq-hero,
+#contact-hero {
+  padding-top: clamp(2.5rem, 4.5vh, 3.75rem) !important;
+  padding-bottom: clamp(2.5rem, 4.5vh, 3.75rem) !important;
+}
+
+/* Interior Editorial Grid Alignment — Stretch & Vertically Center Content */
+#about-hero .about-hero-editorial-grid,
+#services-hero .grid,
+#doctors-hero .grid,
+#faq-hero .grid,
+#contact-hero .grid {
+  width: 100%;
+  align-items: center;
+}
+
+/* 3. Right-Hand Visual Image Frames on Interior Pages — Unified Max-Height & Aspect Ratio */
+@media (min-width: 1024px) {
+  #about-hero .about-hero-primary-img,
+  #services-hero .services-hero-img,
+  #services-hero .services-hero-image-frame,
+  #doctors-hero [class*="aspect-"],
+  #faq-hero [class*="aspect-"],
+  #contact-hero [class*="aspect-"] {
+    max-height: clamp(420px, 48vh, 500px) !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  #about-hero .about-hero-primary-frame,
+  #services-hero .services-hero-image-frame,
+  #doctors-hero .lg\:col-span-5 > div,
+  #faq-hero .lg\:col-span-5 > div,
+  #contact-hero .lg\:col-span-5 > div {
+    max-height: clamp(420px, 48vh, 500px) !important;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* 4. Home 1 (#hero) — Balanced Panoramic Scaling to Match Standard Hero Height */
+@media (min-width: 1024px) {
+  #hero.hero-sleep-container {
+    justify-content: center !important;
+    padding-top: clamp(1.5rem, 3vh, 2.25rem) !important;
+    padding-bottom: clamp(1.75rem, 3.5vh, 2.5rem) !important;
+  }
+
+  #hero.hero-sleep-container .hero-panoramic-wrapper {
+    max-width: 1040px !important;
+  }
+
+  #hero.hero-sleep-container .hero-panoramic-frame {
+    aspect-ratio: 28 / 8 !important;
+    max-height: clamp(180px, 22vh, 230px) !important;
+  }
+
+  #hero.hero-sleep-container .hero-delay-heading {
+    margin-top: clamp(1rem, 2vh, 1.35rem) !important;
+  }
+
+  #hero.hero-sleep-container h1#hero-title {
+    font-size: clamp(2.35rem, 3.6vw, 3.25rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  #hero.hero-sleep-container .hero-delay-paragraph {
+    margin-top: clamp(0.5rem, 1.2vh, 0.85rem) !important;
+  }
+
+  #hero.hero-sleep-container .hero-info-strip {
+    margin-top: clamp(0.75rem, 1.5vh, 1.25rem) !important;
+  }
+
+  #hero.hero-sleep-container .hero-delay-cta {
+    margin-top: clamp(0.9rem, 1.8vh, 1.35rem) !important;
+  }
+}
+
+/* 5. Home 2 (#hero-home2) — Match Unified Hero Height */
+@media (min-width: 1024px) {
+  #hero-home2.hero-home2-cinematic {
+    min-height: var(--hero-consistent-min-height-desktop) !important;
+    padding-top: clamp(2.5rem, 4.5vh, 3.5rem) !important;
+    padding-bottom: clamp(2.5rem, 4.5vh, 3.5rem) !important;
+  }
+}
+
+/* 6. Tablet Media Query (768px – 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #hero.hero-sleep-container,
+  #hero-home2.hero-home2-cinematic,
+  #about-hero.about-hero-section,
+  #services-hero,
+  #doctors-hero,
+  #faq-hero,
+  #contact-hero {
+    min-height: var(--hero-consistent-min-height-tablet) !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* 7. Mobile Media Query (≤ 767px) */
+@media (max-width: 767px) {
+  #hero.hero-sleep-container,
+  #hero-home2.hero-home2-cinematic,
+  #about-hero.about-hero-section,
+  #services-hero,
+  #doctors-hero,
+  #faq-hero,
+  #contact-hero {
+    min-height: auto !important;
+    padding-top: 2.75rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* 8. Booking & Specialists Interior Headers */
+#booking-hero,
+#specialists-hero {
+  min-height: clamp(280px, 34vh, 360px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  padding-top: clamp(2rem, 4vh, 3rem) !important;
+  padding-bottom: clamp(2rem, 4vh, 3rem) !important;
+}
+
+#booking-hero > div,
+#specialists-hero > div {
+  width: 100% !important;
+}
+
+/* ==========================================================================
+   GLOBAL CTA BUTTONS DESIGN SYSTEM: UNIFIED CORNER RADIUS & HIGH-CONTRAST HOVER
+   ========================================================================== */
+.btn-primary-pill,
+.btn-outline-pill,
+.btn-primary-header,
+.btn-primary-footer,
+.btn-outline-footer,
+.hero-btn-primary,
+.hero-btn-secondary,
+.hero-cta-btn,
+.about-gate-primary-btn,
+#btn-submit-portal,
+#btn-dismiss-modal {
+  border-radius: 9999px !important;
+}
+
 /* Primary Pill CTA */
 .btn-primary-pill {
   background: var(--brand-primary);
   color: #FFFFFF;
-  padding: 8px 20px;
-  border-radius: 40px;
+  padding: 8px 22px;
+  border-radius: 9999px;
   font-weight: 600;
   font-size: 0.84rem;
   letter-spacing: 0.02em;
@@ -929,32 +1179,119 @@ html:not(.dark) .btn-icon-rounded .fa-sun {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.btn-primary-pill i {
+  color: inherit;
+  transition: transform 0.25s ease;
+}
+
 .btn-primary-pill:hover {
-  background: var(--brand-hover);
+  background: var(--brand-hover) !important;
+  color: #FFFFFF !important;
+  border-color: var(--brand-hover) !important;
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(59, 91, 219, 0.32);
-  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(59, 91, 219, 0.35);
+}
+
+.btn-primary-pill:hover i {
+  color: #FFFFFF !important;
 }
 
 .dark .btn-primary-pill {
-  background: #7A9BE8;
-  color: #000000;
-  border-color: #7A9BE8;
-  box-shadow: 0 4px 14px rgba(122, 155, 232, 0.25);
+  background: #3B5BDB;
+  color: #FFFFFF !important;
+  border-color: #5577EF;
+  box-shadow: 0 4px 14px rgba(59, 91, 219, 0.35);
 }
 
 .dark .btn-primary-pill:hover {
-  background: #91AEED;
-  color: #000000;
-  box-shadow: 0 6px 18px rgba(122, 155, 232, 0.35);
+  background: #4C6EF5 !important;
+  color: #FFFFFF !important;
+  border-color: #7A9BE8 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(76, 110, 245, 0.45);
 }
 
+.dark .btn-primary-pill i,
+.dark .btn-primary-pill:hover i {
+  color: #FFFFFF !important;
+}
+
+/* White Pill CTA Buttons (On dark section backgrounds & scrims) */
+.btn-primary-pill.bg-white,
+.btn-primary-pill[class*="bg-white"],
+#sleep-cta .btn-primary-pill,
+#cta-home2 .btn-primary-pill,
+.home2-cta-btn.btn-primary-pill {
+  background-color: #FFFFFF !important;
+  color: #0B132B !important;
+  border-color: #FFFFFF !important;
+}
+
+.btn-primary-pill.bg-white i,
+.btn-primary-pill[class*="bg-white"] i,
+#sleep-cta .btn-primary-pill i,
+#cta-home2 .btn-primary-pill i,
+.home2-cta-btn.btn-primary-pill i {
+  color: #3B5BDB !important;
+}
+
+.btn-primary-pill.bg-white:hover,
+.btn-primary-pill[class*="bg-white"]:hover,
+#sleep-cta .btn-primary-pill:hover,
+#cta-home2 .btn-primary-pill:hover,
+.home2-cta-btn.btn-primary-pill:hover {
+  background-color: #F0F4FC !important;
+  color: #060A18 !important; /* Deepest dark navy: 18:1 contrast on hover */
+  border-color: #FFFFFF !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25) !important;
+}
+
+.btn-primary-pill.bg-white:hover i,
+.btn-primary-pill[class*="bg-white"]:hover i,
+#sleep-cta .btn-primary-pill:hover i,
+#cta-home2 .btn-primary-pill:hover i,
+.home2-cta-btn.btn-primary-pill:hover i {
+  color: #2B4ABF !important;
+}
+
+.dark .btn-primary-pill.bg-white,
+.dark .btn-primary-pill[class*="bg-white"],
+.dark #sleep-cta .btn-primary-pill,
+.dark #cta-home2 .btn-primary-pill,
+.dark .home2-cta-btn.btn-primary-pill {
+  background-color: #FFFFFF !important;
+  color: #070C1E !important;
+  border-color: #FFFFFF !important;
+}
+
+.dark .btn-primary-pill.bg-white:hover,
+.dark .btn-primary-pill[class*="bg-white"]:hover,
+.dark #sleep-cta .btn-primary-pill:hover,
+.dark #cta-home2 .btn-primary-pill:hover,
+.dark .home2-cta-btn.btn-primary-pill:hover {
+  background-color: #F8FAFC !important;
+  color: #000000 !important;
+  border-color: #FFFFFF !important;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3) !important;
+}
+
+.dark .btn-primary-pill.bg-white:hover i,
+.dark .btn-primary-pill[class*="bg-white"]:hover i,
+.dark #sleep-cta .btn-primary-pill:hover i,
+.dark #cta-home2 .btn-primary-pill:hover i,
+.dark .home2-cta-btn.btn-primary-pill:hover i {
+  color: #2B4ABF !important;
+}
+
+/* Secondary Outline Pill CTA */
 .btn-outline-pill {
   background: transparent;
   color: var(--brand-primary);
   border: 1.5px solid var(--brand-primary);
-  padding: 8px 20px;
-  border-radius: 40px;
+  padding: 8px 22px;
+  border-radius: 9999px;
   font-weight: 600;
   font-size: 0.84rem;
   display: inline-flex;
@@ -965,18 +1302,74 @@ html:not(.dark) .btn-icon-rounded .fa-sun {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.btn-outline-pill i {
+  color: inherit;
+  transition: transform 0.25s ease;
+}
+
 .btn-outline-pill:hover {
-  background: var(--brand-subtle);
+  background: var(--brand-primary) !important;
+  color: #FFFFFF !important;
+  border-color: var(--brand-primary) !important;
   transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(59, 91, 219, 0.28);
+}
+
+.btn-outline-pill:hover i {
+  color: #FFFFFF !important;
 }
 
 .dark .btn-outline-pill {
-  color: #7A9BE8;
-  border-color: #7A9BE8;
+  color: #93B5FF;
+  border-color: rgba(147, 181, 255, 0.6);
+  background: transparent;
 }
 
 .dark .btn-outline-pill:hover {
-  background: rgba(122, 155, 232, 0.14);
+  background: #3B5BDB !important;
+  color: #FFFFFF !important;
+  border-color: #5577EF !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(59, 91, 219, 0.35);
+}
+
+.dark .btn-outline-pill:hover i {
+  color: #FFFFFF !important;
+}
+
+/* Frosted Outline Pill Buttons (On dark section backgrounds & scrims) */
+.btn-outline-pill[class*="text-white"],
+.btn-outline-pill[class*="border-white"],
+#sleep-cta .btn-outline-pill,
+#cta-home2 .btn-outline-pill,
+.home2-cta-btn.btn-outline-pill,
+.final-cta-field .btn-outline-pill {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline-pill[class*="text-white"]:hover,
+.btn-outline-pill[class*="border-white"]:hover,
+#sleep-cta .btn-outline-pill:hover,
+#cta-home2 .btn-outline-pill:hover,
+.home2-cta-btn.btn-outline-pill:hover,
+.final-cta-field .btn-outline-pill:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), 0 0 15px rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-1px);
+}
+
+.btn-outline-pill[class*="text-white"]:hover i,
+.btn-outline-pill[class*="border-white"]:hover i,
+#sleep-cta .btn-outline-pill:hover i,
+#cta-home2 .btn-outline-pill:hover i,
+.home2-cta-btn.btn-outline-pill:hover i,
+.final-cta-field .btn-outline-pill:hover i {
+  color: #FFFFFF !important;
 }
 
 /* Mobile Toggle & Drawer */
@@ -1519,11 +1912,11 @@ details[open] .faq-icon-chevron {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 20px;
-  border-radius: 12px;
+  padding: 10px 24px;
+  border-radius: 9999px !important;
   background: transparent;
   color: #CBD5E1;
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
   font-size: 0.84rem;
   font-weight: 500;
   text-decoration: none;
@@ -1532,10 +1925,16 @@ details[open] .faq-icon-chevron {
 }
 
 .btn-outline-footer:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: #7A9BE8;
-  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.20) !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
   transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-outline-footer i,
+.btn-outline-footer:hover i {
+  color: #FFFFFF !important;
 }
 
 .btn-primary-footer {
@@ -1543,10 +1942,10 @@ details[open] .faq-icon-chevron {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 22px;
-  border-radius: 12px;
+  padding: 10px 24px;
+  border-radius: 9999px !important;
   background: var(--brand-primary);
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   border: 1px solid var(--brand-hover);
   font-size: 0.84rem;
   font-weight: 600;
@@ -1557,10 +1956,28 @@ details[open] .faq-icon-chevron {
 }
 
 .btn-primary-footer:hover {
-  background: var(--brand-hover);
-  color: #FFFFFF;
+  background: var(--brand-hover) !important;
+  color: #FFFFFF !important;
+  border-color: var(--brand-hover) !important;
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(59, 91, 219, 0.4);
+}
+
+.btn-primary-footer i,
+.btn-primary-footer:hover i {
+  color: #FFFFFF !important;
+}
+
+.dark .btn-primary-footer {
+  background: #3B5BDB;
+  color: #FFFFFF !important;
+  border-color: #5577EF;
+}
+
+.dark .btn-primary-footer:hover {
+  background: #4C6EF5 !important;
+  color: #FFFFFF !important;
+  border-color: #7A9BE8;
 }
 
 .footer-heading {
@@ -1748,6 +2165,14 @@ details[open] .faq-icon-chevron {
     height: 36px;
     font-size: 0.95rem;
   }
+  .nav-actions .btn-mode-pill,
+  #rtl-toggle.btn-mode-pill,
+  #theme-toggle.btn-mode-pill {
+    height: 36px;
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 0.72rem;
+  }
   .clinical-card {
     border-radius: 20px;
   }
@@ -1809,6 +2234,14 @@ details[open] .faq-icon-chevron {
     width: 32px;
     height: 32px;
     font-size: 0.90rem;
+  }
+  .nav-actions .btn-mode-pill,
+  #rtl-toggle.btn-mode-pill,
+  #theme-toggle.btn-mode-pill {
+    height: 32px;
+    min-height: 32px;
+    padding: 0 10px;
+    font-size: 0.70rem;
   }
   .service-nav-tab,
   .faq-category-btn {
@@ -3154,12 +3587,14 @@ details[open] .faq-icon-chevron {
 /* Section 01: Hero Home 2 (Cinematic Immersive Editorial) */
 .hero-home2-cinematic {
   position: relative;
-  min-height: 75vh;
+  min-height: var(--hero-consistent-min-height-desktop) !important;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
-  padding-top: 3.5rem;
-  padding-bottom: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4.5rem;
 }
 
 .hero-home2-backdrop {
@@ -3180,12 +3615,14 @@ details[open] .faq-icon-chevron {
 .hero-home2-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(8, 12, 32, 0.94) 0%, rgba(13, 20, 54, 0.85) 45%, rgba(6, 9, 24, 0.92) 100%);
+  background: linear-gradient(135deg, rgba(8, 12, 32, 0.94) 0%, rgba(13, 20, 54, 0.86) 45%, rgba(6, 9, 24, 0.92) 100%),
+              radial-gradient(circle at 50% 50%, rgba(13, 20, 54, 0.45) 0%, rgba(6, 9, 24, 0.85) 100%);
   z-index: 1;
 }
 
 .dark .hero-home2-scrim {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(5, 8, 20, 0.90) 45%, rgba(0, 0, 0, 0.96) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(5, 8, 20, 0.88) 45%, rgba(0, 0, 0, 0.96) 100%),
+              radial-gradient(circle at 50% 50%, rgba(10, 15, 36, 0.40) 0%, rgba(0, 0, 0, 0.90) 100%);
 }
 
 /* ==========================================================================
@@ -4190,12 +4627,23 @@ details[open] .faq-icon-chevron {
   font-weight: 600 !important;
   line-height: 1.08 !important;
   letter-spacing: -0.02em !important;
+  color: #FFFFFF !important;
+  text-align: center !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.dark .home2-page #hero-home2 #hero-title {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 255, 255, 0.15) !important;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .home2-page #hero-home2 #hero-title {
     font-size: 3.125rem !important; /* 50px tablet (target 46-54px) */
     line-height: 1.12 !important;
+    text-align: center !important;
   }
 }
 
@@ -4203,6 +4651,7 @@ details[open] .faq-icon-chevron {
   .home2-page #hero-home2 #hero-title {
     font-size: 2.5rem !important; /* 40px mobile (target 38-44px) */
     line-height: 1.15 !important;
+    text-align: center !important;
   }
 }
 
@@ -4210,13 +4659,22 @@ details[open] .faq-icon-chevron {
   font-family: var(--font-sans, 'DM Sans', sans-serif) !important;
   font-size: 1.125rem !important; /* 18px desktop (target 17-19px) */
   line-height: 1.72 !important;
-  color: #C4CCDF !important;
+  color: #D6DEEF !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.dark .home2-page #hero-home2 .hero-paragraph {
+  color: #EEF0FA !important; /* Luminous, high-contrast text against dark scrim */
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
 }
 
 @media (max-width: 767px) {
   .home2-page #hero-home2 .hero-paragraph {
     font-size: 1rem !important; /* 16px mobile (target 15-17px) */
     line-height: 1.65 !important;
+    text-align: center !important;
   }
 }
 
@@ -4225,24 +4683,191 @@ details[open] .faq-icon-chevron {
   font-size: 0.8125rem !important; /* 13px (target 12-14px) */
   font-weight: 600 !important;
   letter-spacing: 0.08em !important;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #EEF0FA;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark .home2-page #hero-home2 .hero-eyebrow {
+  background: rgba(122, 155, 232, 0.14) !important;
+  border-color: rgba(122, 155, 232, 0.38) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(122, 155, 232, 0.12) !important;
 }
 
 .home2-page #hero-home2 .hero-eyebrow i {
   font-size: 0.95rem !important; /* ~15px */
+  color: #7A9BE8;
 }
 
+.dark .home2-page #hero-home2 .hero-eyebrow i {
+  color: #93C5FD !important;
+}
+
+.dark .home2-page #hero-home2 .hero-eyebrow span {
+  color: #FFFFFF !important;
+}
+
+/* Hero CTA Buttons Base */
 .home2-page #hero-home2 .hero-cta-btn {
   font-family: var(--font-sans, 'DM Sans', sans-serif) !important;
   font-size: 0.97rem !important; /* 15.5px (target 14-16px) */
   font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  border-radius: 9999px !important;
+  min-height: 48px;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Primary CTA Button: Crisp White Pill with Deep Navy Text & Sapphire Icon */
+.home2-page #hero-home2 .hero-cta-primary,
+.home2-page #hero-home2 .btn-primary-pill {
+  background: #FFFFFF !important;
+  color: #0A1128 !important;
+  border: 1.5px solid #FFFFFF !important;
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.15) !important;
+}
+
+.home2-page #hero-home2 .hero-cta-primary i,
+.home2-page #hero-home2 .btn-primary-pill i {
+  color: #3B5BDB !important;
+  transition: transform 0.25s ease;
+}
+
+.home2-page #hero-home2 .hero-cta-primary:hover,
+.home2-page #hero-home2 .btn-primary-pill:hover {
+  background: #F1F5F9 !important;
+  color: #000000 !important;
+  border-color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 32px -4px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Dark Mode Primary CTA: Luminous Crisp White Button with Deep Obsidian Text */
+.dark .home2-page #hero-home2 .hero-cta-primary,
+.dark .home2-page #hero-home2 .btn-primary-pill {
+  background: #FFFFFF !important;
+  color: #070C1E !important;
+  border: 1.5px solid #FFFFFF !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 24px rgba(255, 255, 255, 0.22) !important;
+}
+
+.dark .home2-page #hero-home2 .hero-cta-primary i,
+.dark .home2-page #hero-home2 .btn-primary-pill i {
+  color: #2B4ABF !important;
+}
+
+.dark .home2-page #hero-home2 .hero-cta-primary:hover,
+.dark .home2-page #hero-home2 .btn-primary-pill:hover {
+  background: #F8FAFC !important;
+  color: #000000 !important;
+  border-color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 32px rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Secondary CTA Button: Clean Frosted Glass Outline Pill */
+.home2-page #hero-home2 .hero-cta-secondary,
+.home2-page #hero-home2 .btn-outline-pill {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+}
+
+.home2-page #hero-home2 .hero-cta-secondary i,
+.home2-page #hero-home2 .btn-outline-pill i {
+  color: #FFFFFF !important;
+  transition: transform 0.25s ease;
+}
+
+.home2-page #hero-home2 .hero-cta-secondary:hover,
+.home2-page #hero-home2 .btn-outline-pill:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 18px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Dark Mode Secondary CTA: High Contrast Frosted Pill with Radiant White Border & Text */
+.dark .home2-page #hero-home2 .hero-cta-secondary,
+.dark .home2-page #hero-home2 .btn-outline-pill {
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .home2-page #hero-home2 .hero-cta-secondary i,
+.dark .home2-page #hero-home2 .btn-outline-pill i {
+  color: #93C5FD !important;
+}
+
+.dark .home2-page #hero-home2 .hero-cta-secondary:hover,
+.dark .home2-page #hero-home2 .btn-outline-pill:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.25) !important;
+}
+
+.dark .home2-page #hero-home2 .hero-cta-secondary:hover i,
+.dark .home2-page #hero-home2 .btn-outline-pill:hover i {
+  color: #FFFFFF !important;
+}
+
+/* Hero Telemetry Strip */
+.home2-page #hero-home2 .hero-telemetry-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+  justify-content: center !important;
+}
+
+.dark .home2-page #hero-home2 .hero-telemetry-container {
+  border-top-color: rgba(255, 255, 255, 0.22) !important;
 }
 
 .home2-page #hero-home2 .hero-telemetry-item {
+  font-family: var(--font-sans, 'DM Sans', sans-serif) !important;
   font-size: 0.875rem !important; /* 14px (target 13-15px) */
+  font-weight: 500 !important;
+  color: #C4CCDF !important;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .home2-page #hero-home2 .hero-telemetry-item i {
   font-size: 1.05rem !important; /* ~17px (increased by 25%) */
+  color: #7A9BE8 !important;
+  transition: transform 0.2s ease;
+}
+
+.home2-page #hero-home2 .hero-telemetry-item:hover {
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+}
+
+.dark .home2-page #hero-home2 .hero-telemetry-item {
+  color: #CBD5E1 !important; /* High contrast > 9:1 against near-black backdrop */
+}
+
+.dark .home2-page #hero-home2 .hero-telemetry-item i {
+  color: #93C5FD !important; /* Luminous soft sky blue icon */
+}
+
+.dark .home2-page #hero-home2 .hero-telemetry-item:hover {
+  color: #FFFFFF !important;
+}
+
+.dark .home2-page #hero-home2 .hero-telemetry-item:hover i {
+  color: #BFDBFE !important;
+  transform: scale(1.1);
 }
 
 /* 2. ALL MAJOR SECTION HEADINGS (Sections 02 to 06) */
@@ -4536,8 +5161,9 @@ details[open] .faq-icon-chevron {
   position: relative;
   display: flex;
   align-items: center;
-  padding-top: 3.25rem;
-  padding-bottom: 4rem;
+  min-height: var(--hero-consistent-min-height-desktop) !important;
+  padding-top: clamp(2.5rem, 4.5vh, 3.75rem);
+  padding-bottom: clamp(2.5rem, 4.5vh, 3.75rem);
   overflow: visible;
 }
 
@@ -7860,18 +8486,73 @@ details[open] .faq-icon-chevron {
    PHASE 14: CLINICAL OPERATIONS DASHBOARD STYLES (SomnaClinic)
    ========================================================================== */
 
+/* Fixed Side Panel & Non-Scrolling Workspace Architecture */
+@media (min-width: 1024px) {
+  body.dashboard-body {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  .dashboard-shell {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    display: flex !important;
+  }
+
+  .dashboard-sidebar {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    position: sticky !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    flex-shrink: 0 !important;
+    z-index: 40 !important;
+  }
+
+  .dashboard-main-shell {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .dashboard-topbar {
+    position: sticky !important;
+    top: 0 !important;
+    height: 76px !important;
+    flex-shrink: 0 !important;
+    z-index: 30 !important;
+  }
+
+  #main-content {
+    flex: 1 1 0% !important;
+    height: calc(100vh - 76px) !important;
+    max-height: calc(100vh - 76px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+body.dashboard-body {
+  overflow-x: clip !important;
+}
+
 .dashboard-shell {
   display: flex;
   min-height: 100vh;
   background-color: #F0F3FB;
   color: #0A1128;
   position: relative;
-  overflow-x: hidden;
-}
-
-.dark .dashboard-shell {
-  background-color: #000000;
-  color: #F8FAFC;
+  overflow-x: clip !important;
 }
 
 /* Sidebar Navigation Rail */
@@ -7894,12 +8575,7 @@ details[open] .faq-icon-chevron {
   border-left: 1px solid rgba(10, 17, 40, 0.08);
 }
 
-.dark .dashboard-sidebar {
-  background-color: #070B18;
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-/* Sidebar Brand & Logo Overflow Fix */
+/* Sidebar Brand & Logo Alignment */
 .dashboard-sidebar .sidebar-header {
   min-width: 0;
   max-width: 100%;
@@ -7988,20 +8664,10 @@ details[open] .faq-icon-chevron {
   text-align: right;
 }
 
-.dark .dashboard-nav-btn {
-  color: #E2E8F0;
-}
-
 .dashboard-nav-btn:hover,
 .dashboard-nav-btn:focus-visible {
   background-color: rgba(59, 91, 219, 0.06);
   color: #3B5BDB;
-}
-
-.dark .dashboard-nav-btn:hover,
-.dark .dashboard-nav-btn:focus-visible {
-  background-color: rgba(104, 136, 247, 0.1);
-  color: #6888F7;
 }
 
 .dashboard-nav-btn.active {
@@ -8016,30 +8682,23 @@ details[open] .faq-icon-chevron {
   border-right: 3px solid #3B5BDB;
 }
 
-.dark .dashboard-nav-btn.active {
-  background-color: rgba(104, 136, 247, 0.15);
-  color: #6888F7;
-  border-color: #6888F7;
-}
-
-/* Topbar */
+/* Topbar (Sticky Header) */
 .dashboard-topbar {
-  height: 76px;
-  background-color: rgba(240, 243, 251, 0.88);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(10, 17, 40, 0.06);
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1.5rem;
-}
-
-.dark .dashboard-topbar {
-  background-color: rgba(0, 0, 0, 0.88);
-  border-color: rgba(255, 255, 255, 0.06);
+  height: 76px !important;
+  background-color: rgba(240, 243, 251, 0.94) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(10, 17, 40, 0.08) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 0 1.5rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 /* Modules Display Views */
@@ -8075,12 +8734,6 @@ details[open] .faq-icon-chevron {
   box-shadow: 0 4px 20px rgba(10, 17, 40, 0.03);
 }
 
-.dark .dashboard-empty-card {
-  background-color: #0B1022;
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
 /* Overview Operational Grid Item */
 .overview-module-card {
   border-radius: 1.25rem;
@@ -8093,20 +8746,260 @@ details[open] .faq-icon-chevron {
   justify-content: space-between;
 }
 
-.dark .overview-module-card {
-  background-color: #0B1022;
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
 .overview-module-card:hover {
   transform: translateY(-2px);
   border-color: #3B5BDB;
   box-shadow: 0 10px 25px -5px rgba(59, 91, 219, 0.12);
 }
 
+/* ==========================================================================
+   DASHBOARD DARK MODE REDESIGN: HIGH CONTRAST, CONSISTENCY & VISUAL CLARITY
+   ========================================================================== */
+
+.dark body.dashboard-body {
+  background-color: #070B16 !important;
+  color: #FFFFFF !important;
+}
+
+.dark .dashboard-shell {
+  background-color: #070B16 !important;
+  color: #FFFFFF !important;
+}
+
+/* Sidebar in Dark Mode */
+.dark .dashboard-sidebar {
+  background-color: #0A1024 !important;
+  border-color: #1E2D55 !important;
+}
+
+[dir="rtl"] .dark .dashboard-sidebar {
+  border-right: none !important;
+  border-left-color: #1E2D55 !important;
+}
+
+.dark .dashboard-sidebar .sidebar-header {
+  border-bottom-color: #1E2D55 !important;
+}
+
+.dark .dashboard-sidebar .sidebar-logo-text .logo-somna {
+  color: #FFFFFF !important;
+}
+
+.dark .dashboard-sidebar .sidebar-logo-text .logo-clinic {
+  color: #6888F7 !important;
+}
+
+.dark .dashboard-sidebar .sidebar-logo-text .logo-sub {
+  color: #94A3B8 !important;
+}
+
+.dark .dashboard-nav-btn {
+  color: #CBD5E1 !important;
+}
+
+.dark .dashboard-nav-btn:hover,
+.dark .dashboard-nav-btn:focus-visible {
+  background-color: rgba(104, 136, 247, 0.12) !important;
+  color: #82A0F8 !important;
+}
+
+.dark .dashboard-nav-btn.active {
+  background-color: rgba(104, 136, 247, 0.18) !important;
+  color: #82A0F8 !important;
+  border-left: 3px solid #6888F7 !important;
+  font-weight: 600 !important;
+}
+
+[dir="rtl"] .dark .dashboard-nav-btn.active {
+  border-left: none !important;
+  border-right: 3px solid #6888F7 !important;
+}
+
+/* Sidebar Profile Footer in Dark Mode */
+.dark #dashboard-sidebar .border-t {
+  border-top-color: #1E2D55 !important;
+  background-color: #070C1C !important;
+}
+
+.dark #dashboard-sidebar .border-t .bg-white {
+  background-color: #0E1630 !important;
+  border-color: #22335C !important;
+}
+
+.dark #dashboard-sidebar .btn-mode-pill {
+  background-color: #121B38 !important;
+  border-color: #22335C !important;
+  color: #FFFFFF !important;
+}
+
+.dark #dashboard-sidebar .btn-mode-pill:hover {
+  background-color: #1A264E !important;
+  border-color: #6888F7 !important;
+  color: #FFFFFF !important;
+}
+
+/* Topbar in Dark Mode */
+.dark .dashboard-topbar {
+  background-color: rgba(10, 16, 36, 0.94) !important;
+  border-bottom: 1px solid #1E2D55 !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.dark .dashboard-topbar #topbar-heading {
+  color: #FFFFFF !important;
+}
+
+/* Utility Mode & Header Buttons in Dark Mode */
+.dark .dashboard-topbar .btn-mode-pill {
+  background-color: #121B38 !important;
+  border-color: #22335C !important;
+  color: #FFFFFF !important;
+}
+
+.dark .dashboard-topbar .btn-mode-pill:hover {
+  background-color: #1A264E !important;
+  border-color: #6888F7 !important;
+  color: #FFFFFF !important;
+}
+
+.dark .dashboard-topbar .btn-icon-rounded {
+  background-color: #121B38 !important;
+  border-color: #22335C !important;
+  color: #FFFFFF !important;
+}
+
+.dark .dashboard-topbar .btn-icon-rounded:hover {
+  background-color: #1A264E !important;
+  border-color: #6888F7 !important;
+  color: #FFFFFF !important;
+}
+
+/* Overview Module Cards in Dark Mode */
+.dark .overview-module-card {
+  background-color: #0E1630 !important;
+  border: 1px solid #1E2D55 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
 .dark .overview-module-card:hover {
-  border-color: #6888F7;
-  box-shadow: 0 10px 25px -5px rgba(59, 91, 219, 0.25);
+  border-color: #6888F7 !important;
+  box-shadow: 0 10px 25px -5px rgba(59, 91, 219, 0.35) !important;
+  transform: translateY(-2px);
+}
+
+.dark .overview-module-card h4 {
+  color: #FFFFFF !important;
+}
+
+.dark .overview-module-card p {
+  color: #CBD5E1 !important;
+}
+
+.dark .overview-module-card span[class*="rounded-full"] {
+  background-color: #141F42 !important;
+  border-color: #22335C !important;
+  color: #94A3B8 !important;
+}
+
+/* Empty State Cards in Dark Mode */
+.dark .dashboard-empty-card {
+  background-color: #0E1630 !important;
+  border: 1px solid #1E2D55 !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+.dark .dashboard-empty-card h2,
+.dark .dashboard-empty-card h3 {
+  color: #FFFFFF !important;
+}
+
+.dark .dashboard-empty-card p {
+  color: #CBD5E1 !important;
+}
+
+/* Welcome Note Card in Dark Mode */
+.dark #module-overview .bg-gradient-to-br {
+  background: linear-gradient(135deg, #0D1636 0%, #111D44 60%, #152454 100%) !important;
+  border-color: #22335C !important;
+  box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 91, 219, 0.12) !important;
+}
+
+.dark #module-overview .bg-gradient-to-br h2 {
+  color: #FFFFFF !important;
+}
+
+.dark #module-overview .bg-gradient-to-br p {
+  color: #CBD5E1 !important;
+}
+
+.dark #module-overview .bg-gradient-to-br strong {
+  color: #FFFFFF !important;
+}
+
+/* Settings Cards in Dark Mode */
+.dark #module-settings .bg-white {
+  background-color: #0E1630 !important;
+  border-color: #1E2D55 !important;
+}
+
+.dark #module-settings h2,
+.dark #module-settings h3,
+.dark #module-settings span.font-semibold,
+.dark #module-settings span.font-bold {
+  color: #FFFFFF !important;
+}
+
+.dark #module-settings p,
+.dark #module-settings span.text-xs,
+.dark #module-settings span.text-\[11px\] {
+  color: #CBD5E1 !important;
+}
+
+.dark #module-settings .bg-clinic-canvas {
+  background-color: #0A1024 !important;
+  border-color: #1E2D55 !important;
+}
+
+.dark #module-settings .border-clinic-border\/60 {
+  border-color: #1E2D55 !important;
+}
+
+/* Modal Dialog Dark Mode */
+.dark .clinical-modal-dialog {
+  background-color: #0E1630 !important;
+  border: 1px solid #22335C !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+}
+
+.dark .clinical-modal-dialog h3,
+.dark .clinical-modal-dialog h4 {
+  color: #FFFFFF !important;
+}
+
+.dark .clinical-modal-dialog p {
+  color: #CBD5E1 !important;
+}
+
+/* Dark Mode Scrollbars for Dashboard */
+.dark #main-content::-webkit-scrollbar,
+.dark .dashboard-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dark #main-content::-webkit-scrollbar-track,
+.dark .dashboard-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark #main-content::-webkit-scrollbar-thumb,
+.dark .dashboard-sidebar::-webkit-scrollbar-thumb {
+  background: #1E2D55;
+  border-radius: 9999px;
+}
+
+.dark #main-content::-webkit-scrollbar-thumb:hover,
+.dark .dashboard-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #3B5BDB;
 }
 
 /* Mobile Drawer Overlay */
@@ -8139,8 +9032,40 @@ details[open] .faq-icon-chevron {
 }
 
 
-/* Mobile Sidebar Drawer */
+/* Mobile Sidebar Drawer & Sticky Header */
 @media (max-width: 1023px) {
+  body.dashboard-body {
+    overflow-x: clip !important;
+    position: relative !important;
+  }
+
+  .dashboard-shell {
+    overflow-x: clip !important;
+    min-height: 100vh !important;
+  }
+
+  .dashboard-main-shell {
+    min-width: 0 !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .dashboard-topbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 50 !important;
+    width: 100% !important;
+    background-color: rgba(240, 243, 251, 0.96) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 2px 12px rgba(10, 17, 40, 0.06) !important;
+  }
+
+  .dark .dashboard-topbar {
+    background-color: rgba(10, 16, 36, 0.96) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4) !important;
+  }
+
   .dashboard-sidebar {
     position: fixed;
     top: 0;
@@ -8202,24 +9127,86 @@ details[open] .faq-icon-chevron {
 }
 
 /* 4. Dashboard Brand Logo Alignment & Visibility */
-.dashboard-sidebar .logo-wrapper {
-  max-width: 100%;
+.dashboard-sidebar .logo-wrapper,
+.dashboard-topbar .logo-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  max-width: 100% !important;
 }
 
-.dashboard-sidebar .logo-icon {
+.dashboard-sidebar .logo-icon,
+.dashboard-topbar .logo-icon {
   width: 42px !important;
   height: 42px !important;
   min-width: 42px !important;
   border-radius: 12px !important;
+  background-color: rgba(59, 91, 219, 0.1) !important;
+  color: #3B5BDB !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   flex-shrink: 0 !important;
 }
 
-.dashboard-sidebar .logo-icon .somna-brandmark-svg {
+.dark .dashboard-sidebar .logo-icon,
+.dark .dashboard-topbar .logo-icon {
+  background-color: rgba(104, 136, 247, 0.15) !important;
+  color: #6888F7 !important;
+}
+
+.dashboard-sidebar .logo-icon .somna-brandmark-svg,
+.dashboard-topbar .logo-icon .somna-brandmark-svg {
   width: 24px !important;
   height: 24px !important;
+}
+
+.dashboard-topbar .logo-brand {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+}
+
+.dashboard-topbar .logo-title-row {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 6px !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.dashboard-topbar .logo-somna {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif) !important;
+  font-size: 1.55rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1 !important;
+  color: #0A1128 !important;
+  display: inline-block !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark .dashboard-topbar .logo-somna {
+  color: #FFFFFF !important;
+}
+
+.dashboard-topbar .logo-clinic {
+  font-family: var(--font-sans, 'DM Sans', sans-serif) !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+  color: #3B5BDB !important;
+  display: inline-block !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark .dashboard-topbar .logo-clinic {
+  color: #6888F7 !important;
 }
 
 .dashboard-sidebar.collapsed .sidebar-header {
