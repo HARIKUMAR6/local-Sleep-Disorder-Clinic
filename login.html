@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Secure Portal Login — SomnaClinic | Sleep Medicine &amp; Diagnostics</title>
+    <title>Secure Portal Login — SlumberCare Clinic | Sleep Medicine &amp; Diagnostics</title>
     <meta name="description"
-        content="Access your SomnaClinic patient sleep study results, polysomnography reports, CPAP telemetry, or clinician diagnostic workspace. Static secure portal.">
+        content="Access your SlumberCare Clinic patient sleep study results, polysomnography reports, CPAP telemetry, or clinician diagnostic workspace. Static secure portal.">
 
-    <!-- Favicon — SomnaClinic Logomark -->
+    <!-- Favicon — SlumberCare Clinic Logomark -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
@@ -61,13 +61,13 @@
     <!-- Immediate Direction & Theme Initialization (Prevents FOUC) -->
     <script>
         (function () {
-            var theme = localStorage.getItem('somna-theme');
+            var theme = localStorage.getItem('slumber-theme') || localStorage.getItem('somna-theme');
             if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
             } else {
                 document.documentElement.classList.remove('dark');
             }
-            var dir = localStorage.getItem('somna-dir');
+            var dir = localStorage.getItem('slumber-dir') || localStorage.getItem('somna-dir');
             if (dir === 'rtl') {
                 document.documentElement.setAttribute('dir', 'rtl');
             } else {
@@ -230,8 +230,8 @@
     <header class="w-full border-b border-clinic-border/60 dark:border-clinic-dark-border bg-white/80 dark:bg-[#09090F]/80 backdrop-blur-md sticky top-0 z-40 transition-colors duration-300" role="banner">
         <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
             
-            <!-- Left: SomnaClinic Brand Identity (Brand Name & Logo) -->
-            <a href="index.html" class="logo-wrapper group flex items-center gap-2 sm:gap-3 min-w-0" id="portal-brand-logo" aria-label="SomnaClinic Home">
+            <!-- Left: SlumberCare Clinic Brand Identity (Brand Name & Logo) -->
+            <a href="index.html" class="logo-wrapper group flex items-center gap-2 sm:gap-3 min-w-0" id="portal-brand-logo" aria-label="SlumberCare Clinic Home">
                 <div class="logo-icon shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="somna-brandmark-svg"
                         aria-hidden="true">
@@ -243,8 +243,8 @@
                 </div>
                 <div class="logo-brand min-w-0">
                     <div class="logo-title-row">
-                        <span class="logo-somna">SOMNA</span>
-                        <span class="logo-clinic">CLINIC</span>
+                        <span class="logo-somna">SLUMBER</span>
+                        <span class="logo-clinic">CARE</span>
                     </div>
                     <span class="logo-sub hidden sm:block">Sleep Medicine &amp; Diagnostics</span>
                 </div>
@@ -283,7 +283,7 @@
                 <div>
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-clinic-brand/10 dark:bg-clinic-dark-accent/15 text-clinic-brand dark:text-clinic-dark-accent border border-clinic-brand/20 dark:border-clinic-dark-accent/30 mb-3">
                         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span>SomnaCloud™ Secure Gateway</span>
+                        <span>SlumberCloud™ Secure Gateway</span>
                     </div>
                     <h1 class="text-3xl font-serif font-bold text-clinic-primary dark:text-clinic-dark-primary tracking-tight leading-snug">
                         Dedicated Clinical Sleep Care Portal
@@ -330,7 +330,7 @@
                 <div class="pt-2">
                     <a href="index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-clinic-brand dark:text-clinic-dark-accent hover:underline">
                         <i class="fas fa-arrow-left flip-rtl"></i>
-                        <span>Back to SomnaClinic Main Website</span>
+                        <span>Back to SlumberCare Clinic Main Website</span>
                     </a>
                 </div>
             </div>
@@ -384,7 +384,7 @@
                                     <span>Elena Vance (Patient)</span>
                                     <i class="fas fa-arrow-right text-[10px] opacity-0 group-hover:opacity-100 transition-opacity text-clinic-brand dark:text-clinic-dark-accent"></i>
                                 </div>
-                                <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary truncate">MRN: SOMNA-7842 | OSA Follow-up</div>
+                                <div class="text-[10px] text-clinic-muted dark:text-clinic-dark-secondary truncate">MRN: SLUMBER-7842 | OSA Follow-up</div>
                             </button>
                             <button type="button" id="btn-fill-clinician" class="text-left p-2 rounded-lg bg-white dark:bg-[#151728] border border-clinic-border/60 dark:border-clinic-dark-border hover:border-clinic-brand dark:hover:border-clinic-dark-accent text-xs transition-all group">
                                 <div class="font-semibold text-clinic-primary dark:text-white flex items-center justify-between">
@@ -407,7 +407,7 @@
                                 </label>
                                 <div class="relative">
                                     <input type="text" id="portal-identifier" name="identifier" class="portal-input pr-10"
-                                        placeholder="e.g. SOMNA-7842 or elena.vance@somnacloud.org" required autocomplete="username">
+                                        placeholder="e.g. SLUMBER-7842 or elena.vance@slumbercloud.org" required autocomplete="username">
                                     <i class="fas fa-id-card absolute right-3.5 top-1/2 -translate-y-1/2 text-clinic-muted dark:text-clinic-dark-secondary text-sm pointer-events-none"></i>
                                 </div>
                             </div>
@@ -511,10 +511,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-clinic-muted dark:text-clinic-dark-secondary">
             <div class="flex items-center gap-2">
                 <i class="fas fa-shield-halved text-clinic-brand dark:text-clinic-dark-accent"></i>
-                <span>SomnaCloud™ Healthcare Information System • Static Demo Environment</span>
+                <span>SlumberCloud™ Healthcare Information System • Static Demo Environment</span>
             </div>
             <div>
-                &copy; 2026 SomnaClinic Clinical Sleep Medicine &amp; Diagnostics. All rights reserved.
+                &copy; 2026 SlumberCare Clinic Clinical Sleep Medicine &amp; Diagnostics. All rights reserved.
             </div>
         </div>
     </footer>
@@ -543,7 +543,7 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <span class="text-clinic-muted dark:text-clinic-dark-secondary">Portal Helpdesk:</span>
-                    <strong class="text-clinic-primary dark:text-white font-mono">support@somnaclinic.med</strong>
+                    <strong class="text-clinic-primary dark:text-white font-mono">support@slumbercareclinic.med</strong>
                 </div>
             </div>
             <button type="button" id="btn-dismiss-modal" class="w-full btn-primary-header py-2.5 rounded-full text-xs font-bold text-center">
@@ -608,7 +608,7 @@
                     tabClinician.className = 'px-3 py-1.5 rounded-lg text-clinic-secondary dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-white transition-all';
                     tabClinician.setAttribute('aria-selected', 'false');
                     labelIdentifier.innerHTML = 'Patient MRN or Email Address <span class="text-rose-500">*</span>';
-                    inputIdentifier.placeholder = 'e.g. SOMNA-7842 or elena.vance@somnacloud.org';
+                    inputIdentifier.placeholder = 'e.g. SLUMBER-7842 or elena.vance@slumbercloud.org';
                     labelPassword.innerHTML = 'Password or Portal PIN <span class="text-rose-500">*</span>';
                     submitLabel.textContent = 'Sign In to Patient Portal';
                 } else {
@@ -617,7 +617,7 @@
                     tabPatient.className = 'px-3 py-1.5 rounded-lg text-clinic-secondary dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-white transition-all';
                     tabPatient.setAttribute('aria-selected', 'false');
                     labelIdentifier.innerHTML = 'Clinician NPI or Staff Email <span class="text-rose-500">*</span>';
-                    inputIdentifier.placeholder = 'e.g. dr.aris@somnaclinic.med or NPI-18492041';
+                    inputIdentifier.placeholder = 'e.g. dr.aris@slumbercareclinic.med or NPI-18492041';
                     labelPassword.innerHTML = 'Clinical Security Token / Password <span class="text-rose-500">*</span>';
                     submitLabel.textContent = 'Sign In to Clinician Workspace';
                 }
@@ -629,15 +629,15 @@
             // Quick Fill demo buttons
             btnFillPatient?.addEventListener('click', () => {
                 setRole('patient');
-                inputIdentifier.value = 'elena.vance@somnacloud.org';
-                inputPassword.value = 'SomnaSleep2026!';
+                inputIdentifier.value = 'elena.vance@slumbercloud.org';
+                inputPassword.value = 'SlumberSleep2026!';
                 showBanner('success', 'Elena Vance credentials loaded (Static Demo Patient).');
             });
 
             btnFillClinician?.addEventListener('click', () => {
                 setRole('clinician');
-                inputIdentifier.value = 'dr.aris@somnaclinic.med';
-                inputPassword.value = 'NeuroSomna2026!';
+                inputIdentifier.value = 'dr.aris@slumbercareclinic.med';
+                inputPassword.value = 'NeuroSlumber2026!';
                 showBanner('success', 'Dr. Julian Aris credentials loaded (Static Demo Clinician).');
             });
 
@@ -693,9 +693,9 @@
 
                 // Simulating static validation and authentication
                 btnSubmit.disabled = true;
-                submitLabel.textContent = 'Authenticating with SomnaCloud™...';
+                submitLabel.textContent = 'Authenticating with SlumberCloud™...';
                 submitIcon.className = 'fas fa-circle-notch fa-spin text-xs';
-                showBanner('info', 'Verifying credentials against SomnaCloud™ PSG Vault...');
+                showBanner('info', 'Verifying credentials against SlumberCloud™ PSG Vault...');
 
                 setTimeout(() => {
                     btnSubmit.disabled = false;

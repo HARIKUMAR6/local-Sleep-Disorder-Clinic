@@ -1,5 +1,5 @@
 /**
- * SomnaClinic Sleep Disorder Clinic — Main Application Script
+ * SlumberCare Clinic Sleep Disorder Clinic — Main Application Script
  * Theme toggle, RTL/LTR support, Desktop dropdown, Mobile drawer, Modals, FAQ accordion, Tabs
  */
 
@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleTheme = () => {
     document.documentElement.classList.toggle('dark');
     const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('slumber-theme', isDark ? 'dark' : 'light');
     localStorage.setItem('somna-theme', isDark ? 'dark' : 'light');
     updateThemeUI(isDark);
   };
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Init theme
-  const savedTheme = localStorage.getItem('somna-theme');
+  const savedTheme = localStorage.getItem('slumber-theme') || localStorage.getItem('somna-theme');
   if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
     updateThemeUI(true);
@@ -92,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const toggleRtl = () => {
     const isRtl = document.documentElement.dir !== 'rtl';
+    localStorage.setItem('slumber-dir', isRtl ? 'rtl' : 'ltr');
     localStorage.setItem('somna-dir', isRtl ? 'rtl' : 'ltr');
     updateRtlUI(isRtl);
   };
@@ -100,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateRtlUI = updateRtlUI;
 
   rtlBtns.forEach(b => b?.addEventListener('click', toggleRtl));
-  if (localStorage.getItem('somna-dir') === 'rtl') {
+  if ((localStorage.getItem('slumber-dir') || localStorage.getItem('somna-dir')) === 'rtl') {
     updateRtlUI(true);
   } else {
     updateRtlUI(false);

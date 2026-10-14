@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SomnaClinic Sleep Disorder Clinic — Main Stylesheet
+   SlumberCare Clinic Sleep Disorder Clinic — Main Stylesheet
    Theme: MIDNIGHT CLINICAL
    Light Mode:
      - Canvas Background: #F0F3FB
@@ -259,7 +259,7 @@ img, svg, video {
 }
 
 /* ==========================================================================
-   SOMNACLINIC LUXURY BRAND IDENTITY & LOGO SYSTEM
+   SLUMBERCARE CLINIC LUXURY BRAND IDENTITY & LOGO SYSTEM
    ========================================================================== */
 .logo-wrapper {
   display: inline-flex;
@@ -6073,7 +6073,7 @@ details[open] .faq-icon-chevron {
   opacity: 1;
 }
 
-/* 7. Section 03: The SomnaClinic Philosophy Typography Quote */
+/* 7. Section 03: The SlumberCare Clinic Philosophy Typography Quote */
 .about-page .philosophy-quote-box {
   border-left: 3px solid var(--color-brand);
   padding-left: 2rem;
@@ -7642,17 +7642,17 @@ details[open] .faq-icon-chevron {
 }
 
 :not(.dark) .services-cta-statement-box blockquote {
-  color: #171E38 !important; /* SomnaClinic Primary Dark */
+  color: #171E38 !important; /* SlumberCare Clinic Primary Dark */
   opacity: 1 !important;
 }
 
 :not(.dark) .services-cta-statement-box p {
-  color: #464F72 !important; /* SomnaClinic Secondary Dark */
+  color: #464F72 !important; /* SlumberCare Clinic Secondary Dark */
   opacity: 1 !important;
 }
 
 :not(.dark) .services-cta-statement-box .services-cta-quote-icon {
-  color: #3B5BDB !important; /* SomnaClinic Brand Blue */
+  color: #3B5BDB !important; /* SlumberCare Clinic Brand Blue */
   opacity: 0.85 !important;
 }
 
@@ -7676,17 +7676,17 @@ details[open] .faq-icon-chevron {
 }
 
 .dark .services-cta-statement-box blockquote {
-  color: #EEF0FA !important; /* SomnaClinic Dark Mode Primary Light */
+  color: #EEF0FA !important; /* SlumberCare Clinic Dark Mode Primary Light */
   opacity: 1 !important;
 }
 
 .dark .services-cta-statement-box p {
-  color: #9AA3C8 !important; /* SomnaClinic Dark Mode Secondary Light */
+  color: #9AA3C8 !important; /* SlumberCare Clinic Dark Mode Secondary Light */
   opacity: 1 !important;
 }
 
 .dark .services-cta-statement-box .services-cta-quote-icon {
-  color: #7A9BE8 !important; /* SomnaClinic Dark Mode Accent Periwinkle */
+  color: #7A9BE8 !important; /* SlumberCare Clinic Dark Mode Accent Periwinkle */
   opacity: 0.9 !important;
 }
 
@@ -8318,7 +8318,7 @@ details[open] .faq-icon-chevron {
 
 
 /* ==========================================================================
-   PHASE 13: CONTACT PAGE STYLES (SomnaClinic Design System)
+   PHASE 13: CONTACT PAGE STYLES (SlumberCare Clinic Design System)
    ========================================================================== */
 
 /* --- Section 02: Contact Ways to Begin Pathways --- */
@@ -8582,7 +8582,7 @@ details[open] .faq-icon-chevron {
 
 
 /* ==========================================================================
-   PHASE 14: CLINICAL OPERATIONS DASHBOARD STYLES (SomnaClinic)
+   PHASE 14: CLINICAL OPERATIONS DASHBOARD STYLES (SlumberCare Clinic)
    ========================================================================== */
 
 /* Fixed Side Panel & Non-Scrolling Workspace Architecture */

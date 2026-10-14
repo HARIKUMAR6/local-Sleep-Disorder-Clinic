@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>SomnaClinic — Sleep Study Experience &amp; Clinical Diagnostics | Home 2</title>
+    <title>SlumberCare Clinic — Sleep Study Experience &amp; Clinical Diagnostics | Home 2</title>
     <meta name="description"
-        content="Experience SomnaClinic's clinical intelligence approach to sleep medicine: diagnostic pathways, nocturnal biomarker interpretation, sleep environment optimization, and evidence-based sleep care.">
+        content="Experience SlumberCare Clinic's clinical intelligence approach to sleep medicine: diagnostic pathways, nocturnal biomarker interpretation, sleep environment optimization, and evidence-based sleep care.">
 
-    <!-- Favicon — SomnaClinic Logomark -->
+    <!-- Favicon — SlumberCare Clinic Logomark -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
@@ -64,13 +64,13 @@
         <!-- Immediate Direction & Theme Initialization (Prevents FOUC) -->
     <script>
         (function() {
-            var theme = localStorage.getItem('somna-theme');
+            var theme = localStorage.getItem('slumber-theme') || localStorage.getItem('somna-theme');
             if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
             } else {
                 document.documentElement.classList.remove('dark');
             }
-            var dir = localStorage.getItem('somna-dir');
+            var dir = localStorage.getItem('slumber-dir') || localStorage.getItem('somna-dir');
             if (dir === 'rtl') {
                 document.documentElement.setAttribute('dir', 'rtl');
             } else {
@@ -100,8 +100,8 @@
 <!-- ===== CLINICAL STICKY HEADER ===== -->
         <header class="navbar-wrapper" id="navbarWrapper">
         <div class="navbar-inner">
-                        <!-- Zone 1: SomnaClinic Brand Identity (Luxury Geometric Monogram) -->
-            <a href="index.html" class="logo-wrapper" id="nav-brand-logo" aria-label="SomnaClinic Home">
+                        <!-- Zone 1: SlumberCare Clinic Brand Identity (Luxury Geometric Monogram) -->
+            <a href="index.html" class="logo-wrapper" id="nav-brand-logo" aria-label="SlumberCare Clinic Home">
                 <div class="logo-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="somna-brandmark-svg" aria-hidden="true">
                         <path d="M12 28C10 24 10 18 15 13C20 8 28 8 33 13C36 16 36.5 20 35 23.5C33 28 27.5 29 23 27C18.5 25 15 26 13 29C11 32 12 36 16 38C21 40 27 38 31 34" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
@@ -110,8 +110,8 @@
                 </div>
                 <div class="logo-brand">
                     <div class="logo-title-row">
-                        <span class="logo-somna">SOMNA</span>
-                        <span class="logo-clinic">CLINIC</span>
+                        <span class="logo-somna">SLUMBER</span>
+                        <span class="logo-clinic">CARE</span>
                     </div>
                     <span class="logo-sub">Sleep Medicine &amp; Diagnostics</span>
                 </div>
@@ -142,16 +142,10 @@
                 <a href="doctors.html" class="nav-link " id="nav-item-doctors">Doctors</a>
                 <a href="faq.html" class="nav-link " id="nav-item-faq">FAQ</a>
                 <a href="contact.html" class="nav-link " id="nav-item-contact">Contact</a>
-                <a href="dashboard.html" class="nav-link " id="nav-item-dashboard">Dashboard</a>
             </nav>
 
             <!-- Zone 3: Utility Controls & Primary Action CTA (Reference Right Group) -->
             <div class="nav-actions">
-                <!-- Patient & Staff Login Portal Utility Icon -->
-                <a href="login.html" class="btn-icon-rounded" id="nav-login-portal" title="Patient &amp; Staff Login Portal"
-                    aria-label="Login Portal">
-                    <i class="fas fa-user-circle" aria-hidden="true"></i>
-                </a>
 
                 <!-- RTL Layout Switcher Utility Button -->
                 <button id="rtl-toggle" class="btn-mode-pill" type="button" title="Toggle RTL / LTR Direction"
@@ -215,12 +209,6 @@
                 <a href="contact.html" class="mobile-menu-item " id="mobile-item-contact">
                     <span><i class="fas fa-calendar-check text-clinic-brand dark:text-clinic-dark-accent mr-2.5" aria-hidden="true"></i> Contact</span>
                 </a>
-                <a href="dashboard.html" class="mobile-menu-item " id="mobile-item-dashboard">
-                    <span><i class="fas fa-chart-line text-clinic-brand dark:text-clinic-dark-accent mr-2.5" aria-hidden="true"></i> Dashboard</span>
-                </a>
-                <a href="login.html" class="mobile-menu-item " id="mobile-item-portal">
-                    <span><i class="fas fa-user-circle text-clinic-brand dark:text-clinic-dark-accent mr-2.5" aria-hidden="true"></i> Login Portal</span>
-                </a>
 
                 <!-- Mobile CTA Action (Reference Uppercase Rounded-Full) -->
                 <div class="mobile-menu-cta pt-3">
@@ -264,7 +252,7 @@
 
                 <!-- Supporting Copy -->
                 <p class="hero-reveal-item hero-delay-paragraph hero-paragraph max-w-2xl mx-auto text-center text-[#D6DEEF] dark:text-[#EEF0FA]">
-                    Every hour of nocturnal sleep produces complex physiological signals. At SomnaClinic, our clinical sleep specialists decode these neurological, respiratory, and circadian biomarkers to identify the true physiological root causes of sleep disruption.
+                    Every hour of nocturnal sleep produces complex physiological signals. At SlumberCare Clinic, our clinical sleep specialists decode these neurological, respiratory, and circadian biomarkers to identify the true physiological root causes of sleep disruption.
                 </p>
 
                 <!-- Dual Action CTAs -->
@@ -798,7 +786,7 @@
                     </h2>
 
                     <p class="home2-body-text reveal delay-200 text-clinic-secondary dark:text-clinic-dark-secondary leading-relaxed">
-                        Effective medical treatment must always follow diagnostic understanding. At SomnaClinic, we reject uniform prescription models in favor of rigorous biometric investigation, tailored therapy selection, and dedicated longitudinal partnership.
+                        Effective medical treatment must always follow diagnostic understanding. At SlumberCare Clinic, we reject uniform prescription models in favor of rigorous biometric investigation, tailored therapy selection, and dedicated longitudinal partnership.
                     </p>
 
                     <!-- 4 Supporting Pillars -->
@@ -995,7 +983,7 @@
                             Not sure where to begin with your sleep care?
                         </h3>
                         <p class="text-sm text-[#9AA3C8] leading-relaxed">
-                            Explore our comprehensive sleep care pathways or start a conversation with SomnaClinic.
+                            Explore our comprehensive sleep care pathways or start a conversation with SlumberCare Clinic.
                         </p>
                     </div>
                     <div class="flex flex-wrap items-center gap-4">
@@ -1005,7 +993,7 @@
                         </a>
                         <a href="contact.html" class="btn-primary-footer text-xs sm:text-sm py-3 px-6 inline-flex items-center gap-2 shadow-md">
                             <i class="fas fa-calendar-check text-xs" aria-hidden="true"></i>
-                            <span>Contact SomnaClinic</span>
+                            <span>Contact SlumberCare Clinic</span>
                         </a>
                     </div>
                 </div>
@@ -1017,7 +1005,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/8">
                 <!-- Zone 01: Brand Identity & Clinical Mission (Cols 1-4) -->
                 <div class="lg:col-span-4 space-y-4">
-                                        <a href="index.html" class="logo-wrapper" aria-label="SomnaClinic Home">
+                                        <a href="index.html" class="logo-wrapper" aria-label="SlumberCare Clinic Home">
                         <div class="logo-icon footer-logo-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="somna-brandmark-svg" aria-hidden="true">
                                 <path d="M12 28C10 24 10 18 15 13C20 8 28 8 33 13C36 16 36.5 20 35 23.5C33 28 27.5 29 23 27C18.5 25 15 26 13 29C11 32 12 36 16 38C21 40 27 38 31 34" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1026,8 +1014,8 @@
                         </div>
                         <div class="logo-brand">
                             <div class="logo-title-row">
-                                <span class="logo-somna text-white">SOMNA</span>
-                                <span class="logo-clinic text-[#7A9BE8]">CLINIC</span>
+                                <span class="logo-somna text-white">SLUMBER</span>
+                                <span class="logo-clinic text-[#7A9BE8]">CARE</span>
                             </div>
                             <span class="logo-sub text-[#7A9BE8]">Sleep Medicine &amp; Diagnostics</span>
                         </div>
@@ -1082,7 +1070,6 @@
                         <li><a href="doctors.html" class="footer-link">Doctors</a></li>
                         <li><a href="faq.html" class="footer-link">Patient FAQ</a></li>
                         <li><a href="contact.html" class="footer-link">Contact</a></li>
-                        <li><a href="dashboard.html" class="footer-link">Dashboard</a></li>
                     </ul>
                 </div>
 
@@ -1101,10 +1088,6 @@
                             <i class="fas fa-circle-question text-[#7A9BE8]" aria-hidden="true"></i>
                             <span>Patient Guidelines</span>
                         </a>
-                        <a href="dashboard.html" class="footer-link text-xs flex items-center gap-2">
-                            <i class="fas fa-chart-line text-[#7A9BE8]" aria-hidden="true"></i>
-                            <span>Clinic Operations</span>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -1118,11 +1101,10 @@
 
             <!-- Bottom Legal & Navigation Bar -->
             <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#636B90]">
-                <p>&copy; <span id="footer-year">2026</span> SomnaClinic. All rights reserved. Sleep Medicine &amp; Diagnostics.</p>
+                <p>&copy; <span id="footer-year">2026</span> SlumberCare Clinic. All rights reserved. Sleep Medicine &amp; Diagnostics.</p>
                 <div class="flex items-center gap-6">
                     <a href="contact.html" class="footer-legal-link">Patient Inquiries</a>
                     <a href="faq.html" class="footer-legal-link">Care Guidelines</a>
-                    <a href="dashboard.html" class="footer-legal-link">Clinic Dashboard</a>
                 </div>
             </div>
         </div>
@@ -1138,7 +1120,7 @@
                     </div>
                     <div>
                         <h3 id="modalTitle" class="font-bold text-lg text-clinic-primary dark:text-clinic-dark-primary">Schedule a Sleep Consultation</h3>
-                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">SomnaClinic Diagnostic Scheduling</p>
+                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">SlumberCare Clinic Diagnostic Scheduling</p>
                     </div>
                 </div>
                 <button type="button" data-modal-close class="text-clinic-muted dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-clinic-dark-primary text-xl p-1" aria-label="Close dialog">

@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Clinic Operations Dashboard | SomnaClinic — Sleep Medicine &amp; Diagnostics</title>
+    <title>Clinic Operations Dashboard | SlumberCare Clinic — Sleep Medicine &amp; Diagnostics</title>
     <meta name="description"
-        content="SomnaClinic Clinical Operations Workspace: Organize sleep medicine operations, review care workflows, and prepare diagnostic and scheduling system connections.">
+        content="SlumberCare Clinic Clinical Operations Workspace: Organize sleep medicine operations, review care workflows, and prepare diagnostic and scheduling system connections.">
 
-    <!-- Favicon — SomnaClinic Brand Logomark -->
+    <!-- Favicon — SlumberCare Clinic Brand Logomark -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192x192.png">
 
-    <!-- Tailwind CSS (CDN) with SomnaClinic Midnight Clinical Palette -->
+    <!-- Tailwind CSS (CDN) with SlumberCare Clinic Midnight Clinical Palette -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -52,13 +52,13 @@
         <!-- Immediate Direction & Theme Initialization (Prevents FOUC) -->
     <script>
         (function() {
-            var theme = localStorage.getItem('somna-theme');
+            var theme = localStorage.getItem('slumber-theme') || localStorage.getItem('somna-theme');
             if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
             } else {
                 document.documentElement.classList.remove('dark');
             }
-            var dir = localStorage.getItem('somna-dir');
+            var dir = localStorage.getItem('slumber-dir') || localStorage.getItem('somna-dir');
             if (dir === 'rtl') {
                 document.documentElement.setAttribute('dir', 'rtl');
             } else {
@@ -99,7 +99,7 @@
             
             <!-- Sidebar Header / Brand -->
             <div class="sidebar-header flex items-center justify-between p-4 border-b border-clinic-border/60 dark:border-[#1A2440] min-w-0 max-w-full overflow-hidden">
-                <a href="index.html" class="logo-wrapper flex items-center gap-2.5 min-w-0 max-w-full overflow-hidden" id="dashboard-brand-logo" aria-label="SomnaClinic Home">
+                <a href="index.html" class="logo-wrapper flex items-center gap-2.5 min-w-0 max-w-full overflow-hidden" id="dashboard-brand-logo" aria-label="SlumberCare Clinic Home">
                     <div class="logo-icon shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="somna-brandmark-svg" aria-hidden="true">
                             <path d="M12 28C10 24 10 18 15 13C20 8 28 8 33 13C36 16 36.5 20 35 23.5C33 28 27.5 29 23 27C18.5 25 15 26 13 29C11 32 12 36 16 38C21 40 27 38 31 34" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
@@ -108,8 +108,8 @@
                     </div>
                     <div class="sidebar-logo-text min-w-0 flex-1 overflow-hidden">
                         <div class="logo-title-row">
-                            <span class="logo-somna">SOMNA</span>
-                            <span class="logo-clinic">CLINIC</span>
+                            <span class="logo-somna">SLUMBER</span>
+                            <span class="logo-clinic">CARE</span>
                         </div>
                         <span class="logo-sub truncate block max-w-[170px]">
                             Sleep Medicine &amp; Diagnostics
@@ -202,7 +202,7 @@
 
                 <!-- Action Links: Return to Public Site & Sign Out -->
                 <div class="flex items-center gap-2">
-                    <a href="index.html" class="flex-1 dashboard-nav-btn text-[11px] py-1.5 px-2 rounded-xl border border-clinic-border/70 dark:border-[#1E2A4A] hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-colors flex items-center justify-center gap-1.5 text-center text-clinic-primary dark:text-white" title="Return to SomnaClinic Site">
+                    <a href="index.html" class="flex-1 dashboard-nav-btn text-[11px] py-1.5 px-2 rounded-xl border border-clinic-border/70 dark:border-[#1E2A4A] hover:border-clinic-brand dark:hover:border-clinic-dark-accent transition-colors flex items-center justify-center gap-1.5 text-center text-clinic-primary dark:text-white" title="Return to SlumberCare Clinic Site">
                         <i class="fas fa-arrow-left text-[10px]"></i>
                         <span class="truncate">Public Site</span>
                     </a>
@@ -227,7 +227,7 @@
                     </button>
 
                     <!-- Brand Name & Brand Logo Only (Properly Aligned) -->
-                    <a href="index.html" class="logo-wrapper" id="topbar-brand-link" aria-label="SomnaClinic Home">
+                    <a href="index.html" class="logo-wrapper" id="topbar-brand-link" aria-label="SlumberCare Clinic Home">
                         <div class="logo-icon shrink-0">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none" class="somna-brandmark-svg" aria-hidden="true">
                                 <path d="M12 28C10 24 10 18 15 13C20 8 28 8 33 13C36 16 36.5 20 35 23.5C33 28 27.5 29 23 27C18.5 25 15 26 13 29C11 32 12 36 16 38C21 40 27 38 31 34" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
@@ -236,8 +236,8 @@
                         </div>
                         <div class="logo-brand">
                             <div class="logo-title-row">
-                                <span class="logo-somna">SOMNA</span>
-                                <span class="logo-clinic">CLINIC</span>
+                                <span class="logo-somna">SLUMBER</span>
+                                <span class="logo-clinic">CARE</span>
                             </div>
                         </div>
                     </a>
@@ -268,7 +268,7 @@
                             <div class="flex flex-wrap items-center gap-2.5 sm:gap-3.5 mb-3.5">
                                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 dark:border-emerald-500/30 shadow-2xs">
                                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                                    <span>Active Shift • Somna Main Facility</span>
+                                    <span>Active Shift • SlumberCare Main Facility</span>
                                 </span>
                                 <span class="text-xs font-medium text-clinic-muted dark:text-clinic-dark-secondary" id="dashboard-current-date">
                                     Tuesday, October 13, 2026
@@ -673,7 +673,7 @@
                                             Director of Sleep Medicine &amp; Diagnostic Polysomnography
                                         </p>
                                         <p class="text-[11px] text-clinic-muted dark:text-slate-400 mt-0.5">
-                                            Medical Reg. #SM-94821-NY • Somna Main Facility
+                                            Medical Reg. #SM-94821-NY • SlumberCare Main Facility
                                         </p>
                                     </div>
                                 </div>
@@ -693,7 +693,7 @@
                                 </div>
                                 <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#131F42] border border-clinic-border/60 dark:border-[#1E2D55]">
                                     <span class="text-clinic-muted dark:text-slate-400 block text-[11px] mb-0.5">Account Email</span>
-                                    <span class="font-bold text-clinic-primary dark:text-white">e.vance@somnaclinic.org</span>
+                                    <span class="font-bold text-clinic-primary dark:text-white">e.vance@slumbercareclinic.org</span>
                                 </div>
                                 <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#131F42] border border-clinic-border/60 dark:border-[#1E2D55]">
                                     <span class="text-clinic-muted dark:text-slate-400 block text-[11px] mb-0.5">Shift Session Status</span>
@@ -863,7 +863,7 @@
                     </div>
                     <div>
                         <h3 id="conn-modal-title" class="font-bold text-lg text-clinic-primary dark:text-clinic-dark-primary">System Integration</h3>
-                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">SomnaClinic Operational Architecture</p>
+                        <p class="text-xs text-clinic-muted dark:text-clinic-dark-secondary">SlumberCare Clinic Operational Architecture</p>
                     </div>
                 </div>
                 <button type="button" onclick="closeConnectionModal()" class="text-clinic-muted dark:text-clinic-dark-secondary hover:text-clinic-primary dark:hover:text-clinic-dark-primary text-xl p-1" aria-label="Close dialog">
@@ -898,7 +898,7 @@
                 </div>
                 <div>
                     <h3 id="logout-modal-title" class="font-bold text-lg text-clinic-primary dark:text-white">Sign Out of Session</h3>
-                    <p class="text-xs text-clinic-muted dark:text-slate-400">Dr. Eleanor Vance • SomnaClinic</p>
+                    <p class="text-xs text-clinic-muted dark:text-slate-400">Dr. Eleanor Vance • SlumberCare Clinic</p>
                 </div>
             </div>
 

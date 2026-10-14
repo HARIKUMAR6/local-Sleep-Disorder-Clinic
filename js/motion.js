@@ -1,5 +1,5 @@
 /**
- * SomnaClinic Sleep Disorder Clinic — Motion & Animation Controller
+ * SlumberCare Clinic Sleep Disorder Clinic — Motion & Animation Controller
  * Coordinates IntersectionObserver scroll reveals, staggered animations,
  * counter transitions, and scroll interactions.
  */
